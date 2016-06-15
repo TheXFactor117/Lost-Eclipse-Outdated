@@ -1,0 +1,47 @@
+levels.rarity.0=Unknown
+levels.rarity.1=Basic
+levels.rarity.2=Uncommon
+levels.rarity.3=Rare
+levels.rarity.4=Legendary
+levels.rarity.5=Ancient
+
+#############################################
+#                   ITEMS                   #
+#############################################
+
+### artifacts
+item.eclipse.name=Eclipse
+item.omega.name=Omega
+item.inheritance.name=Inheritance
+item.mythic.name=Mythic
+item.nova.name=Nova
+
+### ingots & gems
+item.malachiteIngot.name=Malachite Ingot
+item.vexalGem.name=Vexal Gem
+item.astrillGem.name=Astrill Gem
+item.astrillGemFragment.name=Astrill Gem Fragment
+item.soulGem.name=Soul Gem
+item.soulGemFragment.name=Soul Gem Fragment
+item.etherealGem.name=Ethereal Gem
+
+### scrolls
+item.fireballScroll.name=Fireball Scroll
+item.frostbiteScroll.name=Frostbite Scroll
+item.etherealScroll.name=Ethereal Scroll
+item.radiationScroll.name=Radiation Scroll
+item.elementalScroll.name=Elemental Scroll
+item.voidScroll.name=Void Scroll
+
+### misc
+item.staffBase.name=Staff Base
+item.frostRod.name=Frost Rod
+item.frostDust.name=Frost Dust
+item.golemGyro.name=Golem Gyro
+
+#############################################
+#                   TABS                    #
+#############################################
+
+itemGroup.tabLE=Lost Eclipse
+itemGroup.tabLETest=Lost Eclipse Test
