@@ -2,6 +2,7 @@ package com.thexfactor117.losteclipse.init;
 
 import com.thexfactor117.levels.leveling.Rarity;
 import com.thexfactor117.losteclipse.items.ItemLE;
+import com.thexfactor117.losteclipse.items.scrolls.ItemFireballScroll;
 import com.thexfactor117.xlib.misc.RegisterHelper;
 
 import net.minecraft.item.Item;
@@ -30,7 +31,7 @@ public class ModItems
 	public static Item etherealGem = new ItemLE("etherealGem", Rarity.RARE);
 	
 	// scrolls
-	public static Item fireballScroll = new ItemLE("fireballScroll", Rarity.UNCOMMON);
+	public static Item fireballScroll = new ItemFireballScroll("fireballScroll", Rarity.UNCOMMON);
 	public static Item frostbiteScroll = new ItemLE("frostbiteScroll", Rarity.UNCOMMON);
 	public static Item etherealScroll = new ItemLE("etherealScroll", Rarity.RARE);
 	public static Item radiationScroll = new ItemLE("radiationScroll", Rarity.RARE);

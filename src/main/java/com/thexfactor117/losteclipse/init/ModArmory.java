@@ -43,10 +43,10 @@ public class ModArmory
 	// tools
 	public static Item malachitePick = new ItemBasePickaxe(malachite, "malachitePick", Reference.MODID, ModTabs.tabLE);
 	public static Item malachiteShovel = new ItemBaseShovel(malachite, "malachiteShovel", Reference.MODID, ModTabs.tabLE);
-	public static Item malachiteAxe = new ItemBaseAxe(malachite, "malachiteAxe", Reference.MODID, ModTabs.tabLE);
-	public static Item astrillPick = new ItemBasePickaxe(malachite, "astrillPick", Reference.MODID, ModTabs.tabLE);
-	public static Item astrillShovel = new ItemBaseShovel(malachite, "astrillShovel", Reference.MODID, ModTabs.tabLE);
-	public static Item astrillAxe = new ItemBaseAxe(malachite, "astrillAxe", Reference.MODID, ModTabs.tabLE);
+	public static Item malachiteAxe = new ItemBaseAxe(malachite, "malachiteAxe", Reference.MODID, ModTabs.tabLE, malachite.getDamageVsEntity(), malachite.getEfficiencyOnProperMaterial()); // TODO: fix damage/speed for axes
+	public static Item astrillPick = new ItemBasePickaxe(astrill, "astrillPick", Reference.MODID, ModTabs.tabLE);
+	public static Item astrillShovel = new ItemBaseShovel(astrill, "astrillShovel", Reference.MODID, ModTabs.tabLE);
+	public static Item astrillAxe = new ItemBaseAxe(astrill, "astrillAxe", Reference.MODID, ModTabs.tabLE, malachite.getDamageVsEntity(), malachite.getEfficiencyOnProperMaterial()); // TODO: fix damage/speed for axes
 
 	// generic melee
 	public static Item ironDagger = new ItemLEAdvancedMelee(ToolMaterial.IRON, "ironDagger", 0.5, 0.5, 175);
