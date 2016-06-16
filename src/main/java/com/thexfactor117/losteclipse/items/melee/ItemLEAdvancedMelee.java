@@ -15,14 +15,16 @@ import net.minecraft.item.ItemStack;
 /**
  * 
  * @author TheXFactor117
- *
+ * @author Choonster
+ * 
+ * Manipulates AttributeModifiers in order to make weapons swing slower, faster, as well as multiply damage values by a multiplier.
  */
-public class ItemLEMace extends ItemLEMelee
+public class ItemLEAdvancedMelee extends ItemLEMelee
 {
 	private double damageMultiplier;
 	private double speedMultiplier;
 	
-	public ItemLEMace(ToolMaterial material, String name, double damageMultiplier, double speedMultiplier, int maxUses) 
+	public ItemLEAdvancedMelee(ToolMaterial material, String name, double damageMultiplier, double speedMultiplier, int maxUses) 
 	{
 		super(material, name);
 		this.setMaxDamage(maxUses);
@@ -30,7 +32,7 @@ public class ItemLEMace extends ItemLEMelee
 		this.speedMultiplier = speedMultiplier;
 	}
 	
-	public ItemLEMace(ToolMaterial material, String name, double damageMultiplier, double speedMultiplier)
+	public ItemLEAdvancedMelee(ToolMaterial material, String name, double damageMultiplier, double speedMultiplier)
 	{
 		super(material, name);
 		this.damageMultiplier = damageMultiplier;

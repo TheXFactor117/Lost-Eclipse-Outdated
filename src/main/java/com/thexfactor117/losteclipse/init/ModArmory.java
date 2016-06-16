@@ -1,8 +1,11 @@
 package com.thexfactor117.losteclipse.init;
 
-import com.thexfactor117.losteclipse.items.melee.ItemLEDagger;
-import com.thexfactor117.losteclipse.items.melee.ItemLEMace;
+import com.thexfactor117.losteclipse.Reference;
+import com.thexfactor117.losteclipse.items.melee.ItemLEAdvancedMelee;
 import com.thexfactor117.losteclipse.items.melee.ItemLEMelee;
+import com.thexfactor117.xlib.items.ItemBaseAxe;
+import com.thexfactor117.xlib.items.ItemBasePickaxe;
+import com.thexfactor117.xlib.items.ItemBaseShovel;
 import com.thexfactor117.xlib.misc.RegisterHelper;
 
 import net.minecraft.item.Item;
@@ -37,31 +40,47 @@ public class ModArmory
 	/*
 	 * items
 	 */
+	// tools
+	public static Item malachitePick = new ItemBasePickaxe(malachite, "malachitePick", Reference.MODID, ModTabs.tabLE);
+	public static Item malachiteShovel = new ItemBaseShovel(malachite, "malachiteShovel", Reference.MODID, ModTabs.tabLE);
+	public static Item malachiteAxe = new ItemBaseAxe(malachite, "malachiteAxe", Reference.MODID, ModTabs.tabLE);
+	public static Item astrillPick = new ItemBasePickaxe(malachite, "astrillPick", Reference.MODID, ModTabs.tabLE);
+	public static Item astrillShovel = new ItemBaseShovel(malachite, "astrillShovel", Reference.MODID, ModTabs.tabLE);
+	public static Item astrillAxe = new ItemBaseAxe(malachite, "astrillAxe", Reference.MODID, ModTabs.tabLE);
+
 	// generic melee
-	public static Item ironDagger = new ItemLEDagger(ToolMaterial.IRON, "ironDagger", 0.5, 0.5, 175);
-	public static Item ironMace = new ItemLEMace(ToolMaterial.IRON, "ironMace", 1.25, 1.25, 350);
-	public static Item malachiteDagger = new ItemLEDagger(malachite, "malachiteDagger", 0.5, 0.5, 175);
+	public static Item ironDagger = new ItemLEAdvancedMelee(ToolMaterial.IRON, "ironDagger", 0.5, 0.5, 175);
+	public static Item ironMace = new ItemLEAdvancedMelee(ToolMaterial.IRON, "ironMace", 1.25, 1.25, 350);
+	public static Item malachiteDagger = new ItemLEAdvancedMelee(malachite, "malachiteDagger", 0.5, 0.5, 175);
 	public static Item malachiteSword = new ItemLEMelee(malachite, "malachiteSword");
-	public static Item malachiteMace = new ItemLEMace(malachite, "malachiteMace", 1.25, 1.25, 350);
-	public static Item vexalDagger = new ItemLEDagger(vexal, "vexalDagger", 0.5, 0.5, 512);
+	public static Item malachiteMace = new ItemLEAdvancedMelee(malachite, "malachiteMace", 1.25, 1.25, 350);
+	public static Item vexalDagger = new ItemLEAdvancedMelee(vexal, "vexalDagger", 0.5, 0.5, 512);
 	public static Item vexalSword = new ItemLEMelee(vexal, "vexalSword");
-	public static Item vexalMace = new ItemLEMace(vexal, "vexalMace", 1.25, 1.25, 1024);
-	public static Item astrillDagger = new ItemLEDagger(astrill, "astrillDagger", 0.5, 0.5, 1500);
+	public static Item vexalMace = new ItemLEAdvancedMelee(vexal, "vexalMace", 1.25, 1.25, 1024);
+	public static Item astrillDagger = new ItemLEAdvancedMelee(astrill, "astrillDagger", 0.5, 0.5, 1500);
 	public static Item astrillSword = new ItemLEMelee(astrill, "astrillSword");
-	public static Item astrillMace = new ItemLEMace(astrill, "astrillMace", 1.25, 1.25, 2500);
+	public static Item astrillMace = new ItemLEAdvancedMelee(astrill, "astrillMace", 1.25, 1.25, 2500);
 	
 	// special melee
 	public static Item crystallizedSword = new ItemLEMelee(crystallized, "crystallizedSword");
-	public static Item gyroMace = new ItemLEMace(gyro, "gyroMace", 1, 1.25);
+	public static Item gyroMace = new ItemLEAdvancedMelee(gyro, "gyroMace", 1, 1.25);
 	public static Item shadowBlade = new ItemLEMelee(shadow, "shadowBlade");
 	public static Item maliceBlade = new ItemLEMelee(malice, "maliceBlade");
 	public static Item darkMaliceBlade = new ItemLEMelee(dark_malice, "darkMaliceBlade");
-	public static Item divineRapier = new ItemLEDagger(divine, "divineRapier", 1, 0.75);
-	public static Item voidHammer = new ItemLEMace(void_hammer, "voidHammer", 1, 1.5);
-	public static Item excaliburRapier = new ItemLEDagger(excalibur, "excaliburRapier", 1, 0.75);
+	public static Item divineRapier = new ItemLEAdvancedMelee(divine, "divineRapier", 1, 0.75);
+	public static Item voidHammer = new ItemLEAdvancedMelee(void_hammer, "voidHammer", 1, 1.5);
+	public static Item excaliburRapier = new ItemLEAdvancedMelee(excalibur, "excaliburRapier", 1, 0.75);
 	
 	public static void registerItems()
 	{
+		// tools
+		RegisterHelper.registerItems(malachitePick);
+		RegisterHelper.registerItems(malachiteShovel);
+		RegisterHelper.registerItems(malachiteAxe);
+		RegisterHelper.registerItems(astrillPick);
+		RegisterHelper.registerItems(astrillShovel);
+		RegisterHelper.registerItems(astrillAxe);
+		
 		// generic melee
 		RegisterHelper.registerItems(ironDagger);
 		RegisterHelper.registerItems(ironMace);
