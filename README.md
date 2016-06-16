@@ -1,3 +1,5 @@
+Use the wiki feature above to see the finer details of the mod.
+
 # Lost-Eclipse
 The pinnacle of all adventure mods is here - Lost Eclipse: The Tale of Alacrity
 
