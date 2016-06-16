@@ -15,12 +15,11 @@ import net.minecraft.item.ItemStack;
 /**
  * 
  * @author TheXFactor117
- * @author Choonster
  *
  */
-public class ItemLEDagger extends ItemLEMelee
+public class ItemLEMace extends ItemLEMelee
 {
-	public ItemLEDagger(ToolMaterial material, String name, int maxUses) 
+	public ItemLEMace(ToolMaterial material, String name, int maxUses) 
 	{
 		super(material, name);
 		this.setMaxDamage(maxUses);
@@ -33,8 +32,8 @@ public class ItemLEDagger extends ItemLEMelee
 
 		if (slot == EntityEquipmentSlot.MAINHAND) 
 		{
-			replaceModifier(modifiers, SharedMonsterAttributes.ATTACK_DAMAGE, ATTACK_DAMAGE_MODIFIER, 0.5);
-			replaceModifier(modifiers, SharedMonsterAttributes.ATTACK_SPEED, ATTACK_SPEED_MODIFIER, 0.5);
+			replaceModifier(modifiers, SharedMonsterAttributes.ATTACK_DAMAGE, ATTACK_DAMAGE_MODIFIER, 1.5);
+			replaceModifier(modifiers, SharedMonsterAttributes.ATTACK_SPEED, ATTACK_SPEED_MODIFIER, 1.5);
 		}
 
 		return modifiers;
