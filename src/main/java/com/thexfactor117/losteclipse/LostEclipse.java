@@ -3,6 +3,7 @@ package com.thexfactor117.losteclipse;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.thexfactor117.losteclipse.init.ModArmory;
 import com.thexfactor117.losteclipse.init.ModItems;
 import com.thexfactor117.losteclipse.proxies.CommonProxy;
 
@@ -29,6 +30,7 @@ public class LostEclipse
 	public void preInit(FMLPreInitializationEvent event)
 	{
 		ModItems.registerItems();
+		ModArmory.registerItems();
 	}
 	
 	@EventHandler

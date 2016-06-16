@@ -19,10 +19,22 @@ import net.minecraft.item.ItemStack;
  */
 public class ItemLEMace extends ItemLEMelee
 {
-	public ItemLEMace(ToolMaterial material, String name, int maxUses) 
+	private double damageMultiplier;
+	private double speedMultiplier;
+	
+	public ItemLEMace(ToolMaterial material, String name, double damageMultiplier, double speedMultiplier, int maxUses) 
 	{
 		super(material, name);
 		this.setMaxDamage(maxUses);
+		this.damageMultiplier = damageMultiplier;
+		this.speedMultiplier = speedMultiplier;
+	}
+	
+	public ItemLEMace(ToolMaterial material, String name, double damageMultiplier, double speedMultiplier)
+	{
+		super(material, name);
+		this.damageMultiplier = damageMultiplier;
+		this.speedMultiplier = speedMultiplier;
 	}
 	
 	@Override
@@ -32,8 +44,8 @@ public class ItemLEMace extends ItemLEMelee
 
 		if (slot == EntityEquipmentSlot.MAINHAND) 
 		{
-			replaceModifier(modifiers, SharedMonsterAttributes.ATTACK_DAMAGE, ATTACK_DAMAGE_MODIFIER, 1.5);
-			replaceModifier(modifiers, SharedMonsterAttributes.ATTACK_SPEED, ATTACK_SPEED_MODIFIER, 1.5);
+			replaceModifier(modifiers, SharedMonsterAttributes.ATTACK_DAMAGE, ATTACK_DAMAGE_MODIFIER, damageMultiplier);
+			replaceModifier(modifiers, SharedMonsterAttributes.ATTACK_SPEED, ATTACK_SPEED_MODIFIER, speedMultiplier);
 		}
 
 		return modifiers;

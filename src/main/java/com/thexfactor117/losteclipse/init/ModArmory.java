@@ -21,33 +21,48 @@ public class ModArmory
 	 */
 	// generic melee
 	public static ToolMaterial malachite = EnumHelper.addToolMaterial("malachite", 2, 250, 6.0F, 2.0F, 14);
-	public static ToolMaterial vexal = EnumHelper.addToolMaterial("vexal", 2, 784, 6.5F, 2.5F, 10);
+	public static ToolMaterial vexal = EnumHelper.addToolMaterial("vexal", 2, 768, 6.5F, 2.5F, 10);
 	public static ToolMaterial astrill = EnumHelper.addToolMaterial("astrill", 3, 2000, 7.0F, 4.0F, 15);
 	
 	// special melee
-	
+	public static ToolMaterial crystallized = EnumHelper.addToolMaterial("crystallized", 2, 256, 6.0F, 3.0F, 25);
+	public static ToolMaterial gyro = EnumHelper.addToolMaterial("gyro", 2, 768, 6.0F, 6.0F, 15);
+	public static ToolMaterial shadow = EnumHelper.addToolMaterial("shadow", 2, 384, 6.0F, 4.0F, 20);
+	public static ToolMaterial malice = EnumHelper.addToolMaterial("malice", 2, 448, 6.0F, 4.0F, 10);
+	public static ToolMaterial dark_malice = EnumHelper.addToolMaterial("dark_malice", 2, 640, 6.0F, 7.0F, 25);
+	public static ToolMaterial divine = EnumHelper.addToolMaterial("divine", 2, 384, 6.0F, 6.0F, 25);
+	public static ToolMaterial void_hammer = EnumHelper.addToolMaterial("void_hammer", 2, 1024, 6.0F, 12.0F, 15);
+	public static ToolMaterial excalibur = EnumHelper.addToolMaterial("excalibur", 2, 512, 6.0F, 8.0F, 15);
 	
 	/*
 	 * items
 	 */
 	// generic melee
-	public static Item ironDagger = new ItemLEDagger(ToolMaterial.IRON, "ironDagger", 175);
-	public static Item ironMace = new ItemLEMace(ToolMaterial.IRON, "ironMace", 350);
-	public static Item malachiteDagger = new ItemLEDagger(malachite, "malachiteDagger", 175);
+	public static Item ironDagger = new ItemLEDagger(ToolMaterial.IRON, "ironDagger", 0.5, 0.5, 175);
+	public static Item ironMace = new ItemLEMace(ToolMaterial.IRON, "ironMace", 1.25, 1.25, 350);
+	public static Item malachiteDagger = new ItemLEDagger(malachite, "malachiteDagger", 0.5, 0.5, 175);
 	public static Item malachiteSword = new ItemLEMelee(malachite, "malachiteSword");
-	public static Item malachiteMace = new ItemLEMace(malachite, "malachiteMace", 350);
-	public static Item vexalDagger = new ItemLEDagger(vexal, "vexalDagger", 512);
+	public static Item malachiteMace = new ItemLEMace(malachite, "malachiteMace", 1.25, 1.25, 350);
+	public static Item vexalDagger = new ItemLEDagger(vexal, "vexalDagger", 0.5, 0.5, 512);
 	public static Item vexalSword = new ItemLEMelee(vexal, "vexalSword");
-	public static Item vexalMace = new ItemLEMace(vexal, "vexalMace", 1024);
-	public static Item astrillDagger = new ItemLEDagger(astrill, "astrillDagger", 1500);
+	public static Item vexalMace = new ItemLEMace(vexal, "vexalMace", 1.25, 1.25, 1024);
+	public static Item astrillDagger = new ItemLEDagger(astrill, "astrillDagger", 0.5, 0.5, 1500);
 	public static Item astrillSword = new ItemLEMelee(astrill, "astrillSword");
-	public static Item astrillMace = new ItemLEMace(astrill, "astrillMace", 2500);
+	public static Item astrillMace = new ItemLEMace(astrill, "astrillMace", 1.25, 1.25, 2500);
 	
 	// special melee
+	public static Item crystallizedSword = new ItemLEMelee(crystallized, "crystallizedSword");
+	public static Item gyroMace = new ItemLEMace(gyro, "gyroMace", 1, 1.25);
+	public static Item shadowBlade = new ItemLEMelee(shadow, "shadowBlade");
+	public static Item maliceBlade = new ItemLEMelee(malice, "maliceBlade");
+	public static Item darkMaliceBlade = new ItemLEMelee(dark_malice, "darkMaliceBlade");
+	public static Item divineRapier = new ItemLEDagger(divine, "divineRapier", 1, 0.75);
+	public static Item voidHammer = new ItemLEMace(void_hammer, "voidHammer", 1, 1.5);
+	public static Item excaliburRapier = new ItemLEDagger(excalibur, "excaliburRapier", 1, 0.75);
 	
 	public static void registerItems()
 	{
-		// weapons
+		// generic melee
 		RegisterHelper.registerItems(ironDagger);
 		RegisterHelper.registerItems(ironMace);
 		RegisterHelper.registerItems(malachiteDagger);
@@ -59,5 +74,15 @@ public class ModArmory
 		RegisterHelper.registerItems(astrillDagger);
 		RegisterHelper.registerItems(astrillSword);
 		RegisterHelper.registerItems(astrillMace);
+		
+		// special melee
+		RegisterHelper.registerItems(crystallizedSword);
+		RegisterHelper.registerItems(gyroMace);
+		RegisterHelper.registerItems(shadowBlade);
+		RegisterHelper.registerItems(maliceBlade);
+		RegisterHelper.registerItems(darkMaliceBlade);
+		RegisterHelper.registerItems(divineRapier);
+		RegisterHelper.registerItems(voidHammer);
+		RegisterHelper.registerItems(excaliburRapier);
 	}
 }

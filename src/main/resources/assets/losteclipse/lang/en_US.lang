@@ -39,6 +39,29 @@ item.frostRod.name=Frost Rod
 item.frostDust.name=Frost Dust
 item.golemGyro.name=Golem Gyro
 
+### generic melee
+item.ironDagger.name=Iron Dagger
+item.ironMace.name=Iron Mace
+item.malachiteDagger.name=Malachite Dagger
+item.malachiteSword.name=Malachite Sword
+item.malachiteMace.name=Malachite Mace
+item.vexalDagger.name=Vexal Dagger
+item.vexalSword.name=Vexal Sword
+item.vexalMace.name=Vexal Mace
+item.astrillDagger.name=Astrill Dagger
+item.astrillSword.name=Astrill Sword
+item.astrillMace.name=Astrill Mace
+
+### special melee
+item.crystallizedSword.name=Crystallized Sword
+item.gyroMace.name=Gyro Mace
+item.shadowBlade.name=Shadow Blade
+item.maliceBlade.name=Malice Blade
+item.darkMaliceBlade.name=Dark Malice Blade
+item.divineRapier.name=Divine Rapier
+item.voidHammer.name=Void Hammer
+item.excaliburRapier.name=Excalibur Rapier
+
 #############################################
 #                   TABS                    #
 #############################################

@@ -19,6 +19,7 @@ public class ItemLEMelee extends ItemSword
 		super(material);
 		this.material = material;
 		this.setRegistryName(Reference.MODID, name);
+		this.setUnlocalizedName(name);
 		this.setCreativeTab(ModTabs.tabLE);
 	}
 }
