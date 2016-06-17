@@ -19,9 +19,9 @@ import net.minecraft.world.World;
  * @author TheXFactor117
  *
  */
-public class ItemFireballScroll extends ItemLE
+public class ItemElementalScroll extends ItemLE
 {
-	public ItemFireballScroll(String name, Rarity rarity) 
+	public ItemElementalScroll(String name, Rarity rarity) 
 	{
 		super(name, rarity);
 	}
@@ -29,23 +29,29 @@ public class ItemFireballScroll extends ItemLE
 	@Override
 	public ActionResult<ItemStack> onItemRightClick(ItemStack stack, World world, EntityPlayer player, EnumHand hand)
 	{		
-		if (player.inventory.getCurrentItem().getItem() == ModItems.fireballScroll)
+		if (player.inventory.getCurrentItem().getItem() == ModItems.elementalScroll)
 		{
 			if (!world.isRemote)
 			{
-				/**
-				 * Vec3 is used to find the players position, as well as
-				 * the direction the player is facing so that the entity
-				 * will 'fly' in a straight path.
-				 */
+				int rand = world.rand.nextInt(2);
 				Vec3d look = player.getLookVec();
 				double x = look.xCoord;
 				double y = look.yCoord;
 				double z = look.zCoord;
 				LostEclipse.LOGGER.info("Look Coords: " + x + " " + y + " " + z);
-				EntitySmallFireball fireball = new EntitySmallFireball(world, player, x, y, z); // TODO: fix look vectors
-				fireball.setPosition(player.posX + look.xCoord, player.posY + look.yCoord + 1.5, player.posZ + look.zCoord);
-				world.spawnEntityInWorld(fireball);
+				
+				switch (rand)
+				{
+					case 0:
+						EntitySmallFireball fireball = new EntitySmallFireball(world, player, x, y, z); // TODO: fix look vectors
+						fireball.setPosition(player.posX + look.xCoord, player.posY + look.yCoord + 1.5, player.posZ + look.zCoord);
+						world.spawnEntityInWorld(fireball);
+					case 1:
+						EntitySmallFireball frostbite = new EntitySmallFireball(world, player, x, y, z); // TODO: fix look vectors
+						frostbite.setPosition(player.posX + look.xCoord, player.posY + look.yCoord + 1.5, player.posZ + look.zCoord);
+						world.spawnEntityInWorld(frostbite);
+				}
+				
 				stack.stackSize--;
 			}
 		}

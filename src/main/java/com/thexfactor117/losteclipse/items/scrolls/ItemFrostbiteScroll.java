@@ -19,9 +19,9 @@ import net.minecraft.world.World;
  * @author TheXFactor117
  *
  */
-public class ItemFireballScroll extends ItemLE
+public class ItemFrostbiteScroll extends ItemLE
 {
-	public ItemFireballScroll(String name, Rarity rarity) 
+	public ItemFrostbiteScroll(String name, Rarity rarity) 
 	{
 		super(name, rarity);
 	}
@@ -29,7 +29,7 @@ public class ItemFireballScroll extends ItemLE
 	@Override
 	public ActionResult<ItemStack> onItemRightClick(ItemStack stack, World world, EntityPlayer player, EnumHand hand)
 	{		
-		if (player.inventory.getCurrentItem().getItem() == ModItems.fireballScroll)
+		if (player.inventory.getCurrentItem().getItem() == ModItems.frostbiteScroll)
 		{
 			if (!world.isRemote)
 			{
@@ -43,6 +43,7 @@ public class ItemFireballScroll extends ItemLE
 				double y = look.yCoord;
 				double z = look.zCoord;
 				LostEclipse.LOGGER.info("Look Coords: " + x + " " + y + " " + z);
+				// TODO: make new entities (frost, etc.)
 				EntitySmallFireball fireball = new EntitySmallFireball(world, player, x, y, z); // TODO: fix look vectors
 				fireball.setPosition(player.posX + look.xCoord, player.posY + look.yCoord + 1.5, player.posZ + look.zCoord);
 				world.spawnEntityInWorld(fireball);

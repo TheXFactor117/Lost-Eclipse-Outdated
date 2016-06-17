@@ -2,7 +2,12 @@ package com.thexfactor117.losteclipse.init;
 
 import com.thexfactor117.levels.leveling.Rarity;
 import com.thexfactor117.losteclipse.items.ItemLE;
+import com.thexfactor117.losteclipse.items.scrolls.ItemElementalScroll;
+import com.thexfactor117.losteclipse.items.scrolls.ItemEtherealScroll;
 import com.thexfactor117.losteclipse.items.scrolls.ItemFireballScroll;
+import com.thexfactor117.losteclipse.items.scrolls.ItemFrostbiteScroll;
+import com.thexfactor117.losteclipse.items.scrolls.ItemRadiationScroll;
+import com.thexfactor117.losteclipse.items.scrolls.ItemVoidScroll;
 import com.thexfactor117.xlib.misc.RegisterHelper;
 
 import net.minecraft.item.Item;
@@ -32,11 +37,11 @@ public class ModItems
 	
 	// scrolls
 	public static Item fireballScroll = new ItemFireballScroll("fireballScroll", Rarity.UNCOMMON);
-	public static Item frostbiteScroll = new ItemLE("frostbiteScroll", Rarity.UNCOMMON);
-	public static Item etherealScroll = new ItemLE("etherealScroll", Rarity.RARE);
-	public static Item radiationScroll = new ItemLE("radiationScroll", Rarity.RARE);
-	public static Item elementalScroll = new ItemLE("elementalScroll", Rarity.RARE);
-	public static Item voidScroll = new ItemLE("voidScroll", Rarity.LEGENDARY);
+	public static Item frostbiteScroll = new ItemFrostbiteScroll("frostbiteScroll", Rarity.UNCOMMON);
+	public static Item etherealScroll = new ItemEtherealScroll("etherealScroll", Rarity.RARE);
+	public static Item radiationScroll = new ItemRadiationScroll("radiationScroll", Rarity.RARE);
+	public static Item elementalScroll = new ItemElementalScroll("elementalScroll", Rarity.RARE);
+	public static Item voidScroll = new ItemVoidScroll("voidScroll", Rarity.LEGENDARY);
 	
 	// misc
 	public static Item staffBase = new ItemLE("staffBase", Rarity.BASIC);
