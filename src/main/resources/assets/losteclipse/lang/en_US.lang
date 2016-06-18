@@ -39,6 +39,26 @@ item.frostRod.name=Frost Rod
 item.frostDust.name=Frost Dust
 item.golemGyro.name=Golem Gyro
 
+### tools
+item.malachitePick.name=Malachite Pickaxe
+item.malachiteShovel.name=Malachite Shovel
+item.malachiteAxe.name=Malachite Axe
+item.astrillPick.name=Astrill Pickaxe
+item.astrillShovel.name=Astrill Shovel
+item.astrillAxe.name=Astrill Axe
+
+### armor
+item.malachiteHelmet.name=Malachite Helmet
+item.malachiteChestplate.name=Malachite Chestplate
+item.malachiteLeggings.name=Malachite Leggings
+item.malachiteBoots.name=Malachite Boots
+item.astrillHelmet.name=Astrill Helmet
+item.astrillChestplate.name=Astrill Chestplate
+item.astrillLeggings.name=Astrill Leggings
+item.astrillBoots.name=Astrill Boots
+
+item.gyroChestplate.name=Gyro Chestplate
+
 ### generic melee
 item.ironDagger.name=Iron Dagger
 item.ironMace.name=Iron Mace

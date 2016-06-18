@@ -3,13 +3,17 @@ package com.thexfactor117.losteclipse.init;
 import com.thexfactor117.losteclipse.Reference;
 import com.thexfactor117.losteclipse.items.melee.ItemLEAdvancedMelee;
 import com.thexfactor117.losteclipse.items.melee.ItemLEMelee;
+import com.thexfactor117.xlib.items.ItemBaseArmor;
 import com.thexfactor117.xlib.items.ItemBaseAxe;
 import com.thexfactor117.xlib.items.ItemBasePickaxe;
 import com.thexfactor117.xlib.items.ItemBaseShovel;
 import com.thexfactor117.xlib.misc.RegisterHelper;
 
+import net.minecraft.init.SoundEvents;
+import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
+import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraftforge.common.util.EnumHelper;
 
 /**
@@ -37,6 +41,12 @@ public class ModArmory
 	public static ToolMaterial void_hammer = EnumHelper.addToolMaterial("void_hammer", 2, 1024, 6.0F, 12.0F, 15);
 	public static ToolMaterial excalibur = EnumHelper.addToolMaterial("excalibur", 2, 512, 6.0F, 8.0F, 15);
 	
+	// armor
+	public static ArmorMaterial malachite_armor = EnumHelper.addArmorMaterial("malachite_armor", Reference.MODID + ":malachiteArmor", 15, new int[] { 2, 6, 5, 2 }, 20, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0.0F);
+	public static ArmorMaterial astrill_armor = EnumHelper.addArmorMaterial("astrill_armor", Reference.MODID + ":astrillArmor", 40, new int[] { 4, 8, 5, 3 }, 10, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 3.0F);
+	
+	public static ArmorMaterial gyro_chestplate = EnumHelper.addArmorMaterial("gyro_chestplate", Reference.MODID + ":gyroChestplate", 33, new int [] { 1, 10, 1, 1 }, 15, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 1.0F);
+	
 	/*
 	 * items
 	 */
@@ -47,7 +57,19 @@ public class ModArmory
 	public static Item astrillPick = new ItemBasePickaxe(astrill, "astrillPick", Reference.MODID, ModTabs.tabLE);
 	public static Item astrillShovel = new ItemBaseShovel(astrill, "astrillShovel", Reference.MODID, ModTabs.tabLE);
 	public static Item astrillAxe = new ItemBaseAxe(astrill, "astrillAxe", Reference.MODID, ModTabs.tabLE, malachite.getDamageVsEntity(), malachite.getEfficiencyOnProperMaterial()); // TODO: fix damage/speed for axes
-
+	
+	// armor
+	public static Item malachiteHelmet = new ItemBaseArmor(malachite_armor, EntityEquipmentSlot.HEAD, "malachiteHelmet", Reference.MODID, ModTabs.tabLE);
+	public static Item malachiteChestplate = new ItemBaseArmor(malachite_armor, EntityEquipmentSlot.CHEST, "malachiteChestplate", Reference.MODID, ModTabs.tabLE);
+	public static Item malachiteLeggings = new ItemBaseArmor(malachite_armor, EntityEquipmentSlot.LEGS, "malachiteLeggings", Reference.MODID, ModTabs.tabLE);
+	public static Item malachiteBoots = new ItemBaseArmor(malachite_armor, EntityEquipmentSlot.FEET, "malachiteBoots", Reference.MODID, ModTabs.tabLE);
+	public static Item astrillHelmet = new ItemBaseArmor(astrill_armor, EntityEquipmentSlot.HEAD, "astrillHelmet", Reference.MODID, ModTabs.tabLE);
+	public static Item astrillChestplate = new ItemBaseArmor(astrill_armor, EntityEquipmentSlot.CHEST, "astrillChestplate", Reference.MODID, ModTabs.tabLE);
+	public static Item astrillLeggings = new ItemBaseArmor(astrill_armor, EntityEquipmentSlot.LEGS, "astrillLeggings", Reference.MODID, ModTabs.tabLE);
+	public static Item astrillBoots = new ItemBaseArmor(astrill_armor, EntityEquipmentSlot.FEET, "astrillBoots", Reference.MODID, ModTabs.tabLE);
+	
+	public static Item gyroChestplate = new ItemBaseArmor(gyro_chestplate, EntityEquipmentSlot.CHEST, "gyroChestplate", Reference.MODID, ModTabs.tabLE);
+	
 	// generic melee
 	public static Item ironDagger = new ItemLEAdvancedMelee(ToolMaterial.IRON, "ironDagger", 0.5, 0.5, 175);
 	public static Item ironMace = new ItemLEAdvancedMelee(ToolMaterial.IRON, "ironMace", 1.25, 1.25, 350);
@@ -80,6 +102,18 @@ public class ModArmory
 		RegisterHelper.registerItems(astrillPick);
 		RegisterHelper.registerItems(astrillShovel);
 		RegisterHelper.registerItems(astrillAxe);
+		
+		// armor
+		RegisterHelper.registerItems(malachiteHelmet);
+		RegisterHelper.registerItems(malachiteChestplate);
+		RegisterHelper.registerItems(malachiteLeggings);
+		RegisterHelper.registerItems(malachiteBoots);
+		RegisterHelper.registerItems(astrillHelmet);
+		RegisterHelper.registerItems(astrillChestplate);
+		RegisterHelper.registerItems(astrillLeggings);
+		RegisterHelper.registerItems(astrillBoots);
+		
+		RegisterHelper.registerItems(gyroChestplate);
 		
 		// generic melee
 		RegisterHelper.registerItems(ironDagger);
