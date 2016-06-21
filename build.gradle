@@ -39,8 +39,9 @@ minecraft {
 
 dependencies {
 	compile files (
-	"libs/xLib-1.9.4-r1.0.1.jar"
-	"libs/Levels-1.9.4-r3.0.5.jar"
+	"libs/xLib-" + config.xlib_version + ".jar",
+	"libs/Levels-" + config.levels_version + ".jar"
+	)
 }
 
 processResources
