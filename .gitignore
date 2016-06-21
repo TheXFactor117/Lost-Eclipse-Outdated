@@ -3,8 +3,3 @@
 /.gradle
 /.project
 /.settings
-/build.gradle
-/gradle
-/gradlew
-/gradlew.bat
-/libs

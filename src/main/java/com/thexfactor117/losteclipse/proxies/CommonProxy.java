@@ -7,5 +7,8 @@ package com.thexfactor117.losteclipse.proxies;
  */
 public class CommonProxy 
 {
-
+	public void registerRenderers()
+	{
+		
+	}
 }
