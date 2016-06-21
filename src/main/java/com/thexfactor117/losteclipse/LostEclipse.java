@@ -33,6 +33,7 @@ public class LostEclipse
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
 	{
+		LostEclipse.LOGGER.info("Beginning initialization...");
 		ModItems.registerItems();
 		ModArmory.registerItems();
 		ModEntities.registerEntities();
