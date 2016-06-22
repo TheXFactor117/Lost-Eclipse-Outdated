@@ -1,5 +1,5 @@
 publish
   github_release:
-    api_key: a8cf23e4e7670009e91f1fde0f1fa60c2e9b309c
+    api_key: a757cae458608b4e3c40f57ef6ace2a86edf9a40
     files: build/libs/*.jar
     checksum: md5
