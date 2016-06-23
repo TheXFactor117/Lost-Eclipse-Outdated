@@ -14,6 +14,8 @@ import net.minecraft.world.World;
  */
 public class EntityMagic extends EntityThrowable
 {
+	private float damage;
+	
 	public EntityMagic(World world)
     {
         super(world);
@@ -24,10 +26,11 @@ public class EntityMagic extends EntityThrowable
         super(world, entity);
     }
    
-    public EntityMagic(World world, double x, double y, double z, float velocity, float inaccuracy)
+    public EntityMagic(World world, double x, double y, double z, float velocity, float inaccuracy, float damage)
     {
         super(world, x, y, z);
         this.setThrowableHeading(x, y, z, velocity, inaccuracy);
+        this.damage = damage;
     }
 
     @Override
@@ -53,7 +56,7 @@ public class EntityMagic extends EntityThrowable
     			{
     				EntityLivingBase enemy = (EntityLivingBase) result.entityHit;
     				
-    				enemy.attackEntityFrom(DamageSource.magic, 4.0F);
+    				enemy.attackEntityFrom(DamageSource.magic, this.damage);
     			}
     		}
     		

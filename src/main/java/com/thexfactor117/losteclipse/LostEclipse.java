@@ -6,6 +6,7 @@ import org.apache.logging.log4j.Logger;
 import com.thexfactor117.losteclipse.init.ModArmory;
 import com.thexfactor117.losteclipse.init.ModEntities;
 import com.thexfactor117.losteclipse.init.ModItems;
+import com.thexfactor117.losteclipse.init.ModRecipes;
 import com.thexfactor117.losteclipse.proxies.CommonProxy;
 
 import net.minecraftforge.fml.common.Mod;
@@ -37,6 +38,7 @@ public class LostEclipse
 		ModItems.registerItems();
 		ModArmory.registerItems();
 		ModEntities.registerEntities();
+		ModRecipes.registerRecipes();
 	}
 	
 	@EventHandler
