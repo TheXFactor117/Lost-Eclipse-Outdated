@@ -14,6 +14,6 @@ public class ClientProxy extends CommonProxy
 	@Override
 	public void registerRenderers()
 	{
-		//RenderingRegistry.registerEntityRenderingHandler(EntityMagic.class, RenderModProjectile::new);
+		
 	}
 }

@@ -1,0 +1,28 @@
+{
+    "parent":"losteclipse:item/standard",
+    "textures": {
+        "layer0":"losteclipse:items/oblivionStaff"
+    },
+    "overrides": [
+        {
+            "predicate": {
+                "pulling": 1
+            },
+            "model": "losteclipse:item/oblivionStaff_0"
+        },
+        {
+            "predicate": {
+                "pulling": 1,
+                "pull": 0.7
+            },
+            "model": "losteclipse:item/oblivionStaff_1"
+        },
+        {
+            "predicate": {
+                "pulling": 1,
+                "pull": 1.5
+            },
+            "model": "losteclipse:item/oblivionStaff_2"
+        }
+    ]
+}

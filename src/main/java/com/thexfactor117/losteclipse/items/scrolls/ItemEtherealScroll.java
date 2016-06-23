@@ -38,6 +38,6 @@ public class ItemEtherealScroll extends ItemLE
 			}
 		}
 		
-		return new ActionResult<ItemStack>(EnumActionResult.PASS, stack);
+		return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, stack);
 	}
 }

@@ -1,12 +1,11 @@
 package com.thexfactor117.losteclipse.items.scrolls;
 
 import com.thexfactor117.levels.leveling.Rarity;
-import com.thexfactor117.losteclipse.LostEclipse;
+import com.thexfactor117.losteclipse.entities.projectiles.EntityFrostbite;
 import com.thexfactor117.losteclipse.init.ModItems;
 import com.thexfactor117.losteclipse.items.ItemLE;
 
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.projectile.EntitySmallFireball;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumActionResult;
@@ -42,15 +41,13 @@ public class ItemFrostbiteScroll extends ItemLE
 				double x = look.xCoord;
 				double y = look.yCoord;
 				double z = look.zCoord;
-				LostEclipse.LOGGER.info("Look Coords: " + x + " " + y + " " + z);
-				// TODO: make new entities (frost, etc.)
-				EntitySmallFireball fireball = new EntitySmallFireball(world, player, x, y, z); // TODO: fix look vectors
-				fireball.setPosition(player.posX + look.xCoord, player.posY + look.yCoord + 1.5, player.posZ + look.zCoord);
-				world.spawnEntityInWorld(fireball);
+				EntityFrostbite frostbite = new EntityFrostbite(world, x, y, z, 1.0F, 0F);
+				frostbite.setPosition(player.posX + look.xCoord, player.posY + look.yCoord + 1.5, player.posZ + look.zCoord);
+				world.spawnEntityInWorld(frostbite);
 				stack.stackSize--;
 			}
 		}
 		
-		return new ActionResult<ItemStack>(EnumActionResult.PASS, stack);
+		return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, stack);
 	}
 }

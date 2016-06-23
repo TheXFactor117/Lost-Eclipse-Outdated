@@ -1,8 +1,12 @@
 package com.thexfactor117.losteclipse.init;
 
+import com.thexfactor117.levels.leveling.Rarity;
 import com.thexfactor117.losteclipse.Reference;
+import com.thexfactor117.losteclipse.items.ItemLE;
 import com.thexfactor117.losteclipse.items.melee.ItemLEAdvancedMelee;
 import com.thexfactor117.losteclipse.items.melee.ItemLEMelee;
+import com.thexfactor117.losteclipse.items.ranged.ItemBlizzardStaff;
+import com.thexfactor117.losteclipse.items.ranged.ItemInfernoStaff;
 import com.thexfactor117.xlib.items.ItemBaseArmor;
 import com.thexfactor117.xlib.items.ItemBaseAxe;
 import com.thexfactor117.xlib.items.ItemBasePickaxe;
@@ -93,6 +97,16 @@ public class ModArmory
 	public static Item voidHammer = new ItemLEAdvancedMelee(void_hammer, "voidHammer", 1, 1.5);
 	public static Item excaliburRapier = new ItemLEAdvancedMelee(excalibur, "excaliburRapier", 1, 0.75);
 	
+	// ranged
+	public static Item ironStaff = new ItemLE("ironStaff", Rarity.UNCOMMON);
+	public static Item malachiteStaff = new ItemLE("malachiteStaff", Rarity.RARE);
+	public static Item astrillStaff = new ItemLE("astrillStaff", Rarity.LEGENDARY);
+	public static Item infernoStaff = new ItemInfernoStaff("infernoStaff", Rarity.UNCOMMON, 300);
+	public static Item blizzardStaff = new ItemBlizzardStaff("blizzardStaff", Rarity.UNCOMMON, 300);
+	public static Item lightningStaff = new ItemLE("lightningStaff", Rarity.RARE);
+	public static Item elementalStaff = new ItemLE("elementalStaff", Rarity.RARE);
+	public static Item oblivionStaff = new ItemLE("oblivionStaff", Rarity.LEGENDARY);
+	
 	public static void registerItems()
 	{
 		// tools
@@ -137,5 +151,15 @@ public class ModArmory
 		RegisterHelper.registerItems(divineRapier);
 		RegisterHelper.registerItems(voidHammer);
 		RegisterHelper.registerItems(excaliburRapier);
+		
+		// ranged
+		RegisterHelper.registerItems(ironStaff);
+		RegisterHelper.registerItems(malachiteStaff);
+		RegisterHelper.registerItems(astrillStaff);
+		RegisterHelper.registerItems(infernoStaff);
+		RegisterHelper.registerItems(blizzardStaff);
+		RegisterHelper.registerItems(lightningStaff);
+		RegisterHelper.registerItems(elementalStaff);
+		RegisterHelper.registerItems(oblivionStaff);
 	}
 }

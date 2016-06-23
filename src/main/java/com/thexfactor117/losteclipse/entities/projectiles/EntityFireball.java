@@ -12,19 +12,19 @@ import net.minecraft.world.World;
  * @author TheXFactor117
  *
  */
-public class EntityMagic extends EntityThrowable
+public class EntityFireball extends EntityThrowable
 {
-	public EntityMagic(World world)
+	public EntityFireball(World world)
     {
         super(world);
     }
     
-    public EntityMagic(World world, EntityLivingBase entity)
+    public EntityFireball(World world, EntityLivingBase entity)
     {
         super(world, entity);
     }
    
-    public EntityMagic(World world, double x, double y, double z, float velocity, float inaccuracy)
+    public EntityFireball(World world, double x, double y, double z, float velocity, float inaccuracy)
     {
         super(world, x, y, z);
         this.setThrowableHeading(x, y, z, velocity, inaccuracy);
@@ -37,7 +37,7 @@ public class EntityMagic extends EntityThrowable
     	
     	if (this.worldObj.isRemote)
     	{
-    		if (!this.inGround && !this.isDead) this.worldObj.spawnParticle(EnumParticleTypes.SPELL_INSTANT, this.posX, this.posY, this.posZ, 0F, 0F, 0F, new int[0]);
+    		if (!this.inGround && !this.isDead) this.worldObj.spawnParticle(EnumParticleTypes.FLAME, this.posX, this.posY, this.posZ, 0F, 0F, 0F, new int[0]);
     		if (this.inGround) this.setDead();
     	}
     }
@@ -48,12 +48,13 @@ public class EntityMagic extends EntityThrowable
     	if (!this.worldObj.isRemote)
     	{
     		if (result.entityHit != null)
-    		{
+    		{	
     			if (result.entityHit instanceof EntityLivingBase)
     			{
     				EntityLivingBase enemy = (EntityLivingBase) result.entityHit;
     				
     				enemy.attackEntityFrom(DamageSource.magic, 4.0F);
+    				enemy.setFire(4);
     			}
     		}
     		

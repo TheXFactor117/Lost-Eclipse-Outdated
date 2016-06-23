@@ -1,6 +1,11 @@
 package com.thexfactor117.losteclipse.init;
 
 import com.thexfactor117.losteclipse.LostEclipse;
+import com.thexfactor117.losteclipse.Reference;
+import com.thexfactor117.losteclipse.entities.projectiles.EntityDarkMagic;
+import com.thexfactor117.losteclipse.entities.projectiles.EntityFireball;
+import com.thexfactor117.losteclipse.entities.projectiles.EntityFrostbite;
+import com.thexfactor117.losteclipse.entities.projectiles.EntityLightning;
 import com.thexfactor117.losteclipse.entities.projectiles.EntityMagic;
 
 import net.minecraft.entity.EntityList;
@@ -18,7 +23,11 @@ public class ModEntities
 	
 	public static void registerEntities()
 	{
-		registerModProjectile(EntityMagic.class, "losteclipse.entityMagic");
+		registerModProjectile(EntityMagic.class, "entityMagic");
+		registerModProjectile(EntityFireball.class, "entityFireball");
+		registerModProjectile(EntityFrostbite.class, "entityFrostbite");
+		registerModProjectile(EntityLightning.class, "entityLightning");
+		registerModProjectile(EntityDarkMagic.class, "entityDarkMagic");
 	}
 	
 	/**
@@ -27,7 +36,7 @@ public class ModEntities
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public static void registerModProjectile(Class entityClass, String name)
 	{
-		EntityRegistry.registerModEntity(entityClass, name, ++id, LostEclipse.INSTANCE, 64, 10, true);
+		EntityRegistry.registerModEntity(entityClass, Reference.MODID + "." + name, ++id, LostEclipse.INSTANCE, 64, 10, true);
 		LostEclipse.LOGGER.info("Registering mod projectile " + name + " with ID = " + id);
 	}
 	
@@ -37,7 +46,7 @@ public class ModEntities
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public static void registerModEntity(Class entityClass, String name)
 	{
-        EntityRegistry.registerModEntity(entityClass, name, ++id, LostEclipse.INSTANCE, 80, 3, false);
+        EntityRegistry.registerModEntity(entityClass, Reference.MODID + "." + name, ++id, LostEclipse.INSTANCE, 80, 3, false);
         LostEclipse.LOGGER.info("Registering mod entity " + name + " with ID = " + id);
 	}
 	

@@ -1,0 +1,6 @@
+{
+    "parent":"losteclipse:item/astrillStaff",
+    "textures": {
+        "layer0":"losteclipse:items/astrillStaff_0"
+    }
+}

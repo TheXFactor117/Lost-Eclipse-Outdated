@@ -82,6 +82,16 @@ item.divineRapier.name=Divine Rapier
 item.voidHammer.name=Void Hammer
 item.excaliburRapier.name=Excalibur Rapier
 
+### ranged
+item.ironStaff.name=Iron Staff
+item.malachiteStaff.name=Malachite Staff
+item.astrillStaff.name=Astrill Staff
+item.infernoStaff.name=Inferno Staff
+item.blizzardStaff.name=Blizzard Staff
+item.lightningStaff.name=Lightning Staff
+item.elementalStaff.name=Elemental Staff
+item.oblivionStaff.name=Oblivion Staff
+
 #############################################
 #                   TABS                    #
 #############################################
