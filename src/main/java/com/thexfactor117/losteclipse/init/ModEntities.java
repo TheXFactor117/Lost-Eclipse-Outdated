@@ -1,14 +1,13 @@
 package com.thexfactor117.losteclipse.init;
 
 import com.thexfactor117.losteclipse.LostEclipse;
-import com.thexfactor117.losteclipse.Reference;
+import com.thexfactor117.losteclipse.entities.monsters.EntityBarbarian;
 import com.thexfactor117.losteclipse.entities.projectiles.EntityDarkMagic;
 import com.thexfactor117.losteclipse.entities.projectiles.EntityFireball;
 import com.thexfactor117.losteclipse.entities.projectiles.EntityFrostbite;
 import com.thexfactor117.losteclipse.entities.projectiles.EntityLightning;
 import com.thexfactor117.losteclipse.entities.projectiles.EntityMagic;
 
-import net.minecraft.entity.EntityList;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 
 /**
@@ -18,11 +17,15 @@ import net.minecraftforge.fml.common.registry.EntityRegistry;
  */
 public class ModEntities 
 {
-	public static int id;
+	public static int id = 0;
 	public static int index;
 	
 	public static void registerEntities()
 	{
+		// monsters
+		registerModEntity(EntityBarbarian.class, "entityBarbarian");
+		
+		// projectiles
 		registerModProjectile(EntityMagic.class, "entityMagic");
 		registerModProjectile(EntityFireball.class, "entityFireball");
 		registerModProjectile(EntityFrostbite.class, "entityFrostbite");
@@ -36,7 +39,7 @@ public class ModEntities
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public static void registerModProjectile(Class entityClass, String name)
 	{
-		EntityRegistry.registerModEntity(entityClass, Reference.MODID + "." + name, ++id, LostEclipse.INSTANCE, 64, 10, true);
+		EntityRegistry.registerModEntity(entityClass, name, ++id, LostEclipse.INSTANCE, 64, 10, true);
 		LostEclipse.LOGGER.info("Registering mod projectile " + name + " with ID = " + id);
 	}
 	
@@ -46,21 +49,7 @@ public class ModEntities
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public static void registerModEntity(Class entityClass, String name)
 	{
-        EntityRegistry.registerModEntity(entityClass, Reference.MODID + "." + name, ++id, LostEclipse.INSTANCE, 80, 3, false);
+        EntityRegistry.registerModEntity(entityClass, name, ++id, LostEclipse.INSTANCE, 80, 3, false);
         LostEclipse.LOGGER.info("Registering mod entity " + name + " with ID = " + id);
 	}
-	
-	/**
-	 * Generates a unique ID for every entity to reduce ID mismatches.
-	 */
-	public static int getUniqueEntityId()
-    {
-    	do
-    	{
-    		id++;
-    	}
-    	while (EntityList.getClassFromID(id) != null);
-    	
-    	return id;
-    }
 }

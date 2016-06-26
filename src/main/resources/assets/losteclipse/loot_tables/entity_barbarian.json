@@ -1,0 +1,19 @@
+{
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "item",
+					"name": "losteclipse:soulGemFragment",
+					"weight": 3
+				},
+				{
+					"type": "item",
+					"name": "minecraft:iron_ingot",
+					"weight": 5
+				}
+			]
+		}
+	]
+}
