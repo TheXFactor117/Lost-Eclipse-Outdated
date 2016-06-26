@@ -1,4 +1,4 @@
-package com.thexfactor117.losteclipse.rendering;
+package com.thexfactor117.losteclipse.rendering.monsters;
 
 import com.thexfactor117.losteclipse.Reference;
 import com.thexfactor117.losteclipse.entities.monsters.EntityBarbarian;

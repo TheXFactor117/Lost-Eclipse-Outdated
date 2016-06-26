@@ -26,9 +26,9 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 public class LostEclipse 
 {
 	@Instance(Reference.MODID)
-	public static LostEclipse INSTANCE;
+	public static LostEclipse instance;
 	@SidedProxy(clientSide = Reference.CLIENT_PROXY, serverSide = Reference.COMMON_PROXY)
-	public static CommonProxy PROXY;
+	public static CommonProxy proxy;
 	public static final Logger LOGGER = LogManager.getLogger("Levels");
 	
 	@EventHandler
@@ -39,6 +39,8 @@ public class LostEclipse
 		ModArmory.registerItems();
 		ModEntities.registerEntities();
 		ModRecipes.registerRecipes();
+		
+		proxy.registerRenderers();
 	}
 	
 	@EventHandler

@@ -39,7 +39,7 @@ public class ModEntities
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public static void registerModProjectile(Class entityClass, String name)
 	{
-		EntityRegistry.registerModEntity(entityClass, name, ++id, LostEclipse.INSTANCE, 64, 10, true);
+		EntityRegistry.registerModEntity(entityClass, name, ++id, LostEclipse.instance, 64, 10, true);
 		LostEclipse.LOGGER.info("Registering mod projectile " + name + " with ID = " + id);
 	}
 	
@@ -49,7 +49,7 @@ public class ModEntities
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public static void registerModEntity(Class entityClass, String name)
 	{
-        EntityRegistry.registerModEntity(entityClass, name, ++id, LostEclipse.INSTANCE, 80, 3, false);
+        EntityRegistry.registerModEntity(entityClass, name, ++id, LostEclipse.instance, 80, 3, false);
         LostEclipse.LOGGER.info("Registering mod entity " + name + " with ID = " + id);
 	}
 }
