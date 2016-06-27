@@ -1,0 +1,207 @@
+# Lasr
+
+### Monster Drops
+
+# This file might get outdated at times, but should
+# serve as good guide regardless. If you are viewing
+# this way past the updated date above, you might 
+# want to use the JSON files instead.
+#
+# example
+# 
+# entity/chest:
+# 	pool: (chance if applicable)
+# 		item: weight:
+# 		loot_table: weight: amount:
+# 	bonus_pool:
+# etc...
+#
+# Weight formula: weight of item / sum of all weights
+# Pool chance is determined if random number is less than
+# the pool chance provided
+
+# COMMON
+Barbarian:
+	bonus_pool1: 0.075
+		malachiteIngot, 5, 0/1
+		soulGemFragment, 6, 0/2
+		fireballScroll, 2, 0/1
+		frostbiteScroll, 2, 0/1
+Bear:
+	bonus_pool1: 0.05
+		soulGemFragment, 5, 0/2
+		soulGem, 1, 0/1
+		fireballScroll, 2, 0/1
+		frostbiteScroll, 2, 0/1
+Ghost:
+	bonus_pool1: 0.075
+		soulGemFragment, 5, 0/2
+		soulGem, 1, 0/1
+		vexalGem, 1, 0/1
+		fireballScroll, 2, 0/1
+		frostbiteScroll, 2, 0/1
+Goblin:
+	main: 0.5
+		staffBase, 1, 0/1
+	bonus_pool1: 0.05
+		soulGemFragment, 5, 0/2
+		soulGem, 1, 0/1
+		etherealGem, 1, 0/1
+		fireballScroll, 2, 0/1
+		frostbiteScroll, 2, 0/1
+Mummy:
+	main:
+		goldenNugget, 7, 0/3
+		goldIngot, 2, 0/1
+		lapisLazuli, 4, 0/3
+		soulGemFragment, 5, 0/2
+		vexalGem, 1, 0/1
+	bonus_pool1: 0.05
+		soulGem, 1, 0/1
+		fireballScroll, 2, 0/1
+		frostbiteScroll, 2, 0/1
+Snow Blaze:
+	main: 0.75
+		frostRod, 1, 0/1
+		frostDust, 2, 0/2
+	bonus_pool1: 0.05
+		soulGemFragment, 5, 0/2
+		soulGem, 1, 0/1
+		etherealGem, 1, 0/1
+		fireballScroll, 2, 0/1
+		frostbiteScroll, 3, 0/2
+Valkyrie:
+	bonus_pool1: 0.075
+		malachiteIngot, 5, 0/1
+		soulGemFragment, 6, 0/2
+		fireballScroll, 2, 0/1
+		frostbiteScroll, 2, 0/1
+### SEMI-RARE
+Bandit:
+	main: 0.5
+		malachiteIngot, 3, 0/1
+		soulGemFragment, 5, 0/2
+		fireballScroll, 2, 0/1
+		frostbiteScroll, 2, 0/1
+	bonus_pool1: 0.1
+		vexalGem, 3, 0/1
+		astrillGemFragment, 1, 0/1
+		soulGem, 4, 0/1
+		etherealGem, 3, 0/1
+		etherealScroll, 2, 0/1
+		radiationScroll, 2, 0/1
+		elementalScroll, 2, 0/1
+Banshee:
+	main: 0.5
+		soulGemFragment, 3, 0/2
+		soulGem, 1, 0/1
+		fireballScroll, 1, 0/1
+		frostbiteScroll, 1, 0/1
+	bonus_pool1: 0.1
+		astrillGemFragment, 1, 0/1
+		soulGem, 3, 0/1
+		etherealGem, 2, 0/1
+		etherealScroll, 2, 0/1
+		radiationScroll, 2, 0/1
+		elementalScroll, 2, 0/1
+Frozen Wight:
+	main: 0.5
+		frostRod, 5, 0/2
+		frostDust, 8, 0/3
+		soulGemFragment, 5, 0/2
+		fireballScroll, 3, 0/1
+		frostbiteScroll, 3, 0/1
+	bonus_pool1: 0.1
+		vexalGem, 3, 0/1
+		astrillGemFragment, 1, 0/1
+		soulGem, 3, 0/1
+		etherealScroll, 2, 0/1
+		radiationScroll, 2, 0/1
+		elementalScroll, 2, 0/1
+Orc:
+	main: 0.5
+		malachiteIngot, 4, 0/2
+		soulGemFragment, 4, 0/2
+		soulGem, 1, 0/1
+		fireballScroll, 0/1
+		frostbiteScroll, 0/1
+	bonus_pool1:
+		astrillGemFragment, 1, 0/1
+		soulGem, 3, 0/1
+		etherealGem, 3, 0/1
+		etherealScroll, 2, 0/1
+		radiationScroll, 2, 0/1
+		elementalScroll, 2, 0/1
+Pirate:
+	main: 0.5
+		goldenNugget, 5, 0/5
+		goldenIngot, 3, 0/2
+		lapisLazuli, 4, 0/3
+		diamond, 1, 0/1
+		soulGemFragment, 5, 0/2
+		fireballScroll, 2, 0/1
+		frostbiteScroll, 2, 0/1
+	bonus_pool1: 0.1
+		vexalGem, 3, 0/1
+		astrillGemFragment, 1, 0/1
+		etherealGem, 3, 0/1
+		soulGem, 3, 0/1
+		etherealScroll, 2, 0/1
+		radiationScroll, 2, 0/1
+		elementalScroll, 2, 0/1
+### RARE
+Golem:
+	main: 0.75
+		golemGyro, 3, 0/2
+		soulGemFragment, 3, 0/2
+		soulGem, 1, 0/1
+		fireballScroll, 2, 0/1
+		frostbiteScroll, 2, 0/1
+	bonus_pool1: 0.2
+		vexalGem, 3, 0/1
+		etherealGem, 3, 0/1
+		soulGem, 3, 0/1
+		astrillGemFragment, 1, 0/1
+		etherealScroll, 2, 0/1
+		radiationScroll, 2, 0/1
+		elementalScroll, 2, 0/1
+	bonus_pool2: 0.025
+		astrillGem, 1, 0/1
+		astrillGemFragment, 3, 0/1
+		voidScroll, 1, 0/1
+Troll:
+	main: 0.75
+		soulGemFragment, 2, 0/2
+		soulGem, 1, 0/1
+		fireballScroll, 2, 0/1
+		frostbiteScroll, 2, 0/1
+	bonus_pool1:
+		vexalGem, 3, 0/1
+		etherealGem, 3, 0/1
+		soulGem, 3, 0/1
+		astrillGemFragment, 1, 0/1
+		etherealScroll, 2, 0/1
+		radiationScroll, 2, 0/1
+		elementalScroll, 2, 0/1
+	bonus_pool2: 0.025
+		astrillGem, 1, 0/1
+		astrillGemFragment, 3, 0/1
+		voidScroll, 1, 0/1
+Wraith:
+	main: 0.75
+		soulGemFragment, 2, 0/2
+		soulGem, 1, 0/1
+		fireballScroll, 2, 0/1
+		frostbiteScroll, 2, 0/1
+	bonus_pool1:
+		vexalGem, 3, 0/1
+		etherealGem, 3, 0/1
+		soulGem, 3, 0/1
+		astrillGemFragment, 1, 0/1
+		etherealScroll, 2, 0/1
+		radiationScroll, 2, 0/1
+		elementalScroll, 2, 0/1
+	bonus_pool2:
+		astrillGem, 1, 0/1
+		astrillGemFragment, 3, 0/1
+		voidScroll, 1, 0/1
