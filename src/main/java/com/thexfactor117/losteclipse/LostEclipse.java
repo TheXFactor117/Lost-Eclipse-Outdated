@@ -3,6 +3,7 @@ package com.thexfactor117.losteclipse;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.thexfactor117.losteclipse.generation.LEWorldGenerator;
 import com.thexfactor117.losteclipse.init.ModArmory;
 import com.thexfactor117.losteclipse.init.ModEntities;
 import com.thexfactor117.losteclipse.init.ModItems;
@@ -16,6 +17,7 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 /**
  * 
@@ -46,12 +48,9 @@ public class LostEclipse
 	@EventHandler
 	public void init(FMLInitializationEvent event)
 	{
-		
+		GameRegistry.registerWorldGenerator(new LEWorldGenerator(), 100);
 	}
 	
 	@EventHandler
-	public void postInit(FMLPostInitializationEvent event)
-	{
-		
-	}
+	public void postInit(FMLPostInitializationEvent event) {}
 }

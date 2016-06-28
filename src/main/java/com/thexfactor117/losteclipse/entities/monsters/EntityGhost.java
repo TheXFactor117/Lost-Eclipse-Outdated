@@ -12,6 +12,9 @@ import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.MobEffects;
+import net.minecraft.potion.PotionEffect;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 
@@ -20,9 +23,9 @@ import net.minecraft.world.World;
  * @author TheXFactor117
  *
  */
-public class EntityBarbarian extends EntityLEMonster
-{	
-	public EntityBarbarian(World world) 
+public class EntityGhost extends EntityLEMonster
+{
+	public EntityGhost(World world) 
 	{
 		super(world);
 		this.experienceValue = 10;
@@ -50,15 +53,30 @@ public class EntityBarbarian extends EntityLEMonster
 	protected void applyEntityAttributes()
 	{
 		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(20.0D);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(4.0D);
-		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.3D);
-		this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(32.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(30.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(8.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.18D);
+		this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(24.0D);
 	}
+	
+	@Override
+	public boolean attackEntityFrom(DamageSource source, float amount)
+    {
+    	if (!super.attackEntityFrom(source, amount)) return false;
+    	else
+    	{
+    		if (!this.worldObj.isRemote)
+        	{
+        		this.addPotionEffect(new PotionEffect(MobEffects.INVISIBILITY, 20*5, 0, false, false));
+        	}    	
+    	}
+    	
+    	return true;
+    }
 	
 	@Override
 	protected ResourceLocation getLootTable()
     {
-		return ModLootTables.ENTITY_BARBARIAN;
+		return ModLootTables.ENTITY_GHOST;
     }
 }

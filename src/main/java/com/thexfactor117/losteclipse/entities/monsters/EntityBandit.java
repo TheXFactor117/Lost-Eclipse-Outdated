@@ -20,9 +20,9 @@ import net.minecraft.world.World;
  * @author TheXFactor117
  *
  */
-public class EntityBarbarian extends EntityLEMonster
-{	
-	public EntityBarbarian(World world) 
+public class EntityBandit extends EntityLEMonster
+{
+	public EntityBandit(World world) 
 	{
 		super(world);
 		this.experienceValue = 10;
@@ -50,8 +50,8 @@ public class EntityBarbarian extends EntityLEMonster
 	protected void applyEntityAttributes()
 	{
 		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(20.0D);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(4.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(30.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(8.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.3D);
 		this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(32.0D);
 	}
@@ -59,6 +59,6 @@ public class EntityBarbarian extends EntityLEMonster
 	@Override
 	protected ResourceLocation getLootTable()
     {
-		return ModLootTables.ENTITY_BARBARIAN;
+		return ModLootTables.ENTITY_BANDIT;
     }
 }

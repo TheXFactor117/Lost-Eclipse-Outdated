@@ -1,7 +1,10 @@
 package com.thexfactor117.losteclipse.init;
 
 import com.thexfactor117.losteclipse.LostEclipse;
+import com.thexfactor117.losteclipse.entities.monsters.EntityBandit;
 import com.thexfactor117.losteclipse.entities.monsters.EntityBarbarian;
+import com.thexfactor117.losteclipse.entities.monsters.EntityGhost;
+import com.thexfactor117.losteclipse.entities.monsters.EntityGolem;
 import com.thexfactor117.losteclipse.entities.projectiles.EntityDarkMagic;
 import com.thexfactor117.losteclipse.entities.projectiles.EntityFireball;
 import com.thexfactor117.losteclipse.entities.projectiles.EntityFrostbite;
@@ -24,6 +27,9 @@ public class ModEntities
 	{
 		// monsters
 		registerModEntity(EntityBarbarian.class, "entityBarbarian");
+		registerModEntity(EntityGhost.class, "entityGhost");
+		registerModEntity(EntityBandit.class, "entityBandit");
+		registerModEntity(EntityGolem.class, "entityGolem");
 		
 		// projectiles
 		registerModProjectile(EntityMagic.class, "entityMagic");
