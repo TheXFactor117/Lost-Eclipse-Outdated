@@ -50,6 +50,6 @@ public class EntityBarbarian extends EntityLEMonster
 	@Override
 	protected ResourceLocation getLootTable()
     {
-        return ModLootTables.ENTITY_BARBARIAN;
+		return ModLootTables.ENTITY_BARBARIAN;
     }
 }
