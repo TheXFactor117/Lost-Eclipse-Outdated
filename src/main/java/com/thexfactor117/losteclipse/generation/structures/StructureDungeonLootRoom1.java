@@ -2,7 +2,6 @@ package com.thexfactor117.losteclipse.generation.structures;
 
 import java.util.Random;
 
-import com.thexfactor117.losteclipse.LostEclipse;
 import com.thexfactor117.losteclipse.generation.StructureLEBase;
 import com.thexfactor117.losteclipse.init.ModLootTables;
 
@@ -18,7 +17,7 @@ import net.minecraft.world.World;
  *
  */
 public class StructureDungeonLootRoom1 extends StructureLEBase
-{	
+{		
 	private final int[][] stoneBrickPos = new int[][]
 	{
 		// layer 0
@@ -100,7 +99,6 @@ public class StructureDungeonLootRoom1 extends StructureLEBase
 			BlockPos chestActualPos2 = position.add(chestPos2[0], chestPos2[1], chestPos2[2]);
 			BlockPos chestActualPos3 = position.add(chestPos3[0], chestPos3[1], chestPos3[2]);
 			BlockPos chestActualPos4 = position.add(chestPos4[0], chestPos4[1], chestPos4[2]);
-			LostEclipse.LOGGER.info("LootRoom generated: " + chestActualPos1);
 			
 			TileEntityChest chestTE1 = (TileEntityChest) world.getTileEntity(chestActualPos1);
 			TileEntityChest chestTE2 = (TileEntityChest) world.getTileEntity(chestActualPos2);

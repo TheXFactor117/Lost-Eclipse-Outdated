@@ -72,6 +72,13 @@ public class StructureLEBase extends WorldGenerator
 		return posUnderGround.getY() > minY && posUnderGround.getY() < maxY && corner1 && corner2 && corner3 && corner4;
 	}
 	
+	protected boolean canSpawnUnderground(World world, BlockPos posUnderGround, int minY, int maxY)
+	{
+		boolean corner = canReplaceStone(world, posUnderGround);
+		
+		return posUnderGround.getY() > minY && posUnderGround.getY() < maxY && corner;
+	}
+	
 	protected boolean canSpawnHere(World world, BlockPos posAboveGround)
 	{
 		// check all the corners to see which ones are replaceable

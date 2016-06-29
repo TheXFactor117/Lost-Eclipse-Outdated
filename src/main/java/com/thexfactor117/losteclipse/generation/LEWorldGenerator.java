@@ -2,8 +2,9 @@ package com.thexfactor117.losteclipse.generation;
 
 import java.util.Random;
 
+import com.thexfactor117.losteclipse.LostEclipse;
 import com.thexfactor117.losteclipse.generation.structures.StructureAbandonedHouse;
-import com.thexfactor117.losteclipse.generation.structures.StructureDungeonLootRoom1;
+import com.thexfactor117.losteclipse.generation.structures.StructureDungeon;
 
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
@@ -52,13 +53,23 @@ public class LEWorldGenerator implements IWorldGenerator
 			abandonedHouse.generate(world, rand, new BlockPos(randX, groundY + 1, randZ));
 		}
 		
-		WorldGenerator lootRoom = new StructureDungeonLootRoom1();
+		/*WorldGenerator lootRoom = new StructureDungeonLootRoom1();
 		if (rand.nextInt(4) == 0)
 		{
 			int randX = blockX + rand.nextInt(16);
 			int randZ = blockZ + rand.nextInt(16);
 			int randY = rand.nextInt(51);
 			lootRoom.generate(world, rand, new BlockPos(randX, randY, randZ));
+		}*/
+		
+		WorldGenerator dungeon = new StructureDungeon();
+		if (rand.nextInt(10) == 0)
+		{
+			int randX = blockX + rand.nextInt(16);
+			int randZ = blockZ + rand.nextInt(16);
+			int randY = rand.nextInt(51);
+			dungeon.generate(world, rand, new BlockPos(randX, randY, randZ));
+			LostEclipse.LOGGER.info("Generating dungeon @ " + randX + " " + randY + " " + randZ);
 		}
 	}
 	
