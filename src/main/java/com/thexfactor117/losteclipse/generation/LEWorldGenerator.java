@@ -3,6 +3,7 @@ package com.thexfactor117.losteclipse.generation;
 import java.util.Random;
 
 import com.thexfactor117.losteclipse.generation.structures.StructureAbandonedHouse;
+import com.thexfactor117.losteclipse.generation.structures.StructureDungeonLootRoom1;
 
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
@@ -50,6 +51,15 @@ public class LEWorldGenerator implements IWorldGenerator
 			int groundY = getGroundFromAbove(world, randX, randZ);
 			abandonedHouse.generate(world, rand, new BlockPos(randX, groundY + 1, randZ));
 		}
+		
+		WorldGenerator lootRoom = new StructureDungeonLootRoom1();
+		if (rand.nextInt(4) == 0)
+		{
+			int randX = blockX + rand.nextInt(16);
+			int randZ = blockZ + rand.nextInt(16);
+			int randY = rand.nextInt(51);
+			lootRoom.generate(world, rand, new BlockPos(randX, randY, randZ));
+		}
 	}
 	
 	private void generateNether(World world, Random rand, int chunkX, int chunkZ) {}
@@ -62,7 +72,6 @@ public class LEWorldGenerator implements IWorldGenerator
 		while(!foundGround && y-- >= 0)
 		{
 			Block blockAt = world.getBlockState(new BlockPos(x,y,z)).getBlock();
-			// "ground" for our bush is grass or dirt
 			foundGround = blockAt == Blocks.DIRT || blockAt == Blocks.GRASS;
 		}
 
