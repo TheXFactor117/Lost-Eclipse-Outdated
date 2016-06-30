@@ -6,6 +6,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
@@ -17,6 +18,8 @@ import net.minecraft.world.gen.feature.WorldGenerator;
  */
 public class StructureLEBase extends WorldGenerator
 {
+	protected int xOffset;
+	
 	@Override
 	public boolean generate(World world, Random rand, BlockPos position) 
 	{
@@ -105,5 +108,12 @@ public class StructureLEBase extends WorldGenerator
 		@SuppressWarnings("deprecation") // TODO: fix depreciation
 		Material material = block.getMaterial(world.getBlockState(pos));
 		return material == Material.ROCK;
+	}
+	
+	/** dirForward 0=SOUTH=z++; 1=WEST=x--; 2=NORTH=z--; 3=EAST=x++ */
+	public BlockPos getPosFromCorner(BlockPos corner, int disForward, int disRight, EnumFacing forward)
+	{
+		EnumFacing right = forward.rotateY();
+		return corner.offset(forward, disForward).offset(right, disRight);
 	}
 }

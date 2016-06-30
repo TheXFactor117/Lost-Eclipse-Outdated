@@ -79,8 +79,8 @@ public class StructureDungeonLootRoom1 extends StructureLEBase
 	@Override
 	public boolean generate(World world, Random rand, BlockPos position) 
 	{
-		if (canSpawnUnderground(world, position, 6, 50, 9, 10))
-		{
+		//if (canSpawnUnderground(world, position, 6, 50, 9, 10))
+		//{
 			IBlockState stone_brick = Blocks.STONEBRICK.getDefaultState();
 			IBlockState cobweb = Blocks.WEB.getDefaultState();
 			IBlockState chest = Blocks.CHEST.getDefaultState();
@@ -114,8 +114,8 @@ public class StructureDungeonLootRoom1 extends StructureLEBase
 			}
 			
 			return true;
-		}
+		//}
 		
-		return false;
+		//return false;
 	}
 }

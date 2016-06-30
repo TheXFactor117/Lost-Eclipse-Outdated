@@ -5,6 +5,7 @@ import org.apache.logging.log4j.Logger;
 
 import com.thexfactor117.losteclipse.generation.LEWorldGenerator;
 import com.thexfactor117.losteclipse.init.ModArmory;
+import com.thexfactor117.losteclipse.init.ModBlocks;
 import com.thexfactor117.losteclipse.init.ModEntities;
 import com.thexfactor117.losteclipse.init.ModItems;
 import com.thexfactor117.losteclipse.init.ModRecipes;
@@ -37,6 +38,7 @@ public class LostEclipse
 	public void preInit(FMLPreInitializationEvent event)
 	{
 		LostEclipse.LOGGER.info("Beginning initialization...");
+		ModBlocks.registerBlocks();
 		ModItems.registerItems();
 		ModArmory.registerItems();
 		ModEntities.registerEntities();

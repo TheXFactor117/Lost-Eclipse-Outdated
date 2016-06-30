@@ -5,13 +5,16 @@ import java.util.Random;
 import com.thexfactor117.losteclipse.LostEclipse;
 import com.thexfactor117.losteclipse.generation.structures.StructureAbandonedHouse;
 import com.thexfactor117.losteclipse.generation.structures.StructureDungeon;
+import com.thexfactor117.losteclipse.init.ModBlocks;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkGenerator;
 import net.minecraft.world.chunk.IChunkProvider;
+import net.minecraft.world.gen.feature.WorldGenMinable;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.fml.common.IWorldGenerator;
 
@@ -44,6 +47,10 @@ public class LEWorldGenerator implements IWorldGenerator
 	
 	private void generateOverworld(World world, Random rand, int blockX, int blockZ)
 	{
+		IBlockState malachiteOre = ModBlocks.malachiteOre.getDefaultState();
+		
+		addOreSpawn(malachiteOre, world, rand, blockX, blockZ, 16, 16, 4 + rand.nextInt(4), 20, 1, 64);
+		
 		WorldGenerator abandonedHouse = new StructureAbandonedHouse();
 		if (rand.nextInt(4) == 0)
 		{
@@ -63,13 +70,13 @@ public class LEWorldGenerator implements IWorldGenerator
 		}*/
 		
 		WorldGenerator dungeon = new StructureDungeon();
-		if (rand.nextInt(10) == 0)
+		if (rand.nextInt(20) == 0)
 		{
 			int randX = blockX + rand.nextInt(16);
 			int randZ = blockZ + rand.nextInt(16);
 			int randY = rand.nextInt(51);
-			dungeon.generate(world, rand, new BlockPos(randX, randY, randZ));
 			LostEclipse.LOGGER.info("Generating dungeon @ " + randX + " " + randY + " " + randZ);
+			dungeon.generate(world, rand, new BlockPos(randX, randY, randZ));
 		}
 	}
 	
@@ -87,5 +94,16 @@ public class LEWorldGenerator implements IWorldGenerator
 		}
 
 		return y;
+	}
+	
+	private void addOreSpawn(IBlockState block, World world, Random random, int blockXPos, int blockZPos, int maxX, int maxZ, int maxVeinSize, int chanceToSpawn, int minY, int maxY)
+	{
+		for (int i = 0; i < chanceToSpawn; i++)
+		{
+			int posX = blockXPos + random.nextInt(maxX);
+			int posY = minY + random.nextInt(maxY - minY);
+			int posZ = blockZPos + random.nextInt(maxZ);
+			new WorldGenMinable(block, maxVeinSize).generate(world, random, new BlockPos(posX, posY, posZ));
+		}
 	}
 }

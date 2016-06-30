@@ -2,6 +2,7 @@ package com.thexfactor117.losteclipse.init;
 
 import com.thexfactor117.levels.leveling.Rarity;
 import com.thexfactor117.losteclipse.items.ItemLE;
+import com.thexfactor117.losteclipse.items.ItemTest;
 import com.thexfactor117.losteclipse.items.scrolls.ItemElementalScroll;
 import com.thexfactor117.losteclipse.items.scrolls.ItemEtherealScroll;
 import com.thexfactor117.losteclipse.items.scrolls.ItemFireballScroll;
@@ -49,6 +50,9 @@ public class ModItems
 	public static Item frostDust = new ItemLE("frostDust", Rarity.BASIC);
 	public static Item golemGyro = new ItemLE("golemGyro", Rarity.UNCOMMON);
 	
+	// test
+	public static Item testItem = new ItemTest("testItem", Rarity.ANCIENT);
+	
 	public static void registerItems()
 	{
 		// artifacts
@@ -80,5 +84,8 @@ public class ModItems
 		RegisterHelper.registerItems(frostRod);
 		RegisterHelper.registerItems(frostDust);
 		RegisterHelper.registerItems(golemGyro);
+		
+		// test
+		RegisterHelper.registerItems(testItem);
 	}
 }

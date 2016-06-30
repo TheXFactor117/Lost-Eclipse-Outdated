@@ -3,7 +3,7 @@ package com.thexfactor117.losteclipse.generation.structures;
 import java.util.Random;
 
 import com.thexfactor117.losteclipse.LostEclipse;
-import com.thexfactor117.losteclipse.generation.StructureLEBase;
+import com.thexfactor117.losteclipse.generation.StructureLEProcedurallyGenerated;
 
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
@@ -15,15 +15,14 @@ import net.minecraft.world.gen.feature.WorldGenerator;
  * @author TheXFactor117
  *
  */
-public class StructureDungeon extends StructureLEBase
+public class StructureDungeon extends StructureLEProcedurallyGenerated
 {
 	private int roomCount;
-	private int xOffset;
 	
 	@Override
 	public boolean generate(World world, Random rand, BlockPos position)
 	{	
-		if (this.canSpawnUnderground(world, position, 10, 50))
+		if (this.canSpawnUnderground(world, position, 2, 50))
 		{
 			int maxRooms = rand.nextInt(6);
 			LostEclipse.LOGGER.info("Procedural generation beginning...");
@@ -40,44 +39,20 @@ public class StructureDungeon extends StructureLEBase
 		
 		WorldGenerator lootRoom = new StructureDungeonLootRoom1();
 		
-		lootRoom.generate(world, rand, position);
+		BlockPos newPosition = position;
 		
-		BlockPos newPosition = position.offset(getRandomSide(rand), this.getOffsetDistance());
+		if (roomCount == 0) lootRoom.generate(world, rand, position);
+		else
+		{
+			EnumFacing side = getRandomSide(rand, roomCount);
+			newPosition = position.offset(side, this.getOffsetDistance());
+			
+			lootRoom.generate(world, rand, newPosition);
+			LostEclipse.LOGGER.info("Loot room generated. Count: " + roomCount);
+			LostEclipse.LOGGER.info("Loot Room " + roomCount + "coords:" + newPosition);
+		}
 		
 		roomCount++;
 		procedurallyGenerate(world, rand, newPosition, maxRooms);
-	}
-	
-	protected EnumFacing getRandomSide(Random rand)
-	{
-		int side = rand.nextInt(4);
-		
-		switch (side)
-		{
-			case 0: 
-				this.setOffsetDistance(-9);
-				return EnumFacing.NORTH;
-			case 1: 
-				this.setOffsetDistance(9);
-				return EnumFacing.SOUTH;
-			case 2: 
-				this.setOffsetDistance(6);
-				return EnumFacing.EAST;
-			case 3: 
-				this.setOffsetDistance(6);
-				return EnumFacing.WEST;
-		}
-		
-		return null;
-	}
-	
-	protected void setOffsetDistance(int offset)
-	{
-		this.xOffset = offset;
-	}
-	
-	protected int getOffsetDistance()
-	{
-		return this.xOffset;
 	}
 }

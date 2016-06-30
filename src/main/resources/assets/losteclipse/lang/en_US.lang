@@ -6,6 +6,13 @@ levels.rarity.4=Legendary
 levels.rarity.5=Ancient
 
 #############################################
+#                  BLOCKS                   #
+#############################################
+tile.malachiteOre.name=Malachite Ore
+tile.vexalOre.name=Vexal Ore
+tile.astrillOre.name=Astrill Ore
+
+#############################################
 #                   ITEMS                   #
 #############################################
 
