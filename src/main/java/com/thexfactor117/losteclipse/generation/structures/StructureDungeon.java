@@ -26,26 +26,26 @@ public class StructureDungeon extends StructureLEProcedurallyGenerated
 		{
 			int maxRooms = rand.nextInt(6);
 			LostEclipse.LOGGER.info("Procedural generation beginning...");
-			EnumFacing side = getRandomSideWithoutOffset(rand);
-			this.procedurallyGenerate(world, rand, position, maxRooms, side);
+			this.procedurallyGenerate(world, rand, position, maxRooms);
 			return true;
 		}
 		
 		return false;
 	}
 	
-	protected void procedurallyGenerate(World world, Random rand, BlockPos position, int maxRooms, EnumFacing side)
+	protected void procedurallyGenerate(World world, Random rand, BlockPos position, int maxRooms)
 	{
 		if (roomCount == maxRooms) return;
 		
-		WorldGenerator lootRoom = new StructureDungeonLootRoom1();
+		EnumFacing facing = getRandomSideWithoutOffset(rand);
+		WorldGenerator lootRoom = new StructureDungeonLootRoom1(facing);
 		
 		BlockPos newPosition = position;
 		
 		if (roomCount == 0) lootRoom.generate(world, rand, position);
 		else
 		{
-			newPosition = getPosFromCorner(position, 6, 9, side);
+			newPosition = getPosFromCorner1(position, 6, 9, facing);
 			
 			lootRoom.generate(world, rand, newPosition);
 			LostEclipse.LOGGER.info("Loot room generated. Count: " + roomCount);
@@ -53,6 +53,6 @@ public class StructureDungeon extends StructureLEProcedurallyGenerated
 		}
 		
 		roomCount++;
-		procedurallyGenerate(world, rand, newPosition, maxRooms, side);
+		procedurallyGenerate(world, rand, newPosition, maxRooms);
 	}
 }

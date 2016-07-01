@@ -19,6 +19,13 @@ import net.minecraft.world.World;
  */
 public class StructureDungeonLootRoom1 extends StructureLEBase
 {		
+	protected EnumFacing facing;
+	
+	protected StructureDungeonLootRoom1(EnumFacing facing)
+	{
+		this.facing = facing;
+	}
+	
 	private final int[][] stoneBrickPos = new int[][]
 	{
 		// layer 0
@@ -86,17 +93,17 @@ public class StructureDungeonLootRoom1 extends StructureLEBase
 			IBlockState cobweb = Blocks.WEB.getDefaultState();
 			IBlockState chest = Blocks.CHEST.getDefaultState();
 			
-			EnumFacing side = getRandomSideWithoutOffset(rand);
+			//EnumFacing side = getRandomSideWithoutOffset(rand);
 			
-			placeAirBlocks(world, position, 6, 4, 9);
+			placeAirBlocks(world, position, 6, 4, 9, this.facing);
 			
-			buildLayer(world, position, stoneBrickPos, stone_brick, side);
-			buildLayer(world, position, cobwebPos, cobweb, side);
+			buildLayer(world, position, stoneBrickPos, stone_brick, this.facing);
+			buildLayer(world, position, cobwebPos, cobweb, this.facing);
 			
-			placeBlock(world, position, chestPos1, chest, side);
-			placeBlock(world, position, chestPos2, chest, side);
-			placeBlock(world, position, chestPos3, chest, side);
-			placeBlock(world, position, chestPos4, chest, side);
+			placeBlock(world, position, chestPos1, chest, this.facing);
+			placeBlock(world, position, chestPos2, chest, this.facing);
+			placeBlock(world, position, chestPos3, chest, this.facing);
+			placeBlock(world, position, chestPos4, chest, this.facing);
 			
 			BlockPos chestActualPos1 = position.add(chestPos1[0], chestPos1[1], chestPos1[2]);
 			BlockPos chestActualPos2 = position.add(chestPos2[0], chestPos2[1], chestPos2[2]);

@@ -2,7 +2,8 @@ package com.thexfactor117.losteclipse.generation;
 
 import java.util.Random;
 
-import net.minecraft.block.Block;
+import com.thexfactor117.losteclipse.LostEclipse;
+
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
@@ -45,11 +46,11 @@ public class StructureLEBase extends WorldGenerator
 	{	
 		// figure out where that block is relative to the corner
 		//BlockPos placePos = frontLeftCorner.add(offsetX, offsetY, offsetZ);
-		BlockPos placePos = getPosFromCorner(frontLeftCorner, offsetX, offsetZ, facing);
-		world.setBlockState(placePos, toPlace, 2);
+		BlockPos placePos = getPosFromCorner(frontLeftCorner, offsetX, offsetY, offsetZ, facing);
+		world.setBlockState(placePos, toPlace, 3);
 	}
 	
-	protected void placeAirBlocks(World world, BlockPos frontLeftCorner, int maxX, int maxY, int maxZ)
+	protected void placeAirBlocks(World world, BlockPos frontLeftCorner, int maxX, int maxY, int maxZ, EnumFacing facing)
 	{
 		IBlockState air = Blocks.AIR.getDefaultState();
 		
@@ -59,7 +60,7 @@ public class StructureLEBase extends WorldGenerator
 			{
 				for (int z = 0; z < maxZ; z++)
 				{
-					BlockPos airblocks = frontLeftCorner.add(x, y, z);
+					BlockPos airblocks = getPosFromCorner(frontLeftCorner, maxX, maxY, maxZ, facing);
 					world.setBlockState(airblocks, air);
 				}
 			}
@@ -97,17 +98,13 @@ public class StructureLEBase extends WorldGenerator
 	
 	protected boolean canReplaceAir(World world, BlockPos pos)
 	{
-		Block block = world.getBlockState(pos).getBlock();
-		@SuppressWarnings("deprecation") // TODO: fix depreciation
-		Material material = block.getMaterial(world.getBlockState(pos));
+		Material material = world.getBlockState(pos).getMaterial();
 		return material.isReplaceable() || material == Material.PLANTS || material == Material.LEAVES;
 	}
 	
 	protected boolean canReplaceStone(World world, BlockPos pos)
 	{
-		Block block = world.getBlockState(pos).getBlock();
-		@SuppressWarnings("deprecation") // TODO: fix depreciation
-		Material material = block.getMaterial(world.getBlockState(pos));
+		Material material = world.getBlockState(pos).getMaterial();
 		return material == Material.ROCK;
 	}
 	
@@ -116,6 +113,28 @@ public class StructureLEBase extends WorldGenerator
 	{
 		EnumFacing right = forward.rotateY();
 		return corner.offset(forward, disForward).offset(right, disRight);
+	}
+	
+	public BlockPos getPosFromCorner1(BlockPos corner, int maxDisForward, int maxDisRight, EnumFacing forward)
+	{
+		EnumFacing right = forward.rotateY();
+				
+		switch (forward)
+		{
+			case NORTH: return corner.offset(forward, maxDisForward).offset(right, -maxDisRight);
+			case EAST: return corner.offset(forward, maxDisForward).offset(right, maxDisRight);
+			case SOUTH: return corner.offset(forward, -maxDisForward).offset(right, maxDisRight);
+			case WEST: return corner.offset(forward, -maxDisForward).offset(right, -maxDisRight);
+			default: break;
+		}
+				
+		return corner.offset(forward, maxDisForward).offset(right, maxDisRight);
+	}
+	
+	public BlockPos getPosFromCorner(BlockPos corner, int disForward, int y, int disRight, EnumFacing forward)
+	{
+		EnumFacing right = forward.rotateY();
+		return corner.offset(forward, disForward).offset(right, disRight).up(y);
 	}
 	
 	protected EnumFacing getRandomSideWithoutOffset(Random rand)
