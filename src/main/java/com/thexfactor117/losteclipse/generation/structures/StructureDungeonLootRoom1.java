@@ -8,6 +8,7 @@ import com.thexfactor117.losteclipse.init.ModLootTables;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.tileentity.TileEntityChest;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
@@ -85,15 +86,17 @@ public class StructureDungeonLootRoom1 extends StructureLEBase
 			IBlockState cobweb = Blocks.WEB.getDefaultState();
 			IBlockState chest = Blocks.CHEST.getDefaultState();
 			
+			EnumFacing side = getRandomSideWithoutOffset(rand);
+			
 			placeAirBlocks(world, position, 6, 4, 9);
 			
-			buildLayer(world, position, stoneBrickPos, stone_brick);
-			buildLayer(world, position, cobwebPos, cobweb);
+			buildLayer(world, position, stoneBrickPos, stone_brick, side);
+			buildLayer(world, position, cobwebPos, cobweb, side);
 			
-			placeBlock(world, position, chestPos1, chest);
-			placeBlock(world, position, chestPos2, chest);
-			placeBlock(world, position, chestPos3, chest);
-			placeBlock(world, position, chestPos4, chest);
+			placeBlock(world, position, chestPos1, chest, side);
+			placeBlock(world, position, chestPos2, chest, side);
+			placeBlock(world, position, chestPos3, chest, side);
+			placeBlock(world, position, chestPos4, chest, side);
 			
 			BlockPos chestActualPos1 = position.add(chestPos1[0], chestPos1[1], chestPos1[2]);
 			BlockPos chestActualPos2 = position.add(chestPos2[0], chestPos2[1], chestPos2[2]);

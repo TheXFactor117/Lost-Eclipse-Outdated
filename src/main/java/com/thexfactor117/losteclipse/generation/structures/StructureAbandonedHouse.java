@@ -10,6 +10,7 @@ import net.minecraft.block.BlockSlab;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.tileentity.TileEntityChest;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
@@ -99,16 +100,18 @@ public class StructureAbandonedHouse extends StructureLEBase
 			IBlockState doorTop = Blocks.OAK_DOOR.getDefaultState().withProperty(BlockDoor.HALF, BlockDoor.EnumDoorHalf.UPPER);
 			IBlockState chest = Blocks.CHEST.getDefaultState();
 			
-			buildLayer(world, position, logsPos, log);
-			buildLayer(world, position, planksPos, plank);
-			buildLayer(world, position, slabsPos, slab);
-			buildLayer(world, position, slabsPos2, slab2);
-			buildLayer(world, position, panesPos, glass_pane);
+			EnumFacing side = getRandomSideWithoutOffset(rand);
 			
-			placeBlock(world, position, doorBottomPos, doorBottom);
-			placeBlock(world, position, doorTopPos, doorTop);
-			placeBlock(world, position, chestPos1, chest);
-			placeBlock(world, position, chestPos2, chest);
+			buildLayer(world, position, logsPos, log, side);
+			buildLayer(world, position, planksPos, plank, side);
+			buildLayer(world, position, slabsPos, slab, side);
+			buildLayer(world, position, slabsPos2, slab2, side);
+			buildLayer(world, position, panesPos, glass_pane, side);
+			
+			placeBlock(world, position, doorBottomPos, doorBottom, side);
+			placeBlock(world, position, doorTopPos, doorTop, side);
+			placeBlock(world, position, chestPos1, chest, side);
+			placeBlock(world, position, chestPos2, chest, side);
 			
 			BlockPos chestActualPos1 = position.add(chestPos1[0], chestPos1[1], chestPos1[2]);
 			BlockPos chestActualPos2 = position.add(chestPos2[0], chestPos2[1], chestPos2[2]);

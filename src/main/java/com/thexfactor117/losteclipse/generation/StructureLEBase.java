@@ -26,25 +26,26 @@ public class StructureLEBase extends WorldGenerator
 		return false;
 	}
 	
-	protected void buildLayer(World world, BlockPos frontLeftCorner, int[][] blockPositions, IBlockState toPlace)
+	protected void buildLayer(World world, BlockPos frontLeftCorner, int[][] blockPositions, IBlockState toPlace, EnumFacing facing)
 	{
 		// iterate through the entire int[][]
 		for(int[] coord : blockPositions)
 		{
-			placeBlock(world, frontLeftCorner, coord[0], coord[1], coord[2], toPlace);
+			placeBlock(world, frontLeftCorner, coord[0], coord[1], coord[2], toPlace, facing);
 		}
 	}
 	
-	protected void placeBlock(World world, BlockPos frontLeftCorner, int[] offsets, IBlockState toPlace)
+	protected void placeBlock(World world, BlockPos frontLeftCorner, int[] offsets, IBlockState toPlace, EnumFacing facing)
 	{
-		placeBlock(world, frontLeftCorner, offsets[0], offsets[1], offsets[2], toPlace);
+		placeBlock(world, frontLeftCorner, offsets[0], offsets[1], offsets[2], toPlace, facing);
 	}
 	
 	/** Places a block using corner position and offsets **/
-	protected void placeBlock(World world, BlockPos frontLeftCorner, int offsetX, int offsetY, int offsetZ, IBlockState toPlace)
+	protected void placeBlock(World world, BlockPos frontLeftCorner, int offsetX, int offsetY, int offsetZ, IBlockState toPlace, EnumFacing facing)
 	{	
 		// figure out where that block is relative to the corner
-		BlockPos placePos = frontLeftCorner.add(offsetX, offsetY, offsetZ);
+		//BlockPos placePos = frontLeftCorner.add(offsetX, offsetY, offsetZ);
+		BlockPos placePos = getPosFromCorner(frontLeftCorner, offsetX, offsetZ, facing);
 		world.setBlockState(placePos, toPlace, 2);
 	}
 	
@@ -115,5 +116,24 @@ public class StructureLEBase extends WorldGenerator
 	{
 		EnumFacing right = forward.rotateY();
 		return corner.offset(forward, disForward).offset(right, disRight);
+	}
+	
+	protected EnumFacing getRandomSideWithoutOffset(Random rand)
+	{
+		int side = rand.nextInt(4);
+		
+		switch (side)
+		{
+			case 0: 
+				return EnumFacing.NORTH;
+			case 1: 
+				return EnumFacing.SOUTH;
+			case 2: 
+				return EnumFacing.EAST;
+			case 3: 
+				return EnumFacing.WEST;
+		}
+		
+		return null;
 	}
 }

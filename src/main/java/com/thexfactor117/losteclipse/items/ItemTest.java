@@ -3,7 +3,6 @@ package com.thexfactor117.losteclipse.items;
 import java.util.Random;
 
 import com.thexfactor117.levels.leveling.Rarity;
-import com.thexfactor117.losteclipse.LostEclipse;
 import com.thexfactor117.losteclipse.generation.structures.StructureDungeon;
 
 import net.minecraft.entity.player.EntityPlayer;
@@ -29,11 +28,8 @@ public class ItemTest extends ItemLE
 	@Override
 	public EnumActionResult onItemUse(ItemStack stack, EntityPlayer player, World world, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
     {
-		LostEclipse.LOGGER.info("Hello?");
-		
 		if (!world.isRemote)
 		{
-			LostEclipse.LOGGER.info("Hello 2?");
 			Random random = world.rand;
 			StructureDungeon house = new StructureDungeon();
 			BlockPos newPos = pos.add(1, 0, 1);
