@@ -1,5 +1,3 @@
-# Lasr
-
 ### Monster Drops
 
 # This file might get outdated at times, but should
