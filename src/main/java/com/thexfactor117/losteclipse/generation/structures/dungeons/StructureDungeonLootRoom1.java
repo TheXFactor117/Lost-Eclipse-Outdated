@@ -95,7 +95,7 @@ public class StructureDungeonLootRoom1 extends StructureLEBase
 			
 			//EnumFacing side = getRandomSideWithoutOffset(rand);
 			
-			placeAirBlocks(world, position, 6, 4, 9, this.facing);
+			placeAirBlocks(world, position, 6, 4, 9, this.facing, 0);
 			
 			buildLayer(world, position, stoneBrickPos, stone_brick, this.facing);
 			buildLayer(world, position, cobwebPos, cobweb, this.facing);

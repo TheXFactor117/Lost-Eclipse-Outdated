@@ -81,7 +81,7 @@ public class LEWorldGenerator implements IWorldGenerator
 	private void generateOverworldStructures(World world, Random rand, int blockX, int blockZ)
 	{
 		WorldGenerator abandonedHouse = new StructureAbandonedHouse();
-		if (rand.nextInt(8) == 0)
+		if (rand.nextInt(50) == 0)
 		{
 			int randX = blockX + rand.nextInt(16);
 			int randZ = blockZ + rand.nextInt(16);
@@ -90,7 +90,7 @@ public class LEWorldGenerator implements IWorldGenerator
 		}
 		
 		WorldGenerator shrine = new StructureShrine();
-		if (rand.nextInt(4) == 0)
+		if (rand.nextInt(50) == 0)
 		{
 			int randX = blockX + rand.nextInt(16);
 			int randZ = blockZ + rand.nextInt(16);

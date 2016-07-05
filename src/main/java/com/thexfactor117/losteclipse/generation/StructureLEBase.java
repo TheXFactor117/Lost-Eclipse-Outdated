@@ -83,13 +83,13 @@ public class StructureLEBase extends WorldGenerator
 	 * @param maxZ
 	 * @param facing
 	 */
-	protected void placeAirBlocks(World world, BlockPos frontLeftCorner, int maxX, int maxY, int maxZ, EnumFacing facing)
+	protected void placeAirBlocks(World world, BlockPos frontLeftCorner, int maxX, int maxY, int maxZ, EnumFacing facing, int minY)
 	{
 		IBlockState air = Blocks.AIR.getDefaultState();
 		
 		for (int x = 0; x < maxX; x++)
 		{
-			for (int y = 0; y < maxY; y++)
+			for (int y = 0 - minY; y < maxY; y++)
 			{
 				for (int z = 0; z < maxZ; z++)
 				{
@@ -150,13 +150,13 @@ public class StructureLEBase extends WorldGenerator
 		boolean corner4Air = canReplaceAboveGround(world, posAboveGround.add(0, 0, maxZ));
 		boolean corner3Air = canReplaceAboveGround(world, posAboveGround.add(maxX, 0, maxZ));
 		
-		return posAboveGround.getY() > 20 && corner1Air && corner2Air && corner3Air && corner4Air;
+		return posAboveGround.getY() > 0 && corner1Air && corner2Air && corner3Air && corner4Air;
 	}
 	
 	protected boolean canReplaceAboveGround(World world, BlockPos pos)
 	{
 		Material material = world.getBlockState(pos).getMaterial();
-		return material.isReplaceable() || material == Material.PLANTS || material == Material.LEAVES;
+		return material.isReplaceable() || material == Material.PLANTS || material == Material.LEAVES || material == Material.GRASS;
 	}
 	
 	protected boolean canReplaceMaterial(World world, BlockPos pos, Material materials)

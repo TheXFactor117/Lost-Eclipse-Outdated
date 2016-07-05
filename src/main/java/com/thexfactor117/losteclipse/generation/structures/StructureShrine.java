@@ -35,7 +35,7 @@ public class StructureShrine extends StructureLEBase
 		// layer 1
 		{2, 1, 2}, {2, 1, 4}, {2, 1, 5},
 		{3, 1, 5},
-		{4, 1, 2}, {4, 1, 5}, {4, 1, 6},
+		{4, 1, 2}, {4, 1, 5},
 		{5, 1, 2}, {5, 1, 3}, {5, 1, 4}, {5, 1, 5},
 		// layer 2
 		{2, 2, 2}, {2, 2, 3}, {2, 2, 4},
@@ -44,7 +44,7 @@ public class StructureShrine extends StructureLEBase
 		// layer 3
 		{2, 3, 3}, {2, 3, 4},
 		{3, 3, 2}, {3, 3, 3}, {3, 3, 4},
-		{4, 3, 2}, {4, 3, 4}, {4, 3, 4},
+		{4, 3, 2}, {4, 3, 3}, {4, 3, 4},
 		// layer 4
 		{2, 4, 4},
 		{3, 4, 3}, {3, 4, 4},
@@ -73,12 +73,14 @@ public class StructureShrine extends StructureLEBase
 			
 			EnumFacing side = getRandomSideWithoutOffset(rand);
 			
+			placeAirBlocks(world, position, 7, 8, 7, side, 1);
+			
 			buildLayer(world, position, bricksPos, stone_brick, side);
 			placeBlock(world, position, chestPos1, chest, side);
 			placeBlock(world, position, chestPos2, chest, side);
-			
-			BlockPos chestActualPos1 = position.add(chestPos1[0], chestPos1[1], chestPos1[2]);
-			BlockPos chestActualPos2 = position.add(chestPos2[0], chestPos2[1], chestPos2[2]);
+
+			BlockPos chestActualPos1 = getPosFromCorner(position, chestPos1[0], chestPos1[2], side);
+			BlockPos chestActualPos2 = getPosFromCorner(position, chestPos2[0], chestPos2[2], side);
 			
 			TileEntityChest chestTE1 = (TileEntityChest) world.getTileEntity(chestActualPos1);
 			TileEntityChest chestTE2 = (TileEntityChest) world.getTileEntity(chestActualPos2);

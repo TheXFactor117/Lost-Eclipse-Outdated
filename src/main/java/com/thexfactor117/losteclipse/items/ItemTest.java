@@ -3,7 +3,7 @@ package com.thexfactor117.losteclipse.items;
 import java.util.Random;
 
 import com.thexfactor117.levels.leveling.Rarity;
-import com.thexfactor117.losteclipse.generation.structures.dungeons.StructureDungeon;
+import com.thexfactor117.losteclipse.generation.structures.StructureShrine;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
@@ -31,9 +31,8 @@ public class ItemTest extends ItemLE
 		if (!world.isRemote)
 		{
 			Random random = world.rand;
-			StructureDungeon house = new StructureDungeon();
-			BlockPos newPos = pos.add(1, 0, 1);
-			house.generate(world, random, newPos);
+			StructureShrine structure = new StructureShrine();
+			structure.generate(world, random, pos);
 			
 			return EnumActionResult.SUCCESS;
 		}
