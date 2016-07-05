@@ -27,6 +27,14 @@ public class StructureLEBase extends WorldGenerator
 		return false;
 	}
 	
+	/**
+	 * Builds an entire layer of blocks according to the arrays of block positions.
+	 * @param world
+	 * @param frontLeftCorner
+	 * @param blockPositions
+	 * @param toPlace
+	 * @param facing
+	 */
 	protected void buildLayer(World world, BlockPos frontLeftCorner, int[][] blockPositions, IBlockState toPlace, EnumFacing facing)
 	{
 		// iterate through the entire int[][]
@@ -36,20 +44,45 @@ public class StructureLEBase extends WorldGenerator
 		}
 	}
 	
+	/**
+	 * Places a block using an array of offsets.
+	 * @param world
+	 * @param frontLeftCorner
+	 * @param offsets
+	 * @param toPlace
+	 * @param facing
+	 */
 	protected void placeBlock(World world, BlockPos frontLeftCorner, int[] offsets, IBlockState toPlace, EnumFacing facing)
 	{
 		placeBlock(world, frontLeftCorner, offsets[0], offsets[1], offsets[2], toPlace, facing);
 	}
 	
-	/** Places a block using corner position and offsets **/
+	/**
+	 * Places a block using corner position and offsets
+	 * @param world
+	 * @param frontLeftCorner
+	 * @param offsetX
+	 * @param offsetY
+	 * @param offsetZ
+	 * @param toPlace
+	 * @param facing
+	 */
 	protected void placeBlock(World world, BlockPos frontLeftCorner, int offsetX, int offsetY, int offsetZ, IBlockState toPlace, EnumFacing facing)
 	{	
-		// figure out where that block is relative to the corner
 		//BlockPos placePos = frontLeftCorner.add(offsetX, offsetY, offsetZ);
 		BlockPos placePos = getPosFromCorner(frontLeftCorner, offsetX, offsetY, offsetZ, facing);
 		world.setBlockState(placePos, toPlace, 3);
 	}
 	
+	/**
+	 * Places air blocks in a cube in order to clear out the space for a structure to spawn.
+	 * @param world
+	 * @param frontLeftCorner
+	 * @param maxX
+	 * @param maxY
+	 * @param maxZ
+	 * @param facing
+	 */
 	protected void placeAirBlocks(World world, BlockPos frontLeftCorner, int maxX, int maxY, int maxZ, EnumFacing facing)
 	{
 		IBlockState air = Blocks.AIR.getDefaultState();
@@ -67,45 +100,69 @@ public class StructureLEBase extends WorldGenerator
 		}
 	}
 	
+	/**
+	 * Checks to see if the structure can spawn underground by checking block materials for all 4 corners and Y-positions.
+	 * @param world
+	 * @param posUnderGround
+	 * @param maxX
+	 * @param maxY
+	 * @param maxZ
+	 * @param minY
+	 * @return
+	 */
 	protected boolean canSpawnUnderground(World world, BlockPos posUnderGround, int maxX, int maxY, int maxZ, int minY)
 	{
-		boolean corner1 = canReplaceStone(world, posUnderGround);
-		boolean corner2 = canReplaceStone(world, posUnderGround.add(maxX, 0, 0));
-		boolean corner3 = canReplaceStone(world, posUnderGround.add(0, 0, maxZ));
-		boolean corner4 = canReplaceStone(world, posUnderGround.add(maxX, 0, maxZ));
+		boolean corner1 = canReplaceMaterial(world, posUnderGround, Material.ROCK);
+		boolean corner2 = canReplaceMaterial(world, posUnderGround.add(maxX, 0, 0), Material.ROCK);
+		boolean corner3 = canReplaceMaterial(world, posUnderGround.add(0, 0, maxZ), Material.ROCK);
+		boolean corner4 = canReplaceMaterial(world, posUnderGround.add(maxX, 0, maxZ), Material.ROCK);
 		
 		return posUnderGround.getY() > minY && posUnderGround.getY() < maxY && corner1 && corner2 && corner3 && corner4;
 	}
 	
+	/**
+	 * Checks to see if the structure can spawn underground by checking block materials and Y-positions.
+	 * @param world
+	 * @param posUnderGround
+	 * @param minY
+	 * @param maxY
+	 * @return
+	 */
 	protected boolean canSpawnUnderground(World world, BlockPos posUnderGround, int minY, int maxY)
 	{
-		boolean corner = canReplaceStone(world, posUnderGround);
+		boolean corner = canReplaceMaterial(world, posUnderGround, Material.ROCK);
 		
 		return posUnderGround.getY() > minY && posUnderGround.getY() < maxY && corner;
 	}
 	
-	protected boolean canSpawnHere(World world, BlockPos posAboveGround)
+	/**
+	 * Checks the four corners of the structure spot.
+	 * @param world
+	 * @param posAboveGround
+	 * @param maxX - max x direction of structure (relative to structure corner)
+	 * @param maxZ - max z direction of structure (relative to structure corner)
+	 * @return
+	 */
+	protected boolean canSpawnAboveGround(World world, BlockPos posAboveGround, int maxX, int maxZ)
 	{
-		// check all the corners to see which ones are replaceable
-		boolean corner1Air = canReplaceAir(world, posAboveGround);
-		boolean corner2Air = canReplaceAir(world, posAboveGround.add(8, 0, 0));
-		boolean corner4Air = canReplaceAir(world, posAboveGround.add(0, 0, 8));
-		boolean corner3Air = canReplaceAir(world, posAboveGround.add(8, 0, 8));
+		boolean corner1Air = canReplaceAboveGround(world, posAboveGround);
+		boolean corner2Air = canReplaceAboveGround(world, posAboveGround.add(maxX, 0, 0));
+		boolean corner4Air = canReplaceAboveGround(world, posAboveGround.add(0, 0, maxZ));
+		boolean corner3Air = canReplaceAboveGround(world, posAboveGround.add(maxX, 0, maxZ));
 		
-		// if Y > 20 and all corners pass the test, it's okay to spawn the structure
 		return posAboveGround.getY() > 20 && corner1Air && corner2Air && corner3Air && corner4Air;
 	}
 	
-	protected boolean canReplaceAir(World world, BlockPos pos)
+	protected boolean canReplaceAboveGround(World world, BlockPos pos)
 	{
 		Material material = world.getBlockState(pos).getMaterial();
 		return material.isReplaceable() || material == Material.PLANTS || material == Material.LEAVES;
 	}
 	
-	protected boolean canReplaceStone(World world, BlockPos pos)
+	protected boolean canReplaceMaterial(World world, BlockPos pos, Material materials)
 	{
 		Material material = world.getBlockState(pos).getMaterial();
-		return material == Material.ROCK;
+		return material == materials;
 	}
 	
 	/** dirForward 0=SOUTH=z++; 1=WEST=x--; 2=NORTH=z--; 3=EAST=x++ */
@@ -116,15 +173,23 @@ public class StructureLEBase extends WorldGenerator
 	}
 	
 	public BlockPos getPosFromCorner1(BlockPos corner, int maxDisForward, int maxDisRight, EnumFacing forward)
-	{
+	{			
 		EnumFacing right = forward.rotateY();
-				
+		
 		switch (forward)
 		{
-			case NORTH: return corner.offset(forward, maxDisForward).offset(right, -maxDisRight);
-			case EAST: return corner.offset(forward, maxDisForward).offset(right, maxDisRight);
-			case SOUTH: return corner.offset(forward, -maxDisForward).offset(right, maxDisRight);
-			case WEST: return corner.offset(forward, -maxDisForward).offset(right, -maxDisRight);
+			case NORTH: 
+				LostEclipse.LOGGER.info("NORTH: " + forward + " " + maxDisForward);
+				return corner.offset(forward, -7).offset(right, 6);
+			case EAST: 
+				LostEclipse.LOGGER.info("EAST: " + forward + " " + maxDisForward + " " + right + " " + maxDisRight);
+				return corner.offset(forward, maxDisForward).offset(right, maxDisRight);
+			case SOUTH: 
+				LostEclipse.LOGGER.info("SOUTH: " + forward + " " + maxDisForward + right + " " + maxDisRight);
+				return corner.offset(right, 9);
+			case WEST: 
+				LostEclipse.LOGGER.info("WEST: " + forward + " " + maxDisForward + right + " " + maxDisRight);
+				return corner.offset(forward, 7);
 			default: break;
 		}
 				

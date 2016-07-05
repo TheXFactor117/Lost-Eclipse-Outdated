@@ -3,7 +3,7 @@ package com.thexfactor117.losteclipse.items;
 import java.util.Random;
 
 import com.thexfactor117.levels.leveling.Rarity;
-import com.thexfactor117.losteclipse.generation.structures.StructureDungeon;
+import com.thexfactor117.losteclipse.generation.structures.dungeons.StructureDungeon;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;

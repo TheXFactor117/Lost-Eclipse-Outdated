@@ -2,9 +2,8 @@ package com.thexfactor117.losteclipse.generation;
 
 import java.util.Random;
 
-import com.thexfactor117.losteclipse.LostEclipse;
 import com.thexfactor117.losteclipse.generation.structures.StructureAbandonedHouse;
-import com.thexfactor117.losteclipse.generation.structures.StructureDungeon;
+import com.thexfactor117.losteclipse.generation.structures.StructureShrine;
 import com.thexfactor117.losteclipse.init.ModBlocks;
 
 import net.minecraft.block.Block;
@@ -46,13 +45,43 @@ public class LEWorldGenerator implements IWorldGenerator
 	}
 	
 	private void generateOverworld(World world, Random rand, int blockX, int blockZ)
+	{	
+		generateOverworldOres(world, rand, blockX, blockZ);
+		generateOverworldStructures(world, rand, blockX, blockZ);
+	}
+	
+	private void generateNether(World world, Random rand, int chunkX, int chunkZ) {}
+	private void generateEnd(World world, Random rand, int chunkX, int chunkZ) {}
+	
+	/**
+	 * Generates ores in the overworld. Helper method to make things cleaner.
+	 * @param world
+	 * @param rand
+	 * @param blockX
+	 * @param blockZ
+	 */
+	private void generateOverworldOres(World world, Random rand, int blockX, int blockZ)
 	{
 		IBlockState malachiteOre = ModBlocks.malachiteOre.getDefaultState();
+		IBlockState vexalOre = ModBlocks.vexalOre.getDefaultState();
+		IBlockState astrillOre = ModBlocks.astrillOre.getDefaultState();
 		
 		addOreSpawn(malachiteOre, world, rand, blockX, blockZ, 16, 16, 4 + rand.nextInt(4), 20, 1, 64);
-		
+		addOreSpawn(vexalOre, world, rand, blockX, blockZ, 16, 16, 2 + rand.nextInt(2), 10, 24, 48);
+		addOreSpawn(astrillOre, world, rand, blockX, blockZ, 16, 16, 1, 3, 1, 15);
+	}
+	
+	/**
+	 * Generates structures in the overworld. Helper method to make things cleaner.
+	 * @param world
+	 * @param rand
+	 * @param blockX
+	 * @param blockZ
+	 */
+	private void generateOverworldStructures(World world, Random rand, int blockX, int blockZ)
+	{
 		WorldGenerator abandonedHouse = new StructureAbandonedHouse();
-		if (rand.nextInt(4) == 0)
+		if (rand.nextInt(8) == 0)
 		{
 			int randX = blockX + rand.nextInt(16);
 			int randZ = blockZ + rand.nextInt(16);
@@ -60,28 +89,15 @@ public class LEWorldGenerator implements IWorldGenerator
 			abandonedHouse.generate(world, rand, new BlockPos(randX, groundY + 1, randZ));
 		}
 		
-		/*WorldGenerator lootRoom = new StructureDungeonLootRoom1();
+		WorldGenerator shrine = new StructureShrine();
 		if (rand.nextInt(4) == 0)
 		{
 			int randX = blockX + rand.nextInt(16);
 			int randZ = blockZ + rand.nextInt(16);
-			int randY = rand.nextInt(51);
-			lootRoom.generate(world, rand, new BlockPos(randX, randY, randZ));
-		}*/
-		
-		WorldGenerator dungeon = new StructureDungeon();
-		if (rand.nextInt(20) == 0)
-		{
-			int randX = blockX + rand.nextInt(16);
-			int randZ = blockZ + rand.nextInt(16);
-			int randY = rand.nextInt(51);
-			LostEclipse.LOGGER.info("Generating dungeon @ " + randX + " " + randY + " " + randZ);
-			dungeon.generate(world, rand, new BlockPos(randX, randY, randZ));
+			int groundY = getGroundFromAbove(world, randX, randZ);
+			shrine.generate(world, rand, new BlockPos(randX, groundY + 1, randZ));
 		}
 	}
-	
-	private void generateNether(World world, Random rand, int chunkX, int chunkZ) {}
-	private void generateEnd(World world, Random rand, int chunkX, int chunkZ) {}
 	
 	public static int getGroundFromAbove(World world, int x, int z)
 	{
@@ -96,6 +112,21 @@ public class LEWorldGenerator implements IWorldGenerator
 		return y;
 	}
 	
+	/**
+	 * Adds the specified block to be generated in throughout the world. 
+	 * Key parameters: maxVeinSize, chanceToSpawn, minY, maxY.
+	 * @param block
+	 * @param world
+	 * @param random
+	 * @param blockXPos
+	 * @param blockZPos
+	 * @param maxX
+	 * @param maxZ
+	 * @param maxVeinSize
+	 * @param chanceToSpawn
+	 * @param minY
+	 * @param maxY
+	 */
 	private void addOreSpawn(IBlockState block, World world, Random random, int blockXPos, int blockZPos, int maxX, int maxZ, int maxVeinSize, int chanceToSpawn, int minY, int maxY)
 	{
 		for (int i = 0; i < chanceToSpawn; i++)

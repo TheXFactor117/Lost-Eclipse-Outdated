@@ -1,4 +1,4 @@
-package com.thexfactor117.losteclipse.generation.structures;
+package com.thexfactor117.losteclipse.generation.structures.dungeons;
 
 import java.util.Random;
 
@@ -24,7 +24,7 @@ public class StructureDungeon extends StructureLEProcedurallyGenerated
 	{	
 		if (this.canSpawnUnderground(world, position, 2, 50))
 		{
-			int maxRooms = rand.nextInt(6);
+			int maxRooms = 2;
 			LostEclipse.LOGGER.info("Procedural generation beginning...");
 			this.procedurallyGenerate(world, rand, position, maxRooms);
 			return true;
@@ -45,7 +45,9 @@ public class StructureDungeon extends StructureLEProcedurallyGenerated
 		if (roomCount == 0) lootRoom.generate(world, rand, position);
 		else
 		{
-			newPosition = getPosFromCorner1(position, 6, 9, facing);
+			// forward, right
+			LostEclipse.LOGGER.info("Facing: " + facing);
+			newPosition = getPosFromCorner1(position, 9, 6, facing);
 			
 			lootRoom.generate(world, rand, newPosition);
 			LostEclipse.LOGGER.info("Loot room generated. Count: " + roomCount);

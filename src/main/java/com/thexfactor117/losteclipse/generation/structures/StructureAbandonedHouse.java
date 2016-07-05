@@ -89,7 +89,7 @@ public class StructureAbandonedHouse extends StructureLEBase
 	@Override
 	public boolean generate(World world, Random rand, BlockPos position) 
 	{
-		if (canSpawnHere(world, position))
+		if (canSpawnAboveGround(world, position, 8, 8))
 		{
 			IBlockState log = Blocks.LOG.getDefaultState();
 			IBlockState plank = Blocks.PLANKS.getDefaultState();

@@ -1,4 +1,4 @@
-package com.thexfactor117.losteclipse.generation.structures;
+package com.thexfactor117.losteclipse.generation.structures.dungeons;
 
 import java.util.Random;
 

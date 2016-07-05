@@ -13,8 +13,8 @@ import net.minecraft.block.Block;
 public class ModBlocks 
 {
 	public static Block malachiteOre = new BlockLEOre("malachiteOre", 3.0F, 5.0F, 0F, 1);
-	public static Block vexalOre = new BlockLEOre("vexalOre", 3.0F, 5.0F, 0F, 2);
-	public static Block astrillOre = new BlockLEOre("astrillOre", 3.0F, 5.0F, 0.1F, 3);
+	public static Block vexalOre = new BlockLEOre("vexalOre", 3.0F, 5.0F, 0F, 2, ModItems.vexalGem);
+	public static Block astrillOre = new BlockLEOre("astrillOre", 3.0F, 5.0F, 0.1F, 3, ModItems.astrillGem);
 	
 	public static void registerBlocks()
 	{
