@@ -29,7 +29,7 @@
 			"entries": [
 				{
 					"type": "loot_table",
-					"name": "losteclipse:vanilla_rare_loot",
+					"name": "losteclipse:tables/rare_vanilla",
 					"weight": 1
 				}
 			]

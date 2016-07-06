@@ -67,9 +67,9 @@ public class LEWorldGenerator implements IWorldGenerator
 		IBlockState vexalOre = ModBlocks.vexalOre.getDefaultState();
 		IBlockState astrillOre = ModBlocks.astrillOre.getDefaultState();
 		
-		addOreSpawn(malachiteOre, world, rand, blockX, blockZ, 16, 16, 4 + rand.nextInt(4), 20, 1, 64);
-		addOreSpawn(vexalOre, world, rand, blockX, blockZ, 16, 16, 2 + rand.nextInt(2), 10, 24, 48);
-		addOreSpawn(astrillOre, world, rand, blockX, blockZ, 16, 16, 1, 3, 1, 15);
+		addOreSpawn(malachiteOre, world, rand, blockX, blockZ, 16, 16, 4 + rand.nextInt(4), 14, 1, 64);
+		addOreSpawn(vexalOre, world, rand, blockX, blockZ, 16, 16, 2 + rand.nextInt(2), 6, 24, 48);
+		addOreSpawn(astrillOre, world, rand, blockX, blockZ, 16, 16, 1, 3, rand.nextInt(1), 15);
 	}
 	
 	/**
