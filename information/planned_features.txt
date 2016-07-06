@@ -1,0 +1,58 @@
+##### Lost Eclipse Planned Features
+#####
+##### Key:
+##### + Additions to be made
+##### - Subtractions to be made
+##### * Fixes to be made
+##### ? Possible additions
+
+### Condensed List (Highest Priorities)
++ Add textures and entity models
++ Add monsters and bosses
++ Add new structures
++ Add structure variants
++ Add procedurally generated dungeons
++ Add dungeon rooms plus variants
++ Add weapons to loot tables
++ Plan/add new items/blocks
+* Fix procedurally generated structures
+* Cleanup structure generation (spawn rate, spawning logic)
+* Balance/tweak loot tables
+* Weapon balancing
+
+### Complete List
+# Overall
+* Balancing, balancing, and balancing
+* Code cleanup and documentation
+
+# Entities
++ Add entity logic for all monsters
++ Add custom AI for bosses and/or certain monsters
++ Add monster models/textures
++ Add loot tables for monsters
+* Balance monster attributes/logic
+
+# Generation
++ Add variations for existing structures
++ Add new structures and their variations (if applicable)
++ Add new dungeon rooms and their variations (if applicable)
++ Add randomized chest spawns in structures
+* Fix procedurally generated structures (facings, connections, algorithm, etc.)
+* Fix above ground structure generation spawning in strange ways
+* Balance structure spawning rate (too much right now?)
+? Add randomized missing blocks to structures
+? Indestructable dungeons / inability to place torches
+
+# Armory, Items, and Blocks
++ Add weapons to loot tables
++ Plan/add more weapons
++ Artifact logic (abilities, etc.)
++ Add recipes for items needing recipes
+* Balance current recipes
+* Balance loot tables
+
+# Features
++ Add 'Souls' to be used with charging Staffs
++ Add a way to spawn monsters throughout dungeons and structures
++ Add a quest system
++ Add a leveling system (player level, statistics, etc.)
