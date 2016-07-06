@@ -1,0 +1,10 @@
+{
+	"homepage": "http://www.minecraftforum.net/forums/mapping-and-modding/minecraft-mods/wip-mods/2705842-lost-eclipse-the-tale-of-alacrity",
+	"promos": {
+		"1.10.2-latest": "pre-a2.0.0",
+		"1.10.2-recommended": "pre-a2.0.0"
+	},
+	"1.10.2": {
+		"pre-a2.0.0": "* Initial pre-alpha release."
+	}
+}
