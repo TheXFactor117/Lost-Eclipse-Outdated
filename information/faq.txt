@@ -1,0 +1,8 @@
+### Lost Eclipse FAQ
+
+Q. Can I use this mod in my modpack?
+A. Yes - though I highly recommend that pack builders wait till an Alpha or Beta version comes out first.
+
+Q. Why is this mod so buggy and incomplete?
+A. This mod is a work in progress and in a pre-alpha stage. We are mainly focusing in adding the foundations of the mod,
+in which will be refined over time.
