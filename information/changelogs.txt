@@ -1,0 +1,13 @@
+##### Lost Eclipse Changelogs
+#####
+#####
+#####
+#####
+
+### Pre-Alpha
+# pre-a2
+Upcoming changes
+* 
+
+pre-a2.0.0
+* Initial pre-alpha 2 build (first public build)
