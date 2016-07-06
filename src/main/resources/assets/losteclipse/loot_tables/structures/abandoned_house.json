@@ -1,0 +1,38 @@
+{
+	"pools": [
+		{
+			"name": "main",
+			"conditions": [
+				{
+					"condition": "random_chance",
+					"chance": 0.6
+				}
+			],
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "loot_table",
+					"name": "losteclipse:common_loot",
+					"weight": 1
+				}
+			]
+		},
+		{
+			"name": "vanilla",
+			"conditions": [
+				{
+					"condition": "random_chance",
+					"chance": 0.25
+				}
+			],
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "loot_table",
+					"name": "losteclipse:vanilla_rare_loot",
+					"weight": 1
+				}
+			]
+		}
+	]
+}

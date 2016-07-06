@@ -113,8 +113,8 @@ public class StructureAbandonedHouse extends StructureLEBase
 			placeBlock(world, position, chestPos1, chest, side);
 			placeBlock(world, position, chestPos2, chest, side);
 			
-			BlockPos chestActualPos1 = position.add(chestPos1[0], chestPos1[1], chestPos1[2]);
-			BlockPos chestActualPos2 = position.add(chestPos2[0], chestPos2[1], chestPos2[2]);
+			BlockPos chestActualPos1 = getPosFromCorner(position, chestPos1[0], chestPos1[1], chestPos1[2], side);
+			BlockPos chestActualPos2 = getPosFromCorner(position, chestPos2[0], chestPos2[1], chestPos2[2], side);
 			
 			TileEntityChest chestTE1 = (TileEntityChest) world.getTileEntity(chestActualPos1);
 			TileEntityChest chestTE2 = (TileEntityChest) world.getTileEntity(chestActualPos2);

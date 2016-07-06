@@ -4,6 +4,7 @@ import java.util.Random;
 
 import com.thexfactor117.losteclipse.generation.structures.StructureAbandonedHouse;
 import com.thexfactor117.losteclipse.generation.structures.StructureShrine;
+import com.thexfactor117.losteclipse.generation.structures.StructureTower;
 import com.thexfactor117.losteclipse.init.ModBlocks;
 
 import net.minecraft.block.Block;
@@ -81,7 +82,7 @@ public class LEWorldGenerator implements IWorldGenerator
 	private void generateOverworldStructures(World world, Random rand, int blockX, int blockZ)
 	{
 		WorldGenerator abandonedHouse = new StructureAbandonedHouse();
-		if (rand.nextInt(50) == 0)
+		if (rand.nextInt(75) == 0)
 		{
 			int randX = blockX + rand.nextInt(16);
 			int randZ = blockZ + rand.nextInt(16);
@@ -90,12 +91,21 @@ public class LEWorldGenerator implements IWorldGenerator
 		}
 		
 		WorldGenerator shrine = new StructureShrine();
-		if (rand.nextInt(50) == 0)
+		if (rand.nextInt(75) == 0)
 		{
 			int randX = blockX + rand.nextInt(16);
 			int randZ = blockZ + rand.nextInt(16);
 			int groundY = getGroundFromAbove(world, randX, randZ);
 			shrine.generate(world, rand, new BlockPos(randX, groundY + 1, randZ));
+		}
+		
+		WorldGenerator tower = new StructureTower();
+		if (rand.nextInt(100) == 0)
+		{
+			int randX = blockX + rand.nextInt(16);
+			int randZ = blockZ + rand.nextInt(16);
+			int groundY = getGroundFromAbove(world, randX, randZ);
+			tower.generate(world, rand, new BlockPos(randX, groundY + 1, randZ));
 		}
 	}
 	

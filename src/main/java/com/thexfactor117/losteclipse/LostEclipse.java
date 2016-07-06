@@ -24,6 +24,21 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
  * 
  * @author TheXFactor117
  *
+ * TODO:
+ * + More textures!
+ * + Entity models
+ * + Entity logic
+ * + Structure variations
+ * + Dungeon structures
+ * + Artifact logic
+ * * Loot table balancing
+ * * Structure spawn rate balancing
+ * * Cleanup structure spawning
+ * * Finish procedurally generated structures
+ * * Indestructable dungeons / disable torch usage inside of dungeons
+ * * Recipe cleanup
+ * * Overall code cleanup and documentation
+ * 
  */
 @Mod(modid = Reference.MODID, name = Reference.NAME, version = Reference.VERSION, dependencies = Reference.DEPENDENCIES)
 public class LostEclipse 

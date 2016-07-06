@@ -2,13 +2,10 @@
 	"pools": [
 		{
 			"name": "main",
-			"conditions": [
-				{
-					"condition": "random_chance",
-					"chance": 0.5
-				}
-			],
-			"rolls": 3,
+			"rolls": {
+				"min": 1,
+				"max": 2
+			},
 			"entries": [
 				{
 					"type": "item",
