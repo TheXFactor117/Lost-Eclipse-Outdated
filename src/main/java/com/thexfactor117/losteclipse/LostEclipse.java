@@ -3,10 +3,12 @@ package com.thexfactor117.losteclipse;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.thexfactor117.losteclipse.Reference;
 import com.thexfactor117.losteclipse.generation.LEWorldGenerator;
 import com.thexfactor117.losteclipse.init.ModArmory;
 import com.thexfactor117.losteclipse.init.ModBlocks;
 import com.thexfactor117.losteclipse.init.ModEntities;
+import com.thexfactor117.losteclipse.init.ModEvents;
 import com.thexfactor117.losteclipse.init.ModItems;
 import com.thexfactor117.losteclipse.init.ModRecipes;
 import com.thexfactor117.losteclipse.proxies.CommonProxy;
@@ -40,7 +42,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
  * * Overall code cleanup and documentation
  * 
  */
-@Mod(modid = Reference.MODID, name = Reference.NAME, version = Reference.VERSION, dependencies = Reference.DEPENDENCIES)
+@Mod(modid = Reference.MODID, name = Reference.NAME, version = Reference.VERSION, dependencies = Reference.DEPENDENCIES, updateJSON = Reference.UPDATE_URL)
 public class LostEclipse 
 {
 	@Instance(Reference.MODID)
@@ -58,6 +60,7 @@ public class LostEclipse
 		ModArmory.registerItems();
 		ModEntities.registerEntities();
 		ModRecipes.registerRecipes();
+		ModEvents.registerEvents();
 		
 		proxy.registerRenderers();
 	}

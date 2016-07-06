@@ -1,6 +1,6 @@
 package com.thexfactor117.losteclipse.rendering.projectiles;
 
-import com.thexfactor117.losteclipse.entities.projectiles.EntityMagic;
+import com.thexfactor117.losteclipse.entities.projectiles.EntityFrostbite;
 import com.thexfactor117.losteclipse.init.ModItems;
 import com.thexfactor117.losteclipse.rendering.RenderModProjectile;
 
@@ -12,7 +12,7 @@ import net.minecraft.item.ItemStack;
  * @author TheXFactor117
  *
  */
-public class RenderFrostbite<T extends EntityMagic> extends RenderModProjectile<T>
+public class RenderFrostbite<T extends EntityFrostbite> extends RenderModProjectile<T>
 {
 	public RenderFrostbite(RenderManager renderManager) 
 	{

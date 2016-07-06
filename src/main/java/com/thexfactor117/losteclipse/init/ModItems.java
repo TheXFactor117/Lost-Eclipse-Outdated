@@ -2,6 +2,7 @@ package com.thexfactor117.losteclipse.init;
 
 import com.thexfactor117.levels.leveling.Rarity;
 import com.thexfactor117.losteclipse.items.ItemLE;
+import com.thexfactor117.losteclipse.items.ItemSoulGem;
 import com.thexfactor117.losteclipse.items.ItemTest;
 import com.thexfactor117.losteclipse.items.scrolls.ItemElementalScroll;
 import com.thexfactor117.losteclipse.items.scrolls.ItemEtherealScroll;
@@ -32,7 +33,7 @@ public class ModItems
 	public static Item vexalGem = new ItemLE("vexalGem", Rarity.RARE);
 	public static Item astrillGem = new ItemLE("astrillGem", Rarity.LEGENDARY);
 	public static Item astrillGemFragment = new ItemLE("astrillGemFragment", Rarity.RARE);
-	public static Item soulGem = new ItemLE("soulGem", Rarity.RARE);
+	public static Item soulGem = new ItemSoulGem("soulGem", Rarity.RARE);
 	public static Item soulGemFragment = new ItemLE("soulGemFragment", Rarity.UNCOMMON);
 	public static Item etherealGem = new ItemLE("etherealGem", Rarity.RARE);
 	

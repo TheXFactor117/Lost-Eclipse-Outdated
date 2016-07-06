@@ -1,6 +1,6 @@
 package com.thexfactor117.losteclipse.rendering.projectiles;
 
-import com.thexfactor117.losteclipse.entities.projectiles.EntityMagic;
+import com.thexfactor117.losteclipse.entities.projectiles.EntityDarkMagic;
 import com.thexfactor117.losteclipse.init.ModItems;
 import com.thexfactor117.losteclipse.rendering.RenderModProjectile;
 
@@ -12,7 +12,7 @@ import net.minecraft.item.ItemStack;
  * @author TheXFactor117
  *
  */
-public class RenderDarkMagic<T extends EntityMagic> extends RenderModProjectile<T>
+public class RenderDarkMagic<T extends EntityDarkMagic> extends RenderModProjectile<T>
 {
 	public RenderDarkMagic(RenderManager renderManager) 
 	{
