@@ -2,10 +2,12 @@ package com.thexfactor117.losteclipse.items.ranged;
 
 import com.thexfactor117.levels.leveling.Rarity;
 import com.thexfactor117.losteclipse.items.ItemLE;
+import com.thexfactor117.losteclipse.items.ItemSoulGem;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumAction;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
@@ -18,29 +20,50 @@ import net.minecraft.world.World;
  */
 public class ItemLEStaff extends ItemLE
 {
-	public ItemLEStaff(String name, Rarity rarity, int durability) 
+	public ItemLEStaff(String name, Rarity rarity) 
 	{
 		super(name, rarity);
 		this.setMaxStackSize(1);
-		this.setMaxDamage(durability);
 		this.setNoRepair();
 	}
 	
-	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Override
 	public ActionResult<ItemStack> onItemRightClick(ItemStack stack, World world, EntityPlayer player, EnumHand hand)
     {
-        boolean flag = stack != null;
-
-        if (!player.capabilities.isCreativeMode && !flag)
+        if (stack != null)
         {
-            return !flag ? new ActionResult(EnumActionResult.FAIL, stack) : new ActionResult(EnumActionResult.PASS, stack);
+        	for (int i = 0; i < player.inventory.mainInventory.length; i++)
+        	{
+        		if (player.inventory.mainInventory[i] != null)
+        		{
+        			if (player.inventory.mainInventory[i].getItem() instanceof ItemSoulGem)
+        			{
+        				ItemStack soulGemStack = player.inventory.mainInventory[i];
+        				
+        				if (soulGemStack != null)
+        				{
+        					NBTTagCompound nbt = soulGemStack.getTagCompound();
+        					
+        					if (nbt != null)
+        					{
+        						ItemSoulGem soulGem = (ItemSoulGem) player.inventory.mainInventory[i].getItem();
+        						
+        						if (soulGem != null)
+        						{
+        							if (soulGem.getSouls(nbt) > 0)
+        							{
+        								player.setActiveHand(hand);
+        								return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, stack);
+        							}
+        						}
+        					}
+        				}
+        			}
+        		}
+        	}
         }
-        else
-        {
-            player.setActiveHand(hand);
-            return new ActionResult(EnumActionResult.SUCCESS, stack);
-        }
+        
+        return new ActionResult<ItemStack>(EnumActionResult.FAIL, stack);
     }
 	
 	@Override

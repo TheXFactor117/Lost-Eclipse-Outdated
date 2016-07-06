@@ -5,12 +5,14 @@ import javax.annotation.Nullable;
 import com.thexfactor117.levels.leveling.Rarity;
 import com.thexfactor117.losteclipse.entities.projectiles.EntityMagic;
 import com.thexfactor117.losteclipse.init.ModArmory;
+import com.thexfactor117.losteclipse.items.ItemSoulGem;
 
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.IItemPropertyGetter;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.Vec3d;
@@ -25,9 +27,9 @@ import net.minecraftforge.fml.relauncher.SideOnly;
  */
 public class ItemMalachiteStaff extends ItemLEStaff
 {
-	public ItemMalachiteStaff(String name, Rarity rarity, int durability) 
+	public ItemMalachiteStaff(String name, Rarity rarity) 
 	{
-		super(name, rarity, durability);
+		super(name, rarity);
 		this.addPropertyOverride(new ResourceLocation("pull"), new IItemPropertyGetter()
 		{
 			@SideOnly(Side.CLIENT)
@@ -73,7 +75,6 @@ public class ItemMalachiteStaff extends ItemLEStaff
 			
 			if (player.capabilities.isCreativeMode || player.inventory.hasItemStack(stack))
 			{
-				stack.damageItem(1, player);
 				world.playSound(player, player.getPosition(), SoundEvents.ENTITY_ARROW_SHOOT, SoundCategory.NEUTRAL, 1.0F, 1.0F);
 				
 				if (!world.isRemote)
@@ -85,6 +86,26 @@ public class ItemMalachiteStaff extends ItemLEStaff
 					EntityMagic magic = new EntityMagic(world, x, y, z, 1.0F, 0F, 8.0F);
 					magic.setPosition(player.posX + look.xCoord, player.posY + look.yCoord + 1.5, player.posZ + look.zCoord);
 					world.spawnEntityInWorld(magic);
+					
+					for (int i = 0; i < player.inventory.mainInventory.length; i++)
+		        	{
+		        		if (player.inventory.mainInventory[i] != null && player.inventory.mainInventory[i].getItem() instanceof ItemSoulGem)
+		        		{
+		        			ItemStack soulGemStack = player.inventory.mainInventory[i];
+	        				
+	        				if (soulGemStack != null)
+	        				{
+	        					NBTTagCompound nbt = soulGemStack.getTagCompound();
+	        					
+	        					if (nbt != null)
+	        					{
+	        						ItemSoulGem soulGem = (ItemSoulGem) player.inventory.mainInventory[i].getItem();
+	        						
+	        						if (soulGem != null) soulGem.setSouls(nbt, soulGem.getSouls(nbt) - 1);
+	        					}
+	        				}
+		        		}
+		        	}
 				}
 			}
 		}
