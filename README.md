@@ -31,6 +31,6 @@ Please follow this format, even if loosely, when reporting issues. This just sav
 * Steps to reproduce
 
 ## Downloads
-Pre-Alpha versions of the mod will be uploaded seperate from CurseForge, and a link to those files will be found here when Pre-Alpha versions become readily available. Alpha versions and onwards will be hosted on CurseForge - which, when the time comes, will be linked here.
+Remember, Lost Eclipse is only in a pre-alpha stage. I only recommend to use this mod for testing purposes.
 
-For now, Pre-Alpha builds are starting to make an appearance, though do to the lack of content as of now (and unstability of Forge 1.10), they will not be publicly available. However, they are not a long ways off.
+[Lost-Eclipse-1.10.2-pre-a2.0.0](http://www.mediafire.com/download/jh17ap03j2v8q16/Lost-Eclipse-1.10.2-pre-a2.0.0.jar)
