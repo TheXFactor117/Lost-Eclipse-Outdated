@@ -1,11 +1,10 @@
-package com.thexfactor117.losteclipse.items;
+package com.thexfactor117.losteclipse.items.base;
 
 import java.util.List;
 
 import com.thexfactor117.levels.leveling.Rarity;
 import com.thexfactor117.losteclipse.Reference;
 import com.thexfactor117.losteclipse.init.ModTabs;
-import com.thexfactor117.xlib.items.ItemBase;
 
 import net.minecraft.client.resources.I18n;
 import net.minecraft.creativetab.CreativeTabs;

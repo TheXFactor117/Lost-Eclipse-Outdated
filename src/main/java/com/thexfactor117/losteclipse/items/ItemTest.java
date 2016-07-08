@@ -4,6 +4,7 @@ import java.util.Random;
 
 import com.thexfactor117.levels.leveling.Rarity;
 import com.thexfactor117.losteclipse.generation.structures.StructureTower;
+import com.thexfactor117.losteclipse.items.base.ItemLE;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;

@@ -1,8 +1,8 @@
 package com.thexfactor117.losteclipse.items.ranged;
 
 import com.thexfactor117.levels.leveling.Rarity;
-import com.thexfactor117.losteclipse.items.ItemLE;
 import com.thexfactor117.losteclipse.items.ItemSoulGem;
+import com.thexfactor117.losteclipse.items.base.ItemLE;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumAction;

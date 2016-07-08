@@ -1,7 +1,7 @@
 package com.thexfactor117.losteclipse.init;
 
 import com.thexfactor117.losteclipse.blocks.BlockLEOre;
-import com.thexfactor117.xlib.misc.RegisterHelper;
+import com.thexfactor117.losteclipse.misc.RegisterHelper;
 
 import net.minecraft.block.Block;
 

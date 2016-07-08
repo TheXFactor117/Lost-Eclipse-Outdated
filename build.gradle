@@ -34,14 +34,13 @@ minecraft {
     version = config.forge_version
     runDir = "run"
     mappings = config.mappings
-    makeObfSourceJar = true
+    makeObfSourceJar = false
     replace "@VERSION@", config.mod_version + "." + config.build_number
     replace "@MVERSION@", version
 }
 
 dependencies {
 	compile files (
-	"libs/xLib-" + config.xlib_version + ".jar",
 	"libs/Levels-" + config.levels_version + ".jar"
 	)
 }

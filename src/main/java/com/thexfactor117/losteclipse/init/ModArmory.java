@@ -12,11 +12,11 @@ import com.thexfactor117.losteclipse.items.ranged.ItemIronStaff;
 import com.thexfactor117.losteclipse.items.ranged.ItemLightningStaff;
 import com.thexfactor117.losteclipse.items.ranged.ItemMalachiteStaff;
 import com.thexfactor117.losteclipse.items.ranged.ItemOblivionStaff;
-import com.thexfactor117.xlib.items.ItemBaseArmor;
-import com.thexfactor117.xlib.items.ItemBaseAxe;
-import com.thexfactor117.xlib.items.ItemBasePickaxe;
-import com.thexfactor117.xlib.items.ItemBaseShovel;
-import com.thexfactor117.xlib.misc.RegisterHelper;
+import com.thexfactor117.losteclipse.items.base.ItemBaseArmor;
+import com.thexfactor117.losteclipse.items.base.ItemBaseAxe;
+import com.thexfactor117.losteclipse.items.base.ItemBasePickaxe;
+import com.thexfactor117.losteclipse.items.base.ItemBaseShovel;
+import com.thexfactor117.losteclipse.misc.RegisterHelper;
 
 import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.EntityEquipmentSlot;

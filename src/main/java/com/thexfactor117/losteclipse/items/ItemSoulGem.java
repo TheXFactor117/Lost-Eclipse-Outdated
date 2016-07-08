@@ -3,6 +3,7 @@ package com.thexfactor117.losteclipse.items;
 import java.util.List;
 
 import com.thexfactor117.levels.leveling.Rarity;
+import com.thexfactor117.losteclipse.items.base.ItemLE;
 
 import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.Entity;
@@ -24,6 +25,7 @@ public class ItemSoulGem extends ItemLE
 	public ItemSoulGem(String name, Rarity rarity) 
 	{
 		super(name, rarity);
+		this.setMaxStackSize(1);
 	}
 	
 	@Override

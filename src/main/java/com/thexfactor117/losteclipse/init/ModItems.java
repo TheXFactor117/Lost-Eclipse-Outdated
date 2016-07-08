@@ -1,16 +1,16 @@
 package com.thexfactor117.losteclipse.init;
 
 import com.thexfactor117.levels.leveling.Rarity;
-import com.thexfactor117.losteclipse.items.ItemLE;
 import com.thexfactor117.losteclipse.items.ItemSoulGem;
 import com.thexfactor117.losteclipse.items.ItemTest;
+import com.thexfactor117.losteclipse.items.base.ItemLE;
 import com.thexfactor117.losteclipse.items.scrolls.ItemElementalScroll;
 import com.thexfactor117.losteclipse.items.scrolls.ItemEtherealScroll;
 import com.thexfactor117.losteclipse.items.scrolls.ItemFireballScroll;
 import com.thexfactor117.losteclipse.items.scrolls.ItemFrostbiteScroll;
 import com.thexfactor117.losteclipse.items.scrolls.ItemRadiationScroll;
 import com.thexfactor117.losteclipse.items.scrolls.ItemVoidScroll;
-import com.thexfactor117.xlib.misc.RegisterHelper;
+import com.thexfactor117.losteclipse.misc.RegisterHelper;
 
 import net.minecraft.item.Item;
 

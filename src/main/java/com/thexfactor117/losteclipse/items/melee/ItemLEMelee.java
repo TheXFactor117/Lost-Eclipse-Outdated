@@ -2,7 +2,7 @@ package com.thexfactor117.losteclipse.items.melee;
 
 import com.thexfactor117.losteclipse.Reference;
 import com.thexfactor117.losteclipse.init.ModTabs;
-import com.thexfactor117.xlib.items.ItemBaseSword;
+import com.thexfactor117.losteclipse.items.base.ItemBaseSword;
 
 /**
  * 

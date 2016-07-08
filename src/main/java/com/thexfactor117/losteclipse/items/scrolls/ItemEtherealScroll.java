@@ -2,7 +2,7 @@ package com.thexfactor117.losteclipse.items.scrolls;
 
 import com.thexfactor117.levels.leveling.Rarity;
 import com.thexfactor117.losteclipse.init.ModItems;
-import com.thexfactor117.losteclipse.items.ItemLE;
+import com.thexfactor117.losteclipse.items.base.ItemLE;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;

@@ -20,7 +20,6 @@ public class RenderBarbarian extends RenderBiped<EntityBarbarian>
 	public RenderBarbarian(RenderManager manager)
 	{
 		super(manager, new ModelBiped(), 0.5F);
-		
 	}
 
 	@Override
