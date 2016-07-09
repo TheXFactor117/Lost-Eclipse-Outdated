@@ -1,0 +1,72 @@
+{
+	"pools": [
+		{
+			"name": "common",
+			"conditions": [
+				{
+					"condition": "random_chance",
+					"chance": 0.7
+				}
+			],
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "loot_table",
+					"name": "losteclipse:entities/tables/entity_common_loot",
+					"weight": 1
+				}
+			]
+		},
+		{
+			"name": "semirare",
+			"conditions": [
+				{
+					"condition": "random_chance",
+					"chance": 0.1
+				}
+			],
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "loot_table",
+					"name": "losteclipse:entities/tables/entity_semirare_loot",
+					"weight": 1
+				}
+			]
+		},
+		{
+			"name": "rare",
+			"conditions": [
+				{
+					"condition": "random_chance",
+					"chance": 0.0125
+				}
+			],
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "loot_table",
+					"name": "losteclipse:entities/tables/entity_rare_loot",
+					"weight": 1
+				}
+			]
+		},
+		{
+			"name": "semiboss",
+			"conditions": [
+				{
+					"condition": "random_chance",
+					"chance": 0.005
+				}
+			],
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "loot_table",
+					"name": "losteclipse:entities/tables/entity_semiboss_loot",
+					"weight": 1
+				}
+			]
+		}
+	]
+}

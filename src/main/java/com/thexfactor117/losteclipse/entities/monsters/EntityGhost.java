@@ -1,5 +1,7 @@
 package com.thexfactor117.losteclipse.entities.monsters;
 
+import com.thexfactor117.levels.capabilities.CapabilityEnemyLevel;
+import com.thexfactor117.levels.capabilities.IEnemyLevel;
 import com.thexfactor117.losteclipse.entities.EntityLEMonster;
 import com.thexfactor117.losteclipse.init.ModLootTables;
 
@@ -17,6 +19,7 @@ import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
+import net.minecraft.world.storage.loot.LootTableList;
 
 /**
  * 
@@ -77,6 +80,27 @@ public class EntityGhost extends EntityLEMonster
 	@Override
 	protected ResourceLocation getLootTable()
     {
-		return ModLootTables.ENTITY_GHOST;
+		if (this != null)
+		{
+			IEnemyLevel enemyLevel = this.getCapability(CapabilityEnemyLevel.ENEMY_LEVEL_CAP, null);
+			
+			if (enemyLevel != null && enemyLevel.getEnemyLevel() > 0)
+			{
+				int level = enemyLevel.getEnemyLevel();
+				
+				switch (level)
+				{
+					case 0: return LootTableList.EMPTY;
+					case 1: return LootTableList.EMPTY;
+					case 2: return ModLootTables.ENTITY_COMMON_NORMAL;
+					case 3: return ModLootTables.ENTITY_COMMON_HARDENED;
+					case 4: return ModLootTables.ENTITY_COMMON_SUPERIOR;
+					case 5: return ModLootTables.ENTITY_COMMON_ELITE;
+					case 6: return ModLootTables.ENTITY_COMMON_LEGENDARY;
+				}
+			}
+		}
+		
+		return LootTableList.EMPTY;
     }
 }

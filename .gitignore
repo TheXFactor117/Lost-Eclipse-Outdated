@@ -5,3 +5,5 @@
 /.settings
 /run
 /build
+/libs
+/src/main/resources/assets/textures

@@ -1,0 +1,46 @@
+{
+	"pools": [
+		{
+			"name": "items",
+			"rolls": {
+				"min": 0,
+				"max": 2
+			},
+			"entries": [
+				{
+					"type": "loot_table",
+					"name": "losteclipse:entities/tables/common/common_items",
+					"weight": 1
+				}
+			]
+		},
+		{
+			"name": "weapons",
+			"rolls": {
+				"min": 0,
+				"max": 1
+			},
+			"entries": [
+				{
+					"type": "loot_table",
+					"name": "losteclipse:entities/tables/common/common_weapons",
+					"weight": 1
+				}
+			]
+		},
+		{
+			"name": "vanilla",
+			"rolls": {
+				"min": 0,
+				"max": 1
+			},
+			"entries": [
+				{
+					"type": "loot_table",
+					"name": "losteclipse:entities/tables/common/common_vanilla",
+					"weight": 1
+				}
+			]
+		}
+	]
+}

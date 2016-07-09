@@ -2,18 +2,24 @@
 	"pools": [
 		{
 			"name": "main",
-			"conditions": [
-				{
-					"condition": "random_chance",
-					"chance": 0.25
-				}
-			],
-			"rolls": 1,
+			"rolls": {
+				"min": 1,
+				"max": 2
+			},
 			"entries": [
 				{
 					"type": "item",
 					"name": "losteclipse:malachiteIngot",
-					"weight": 5
+					"weight": 5,
+					"functions": [
+						{
+							"function": "set_count",
+							"count": {
+								"min": 0,
+								"max": 1
+							}
+						}
+					]
 				},
 				{
 					"type": "item",

@@ -1,5 +1,7 @@
 package com.thexfactor117.losteclipse.entities.monsters;
 
+import com.thexfactor117.levels.capabilities.CapabilityEnemyLevel;
+import com.thexfactor117.levels.capabilities.IEnemyLevel;
 import com.thexfactor117.losteclipse.entities.EntityLEMonster;
 import com.thexfactor117.losteclipse.init.ModLootTables;
 
@@ -14,6 +16,7 @@ import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
+import net.minecraft.world.storage.loot.LootTableList;
 
 /**
  * 
@@ -60,6 +63,27 @@ public class EntityGolem extends EntityLEMonster
 	@Override
 	protected ResourceLocation getLootTable()
     {
-		return ModLootTables.ENTITY_GOLEM;
+		if (this != null)
+		{
+			IEnemyLevel enemyLevel = this.getCapability(CapabilityEnemyLevel.ENEMY_LEVEL_CAP, null);
+			
+			if (enemyLevel != null && enemyLevel.getEnemyLevel() > 0)
+			{
+				int level = enemyLevel.getEnemyLevel();
+				
+				switch (level)
+				{
+					case 0: return LootTableList.EMPTY;
+					case 1: return LootTableList.EMPTY;
+					case 2: return ModLootTables.ENTITY_RARE_NORMAL;
+					case 3: return ModLootTables.ENTITY_RARE_HARDENED;
+					case 4: return ModLootTables.ENTITY_RARE_SUPERIOR;
+					case 5: return ModLootTables.ENTITY_RARE_ELITE;
+					case 6: return ModLootTables.ENTITY_RARE_LEGENDARY;
+				}
+			}
+		}
+		
+		return LootTableList.EMPTY;
     }
 }
