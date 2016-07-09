@@ -7,6 +7,7 @@ import com.thexfactor117.losteclipse.items.base.ItemLE;
 import com.thexfactor117.losteclipse.items.scrolls.ItemElementalScroll;
 import com.thexfactor117.losteclipse.items.scrolls.ItemEtherealScroll;
 import com.thexfactor117.losteclipse.items.scrolls.ItemFireballScroll;
+import com.thexfactor117.losteclipse.items.scrolls.ItemFlameCloakScroll;
 import com.thexfactor117.losteclipse.items.scrolls.ItemFrostbiteScroll;
 import com.thexfactor117.losteclipse.items.scrolls.ItemRadiationScroll;
 import com.thexfactor117.losteclipse.items.scrolls.ItemVoidScroll;
@@ -71,7 +72,7 @@ public class ModItems
 	public static Item radiationScroll = new ItemRadiationScroll("radiationScroll", Rarity.RARE);
 	public static Item elementalScroll = new ItemElementalScroll("elementalScroll", Rarity.RARE);
 	public static Item familiarConjurationScroll = new ItemLE("familiarConjurationScroll", Rarity.RARE);
-	public static Item flameCloakScroll = new ItemLE("flameCloakScroll", Rarity.RARE);
+	public static Item flameCloakScroll = new ItemFlameCloakScroll("flameCloakScroll", Rarity.RARE);
 	public static Item invisibilityScroll = new ItemLE("invisibilityScroll", Rarity.LEGENDARY);
 	public static Item infusedEtherealScroll = new ItemLE("infusedEtherealScroll", Rarity.LEGENDARY);
 	public static Item voidScroll = new ItemVoidScroll("voidScroll", Rarity.LEGENDARY);

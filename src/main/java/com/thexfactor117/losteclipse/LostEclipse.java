@@ -7,6 +7,7 @@ import com.thexfactor117.losteclipse.Reference;
 import com.thexfactor117.losteclipse.generation.LEWorldGenerator;
 import com.thexfactor117.losteclipse.init.ModArmory;
 import com.thexfactor117.losteclipse.init.ModBlocks;
+import com.thexfactor117.losteclipse.init.ModCapabilities;
 import com.thexfactor117.losteclipse.init.ModEntities;
 import com.thexfactor117.losteclipse.init.ModEvents;
 import com.thexfactor117.losteclipse.init.ModItems;
@@ -61,6 +62,7 @@ public class LostEclipse
 		ModEntities.registerEntities();
 		ModRecipes.registerRecipes();
 		ModEvents.registerEvents();
+		ModCapabilities.registerCapabilities();
 		
 		proxy.registerRenderers();
 	}
