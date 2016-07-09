@@ -31,20 +31,73 @@ item.astrillGemFragment.name=Astrill Gem Fragment
 item.soulGem.name=Soul Gem
 item.soulGemFragment.name=Soul Gem Fragment
 item.etherealGem.name=Ethereal Gem
+item.garnet.name=Garnet
+item.flawlessGarnet.name=Flawless Garnet
+item.onyxGem.name=Onyx Gem
+item.amethyst.name=Amethyst
+item.flawlessAmethyst.name=Flawless Amethyst
+item.chysolite.name=Chysolite
+
+### glyphs
+item.fireGlyph.name=Fire Glyph
+item.frostGlyph.name=Frost Glyph
+item.poisonGlyph.name=Poison Glyph
+item.strengthGlyph.name=Strength Glyph
+item.minorDamageGlyph.name=Glyph of Minor Damage
+item.minorEtherealGlyph.name=Minor Ethereal Glyph
+item.hardenedGlyph.name=Hardened Glyph
+item.elementalGlyph.name=Elemental Glyph
+item.darkenedGlyph.name=Darkened Glyph
+item.brightenedGlyph.name=Brightened Glyph
+item.bloodGlyph.name=Blood Glyph
+item.absorbtionGlyph.name=Absorbtion Glyph
+item.minorConjurationGlyph.name=Glyph of Minor Conjuration
+item.majorEtherealGlyph.name=Major Ethereal Glyph
+item.chainedGlyph.name=Chained Glyph
+item.invisibilityGlyph.name=Invisibility Glyph
+item.majorConjurationGlyph.name=Glyph of Major Conjuration
+item.voidGlyph.name=Void Glyph
 
 ### scrolls
 item.fireballScroll.name=Fireball Scroll
 item.frostbiteScroll.name=Frostbite Scroll
+item.hardenedScroll.name=Hardened Scroll
 item.etherealScroll.name=Ethereal Scroll
 item.radiationScroll.name=Radiation Scroll
 item.elementalScroll.name=Elemental Scroll
+item.familiarConjurationScroll.name=Familiar Conjuration Scroll
+item.flameCloakScroll.name=Flame Cloak Scroll
+item.invisibilityScroll.name=Invisibility Scroll
+item.infusedEtherealScroll.name=Infused Ethereal Scroll
 item.voidScroll.name=Void Scroll
+item.remyScroll.name=Scroll of Remy
+
+### jewelry
+item.minorHealthGoldenRing.name=Golden Ring of Minor Health
+item.minorDamageGoldenRing.name=Golden Ring of Minor Damage
+item.fireResistanceBelt.name=Belt of Fire Resistance
+item.soulRing.name=Soul Ring
+item.soulAmulet.name=Soul Amulet
+item.healthGoldenRing.name=Golden Ring of Health
+item.damageGoldenRing.name=Golden Ring of Damage
+item.resistanceBelt.name=Belt of Resistance
+item.infusedSoulRing.name=Infused Soul Ring
+item.infusedSoulAmulet.name=Infused Soul Amulet
+item.valadurSoulAmulet.name=Soul Amulet of Valadur
+item.forerunnerBelt.name=Forerunner Belt
 
 ### misc
 item.staffBase.name=Staff Base
 item.frostRod.name=Frost Rod
 item.frostDust.name=Frost Dust
+item.goldenRing.name=Golden Ring
+item.basicGlyphPattern.name=Glyph Pattern
+item.uncommonGlyphPattern.name=Glyph Pattern
+item.rareGlyphPattern.name=Glyph Pattern
+item.legendaryGlyphPattern.name=Glyph Pattern
 item.golemGyro.name=Golem Gyro
+item.diamondRing.name=Diamond Ring
+item.astrillRing.name=Astrill Ring
 
 ### tools
 item.malachitePick.name=Malachite Pickaxe

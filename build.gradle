@@ -41,7 +41,8 @@ minecraft {
 
 dependencies {
 	compile files (
-	"libs/Levels-" + config.levels_version + ".jar"
+	"libs/Levels-" + config.levels_version + ".jar",
+	"libs/Baubles-1.9.4-1.2.1.0-deobf.jar"
 	)
 }
 

@@ -4,6 +4,7 @@ import java.util.Random;
 
 import com.thexfactor117.levels.leveling.Rarity;
 import com.thexfactor117.losteclipse.generation.structures.StructureTower;
+import com.thexfactor117.losteclipse.init.ModTabs;
 import com.thexfactor117.losteclipse.items.base.ItemLE;
 
 import net.minecraft.entity.player.EntityPlayer;
@@ -23,7 +24,7 @@ public class ItemTest extends ItemLE
 {
 	public ItemTest(String name, Rarity rarity) 
 	{
-		super(name, rarity);
+		super(name, ModTabs.tabLETest, rarity);
 	}
 	
 	@Override
