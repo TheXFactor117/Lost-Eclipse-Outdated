@@ -1,4 +1,4 @@
-package com.thexfactor117.losteclipse.api.capabilities;
+package com.thexfactor117.losteclipse.capabilities.api;
 
 /**
  * 

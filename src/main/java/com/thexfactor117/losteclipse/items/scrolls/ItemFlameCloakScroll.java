@@ -1,7 +1,7 @@
 package com.thexfactor117.losteclipse.items.scrolls;
 
 import com.thexfactor117.levels.leveling.Rarity;
-import com.thexfactor117.losteclipse.api.capabilities.IFlameCloak;
+import com.thexfactor117.losteclipse.capabilities.api.IFlameCloak;
 import com.thexfactor117.losteclipse.capabilities.player.CapabilityFlameCloak;
 import com.thexfactor117.losteclipse.init.ModItems;
 import com.thexfactor117.losteclipse.items.base.ItemLE;

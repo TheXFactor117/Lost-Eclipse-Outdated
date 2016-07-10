@@ -1,7 +1,7 @@
 package com.thexfactor117.losteclipse.items.jewelry;
 
 import com.thexfactor117.levels.leveling.Rarity;
-import com.thexfactor117.losteclipse.api.capabilities.IPlayerMaxHealth;
+import com.thexfactor117.losteclipse.capabilities.api.IPlayerMaxHealth;
 import com.thexfactor117.losteclipse.capabilities.player.CapabilityPlayerMaxHealth;
 
 import baubles.api.BaubleType;

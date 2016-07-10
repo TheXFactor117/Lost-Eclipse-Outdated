@@ -1,6 +1,6 @@
 package com.thexfactor117.losteclipse.events;
 
-import com.thexfactor117.losteclipse.api.capabilities.IFlameCloak;
+import com.thexfactor117.losteclipse.capabilities.api.IFlameCloak;
 import com.thexfactor117.losteclipse.capabilities.player.CapabilityFlameCloak;
 
 import net.minecraft.entity.EntityLivingBase;
