@@ -4,12 +4,19 @@ import com.thexfactor117.levels.leveling.Rarity;
 import com.thexfactor117.losteclipse.items.ItemSoulGem;
 import com.thexfactor117.losteclipse.items.ItemTest;
 import com.thexfactor117.losteclipse.items.base.ItemLE;
+import com.thexfactor117.losteclipse.items.jewelry.ItemMinorDamageGoldenRing;
+import com.thexfactor117.losteclipse.items.jewelry.ItemMinorHealthGoldenRing;
 import com.thexfactor117.losteclipse.items.scrolls.ItemElementalScroll;
 import com.thexfactor117.losteclipse.items.scrolls.ItemEtherealScroll;
+import com.thexfactor117.losteclipse.items.scrolls.ItemFamiliarConjurationScroll;
 import com.thexfactor117.losteclipse.items.scrolls.ItemFireballScroll;
 import com.thexfactor117.losteclipse.items.scrolls.ItemFlameCloakScroll;
 import com.thexfactor117.losteclipse.items.scrolls.ItemFrostbiteScroll;
+import com.thexfactor117.losteclipse.items.scrolls.ItemHardenedScroll;
+import com.thexfactor117.losteclipse.items.scrolls.ItemInfusedEtherealScroll;
+import com.thexfactor117.losteclipse.items.scrolls.ItemInvisibilityScroll;
 import com.thexfactor117.losteclipse.items.scrolls.ItemRadiationScroll;
+import com.thexfactor117.losteclipse.items.scrolls.ItemRemyScroll;
 import com.thexfactor117.losteclipse.items.scrolls.ItemVoidScroll;
 import com.thexfactor117.losteclipse.misc.RegisterHelper;
 
@@ -67,20 +74,20 @@ public class ModItems
 	// scrolls
 	public static Item fireballScroll = new ItemFireballScroll("fireballScroll", Rarity.UNCOMMON);
 	public static Item frostbiteScroll = new ItemFrostbiteScroll("frostbiteScroll", Rarity.UNCOMMON);
-	public static Item hardenedScroll = new ItemLE("hardenedScroll", Rarity.UNCOMMON);
+	public static Item hardenedScroll = new ItemHardenedScroll("hardenedScroll", Rarity.UNCOMMON);
 	public static Item etherealScroll = new ItemEtherealScroll("etherealScroll", Rarity.RARE);
 	public static Item radiationScroll = new ItemRadiationScroll("radiationScroll", Rarity.RARE);
 	public static Item elementalScroll = new ItemElementalScroll("elementalScroll", Rarity.RARE);
-	public static Item familiarConjurationScroll = new ItemLE("familiarConjurationScroll", Rarity.RARE);
+	public static Item familiarConjurationScroll = new ItemFamiliarConjurationScroll("familiarConjurationScroll", Rarity.RARE);
 	public static Item flameCloakScroll = new ItemFlameCloakScroll("flameCloakScroll", Rarity.RARE);
-	public static Item invisibilityScroll = new ItemLE("invisibilityScroll", Rarity.LEGENDARY);
-	public static Item infusedEtherealScroll = new ItemLE("infusedEtherealScroll", Rarity.LEGENDARY);
+	public static Item invisibilityScroll = new ItemInvisibilityScroll("invisibilityScroll", Rarity.LEGENDARY);
+	public static Item infusedEtherealScroll = new ItemInfusedEtherealScroll("infusedEtherealScroll", Rarity.LEGENDARY);
 	public static Item voidScroll = new ItemVoidScroll("voidScroll", Rarity.LEGENDARY);
-	public static Item remyScroll = new ItemLE("remyScroll", Rarity.ANCIENT);
+	public static Item remyScroll = new ItemRemyScroll("remyScroll", Rarity.ANCIENT);
 	
 	// jewelry
-	public static Item minorHealthGoldenRing = new ItemLE("minorHealthGoldenRing", Rarity.UNCOMMON);
-	public static Item minorDamageGoldenRing = new ItemLE("minorDamageGoldenRing", Rarity.UNCOMMON);
+	public static Item minorHealthGoldenRing = new ItemMinorHealthGoldenRing("minorHealthGoldenRing", Rarity.UNCOMMON);
+	public static Item minorDamageGoldenRing = new ItemMinorDamageGoldenRing("minorDamageGoldenRing", Rarity.UNCOMMON);
 	public static Item fireResistanceBelt = new ItemLE("fireResistanceBelt", Rarity.UNCOMMON);
 	public static Item soulRing = new ItemLE("soulRing", Rarity.RARE);
 	public static Item soulAmulet = new ItemLE("soulAmulet", Rarity.RARE);
