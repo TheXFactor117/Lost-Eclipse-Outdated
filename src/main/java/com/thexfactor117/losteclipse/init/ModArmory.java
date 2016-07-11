@@ -103,14 +103,14 @@ public class ModArmory
 	public static Item excaliburRapier = new ItemLEAdvancedMelee(excalibur, "excaliburRapier", 1, 0.75);
 	
 	// ranged
-	public static Item ironStaff = new ItemIronStaff("ironStaff", Rarity.UNCOMMON);
-	public static Item malachiteStaff = new ItemMalachiteStaff("malachiteStaff", Rarity.RARE);
-	public static Item astrillStaff = new ItemAstrillStaff("astrillStaff", Rarity.LEGENDARY);
-	public static Item infernoStaff = new ItemInfernoStaff("infernoStaff", Rarity.UNCOMMON);
-	public static Item blizzardStaff = new ItemBlizzardStaff("blizzardStaff", Rarity.UNCOMMON);
-	public static Item lightningStaff = new ItemLightningStaff("lightningStaff", Rarity.RARE);
-	public static Item elementalStaff = new ItemElementalStaff("elementalStaff", Rarity.RARE);
-	public static Item oblivionStaff = new ItemOblivionStaff("oblivionStaff", Rarity.LEGENDARY);
+	public static Item ironStaff = new ItemIronStaff("ironStaff", Rarity.UNCOMMON, 1);
+	public static Item malachiteStaff = new ItemMalachiteStaff("malachiteStaff", Rarity.RARE, 2);
+	public static Item astrillStaff = new ItemAstrillStaff("astrillStaff", Rarity.LEGENDARY, 3);
+	public static Item infernoStaff = new ItemInfernoStaff("infernoStaff", Rarity.UNCOMMON, 1);
+	public static Item blizzardStaff = new ItemBlizzardStaff("blizzardStaff", Rarity.UNCOMMON, 1);
+	public static Item lightningStaff = new ItemLightningStaff("lightningStaff", Rarity.RARE, 2);
+	public static Item elementalStaff = new ItemElementalStaff("elementalStaff", Rarity.RARE, 2);
+	public static Item oblivionStaff = new ItemOblivionStaff("oblivionStaff", Rarity.LEGENDARY, 3);
 	
 	public static void registerItems()
 	{

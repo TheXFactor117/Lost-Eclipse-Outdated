@@ -3,9 +3,11 @@ package com.thexfactor117.losteclipse.items.ranged;
 import javax.annotation.Nullable;
 
 import com.thexfactor117.levels.leveling.Rarity;
+import com.thexfactor117.losteclipse.LostEclipse;
 import com.thexfactor117.losteclipse.entities.projectiles.EntityDarkMagic;
 import com.thexfactor117.losteclipse.init.ModArmory;
 import com.thexfactor117.losteclipse.items.ItemSoulGem;
+import com.thexfactor117.losteclipse.items.base.ItemLEStaff;
 
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -27,9 +29,9 @@ import net.minecraftforge.fml.relauncher.SideOnly;
  */
 public class ItemOblivionStaff extends ItemLEStaff
 {
-	public ItemOblivionStaff(String name, Rarity rarity) 
+	public ItemOblivionStaff(String name, Rarity rarity, int soulsPerUse) 
 	{
-		super(name, rarity);
+		super(name, rarity, soulsPerUse);
 		this.addPropertyOverride(new ResourceLocation("pull"), new IItemPropertyGetter()
 		{
 			@SideOnly(Side.CLIENT)
@@ -101,7 +103,12 @@ public class ItemOblivionStaff extends ItemLEStaff
 	        					{
 	        						ItemSoulGem soulGem = (ItemSoulGem) player.inventory.mainInventory[i].getItem();
 	        						
-	        						if (soulGem != null) soulGem.setSouls(nbt, soulGem.getSouls(nbt) - 1);
+	        						LostEclipse.LOGGER.info("souls per use: " + this.getSoulsPerUse());
+	        						if (soulGem != null) 
+	        						{
+	        							soulGem.setSouls(nbt, soulGem.getSouls(nbt) - this.getSoulsPerUse());
+	        							this.setSoulsPerUse(this.getOriginalSoulsPerUse());
+	        						}
 	        					}
 	        				}
 		        		}

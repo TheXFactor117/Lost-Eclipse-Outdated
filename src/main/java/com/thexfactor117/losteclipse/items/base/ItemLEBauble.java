@@ -1,7 +1,6 @@
-package com.thexfactor117.losteclipse.items.jewelry;
+package com.thexfactor117.losteclipse.items.base;
 
 import com.thexfactor117.levels.leveling.Rarity;
-import com.thexfactor117.losteclipse.items.base.ItemLE;
 
 import baubles.api.BaubleType;
 import baubles.api.IBauble;

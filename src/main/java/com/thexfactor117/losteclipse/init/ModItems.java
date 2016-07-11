@@ -3,9 +3,16 @@ package com.thexfactor117.losteclipse.init;
 import com.thexfactor117.levels.leveling.Rarity;
 import com.thexfactor117.losteclipse.items.ItemSoulGem;
 import com.thexfactor117.losteclipse.items.ItemTest;
+import com.thexfactor117.losteclipse.items.base.ItemAmulet;
+import com.thexfactor117.losteclipse.items.base.ItemBelt;
 import com.thexfactor117.losteclipse.items.base.ItemLE;
-import com.thexfactor117.losteclipse.items.jewelry.ItemMinorDamageGoldenRing;
-import com.thexfactor117.losteclipse.items.jewelry.ItemMinorHealthGoldenRing;
+import com.thexfactor117.losteclipse.items.base.ItemRing;
+import com.thexfactor117.losteclipse.items.jewelry.ItemBeltFireResistance;
+import com.thexfactor117.losteclipse.items.jewelry.ItemBeltResistance;
+import com.thexfactor117.losteclipse.items.jewelry.ItemGoldenRingDamage;
+import com.thexfactor117.losteclipse.items.jewelry.ItemGoldenRingHealth;
+import com.thexfactor117.losteclipse.items.jewelry.ItemGoldenRingMinorDamage;
+import com.thexfactor117.losteclipse.items.jewelry.ItemGoldenRingMinorHealth;
 import com.thexfactor117.losteclipse.items.scrolls.ItemElementalScroll;
 import com.thexfactor117.losteclipse.items.scrolls.ItemEtherealScroll;
 import com.thexfactor117.losteclipse.items.scrolls.ItemFamiliarConjurationScroll;
@@ -86,18 +93,18 @@ public class ModItems
 	public static Item remyScroll = new ItemRemyScroll("remyScroll", Rarity.ANCIENT);
 	
 	// jewelry
-	public static Item minorHealthGoldenRing = new ItemMinorHealthGoldenRing("minorHealthGoldenRing", Rarity.UNCOMMON);
-	public static Item minorDamageGoldenRing = new ItemMinorDamageGoldenRing("minorDamageGoldenRing", Rarity.UNCOMMON);
-	public static Item fireResistanceBelt = new ItemLE("fireResistanceBelt", Rarity.UNCOMMON);
-	public static Item soulRing = new ItemLE("soulRing", Rarity.RARE);
-	public static Item soulAmulet = new ItemLE("soulAmulet", Rarity.RARE);
-	public static Item healthGoldenRing = new ItemLE("healthGoldenRing", Rarity.RARE);
-	public static Item damageGoldenRing = new ItemLE("damageGoldenRing", Rarity.RARE);
-	public static Item resistanceBelt = new ItemLE("resistanceBelt", Rarity.RARE);
-	public static Item infusedSoulRing = new ItemLE("infusedSoulRing", Rarity.LEGENDARY);
-	public static Item infusedSoulAmulet = new ItemLE("infusedSoulAmulet", Rarity.LEGENDARY);
-	public static Item valadurSoulAmulet = new ItemLE("valadurSoulAmulet", Rarity.ANCIENT);
-	public static Item forerunnerBelt = new ItemLE("forerunnerBelt", Rarity.ANCIENT);
+	public static Item minorHealthGoldenRing = new ItemGoldenRingMinorHealth("minorHealthGoldenRing", Rarity.UNCOMMON);
+	public static Item minorDamageGoldenRing = new ItemGoldenRingMinorDamage("minorDamageGoldenRing", Rarity.UNCOMMON);
+	public static Item fireResistanceBelt = new ItemBeltFireResistance("fireResistanceBelt", Rarity.UNCOMMON);
+	public static Item soulRing = new ItemRing("soulRing", Rarity.RARE);
+	public static Item soulAmulet = new ItemAmulet("soulAmulet", Rarity.RARE);
+	public static Item healthGoldenRing = new ItemGoldenRingHealth("healthGoldenRing", Rarity.RARE);
+	public static Item damageGoldenRing = new ItemGoldenRingDamage("damageGoldenRing", Rarity.RARE);
+	public static Item resistanceBelt = new ItemBeltResistance("resistanceBelt", Rarity.RARE);
+	public static Item infusedSoulRing = new ItemRing("infusedSoulRing", Rarity.LEGENDARY);
+	public static Item infusedSoulAmulet = new ItemAmulet("infusedSoulAmulet", Rarity.LEGENDARY);
+	public static Item valadurSoulAmulet = new ItemAmulet("valadurSoulAmulet", Rarity.ANCIENT);
+	public static Item forerunnerBelt = new ItemBelt("forerunnerBelt", Rarity.ANCIENT);
 	
 	// misc
 	public static Item staffBase = new ItemLE("staffBase", Rarity.BASIC);

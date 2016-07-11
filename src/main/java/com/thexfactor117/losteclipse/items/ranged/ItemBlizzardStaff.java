@@ -6,6 +6,7 @@ import com.thexfactor117.levels.leveling.Rarity;
 import com.thexfactor117.losteclipse.entities.projectiles.EntityFrostbite;
 import com.thexfactor117.losteclipse.init.ModArmory;
 import com.thexfactor117.losteclipse.items.ItemSoulGem;
+import com.thexfactor117.losteclipse.items.base.ItemLEStaff;
 
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -27,9 +28,9 @@ import net.minecraftforge.fml.relauncher.SideOnly;
  */
 public class ItemBlizzardStaff extends ItemLEStaff
 {
-	public ItemBlizzardStaff(String name, Rarity rarity) 
+	public ItemBlizzardStaff(String name, Rarity rarity, int soulsPerUse) 
 	{
-		super(name, rarity);
+		super(name, rarity, soulsPerUse);
 		this.addPropertyOverride(new ResourceLocation("pull"), new IItemPropertyGetter()
 		{
 			@SideOnly(Side.CLIENT)
@@ -101,7 +102,7 @@ public class ItemBlizzardStaff extends ItemLEStaff
 	        					{
 	        						ItemSoulGem soulGem = (ItemSoulGem) player.inventory.mainInventory[i].getItem();
 	        						
-	        						if (soulGem != null) soulGem.setSouls(nbt, soulGem.getSouls(nbt) - 1);
+	        						if (soulGem != null) soulGem.setSouls(nbt, soulGem.getSouls(nbt) - this.getSoulsPerUse());
 	        					}
 	        				}
 		        		}

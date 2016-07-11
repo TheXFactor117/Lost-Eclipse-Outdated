@@ -3,6 +3,7 @@ package com.thexfactor117.losteclipse.items.jewelry;
 import com.thexfactor117.levels.leveling.Rarity;
 import com.thexfactor117.losteclipse.capabilities.api.IPlayerMaxHealth;
 import com.thexfactor117.losteclipse.capabilities.player.CapabilityPlayerMaxHealth;
+import com.thexfactor117.losteclipse.items.base.ItemLEBauble;
 
 import baubles.api.BaubleType;
 import baubles.api.IBauble;
@@ -15,9 +16,9 @@ import net.minecraft.item.ItemStack;
  * @author TheXFactor117
  *
  */
-public class ItemMinorHealthGoldenRing extends ItemLEBauble implements IBauble
+public class ItemGoldenRingMinorHealth extends ItemLEBauble implements IBauble
 {
-	public ItemMinorHealthGoldenRing(String name, Rarity rarity)
+	public ItemGoldenRingMinorHealth(String name, Rarity rarity)
 	{
 		super(name, rarity);
 	}
