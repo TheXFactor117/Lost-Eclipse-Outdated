@@ -40,7 +40,7 @@ public class EntityGhost extends EntityLEMonster
 	protected void initEntityAI()
 	{
 		this.tasks.addTask(0, new EntityAISwimming(this));
-		this.tasks.addTask(1, new EntityAIAttackMelee(this, 1.0D, true));
+		this.tasks.addTask(2, new EntityAIAttackMelee(this, 1.0D, true));
 		this.tasks.addTask(3, new EntityAIWatchClosest(this, EntityPlayer.class, 32.0F));
 		this.tasks.addTask(5, new EntityAIWander(this, 1.0D));
 		this.tasks.addTask(7, new EntityAILookIdle(this));
@@ -49,7 +49,7 @@ public class EntityGhost extends EntityLEMonster
 	
 	protected void applyEntityAI()
 	{
-		this.targetTasks.addTask(2, new EntityAINearestAttackableTarget<EntityPlayer>(this, EntityPlayer.class, true));
+		this.targetTasks.addTask(1, new EntityAINearestAttackableTarget<EntityPlayer>(this, EntityPlayer.class, true));
 		this.targetTasks.addTask(4, new EntityAIHurtByTarget(this, true));
 	}
 	

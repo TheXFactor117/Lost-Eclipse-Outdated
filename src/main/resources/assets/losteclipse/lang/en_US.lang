@@ -137,10 +137,14 @@ item.crystallizedSword.name=Crystallized Sword
 item.gyroMace.name=Gyro Mace
 item.shadowBlade.name=Shadow Blade
 item.maliceBlade.name=Malice Blade
+item.woeBlade.name=Blade of Woe
 item.darkMaliceBlade.name=Dark Malice Blade
+item.soulInfusedSword.name=Soul Infused Sword
 item.divineRapier.name=Divine Rapier
 item.voidHammer.name=Void Hammer
 item.excaliburRapier.name=Excalibur Rapier
+item.ardonsDagger.name=Ardon's Dagger
+item.foundersBlade.name=Blade of the Founders
 
 ### ranged
 item.ironStaff.name=Iron Staff
@@ -151,6 +155,36 @@ item.blizzardStaff.name=Blizzard Staff
 item.lightningStaff.name=Lightning Staff
 item.elementalStaff.name=Elemental Staff
 item.oblivionStaff.name=Oblivion Staff
+
+#############################################
+#                 ENTITIES                  #
+#############################################
+
+### common
+entity.entityBarbarian.name=Barbarian
+entity.entityBear.name=Bear
+entity.entityGhost.name=Ghost
+entity.entityGoblin.name=Goblin
+entity.entityMummy.name=Mummy
+entity.entitySnowBlaze.name=Snow Blaze
+entity.entityValkyrie.name=Valkyrie
+
+### semi-rare
+entity.entityBandit.name=Bandit
+entity.entityBanshee.name=Banshee
+entity.entityFrozenWight.name=Frozen Wight
+entity.entityOrc.name=Orc
+entity.entityPirate.name=Pirate
+
+### rare
+entity.entityGolem.name=Golem
+entity.entityTroll.name=Troll
+entity.entityWraith.name=Wraith
+
+### semi-boss
+entity.entityPharaoh.name=Pharaoh
+entity.entityMiniGolem.name=Mini Golem
+entity.entityWraithDeathlord.name=Wraith Deathlord
 
 #############################################
 #                   TABS                    #
