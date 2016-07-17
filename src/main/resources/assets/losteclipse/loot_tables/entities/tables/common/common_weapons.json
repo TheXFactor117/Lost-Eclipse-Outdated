@@ -24,21 +24,6 @@
 				},
 				{
 					"type": "item",
-					"name": "losteclipse:malachiteDagger",
-					"weight": 4
-				},
-				{
-					"type": "item",
-					"name": "losteclipse:malachiteSword",
-					"weight": 3
-				},
-				{
-					"type": "item",
-					"name": "losteclipse:malachiteMace",
-					"weight": 2
-				},
-				{
-					"type": "item",
 					"name": "losteclipse:crystallizedSword",
 					"weight": 3
 				},
@@ -55,6 +40,11 @@
 				{
 					"type": "item",
 					"name": "losteclipse:blizzardStaff",
+					"weight": 1
+				},
+				{
+					"type": "item",
+					"name": "losteclipse:minorHealingStaff",
 					"weight": 1
 				}
 			]

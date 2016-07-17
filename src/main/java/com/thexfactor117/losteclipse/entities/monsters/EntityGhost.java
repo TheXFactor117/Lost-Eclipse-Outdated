@@ -33,6 +33,7 @@ public class EntityGhost extends EntityLEMonster
 		super(world);
 		this.experienceValue = 10;
 		this.setSize(1.0F, 2.0F);
+		this.initEntityAI();
 	}
 	
 	@Override
@@ -65,7 +66,7 @@ public class EntityGhost extends EntityLEMonster
 	@Override
 	public boolean attackEntityFrom(DamageSource source, float amount)
     {
-    	if (!super.attackEntityFrom(source, amount)) return false;
+		if (!super.attackEntityFrom(source, amount)) return false;
     	else
     	{
     		if (!this.worldObj.isRemote)

@@ -1,17 +1,19 @@
 package com.thexfactor117.losteclipse.proxies;
 
+import com.thexfactor117.losteclipse.client.rendering.monsters.RenderBarbarian;
+import com.thexfactor117.losteclipse.client.rendering.monsters.RenderGhost;
+import com.thexfactor117.losteclipse.client.rendering.projectiles.RenderDarkMagic;
+import com.thexfactor117.losteclipse.client.rendering.projectiles.RenderFireball;
+import com.thexfactor117.losteclipse.client.rendering.projectiles.RenderFrostbite;
+import com.thexfactor117.losteclipse.client.rendering.projectiles.RenderLightning;
+import com.thexfactor117.losteclipse.client.rendering.projectiles.RenderMagic;
 import com.thexfactor117.losteclipse.entities.monsters.EntityBarbarian;
+import com.thexfactor117.losteclipse.entities.monsters.EntityGhost;
 import com.thexfactor117.losteclipse.entities.projectiles.EntityDarkMagic;
 import com.thexfactor117.losteclipse.entities.projectiles.EntityFireball;
 import com.thexfactor117.losteclipse.entities.projectiles.EntityFrostbite;
 import com.thexfactor117.losteclipse.entities.projectiles.EntityLightning;
 import com.thexfactor117.losteclipse.entities.projectiles.EntityMagic;
-import com.thexfactor117.losteclipse.rendering.monsters.RenderBarbarian;
-import com.thexfactor117.losteclipse.rendering.projectiles.RenderDarkMagic;
-import com.thexfactor117.losteclipse.rendering.projectiles.RenderFireball;
-import com.thexfactor117.losteclipse.rendering.projectiles.RenderFrostbite;
-import com.thexfactor117.losteclipse.rendering.projectiles.RenderLightning;
-import com.thexfactor117.losteclipse.rendering.projectiles.RenderMagic;
 
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.relauncher.Side;
@@ -30,6 +32,7 @@ public class ClientProxy extends CommonProxy
 	{
 		// monsters
 		RenderingRegistry.registerEntityRenderingHandler(EntityBarbarian.class, RenderBarbarian::new);
+		RenderingRegistry.registerEntityRenderingHandler(EntityGhost.class, RenderGhost::new);
 		
 		// projectiles
 		RenderingRegistry.registerEntityRenderingHandler(EntityMagic.class, RenderMagic::new);

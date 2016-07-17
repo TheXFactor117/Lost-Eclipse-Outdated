@@ -1,4 +1,4 @@
-package com.thexfactor117.losteclipse.rendering;
+package com.thexfactor117.losteclipse.client.rendering;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GlStateManager;

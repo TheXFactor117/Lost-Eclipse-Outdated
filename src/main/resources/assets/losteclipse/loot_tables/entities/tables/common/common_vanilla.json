@@ -10,22 +10,27 @@
 				{
 					"type": "item",
 					"name": "minecraft:coal",
-					"weight": 8
-				},
-				{
-					"type": "item",
-					"name": "minecraft:iron_ingot",
-					"weight": 4
-				},
-				{
-					"type": "item",
-					"name": "minecraft:gold_ingot",
-					"weight": 4
+					"weight": 5
 				},
 				{
 					"type": "item",
 					"name": "minecraft:apple",
 					"weight": 10
+				},
+				{
+					"type": "item",
+					"name": "minecraft:bread",
+					"weight": 7
+				},
+				{
+					"type": "item",
+					"name": "minecraft:wheat",
+					"weight": 10
+				},
+				{
+					"type": "item",
+					"name": "minecraft:bone",
+					"weight": 7
 				},
 				{
 					"type": "item",
@@ -36,7 +41,7 @@
 							"function": "set_count",
 							"count": {
 								"min": 1,
-								"max": 5
+								"max": 3
 							}
 						}
 					]
@@ -48,15 +53,10 @@
                     "functions": [
                         {
                             "function": "enchant_with_levels",
-                            "levels": 15,
+                            "levels": 5,
                             "treasure": true
                         }
                     ]
-				},
-				{
-					"type": "loot_table",
-					"name": "losteclipse:tables/rare_vanilla",
-					"weight": 1
 				}
 			]
 		}
