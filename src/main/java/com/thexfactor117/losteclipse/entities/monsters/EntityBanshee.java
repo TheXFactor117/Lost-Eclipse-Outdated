@@ -14,6 +14,9 @@ import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.MobEffects;
+import net.minecraft.potion.PotionEffect;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 import net.minecraft.world.storage.loot.LootTableList;
@@ -23,9 +26,9 @@ import net.minecraft.world.storage.loot.LootTableList;
  * @author TheXFactor117
  *
  */
-public class EntityBarbarian extends EntityLEMonster
-{	
-	public EntityBarbarian(World world) 
+public class EntityBanshee extends EntityLEMonster
+{
+	public EntityBanshee(World world) 
 	{
 		super(world);
 		this.experienceValue = 10;
@@ -54,11 +57,34 @@ public class EntityBarbarian extends EntityLEMonster
 	protected void applyEntityAttributes()
 	{
 		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(20.0D);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(4.0D);
-		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.3D);
-		this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(32.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(50.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(6.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.2D);
+		this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(24.0D);
 	}
+	
+	@Override
+	public void onLivingUpdate()
+	{
+		super.onLivingUpdate();
+		
+		if (this.ticksExisted % (20 * (rand.nextInt(60) + 1) + 15) == 0)
+		{
+			if (!this.worldObj.isRemote) this.addPotionEffect(new PotionEffect(MobEffects.INVISIBILITY, 20*7, 0, false, false));
+		}
+	}
+	
+	@Override
+	public boolean attackEntityFrom(DamageSource source, float amount)
+    {
+		if (!super.attackEntityFrom(source, amount)) return false;
+    	else
+    	{
+    		if (!this.worldObj.isRemote) this.addPotionEffect(new PotionEffect(MobEffects.INVISIBILITY, 20*7, 0, false, false));   	
+    	}
+    	
+    	return true;
+    }
 	
 	@Override
 	protected ResourceLocation getLootTable()
@@ -75,11 +101,11 @@ public class EntityBarbarian extends EntityLEMonster
 				{
 					case 0: return LootTableList.EMPTY;
 					case 1: return LootTableList.EMPTY;
-					case 2: return ModLootTables.ENTITY_COMMON_NORMAL;
-					case 3: return ModLootTables.ENTITY_COMMON_HARDENED;
-					case 4: return ModLootTables.ENTITY_COMMON_SUPERIOR;
-					case 5: return ModLootTables.ENTITY_COMMON_ELITE;
-					case 6: return ModLootTables.ENTITY_COMMON_LEGENDARY;
+					case 2: return ModLootTables.ENTITY_SEMI_RARE_NORMAL;
+					case 3: return ModLootTables.ENTITY_SEMI_RARE_HARDENED;
+					case 4: return ModLootTables.ENTITY_SEMI_RARE_SUPERIOR;
+					case 5: return ModLootTables.ENTITY_SEMI_RARE_ELITE;
+					case 6: return ModLootTables.ENTITY_SEMI_RARE_LEGENDARY;
 				}
 			}
 		}

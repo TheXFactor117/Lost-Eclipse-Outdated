@@ -23,9 +23,9 @@ import net.minecraft.world.storage.loot.LootTableList;
  * @author TheXFactor117
  *
  */
-public class EntityBarbarian extends EntityLEMonster
-{	
-	public EntityBarbarian(World world) 
+public class EntityMiniGolem extends EntityLEMonster
+{
+	public EntityMiniGolem(World world) 
 	{
 		super(world);
 		this.experienceValue = 10;
@@ -54,10 +54,11 @@ public class EntityBarbarian extends EntityLEMonster
 	protected void applyEntityAttributes()
 	{
 		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(20.0D);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(4.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(150.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(10.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.3D);
-		this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(32.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(24.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(0.4D);
 	}
 	
 	@Override
@@ -75,11 +76,11 @@ public class EntityBarbarian extends EntityLEMonster
 				{
 					case 0: return LootTableList.EMPTY;
 					case 1: return LootTableList.EMPTY;
-					case 2: return ModLootTables.ENTITY_COMMON_NORMAL;
-					case 3: return ModLootTables.ENTITY_COMMON_HARDENED;
-					case 4: return ModLootTables.ENTITY_COMMON_SUPERIOR;
-					case 5: return ModLootTables.ENTITY_COMMON_ELITE;
-					case 6: return ModLootTables.ENTITY_COMMON_LEGENDARY;
+					case 2: return ModLootTables.ENTITY_SEMI_BOSS_NORMAL;
+					case 3: return ModLootTables.ENTITY_SEMI_BOSS_HARDENED;
+					case 4: return ModLootTables.ENTITY_SEMI_BOSS_SUPERIOR;
+					case 5: return ModLootTables.ENTITY_SEMI_BOSS_ELITE;
+					case 6: return ModLootTables.ENTITY_SEMI_BOSS_LEGENDARY;
 				}
 			}
 		}

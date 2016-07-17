@@ -23,9 +23,9 @@ import net.minecraft.world.storage.loot.LootTableList;
  * @author TheXFactor117
  *
  */
-public class EntityBarbarian extends EntityLEMonster
-{	
-	public EntityBarbarian(World world) 
+public class EntityValkyrie extends EntityLEMonster
+{
+	public EntityValkyrie(World world) 
 	{
 		super(world);
 		this.experienceValue = 10;
@@ -55,8 +55,8 @@ public class EntityBarbarian extends EntityLEMonster
 	{
 		super.applyEntityAttributes();
 		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(20.0D);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(4.0D);
-		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.3D);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(3.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.28);
 		this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(32.0D);
 	}
 	

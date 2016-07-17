@@ -30,6 +30,7 @@ public class EntityBandit extends EntityLEMonster
 		super(world);
 		this.experienceValue = 10;
 		this.setSize(1.0F, 2.0F);
+		this.initEntityAI();
 	}
 	
 	@Override
