@@ -64,15 +64,23 @@ public class EntityGhost extends EntityLEMonster
 	}
 	
 	@Override
+	public void onLivingUpdate()
+	{
+		super.onLivingUpdate();
+		
+		if (this.ticksExisted % (20 * (rand.nextInt(60) + 1) + 15) == 0)
+		{
+			if (!this.worldObj.isRemote) this.addPotionEffect(new PotionEffect(MobEffects.INVISIBILITY, 20*5, 0, false, false));
+		}
+	}
+	
+	@Override
 	public boolean attackEntityFrom(DamageSource source, float amount)
     {
 		if (!super.attackEntityFrom(source, amount)) return false;
     	else
     	{
-    		if (!this.worldObj.isRemote)
-        	{
-        		this.addPotionEffect(new PotionEffect(MobEffects.INVISIBILITY, 20*5, 0, false, false));
-        	}    	
+    		if (!this.worldObj.isRemote) this.addPotionEffect(new PotionEffect(MobEffects.INVISIBILITY, 20*5, 0, false, false));   	
     	}
     	
     	return true;
