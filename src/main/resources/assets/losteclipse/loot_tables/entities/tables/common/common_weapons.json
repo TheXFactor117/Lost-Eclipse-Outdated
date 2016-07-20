@@ -1,7 +1,7 @@
 {
 	"pools": [
 		{
-			"name": "armory",
+			"name": "main",
 			"rolls": {
 				"min": 1,
 				"max": 2

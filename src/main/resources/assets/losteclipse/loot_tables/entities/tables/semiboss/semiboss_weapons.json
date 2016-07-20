@@ -1,60 +1,65 @@
 {
 	"pools": [
 		{
-			"name": "armory",
+			"name": "main",
 			"rolls": {
-				"min": 1,
-				"max": 2
+				"min": 0,
+				"max": 1
 			},
 			"entries": [
 				{
 					"type": "item",
-					"name": "losteclipse:ironDagger",
+					"name": "losteclipse:astrillDagger",
 					"weight": 5
 				},
 				{
 					"type": "item",
-					"name": "minecraft:iron_sword",
+					"name": "losteclipse:astrillSword",
 					"weight": 4
 				},
 				{
 					"type": "item",
-					"name": "losteclipse:ironMace",
+					"name": "losteclipse:astrillMace",
 					"weight": 3
 				},
 				{
 					"type": "item",
-					"name": "losteclipse:malachiteDagger",
-					"weight": 4
+					"name": "losteclipse:voidHammer",
+					"weight":4
 				},
 				{
 					"type": "item",
-					"name": "losteclipse:malachiteSword",
+					"name": "losteclipse:excaliburRapier",
 					"weight": 3
 				},
 				{
 					"type": "item",
-					"name": "losteclipse:malachiteMace",
-					"weight": 2
-				},
-				{
-					"type": "item",
-					"name": "losteclipse:crystallizedSword",
-					"weight": 3
-				},
-				{
-					"type": "item",
-					"name": "losteclipse:ironStaff",
-					"weight": 3
-				},
-				{
-					"type": "item",
-					"name": "losteclipse:infernoStaff",
+					"name": "losteclipse:ardonsDagger",
 					"weight": 1
 				},
 				{
 					"type": "item",
-					"name": "losteclipse:blizzardStaff",
+					"name": "losteclipse:foundersBlade",
+					"weight": 1
+				},
+				{
+					"type": "item",
+					"name": "losteclipse:astrillStaff",
+					"weight": 3
+				},
+				{
+					"type": "item",
+					"name": "losteclipse:oblivionStaff",
+					"weight": 3
+				},
+				{
+					"type": "item",
+					"name": "losteclipse:majorHealingStaff",
+					"weight": 3
+				},
+				{
+					"type": "item",
+					"name": "losteclipse:authorityStaff",
 					"weight": 1
 				}
 			]

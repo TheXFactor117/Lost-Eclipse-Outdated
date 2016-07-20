@@ -2,10 +2,7 @@
 	"pools": [
 		{
 			"name": "items",
-			"rolls": {
-				"min": 0,
-				"max": 2
-			},
+			"rolls": 1,
 			"entries": [
 				{
 					"type": "loot_table",
@@ -16,10 +13,7 @@
 		},
 		{
 			"name": "weapons",
-			"rolls": {
-				"min": 0,
-				"max": 1
-			},
+			"rolls": 1,
 			"entries": [
 				{
 					"type": "loot_table",
@@ -30,10 +24,7 @@
 		},
 		{
 			"name": "vanilla",
-			"rolls": {
-				"min": 0,
-				"max": 1
-			},
+			"rolls": 1,
 			"entries": [
 				{
 					"type": "loot_table",

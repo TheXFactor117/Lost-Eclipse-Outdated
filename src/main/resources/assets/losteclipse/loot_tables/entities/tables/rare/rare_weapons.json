@@ -1,61 +1,71 @@
 {
 	"pools": [
 		{
-			"name": "armory",
+			"name": "main",
 			"rolls": {
-				"min": 1,
-				"max": 2
+				"min": 0,
+				"max": 1
 			},
 			"entries": [
 				{
 					"type": "item",
-					"name": "losteclipse:ironDagger",
+					"name": "losteclipse:vexalDagger",
 					"weight": 5
 				},
 				{
 					"type": "item",
-					"name": "minecraft:iron_sword",
+					"name": "losteclipse:vexalSword",
 					"weight": 4
 				},
 				{
 					"type": "item",
-					"name": "losteclipse:ironMace",
+					"name": "losteclipse:vexalMace",
 					"weight": 3
 				},
 				{
 					"type": "item",
-					"name": "losteclipse:malachiteDagger",
+					"name": "losteclipse:woeBlade",
 					"weight": 4
 				},
 				{
 					"type": "item",
-					"name": "losteclipse:malachiteSword",
+					"name": "losteclipse:darkMaliceBlade",
 					"weight": 3
 				},
 				{
 					"type": "item",
-					"name": "losteclipse:malachiteMace",
+					"name": "losteclipse:soulInfusedSword",
+					"weight": 4
+				},
+				{
+					"type": "item",
+					"name": "losteclipse:divineRapier",
 					"weight": 2
 				},
 				{
 					"type": "item",
-					"name": "losteclipse:crystallizedSword",
+					"name": "losteclipse:malachiteStaff",
+					"weight": 4
+				},
+				{
+					"type": "item",
+					"name": "losteclipse:lightningStaff",
+					"weight": 4
+				},
+				{
+					"type": "item",
+					"name": "losteclipse:elementalStaff",
+					"weight": 4
+				},
+				{
+					"type": "item",
+					"name": "losteclipse:conjurationStaff",
 					"weight": 3
 				},
 				{
 					"type": "item",
-					"name": "losteclipse:ironStaff",
+					"name": "losteclipse:radiationStaff",
 					"weight": 3
-				},
-				{
-					"type": "item",
-					"name": "losteclipse:infernoStaff",
-					"weight": 1
-				},
-				{
-					"type": "item",
-					"name": "losteclipse:blizzardStaff",
-					"weight": 1
 				}
 			]
 		}

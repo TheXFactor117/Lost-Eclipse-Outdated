@@ -3,14 +3,14 @@
 		{
 			"name": "main",
 			"rolls": {
-				"min": 1,
-				"max": 2
+				"min": 0,
+				"max": 1
 			},
 			"entries": [
 				{
 					"type": "item",
 					"name": "losteclipse:malachiteIngot",
-					"weight": 4,
+					"weight": 2,
 					"functions": [
 						{
 							"function": "set_count",
@@ -24,7 +24,7 @@
 				{
 					"type": "item",
 					"name": "losteclipse:soulGemFragment",
-					"weight": 4,
+					"weight": 2,
 					"functions": [
 						{
 							"function": "set_count",
@@ -38,56 +38,104 @@
 				{
 					"type": "item",
 					"name": "losteclipse:garnet",
-					"weight": 5
+					"weight": 3
 				},
 				{
 					"type": "item",
-					"name": "losteclipse:fireGlyph",
+					"name": "losteclipse:goldenRing",
+					"weight": 3
+				},
+				{
+					"type": "item",
+					"name": "losteclipse:basicGlyphPattern",
+					"weight": 2
+				},
+				{
+					"type": "item",
+					"name": "losteclipse:uncommonGlyphPattern",
 					"weight": 4
+				}
+			]
+		},
+		{
+			"name": "glyphs",
+			"rolls": {
+				"min": 0,
+				"max": 1
+			},
+			"entries": [
+				{
+					"type": "item",
+					"name": "losteclipse:fireGlyph",
+					"weight": 1
 				},
 				{
 					"type": "item",
 					"name": "losteclipse:frostGlyph",
-					"weight": 4
+					"weight": 1
 				},
 				{
 					"type": "item",
 					"name": "losteclipse:poisonGlyph",
-					"weight": 4
+					"weight": 1
 				},
 				{
 					"type": "item",
 					"name": "losteclipse:strengthGlyph",
-					"weight": 3
+					"weight": 2
 				},
 				{
 					"type": "item",
 					"name": "losteclipse:minorDamageGlyph",
-					"weight": 3
+					"weight": 2
 				},
 				{
 					"type": "item",
 					"name": "losteclipse:minorEtherealGlyph",
-					"weight": 3
+					"weight": 2
 				},
 				{
 					"type": "item",
 					"name": "losteclipse:hardenedGlyph",
-					"weight": 3
-				},
+					"weight": 2
+				}
+			]
+		},
+		{
+			"name": "jewelry",
+			"rolls": {
+				"min": 0,
+				"max": 1
+			},
+			"entries": [
 				{
 					"type": "item",
 					"name": "losteclipse:fireballScroll",
-					"weight": 2
+					"weight": 1
 				},
 				{
 					"type": "item",
 					"name": "losteclipse:frostbiteScroll",
-					"weight": 2
+					"weight": 1
 				},
 				{
 					"type": "item",
 					"name": "losteclipse:hardenedScroll",
+					"weight": 1
+				},
+				{
+					"type": "item",
+					"name": "losteclipse:minorHealthGoldenRing",
+					"weight": 2
+				},
+				{
+					"type": "item",
+					"name": "losteclipse:minorDamageGoldenRing",
+					"weight": 2
+				},
+				{
+					"type": "item",
+					"name": "losteclipse:fireResistanceBelt",
 					"weight": 2
 				}
 			]
