@@ -165,13 +165,6 @@ public class StructureLEBase extends WorldGenerator
 		return material == materials;
 	}
 	
-	/** dirForward 0=SOUTH=z++; 1=WEST=x--; 2=NORTH=z--; 3=EAST=x++ */
-	public BlockPos getPosFromCorner(BlockPos corner, int disForward, int disRight, EnumFacing forward)
-	{
-		EnumFacing right = forward.rotateY();
-		return corner.offset(forward, disForward).offset(right, disRight);
-	}
-	
 	public BlockPos getPosFromCorner1(BlockPos corner, int maxDisForward, int maxDisRight, EnumFacing forward)
 	{			
 		EnumFacing right = forward.rotateY();
@@ -180,26 +173,26 @@ public class StructureLEBase extends WorldGenerator
 		{
 			case NORTH: 
 				LostEclipse.LOGGER.info("NORTH: " + forward + " " + maxDisForward);
-				return corner.offset(forward, -7).offset(right, 6);
+				return corner.offset(forward, 0).offset(right, 0);
 			case EAST: 
 				LostEclipse.LOGGER.info("EAST: " + forward + " " + maxDisForward + " " + right + " " + maxDisRight);
 				return corner.offset(forward, maxDisForward).offset(right, maxDisRight);
 			case SOUTH: 
 				LostEclipse.LOGGER.info("SOUTH: " + forward + " " + maxDisForward + right + " " + maxDisRight);
-				return corner.offset(right, 9);
+				return corner.offset(right, 0);
 			case WEST: 
 				LostEclipse.LOGGER.info("WEST: " + forward + " " + maxDisForward + right + " " + maxDisRight);
-				return corner.offset(forward, 7);
+				return corner.offset(forward, 6).offset(right, 3 );
 			default: break;
 		}
 				
 		return corner.offset(forward, maxDisForward).offset(right, maxDisRight);
 	}
 	
-	public BlockPos getPosFromCorner(BlockPos corner, int disForward, int y, int disRight, EnumFacing forward)
+	public BlockPos getPosFromCorner(BlockPos corner, int disForward, int disUp, int disRight, EnumFacing forward)
 	{
 		EnumFacing right = forward.rotateY();
-		return corner.offset(forward, disForward).offset(right, disRight).up(y);
+		return corner.offset(forward, disForward).offset(right, disRight).up(disUp);
 	}
 	
 	protected EnumFacing getRandomSideWithoutOffset(Random rand)

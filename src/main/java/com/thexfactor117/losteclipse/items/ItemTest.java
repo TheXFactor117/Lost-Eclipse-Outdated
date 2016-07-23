@@ -3,7 +3,7 @@ package com.thexfactor117.losteclipse.items;
 import java.util.Random;
 
 import com.thexfactor117.levels.leveling.Rarity;
-import com.thexfactor117.losteclipse.generation.structures.StructureTower;
+import com.thexfactor117.losteclipse.generation.structures.dungeons.StructureDungeonHallway;
 import com.thexfactor117.losteclipse.init.ModTabs;
 import com.thexfactor117.losteclipse.items.base.ItemLE;
 
@@ -33,9 +33,9 @@ public class ItemTest extends ItemLE
 		if (!world.isRemote)
 		{
 			Random random = world.rand;
-			StructureTower structure = new StructureTower();
+			StructureDungeonHallway structure = new StructureDungeonHallway(EnumFacing.getHorizontal(world.rand.nextInt(4)));
 			structure.generate(world, random, pos);
-			
+
 			return EnumActionResult.SUCCESS;
 		}
 		

@@ -125,8 +125,8 @@ public class StructureTower extends StructureLEBase
 			placeBlock(world, position, chestPos3, chest, side);
 			placeBlock(world, position, chestPos4, chest, side);
 			
-			BlockPos chestActualPos1 = getPosFromCorner(position, chestPos1[0], chestPos1[2], side);
-			BlockPos chestActualPos2 = getPosFromCorner(position, chestPos2[0], chestPos2[2], side);
+			BlockPos chestActualPos1 = getPosFromCorner(position, chestPos1[0], 0, chestPos1[2], side);
+			BlockPos chestActualPos2 = getPosFromCorner(position, chestPos2[0], 0, chestPos2[2], side);
 			BlockPos chestActualPos3 = getPosFromCorner(position, chestPos3[0], chestPos3[1], chestPos3[2], side);
 			BlockPos chestActualPos4 = getPosFromCorner(position, chestPos4[0], chestPos4[1], chestPos4[2], side);
 			

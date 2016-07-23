@@ -113,7 +113,6 @@ public class ModItems
 	public static Item goldenRing = new ItemLE("goldenRing", Rarity.BASIC);
 	public static Item basicGlyphPattern = new ItemLE("basicGlyphPattern", Rarity.BASIC);
 	public static Item golemGyro = new ItemLE("golemGyro", Rarity.UNCOMMON);
-	public static Item uncommonGlyphPattern = new ItemLE("uncommonGlyphPattern", Rarity.UNCOMMON);
 	public static Item diamondRing = new ItemLE("diamondRing", Rarity.RARE);
 	public static Item rareGlyphPattern = new ItemLE("rareGlyphPattern", Rarity.RARE);
 	public static Item astrillRing = new ItemLE("astrillRing", Rarity.LEGENDARY);
@@ -201,7 +200,6 @@ public class ModItems
 		RegisterHelper.registerItems(goldenRing);
 		RegisterHelper.registerItems(basicGlyphPattern);
 		RegisterHelper.registerItems(golemGyro);
-		RegisterHelper.registerItems(uncommonGlyphPattern);
 		RegisterHelper.registerItems(diamondRing);
 		RegisterHelper.registerItems(rareGlyphPattern);
 		RegisterHelper.registerItems(astrillRing);

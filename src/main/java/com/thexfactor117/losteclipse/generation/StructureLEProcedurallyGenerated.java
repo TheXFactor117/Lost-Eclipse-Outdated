@@ -2,7 +2,10 @@ package com.thexfactor117.losteclipse.generation;
 
 import java.util.Random;
 
+import com.thexfactor117.losteclipse.LostEclipse;
+
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.math.BlockPos;
 
 /**
  * 
@@ -11,6 +14,59 @@ import net.minecraft.util.EnumFacing;
  */
 public class StructureLEProcedurallyGenerated extends StructureLEBase
 {
+	public BlockPos getPosFromFacing(BlockPos oldPos, EnumFacing facing)
+	{
+		LostEclipse.LOGGER.info("FACING: " + facing);
+		
+		switch (facing)
+		{
+			case EAST: return this.getPosFromCorner(oldPos, 3, 0, 10, facing);
+			case NORTH: return this.getPosFromCorner(oldPos, -7, 0, 10, facing);
+			case SOUTH: return this.getPosFromCorner(oldPos, 3, 0, 0, facing);
+			case WEST: return this.getPosFromCorner(oldPos, -7, 0, 0, facing);
+			case UP:
+				break;
+			case DOWN:
+				break;
+			default:
+				return oldPos;
+		}
+		LostEclipse.LOGGER.info("First Facing: " + facing);
+		return this.getPosFromCorner(oldPos, 3, 0, 10, facing);
+	}
+	
+	public BlockPos getPosFromFacing1(BlockPos oldPos, EnumFacing facing, EnumFacing previousFacing)
+	{
+		switch (previousFacing)
+		{
+			case EAST: 
+				LostEclipse.LOGGER.info("EAST!");
+				return this.getPosFromCorner(oldPos, 3, 0, 10, facing);
+			case NORTH: 
+				LostEclipse.LOGGER.info("NORTH!");
+				return this.getPosFromCorner(oldPos, 10, 0, 3, facing);
+			case SOUTH: 
+				LostEclipse.LOGGER.info("SOUTH!");
+				return this.getPosFromCorner(oldPos, 3, 0, 10, facing);
+			case WEST: 
+				LostEclipse.LOGGER.info("WEST!");
+				return this.getPosFromCorner(oldPos, 0, 0, 0, facing);
+			case UP:
+				break;
+			case DOWN:
+				break;
+			default:
+				return oldPos;
+		}
+		
+		return this.getPosFromCorner(oldPos, 3, 0, 10, facing);
+	}
+	
+	public BlockPos getPosFromHallway(BlockPos oldPos, EnumFacing facing)
+	{
+		return this.getPosFromCorner(oldPos, -3, 0, 8, facing);
+	}
+	
 	protected EnumFacing getRandomSide(Random rand, int roomCount)
 	{
 		int side = rand.nextInt(4);
