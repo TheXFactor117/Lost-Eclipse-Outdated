@@ -8,17 +8,10 @@
 
 ### Condensed List (Highest Priorities)
 + Add textures and entity models
-+ Add monsters and bosses
 + Add new structures
-+ Add structure variants
 + Add procedurally generated dungeons
-+ Add dungeon rooms plus variants
-+ Add weapons to loot tables
-+ Plan/add new items/blocks
 * Fix procedurally generated structures
 * Cleanup structure generation (spawn rate, spawning logic)
-* Balance/tweak loot tables
-* Weapon balancing
 
 ### Complete List
 # Overall
@@ -26,10 +19,8 @@
 * Code cleanup and documentation
 
 # Entities
-+ Add entity logic for all monsters
 + Add custom AI for bosses and/or certain monsters
 + Add monster models/textures
-+ Add loot tables for monsters
 * Balance monster attributes/logic
 
 # Generation
@@ -44,15 +35,12 @@
 ? Indestructable dungeons / inability to place torches
 
 # Armory, Items, and Blocks
-+ Add weapons to loot tables
 + Plan/add more weapons
 + Artifact logic (abilities, etc.)
 + Add recipes for items needing recipes
 * Balance current recipes
-* Balance loot tables
 
 # Features
-+ Add 'Souls' to be used with charging Staffs
 + Add a way to spawn monsters throughout dungeons and structures
 + Add a quest system
 + Add a leveling system (player level, statistics, etc.)
