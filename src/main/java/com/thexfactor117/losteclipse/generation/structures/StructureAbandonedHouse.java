@@ -100,7 +100,7 @@ public class StructureAbandonedHouse extends StructureLEBase
 			IBlockState doorTop = Blocks.OAK_DOOR.getDefaultState().withProperty(BlockDoor.HALF, BlockDoor.EnumDoorHalf.UPPER);
 			IBlockState chest = Blocks.CHEST.getDefaultState();
 			
-			EnumFacing side = getRandomSideWithoutOffset(rand);
+			EnumFacing side = EnumFacing.getHorizontal(world.rand.nextInt(4));
 			
 			buildLayer(world, position, logsPos, log, side);
 			buildLayer(world, position, planksPos, plank, side);

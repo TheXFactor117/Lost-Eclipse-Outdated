@@ -105,7 +105,7 @@ public class StructureTower extends StructureLEBase
 	{
 		if (canSpawnAboveGround(world, position, 12, 12))
 		{
-			EnumFacing side = getRandomSideWithoutOffset(rand);
+			EnumFacing side = EnumFacing.getHorizontal(world.rand.nextInt(4));
 			
 			IBlockState stone_brick = Blocks.STONEBRICK.getDefaultState();
 			IBlockState log = Blocks.LOG.getDefaultState();

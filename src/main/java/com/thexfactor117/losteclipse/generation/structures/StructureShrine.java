@@ -71,7 +71,7 @@ public class StructureShrine extends StructureLEBase
 			IBlockState stone_brick = Blocks.STONEBRICK.getDefaultState();
 			IBlockState chest = Blocks.CHEST.getDefaultState();
 			
-			EnumFacing side = getRandomSideWithoutOffset(rand);
+			EnumFacing side = EnumFacing.getHorizontal(world.rand.nextInt(4));
 			
 			placeAirBlocks(world, position, 7, 8, 7, side, 1);
 			

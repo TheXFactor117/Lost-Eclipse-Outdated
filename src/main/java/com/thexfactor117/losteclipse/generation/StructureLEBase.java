@@ -2,8 +2,6 @@ package com.thexfactor117.losteclipse.generation;
 
 import java.util.Random;
 
-import com.thexfactor117.losteclipse.LostEclipse;
-
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
@@ -165,52 +163,9 @@ public class StructureLEBase extends WorldGenerator
 		return material == materials;
 	}
 	
-	public BlockPos getPosFromCorner1(BlockPos corner, int maxDisForward, int maxDisRight, EnumFacing forward)
-	{			
-		EnumFacing right = forward.rotateY();
-		
-		switch (forward)
-		{
-			case NORTH: 
-				LostEclipse.LOGGER.info("NORTH: " + forward + " " + maxDisForward);
-				return corner.offset(forward, 0).offset(right, 0);
-			case EAST: 
-				LostEclipse.LOGGER.info("EAST: " + forward + " " + maxDisForward + " " + right + " " + maxDisRight);
-				return corner.offset(forward, maxDisForward).offset(right, maxDisRight);
-			case SOUTH: 
-				LostEclipse.LOGGER.info("SOUTH: " + forward + " " + maxDisForward + right + " " + maxDisRight);
-				return corner.offset(right, 0);
-			case WEST: 
-				LostEclipse.LOGGER.info("WEST: " + forward + " " + maxDisForward + right + " " + maxDisRight);
-				return corner.offset(forward, 6).offset(right, 3 );
-			default: break;
-		}
-				
-		return corner.offset(forward, maxDisForward).offset(right, maxDisRight);
-	}
-	
 	public BlockPos getPosFromCorner(BlockPos corner, int disForward, int disUp, int disRight, EnumFacing forward)
 	{
 		EnumFacing right = forward.rotateY();
 		return corner.offset(forward, disForward).offset(right, disRight).up(disUp);
-	}
-	
-	protected EnumFacing getRandomSideWithoutOffset(Random rand)
-	{
-		int side = rand.nextInt(4);
-		
-		switch (side)
-		{
-			case 0: 
-				return EnumFacing.NORTH;
-			case 1: 
-				return EnumFacing.SOUTH;
-			case 2: 
-				return EnumFacing.EAST;
-			case 3: 
-				return EnumFacing.WEST;
-		}
-		
-		return null;
 	}
 }

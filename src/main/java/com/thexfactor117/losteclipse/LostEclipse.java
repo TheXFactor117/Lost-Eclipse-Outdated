@@ -34,7 +34,6 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
  * + Structure variations
  * + Dungeon structures
  * + Artifact logic
- * * Loot table balancing
  * * Structure spawn rate balancing
  * * Cleanup structure spawning
  * * Finish procedurally generated structures
