@@ -25,7 +25,7 @@ public class StructureDungeon extends StructureLEProcedurallyGenerated
 	{	
 		if (this.canSpawnUnderground(world, position, 2, 100))
 		{
-			int maxRooms = 5;
+			int maxRooms = rand.nextInt(5) + 3;
 			LostEclipse.LOGGER.info("Procedural generation beginning...");
 			this.procedurallyGenerate(world, rand, position, maxRooms);
 			return true;
@@ -39,6 +39,12 @@ public class StructureDungeon extends StructureLEProcedurallyGenerated
 		if (roomCount == maxRooms) return;
 		
 		EnumFacing facing = EnumFacing.getHorizontal(world.rand.nextInt(4));
+		
+		if (previousFacing != null)
+		{
+			if (facing == previousFacing.getOpposite()) return;
+		}
+		
 		BlockPos nextPosition = position;
 		
 		if (roomCount == 0) 
@@ -70,7 +76,19 @@ public class StructureDungeon extends StructureLEProcedurallyGenerated
 	
 	protected void generateRoom(World world, Random rand, BlockPos roomPosition, EnumFacing facing)
 	{
-		WorldGenerator lootRoom = new StructureDungeonBaseRoom(facing);
-		lootRoom.generate(world, rand, roomPosition);
+		int index = rand.nextInt(3);
+		
+		switch (index)
+		{
+			case 0:
+				WorldGenerator base = new StructureDungeonBaseRoom(facing);
+				base.generate(world, rand, roomPosition);
+			case 1:
+				WorldGenerator lootRoom = new StructureDungeonLootRoom(facing);
+				lootRoom.generate(world, rand, roomPosition);
+			case 2:
+				WorldGenerator maze = new StructureDungeonMaze(facing);
+				maze.generate(world, rand, roomPosition);
+		}
 	}
 }

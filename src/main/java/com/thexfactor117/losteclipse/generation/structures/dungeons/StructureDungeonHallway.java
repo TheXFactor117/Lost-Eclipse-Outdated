@@ -24,7 +24,7 @@ public class StructureDungeonHallway extends StructureLEBase
 	private final int[][] stoneBricksPos = new int[][]
 	{
 		// layer 0
-		/*{0, 0, 0},*//* {0, 0, 1},*/ {0, 0, 2}, {0, 0, 3}, {0, 0, 4}, {0, 0, 5}, {0, 0, 6}, {0, 0, 7}, {0, 0, 8},
+		{0, 0, 0}, {0, 0, 1}, {0, 0, 2}, {0, 0, 3}, {0, 0, 4}, {0, 0, 5}, {0, 0, 6}, {0, 0, 7}, {0, 0, 8},
 		{1, 0, 0}, {1, 0, 1}, {1, 0, 2}, {1, 0, 3}, {1, 0, 4}, {1, 0, 5}, {1, 0, 6}, {1, 0, 7}, {1, 0, 8},
 		{2, 0, 0}, {2, 0, 1}, {2, 0, 2}, {2, 0, 3}, {2, 0, 4}, {2, 0, 5}, {2, 0, 6}, {2, 0, 7}, {2, 0, 8},
 		{3, 0, 0}, {3, 0, 1}, {3, 0, 2}, {3, 0, 3}, {3, 0, 4}, {3, 0, 5}, {3, 0, 6}, {3, 0, 7}, {3, 0, 8},
@@ -53,25 +53,24 @@ public class StructureDungeonHallway extends StructureLEBase
 		{4, 4, 0}, {4, 4, 1}, {4, 4, 2}, {4, 4, 3}, {4, 4, 4}, {4, 4, 5}, {4, 4, 6}, {4, 4, 7}, {4, 4, 8},
 	};
 	private final int[] chestPos1 = new int[] {3, 1, 3};
-	private final int[] diamondBlock = new int[] {0, 0, 0};
 	
 	@Override
 	public boolean generate(World world, Random rand, BlockPos position)
 	{
 		IBlockState stone_brick = Blocks.STONEBRICK.getDefaultState();
 		IBlockState chest = Blocks.CHEST.getDefaultState();
-		IBlockState diamond = Blocks.DIAMOND_BLOCK.getDefaultState();
 		
 		placeAirBlocks(world, position, 5, 4, 9, this.facing, 0);
 		
 		buildLayer(world, position, stoneBricksPos, stone_brick, this.facing);
-		placeBlock(world, position, chestPos1, chest, this.facing);
-		placeBlock(world, position, diamondBlock, diamond, this.facing);
 		
-		BlockPos chestActualPos1 = position.add(chestPos1[0], chestPos1[1], chestPos1[2]);
-		TileEntityChest chestTE1 = (TileEntityChest) world.getTileEntity(chestActualPos1);
-		
-		if (chestTE1 != null) chestTE1.setLootTable(ModLootTables.STRUCTURE_ABANDONED_HOUSE, rand.nextLong());
+		if (rand.nextInt(5) == 0)
+		{
+			placeBlock(world, position, chestPos1, chest, this.facing);
+			BlockPos chestActualPos1 = position.add(chestPos1[0], chestPos1[1], chestPos1[2]);
+			TileEntityChest chestTE1 = (TileEntityChest) world.getTileEntity(chestActualPos1);
+			if (chestTE1 != null) chestTE1.setLootTable(ModLootTables.STRUCTURE_ABANDONED_HOUSE, rand.nextLong());
+		}
 		
 		return true;
 	}
