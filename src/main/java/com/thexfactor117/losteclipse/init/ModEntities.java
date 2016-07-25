@@ -2,9 +2,15 @@ package com.thexfactor117.losteclipse.init;
 
 import com.thexfactor117.losteclipse.LostEclipse;
 import com.thexfactor117.losteclipse.entities.monsters.EntityBandit;
+import com.thexfactor117.losteclipse.entities.monsters.EntityBanshee;
 import com.thexfactor117.losteclipse.entities.monsters.EntityBarbarian;
 import com.thexfactor117.losteclipse.entities.monsters.EntityGhost;
 import com.thexfactor117.losteclipse.entities.monsters.EntityGolem;
+import com.thexfactor117.losteclipse.entities.monsters.EntityMiniGolem;
+import com.thexfactor117.losteclipse.entities.monsters.EntityMummy;
+import com.thexfactor117.losteclipse.entities.monsters.EntityPirate;
+import com.thexfactor117.losteclipse.entities.monsters.EntityTroll;
+import com.thexfactor117.losteclipse.entities.monsters.EntityValkyrie;
 import com.thexfactor117.losteclipse.entities.projectiles.EntityDarkMagic;
 import com.thexfactor117.losteclipse.entities.projectiles.EntityFireball;
 import com.thexfactor117.losteclipse.entities.projectiles.EntityFrostbite;
@@ -26,10 +32,16 @@ public class ModEntities
 	public static void registerEntities()
 	{
 		// monsters
-		registerModEntity(EntityBarbarian.class, "entityBarbarian");
-		registerModEntity(EntityGhost.class, "entityGhost");
-		registerModEntity(EntityBandit.class, "entityBandit");
-		registerModEntity(EntityGolem.class, "entityGolem");
+		registerModEntity(EntityBandit.class, "bandit");
+		registerModEntity(EntityBanshee.class, "banshee");
+		registerModEntity(EntityBarbarian.class, "barbarian");
+		registerModEntity(EntityGhost.class, "ghost");
+		registerModEntity(EntityGolem.class, "golem");
+		registerModEntity(EntityMiniGolem.class, "mini-golem");
+		registerModEntity(EntityMummy.class, "mummy");
+		registerModEntity(EntityPirate.class, "pirate");
+		registerModEntity(EntityTroll.class, "troll");
+		registerModEntity(EntityValkyrie.class, "valkyrie");
 		
 		// projectiles
 		registerModProjectile(EntityMagic.class, "entityMagic");

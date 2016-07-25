@@ -30,14 +30,10 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
  * TODO:
  * + More textures!
  * + Entity models
- * + Entity logic
- * + Structure variations
  * + Dungeon structures
  * + Artifact logic
  * * Structure spawn rate balancing
  * * Cleanup structure spawning
- * * Finish procedurally generated structures
- * * Indestructable dungeons / disable torch usage inside of dungeons
  * * Recipe cleanup
  * * Overall code cleanup and documentation
  * 
