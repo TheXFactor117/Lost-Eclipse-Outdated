@@ -9,8 +9,7 @@
 ### Condensed List (Highest Priorities)
 + Add textures and entity models
 + Add new structures
-+ Add procedurally generated dungeons
-* Fix procedurally generated structures
++ Add procedurally generated dungeon rooms
 * Cleanup structure generation (spawn rate, spawning logic)
 
 ### Complete List
@@ -27,8 +26,6 @@
 + Add variations for existing structures
 + Add new structures and their variations (if applicable)
 + Add new dungeon rooms and their variations (if applicable)
-+ Add randomized chest spawns in structures
-* Fix procedurally generated structures (facings, connections, algorithm, etc.)
 * Fix above ground structure generation spawning in strange ways
 * Balance structure spawning rate (too much right now?)
 ? Add randomized missing blocks to structures
