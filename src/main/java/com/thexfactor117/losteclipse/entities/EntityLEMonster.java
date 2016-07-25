@@ -16,6 +16,9 @@ public class EntityLEMonster extends EntityMob
 		this.clearAITasks();
 	}
 	
+	/**
+	 * Removes all previous AI tasks. Creates a blank state to build other AI's upon.
+	 */
 	protected void clearAITasks()
 	{
 		tasks.taskEntries.clear();

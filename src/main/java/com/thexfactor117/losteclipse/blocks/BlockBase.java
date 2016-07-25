@@ -12,6 +12,12 @@ import net.minecraft.creativetab.CreativeTabs;
  */
 public class BlockBase extends Block
 {
+	/**
+	 * Creates a simple block without a Creative Tab or any attributes.
+	 * @param material
+	 * @param name
+	 * @param modid
+	 */
 	public BlockBase(Material material, String name, String modid)
 	{
 		super(material);
@@ -19,6 +25,13 @@ public class BlockBase extends Block
 		this.setUnlocalizedName(name);
 	}
 	
+	/**
+	 * Creates a block with the specified tab and no attributes.
+	 * @param material
+	 * @param name
+	 * @param modid
+	 * @param tab
+	 */
 	public BlockBase(Material material, String name, String modid, CreativeTabs tab)
 	{
 		super(material);
@@ -27,6 +40,19 @@ public class BlockBase extends Block
 		this.setCreativeTab(tab);
 	}
 	
+	/**
+	 * Creates a block according to the following parameters.
+	 * @param material
+	 * @param name
+	 * @param modid
+	 * @param tab
+	 * @param soundType
+	 * @param hardness
+	 * @param resistance
+	 * @param lightValue
+	 * @param harvestType
+	 * @param harvestLevel
+	 */
 	public BlockBase(Material material, String name, String modid, CreativeTabs tab, SoundType soundType, float hardness, float resistance, float lightValue, String harvestType, int harvestLevel)
 	{
 		super(material);

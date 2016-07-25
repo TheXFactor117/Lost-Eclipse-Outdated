@@ -8,6 +8,11 @@ import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
+/**
+ * 
+ * @author TheXFactor117
+ *
+ */
 public class RenderBanshee extends RenderLiving<EntityBanshee>
 {
 	protected ResourceLocation banshee = new ResourceLocation(Reference.MODID + ":textures/entity/banshee.png");

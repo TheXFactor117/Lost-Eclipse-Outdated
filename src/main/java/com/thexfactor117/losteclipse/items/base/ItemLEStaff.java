@@ -19,6 +19,7 @@ import net.minecraft.world.World;
  * 
  * @author TheXFactor117
  *
+ * TODO: Optimize this a bit more?
  */
 public class ItemLEStaff extends ItemLE
 {

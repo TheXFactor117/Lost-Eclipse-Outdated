@@ -109,6 +109,13 @@ public class LEWorldGenerator implements IWorldGenerator
 		}
 	}
 	
+	/**
+	 * Gets the Y-value of the ground at a specifix x/y coordinate.
+	 * @param world
+	 * @param x
+	 * @param z
+	 * @return
+	 */
 	public static int getGroundFromAbove(World world, int x, int z)
 	{
 		int y = 255;

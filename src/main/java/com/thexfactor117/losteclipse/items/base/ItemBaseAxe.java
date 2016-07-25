@@ -3,6 +3,11 @@ package com.thexfactor117.losteclipse.items.base;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemAxe;
 
+/**
+ * 
+ * @author TheXFactor117
+ *
+ */
 public class ItemBaseAxe extends ItemAxe
 {
 	public ItemBaseAxe(ToolMaterial material, String name, String modid)

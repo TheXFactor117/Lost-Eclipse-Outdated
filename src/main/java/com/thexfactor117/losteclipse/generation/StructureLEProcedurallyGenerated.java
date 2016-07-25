@@ -9,9 +9,17 @@ import net.minecraft.util.math.BlockPos;
  * 
  * @author TheXFactor117
  *
+ * TODO: Remove the hardcoded limitations?
  */
 public class StructureLEProcedurallyGenerated extends StructureLEBase
 {
+	/**
+	 * Using the position and facing provided, generate a new BlockPos using the hardcoded offsets below. All Dungeon rooms
+	 * should have the same dimensions, so these offsets should never break (they will if the room dimensions are different!).
+	 * @param oldPos
+	 * @param facing
+	 * @return
+	 */
 	public BlockPos getPosFromFacing(BlockPos oldPos, EnumFacing facing)
 	{
 		LostEclipse.LOGGER.info("FACING: " + facing);
@@ -26,6 +34,14 @@ public class StructureLEProcedurallyGenerated extends StructureLEBase
 		}
 	}
 	
+	/**
+	 * Using the position, facing, and previous facing provided, generate a new BlockPos using the hardcoded offsets below. All Dungeon rooms
+	 * should have the same dimensions, so these offsets should never break (they will if the room dimensions are different!).
+	 * @param oldPos
+	 * @param facing
+	 * @param previousFacing
+	 * @return
+	 */
 	public BlockPos getPosFromFacing(BlockPos oldPos, EnumFacing facing, EnumFacing previousFacing)
 	{
 		LostEclipse.LOGGER.info("PREV FACING: " + previousFacing);
@@ -73,6 +89,12 @@ public class StructureLEProcedurallyGenerated extends StructureLEBase
 		}
 	}
 	
+	/**
+	 * Gets the new room position based on the hallways position and facing.
+	 * @param oldPos
+	 * @param facing
+	 * @return
+	 */
 	public BlockPos getPosFromHallway(BlockPos oldPos, EnumFacing facing)
 	{
 		return this.getPosFromCorner(oldPos, -3, 0, 8, facing);

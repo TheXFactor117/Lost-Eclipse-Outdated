@@ -31,7 +31,7 @@ public class LETab extends CreativeTabs
 		} 
 		else if (this.name == "tabLETest")
 		{
-			return ModItems.voidScroll;
+			return ModItems.nova;
 		}
 		return null;
 	}

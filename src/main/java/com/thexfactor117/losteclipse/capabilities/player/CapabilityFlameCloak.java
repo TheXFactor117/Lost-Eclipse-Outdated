@@ -26,6 +26,8 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
  * 
  * @author TheXFactor117
  *
+ * TODO: Create a timer to go along with the Flame Cloak to automatically disable itself
+ * after a set amount of time.
  */
 public class CapabilityFlameCloak 
 {

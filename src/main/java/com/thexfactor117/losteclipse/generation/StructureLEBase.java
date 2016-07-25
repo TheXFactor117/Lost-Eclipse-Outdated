@@ -17,8 +17,6 @@ import net.minecraft.world.gen.feature.WorldGenerator;
  */
 public class StructureLEBase extends WorldGenerator
 {
-	protected int xOffset;
-	
 	@Override
 	public boolean generate(World world, Random rand, BlockPos position) 
 	{
@@ -151,18 +149,41 @@ public class StructureLEBase extends WorldGenerator
 		return posAboveGround.getY() > 0 && corner1Air && corner2Air && corner3Air && corner4Air;
 	}
 	
+	/**
+	 * Check this when spawning structures ABOVE ground.
+	 * @param world
+	 * @param pos
+	 * @return
+	 */
 	protected boolean canReplaceAboveGround(World world, BlockPos pos)
 	{
 		Material material = world.getBlockState(pos).getMaterial();
 		return material.isReplaceable() || material == Material.PLANTS || material == Material.LEAVES || material == Material.GRASS;
 	}
 	
+	/**
+	 * Check this when spawning structures surrounded by the given material.
+	 * @param world
+	 * @param pos
+	 * @param materials
+	 * @return
+	 */
 	protected boolean canReplaceMaterial(World world, BlockPos pos, Material materials)
 	{
 		Material material = world.getBlockState(pos).getMaterial();
 		return material == materials;
 	}
 	
+	/**
+	 * Creates a new BlockPos based on the corner position (position provided) with the offsets added to the corner position.
+	 * Does the heavy lifting for all structures and dungeons.
+	 * @param corner
+	 * @param disForward
+	 * @param disUp
+	 * @param disRight
+	 * @param forward
+	 * @return
+	 */
 	public BlockPos getPosFromCorner(BlockPos corner, int disForward, int disUp, int disRight, EnumFacing forward)
 	{
 		EnumFacing right = forward.rotateY();

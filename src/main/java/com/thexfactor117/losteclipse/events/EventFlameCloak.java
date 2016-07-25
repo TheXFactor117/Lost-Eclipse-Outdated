@@ -8,6 +8,11 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
+/**
+ * 
+ * @author TheXFactor117
+ *
+ */
 public class EventFlameCloak 
 {
 	@SubscribeEvent

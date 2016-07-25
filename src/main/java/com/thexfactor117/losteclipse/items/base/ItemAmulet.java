@@ -6,6 +6,11 @@ import baubles.api.BaubleType;
 import baubles.api.IBauble;
 import net.minecraft.item.ItemStack;
 
+/**
+ * 
+ * @author TheXFactor117
+ *
+ */
 public class ItemAmulet extends ItemLEBauble implements IBauble
 {
 	public ItemAmulet(String name, Rarity rarity) 

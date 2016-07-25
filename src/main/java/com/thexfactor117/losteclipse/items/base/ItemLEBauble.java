@@ -8,6 +8,11 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
 
+/**
+ * 
+ * @author TheXFactor117
+ *
+ */
 public class ItemLEBauble extends ItemLE implements IBauble
 {
 	public ItemLEBauble(String name, Rarity rarity) 

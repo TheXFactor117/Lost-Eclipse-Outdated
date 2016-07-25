@@ -19,6 +19,7 @@ import net.minecraft.world.World;
  * 
  * @author TheXFactor117
  *
+ * Test Item. Serves as a debugging tool.
  */
 public class ItemTest extends ItemLE
 {

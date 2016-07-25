@@ -13,6 +13,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
  * 
  * @author TheXFactor117
  *
+ * TODO: Optimize this a bit more?
  */
 public class EventStealSouls 
 {
