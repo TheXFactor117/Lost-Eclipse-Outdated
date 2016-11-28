@@ -24,8 +24,8 @@ Please follow this format, even if loosely, when reporting issues. This just sav
 * Minecraft Version
 * Forge Version
 * Lost Eclipse Version
-  * Levels Version (if appropriate)
-  * xLib Version (if appropriate)
+  * [Levels](https://mods.curse.com/mc-mods/minecraft/235552-levels) Version (if appropriate)
+  * [xLib](https://mods.curse.com/mc-mods/minecraft/245873-xlib) Version (if appropriate)
 * Other mods possibly involved
 * Crash Reports and Logs (if applicable)
 * Steps to reproduce
