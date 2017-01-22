@@ -26,8 +26,10 @@ public class ItemFireballScroll extends ItemLE
 	}
 	
 	@Override
-	public ActionResult<ItemStack> onItemRightClick(ItemStack stack, World world, EntityPlayer player, EnumHand hand)
+	public ActionResult<ItemStack> onItemRightClick(World world, EntityPlayer player, EnumHand hand)
 	{		
+		ItemStack stack = player.inventory.getCurrentItem();
+		
 		if (player.inventory.getCurrentItem().getItem() == ModItems.fireballScroll)
 		{
 			if (!world.isRemote)
@@ -39,7 +41,8 @@ public class ItemFireballScroll extends ItemLE
 				EntityFireball fireball = new EntityFireball(world, x, y, z, 1.0F, 0F);
 				fireball.setPosition(player.posX + look.xCoord, player.posY + look.yCoord + 1.5, player.posZ + look.zCoord);
 				world.spawnEntityInWorld(fireball);
-				stack.stackSize--;
+				// decrease stack size by 1
+				stack.func_190918_g(1);
 			}
 		}
 		

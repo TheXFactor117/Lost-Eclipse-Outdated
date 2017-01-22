@@ -2,11 +2,12 @@ package com.thexfactor117.losteclipse.capabilities.player;
 
 import javax.annotation.Nullable;
 
-import com.thexfactor117.levels.capabilities.SimpleCapabilityProvider;
-import com.thexfactor117.levels.misc.CapabilityUtils;
+import com.thexfactor117.levels.util.CapabilityUtils;
+import com.thexfactor117.levels.util.SimpleCapabilityProvider;
 import com.thexfactor117.losteclipse.Reference;
 import com.thexfactor117.losteclipse.capabilities.api.IFlameCloak;
 
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.nbt.NBTBase;
@@ -70,11 +71,11 @@ public class CapabilityFlameCloak
 	public static class EventHandler 
 	{
 		@SubscribeEvent
-		public void attachCapabilities(AttachCapabilitiesEvent.Entity event) 
+		public void attachCapabilities(AttachCapabilitiesEvent<Entity> event) 
 		{
-			if (event.getEntity() instanceof EntityPlayer) 
+			if (event.getObject() instanceof EntityPlayer) 
 			{
-				final FlameCloak flameCloak = new FlameCloak((EntityPlayer) event.getEntity());
+				final FlameCloak flameCloak = new FlameCloak((EntityPlayer) event.getObject());
 				event.addCapability(ID, createProvider(flameCloak));
 			}
 		}

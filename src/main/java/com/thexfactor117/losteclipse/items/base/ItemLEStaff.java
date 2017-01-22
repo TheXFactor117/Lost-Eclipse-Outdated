@@ -36,17 +36,17 @@ public class ItemLEStaff extends ItemLE
 	}
 	
 	@Override
-	public ActionResult<ItemStack> onItemRightClick(ItemStack stack, World world, EntityPlayer player, EnumHand hand)
+	public ActionResult<ItemStack> onItemRightClick(World world, EntityPlayer player, EnumHand hand)
     {
-        if (stack != null)
+        if (player.inventory.getCurrentItem() != null)
         {
-        	for (int i = 0; i < player.inventory.mainInventory.length; i++)
+        	for (int i = 0; i < player.inventory.mainInventory.size(); i++)
         	{
-        		if (player.inventory.mainInventory[i] != null)
+        		if (player.inventory.mainInventory.get(i) != null)
         		{
-        			if (player.inventory.mainInventory[i].getItem() instanceof ItemSoulGem)
+        			if (player.inventory.mainInventory.get(i).getItem() instanceof ItemSoulGem)
         			{
-        				ItemStack soulGemStack = player.inventory.mainInventory[i];
+        				ItemStack soulGemStack = player.inventory.mainInventory.get(i);
         				
         				if (soulGemStack != null)
         				{
@@ -54,7 +54,7 @@ public class ItemLEStaff extends ItemLE
         					
         					if (nbt != null)
         					{
-        						ItemSoulGem soulGem = (ItemSoulGem) player.inventory.mainInventory[i].getItem();
+        						ItemSoulGem soulGem = (ItemSoulGem) player.inventory.mainInventory.get(i).getItem();
         						
         						if (soulGem != null)
         						{
@@ -79,7 +79,7 @@ public class ItemLEStaff extends ItemLE
         											if (soulGem.getSouls(nbt) > 0)
         		        							{
         		        								player.setActiveHand(hand);
-        		        								return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, stack);
+        		        								return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, player.inventory.getCurrentItem());
         		        							}
         										}
         									}
@@ -89,7 +89,7 @@ public class ItemLEStaff extends ItemLE
         							if (soulGem.getSouls(nbt) > 0)
         							{
         								player.setActiveHand(hand);
-        								return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, stack);
+        								return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, player.inventory.getCurrentItem());
         							}
         						}
         					}
@@ -99,7 +99,7 @@ public class ItemLEStaff extends ItemLE
         	}
         }
         
-        return new ActionResult<ItemStack>(EnumActionResult.FAIL, stack);
+        return new ActionResult<ItemStack>(EnumActionResult.FAIL, player.inventory.getCurrentItem());
     }
 	
 	@Override

@@ -21,15 +21,18 @@ public class ItemHardenedScroll extends ItemLE
 	}
 	
 	@Override
-	public ActionResult<ItemStack> onItemRightClick(ItemStack stack, World world, EntityPlayer player, EnumHand hand)
+	public ActionResult<ItemStack> onItemRightClick(World world, EntityPlayer player, EnumHand hand)
 	{		
+		ItemStack stack = player.inventory.getCurrentItem();
+		
 		if (player.inventory.getCurrentItem().getItem() == ModItems.hardenedScroll)
 		{
 			if (!world.isRemote)
 			{
 				player.addPotionEffect(new PotionEffect(MobEffects.RESISTANCE, 20*20, 0, false, false));
 				
-				stack.stackSize--;
+				// decrease stack size by 1
+				stack.func_190918_g(1);
 			}
 		}
 		

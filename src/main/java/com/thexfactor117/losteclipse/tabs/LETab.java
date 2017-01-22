@@ -3,7 +3,7 @@ package com.thexfactor117.losteclipse.tabs;
 import com.thexfactor117.losteclipse.init.ModItems;
 
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -23,15 +23,15 @@ public class LETab extends CreativeTabs
 	}
 	
 	@SideOnly(Side.CLIENT)
-	public Item getTabIconItem()
+	public ItemStack getTabIconItem()
 	{
 		if (this.name == "tabLE") 
 		{
-			return ModItems.eclipse;
+			return new ItemStack(ModItems.omega);
 		} 
 		else if (this.name == "tabLETest")
 		{
-			return ModItems.nova;
+			return new ItemStack(ModItems.nova);
 		}
 		return null;
 	}

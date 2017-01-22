@@ -26,15 +26,18 @@ public class ItemInvisibilityScroll extends ItemLE
 	}
 	
 	@Override
-	public ActionResult<ItemStack> onItemRightClick(ItemStack stack, World world, EntityPlayer player, EnumHand hand)
+	public ActionResult<ItemStack> onItemRightClick(World world, EntityPlayer player, EnumHand hand)
 	{		
+		ItemStack stack = player.inventory.getCurrentItem();
+		
 		if (player.inventory.getCurrentItem().getItem() == ModItems.invisibilityScroll)
 		{
 			if (!world.isRemote)
 			{
 				player.addPotionEffect(new PotionEffect(MobEffects.INVISIBILITY, 20*20, 0, false, false));
 				
-				stack.stackSize--;
+				// decrease stack size by 1
+				stack.func_190918_g(1);
 			}
 		}
 		

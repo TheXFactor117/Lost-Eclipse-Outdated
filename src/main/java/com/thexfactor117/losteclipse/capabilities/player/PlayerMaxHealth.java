@@ -4,7 +4,7 @@ import java.util.UUID;
 
 import javax.annotation.Nullable;
 
-import com.thexfactor117.levels.misc.EnumAttributeModifierOperations;
+import com.thexfactor117.levels.util.EnumAttributeModifierOperations;
 import com.thexfactor117.losteclipse.capabilities.api.IPlayerMaxHealth;
 
 import net.minecraft.entity.EntityLivingBase;

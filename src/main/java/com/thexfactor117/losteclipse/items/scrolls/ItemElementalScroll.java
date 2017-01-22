@@ -27,8 +27,10 @@ public class ItemElementalScroll extends ItemLE
 	}
 	
 	@Override
-	public ActionResult<ItemStack> onItemRightClick(ItemStack stack, World world, EntityPlayer player, EnumHand hand)
+	public ActionResult<ItemStack> onItemRightClick(World world, EntityPlayer player, EnumHand hand)
 	{		
+		ItemStack stack = player.inventory.getCurrentItem();
+		
 		if (player.inventory.getCurrentItem().getItem() == ModItems.elementalScroll)
 		{
 			if (!world.isRemote)
@@ -51,7 +53,8 @@ public class ItemElementalScroll extends ItemLE
 						world.spawnEntityInWorld(frostbite);
 				}
 				
-				stack.stackSize--;
+				// decrease stack size by 1
+				stack.func_190918_g(1);
 			}
 		}
 		

@@ -2,11 +2,12 @@ package com.thexfactor117.losteclipse.capabilities.player;
 
 import javax.annotation.Nullable;
 
-import com.thexfactor117.levels.capabilities.SimpleCapabilityProvider;
-import com.thexfactor117.levels.misc.CapabilityUtils;
+import com.thexfactor117.levels.util.CapabilityUtils;
+import com.thexfactor117.levels.util.SimpleCapabilityProvider;
 import com.thexfactor117.losteclipse.Reference;
 import com.thexfactor117.losteclipse.capabilities.api.IPlayerMaxHealth;
 
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.nbt.NBTBase;
@@ -68,11 +69,11 @@ public class CapabilityPlayerMaxHealth
 	public static class EventHandler 
 	{
 		@SubscribeEvent
-		public void attachCapabilities(AttachCapabilitiesEvent.Entity event) 
+		public void attachCapabilities(AttachCapabilitiesEvent<Entity> event) 
 		{
-			if (event.getEntity() instanceof EntityPlayer) 
+			if (event.getObject() instanceof EntityPlayer) 
 			{
-				final PlayerMaxHealth maxHealth = new PlayerMaxHealth((EntityPlayer) event.getEntity());
+				final PlayerMaxHealth maxHealth = new PlayerMaxHealth((EntityPlayer) event.getObject());
 				event.addCapability(ID, createProvider(maxHealth));
 			}
 		}

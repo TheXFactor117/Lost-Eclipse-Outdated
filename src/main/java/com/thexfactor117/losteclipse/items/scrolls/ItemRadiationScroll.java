@@ -32,8 +32,10 @@ public class ItemRadiationScroll extends ItemLE
 	
 	@SuppressWarnings("rawtypes")
 	@Override
-	public ActionResult<ItemStack> onItemRightClick(ItemStack stack, World world, EntityPlayer player, EnumHand hand)
+	public ActionResult<ItemStack> onItemRightClick(World world, EntityPlayer player, EnumHand hand)
 	{		
+		ItemStack stack = player.inventory.getCurrentItem();
+		
 		if (player.inventory.getCurrentItem().getItem() == ModItems.radiationScroll)
 		{
 			if (!world.isRemote)
@@ -47,7 +49,8 @@ public class ItemRadiationScroll extends ItemLE
 					if (entity instanceof EntityMob) entity.setFire(5);
 				}
 				
-				stack.stackSize--;
+				// decrease stack size by 1
+				stack.func_190918_g(1);
 			}
 		}
 		

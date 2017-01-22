@@ -32,8 +32,10 @@ public class ItemVoidScroll extends ItemLE
 	
 	@SuppressWarnings("rawtypes")
 	@Override
-	public ActionResult<ItemStack> onItemRightClick(ItemStack stack, World world, EntityPlayer player, EnumHand hand)
+	public ActionResult<ItemStack> onItemRightClick(World world, EntityPlayer player, EnumHand hand)
 	{		
+		ItemStack stack = player.inventory.getCurrentItem();
+		
 		if (player.inventory.getCurrentItem().getItem() == ModItems.voidScroll)
 		{
 			if (!world.isRemote)
@@ -47,7 +49,8 @@ public class ItemVoidScroll extends ItemLE
 					if (entity instanceof EntityMob) ((EntityMob) entity).setHealth(0);
 				}
 				
-				stack.stackSize--;
+				// decrease stack size by 1
+				stack.func_190918_g(1);
 			}
 		}
 		

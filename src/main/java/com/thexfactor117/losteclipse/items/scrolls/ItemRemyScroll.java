@@ -24,8 +24,10 @@ public class ItemRemyScroll extends ItemLE
 	}
 	
 	@Override
-	public ActionResult<ItemStack> onItemRightClick(ItemStack stack, World world, EntityPlayer player, EnumHand hand)
+	public ActionResult<ItemStack> onItemRightClick(World world, EntityPlayer player, EnumHand hand)
 	{		
+		ItemStack stack = player.inventory.getCurrentItem();
+		
 		if (player.inventory.getCurrentItem().getItem() == ModItems.remyScroll)
 		{
 			if (!world.isRemote)
@@ -33,7 +35,8 @@ public class ItemRemyScroll extends ItemLE
 				// TODO: add entity and spawn in world
 				//world.spawnEntityInWorld(entityIn)
 				
-				stack.stackSize--;
+				// decrease stack size by 1
+				stack.func_190918_g(1);
 			}
 		}
 		

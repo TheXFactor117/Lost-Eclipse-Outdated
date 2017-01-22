@@ -1,6 +1,7 @@
 package com.thexfactor117.losteclipse.init;
 
 import com.thexfactor117.losteclipse.LostEclipse;
+import com.thexfactor117.losteclipse.Reference;
 import com.thexfactor117.losteclipse.entities.monsters.EntityBandit;
 import com.thexfactor117.losteclipse.entities.monsters.EntityBanshee;
 import com.thexfactor117.losteclipse.entities.monsters.EntityBarbarian;
@@ -17,6 +18,7 @@ import com.thexfactor117.losteclipse.entities.projectiles.EntityFrostbite;
 import com.thexfactor117.losteclipse.entities.projectiles.EntityLightning;
 import com.thexfactor117.losteclipse.entities.projectiles.EntityMagic;
 
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 
 /**
@@ -57,7 +59,7 @@ public class ModEntities
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public static void registerModProjectile(Class entityClass, String name)
 	{
-		EntityRegistry.registerModEntity(entityClass, name, ++id, LostEclipse.instance, 64, 10, true);
+		EntityRegistry.registerModEntity(new ResourceLocation(Reference.MODID, name), entityClass, name, ++id, LostEclipse.instance, 64, 10, true);
 		LostEclipse.LOGGER.info("Registering mod projectile " + name + " with ID = " + id);
 	}
 	
@@ -67,7 +69,7 @@ public class ModEntities
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public static void registerModEntity(Class entityClass, String name)
 	{
-        EntityRegistry.registerModEntity(entityClass, name, ++id, LostEclipse.instance, 80, 3, false);
+        EntityRegistry.registerModEntity(new ResourceLocation(Reference.MODID, name), entityClass, name, ++id, LostEclipse.instance, 80, 3, false);
         LostEclipse.LOGGER.info("Registering mod entity " + name + " with ID = " + id);
 	}
 }

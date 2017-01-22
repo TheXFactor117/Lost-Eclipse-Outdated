@@ -24,8 +24,10 @@ public class ItemEtherealScroll extends ItemLE
 	}
 	
 	@Override
-	public ActionResult<ItemStack> onItemRightClick(ItemStack stack, World world, EntityPlayer player, EnumHand hand)
+	public ActionResult<ItemStack> onItemRightClick(World world, EntityPlayer player, EnumHand hand)
 	{		
+		ItemStack stack = player.inventory.getCurrentItem();
+		
 		if (player.inventory.getCurrentItem().getItem() == ModItems.etherealScroll)
 		{
 			if (!world.isRemote)
@@ -34,7 +36,8 @@ public class ItemEtherealScroll extends ItemLE
 				
 				if (player.getHealth() > player.getMaxHealth()) player.setHealth(player.getMaxHealth());
 				
-				stack.stackSize--;
+				// decrease stack size by 1
+				stack.func_190918_g(1);
 			}
 		}
 		

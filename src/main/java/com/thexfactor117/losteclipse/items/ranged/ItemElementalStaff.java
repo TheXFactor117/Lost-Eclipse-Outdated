@@ -104,11 +104,11 @@ public class ItemElementalStaff extends ItemLEStaff
 							world.spawnEntityInWorld(magic);
 					}
 					
-					for (int i = 0; i < player.inventory.mainInventory.length; i++)
+					for (int i = 0; i < player.inventory.mainInventory.size(); i++)
 		        	{
-		        		if (player.inventory.mainInventory[i] != null && player.inventory.mainInventory[i].getItem() instanceof ItemSoulGem)
+		        		if (player.inventory.mainInventory.get(i) != null && player.inventory.mainInventory.get(i).getItem() instanceof ItemSoulGem)
 		        		{
-		        			ItemStack soulGemStack = player.inventory.mainInventory[i];
+		        			ItemStack soulGemStack = player.inventory.mainInventory.get(i);
 	        				
 	        				if (soulGemStack != null)
 	        				{
@@ -116,7 +116,7 @@ public class ItemElementalStaff extends ItemLEStaff
 	        					
 	        					if (nbt != null)
 	        					{
-	        						ItemSoulGem soulGem = (ItemSoulGem) player.inventory.mainInventory[i].getItem();
+	        						ItemSoulGem soulGem = (ItemSoulGem) player.inventory.mainInventory.get(i).getItem();
 	        						
 	        						if (soulGem != null) soulGem.setSouls(nbt, soulGem.getSouls(nbt) - this.getSoulsPerUse());
 	        					}

@@ -89,11 +89,11 @@ public class ItemOblivionStaff extends ItemLEStaff
 					darkMagic.setPosition(player.posX + look.xCoord, player.posY + look.yCoord + 1.5, player.posZ + look.zCoord);
 					world.spawnEntityInWorld(darkMagic);
 					
-					for (int i = 0; i < player.inventory.mainInventory.length; i++)
+					for (int i = 0; i < player.inventory.mainInventory.size(); i++)
 		        	{
-		        		if (player.inventory.mainInventory[i] != null && player.inventory.mainInventory[i].getItem() instanceof ItemSoulGem)
+		        		if (player.inventory.mainInventory.get(i) != null && player.inventory.mainInventory.get(i).getItem() instanceof ItemSoulGem)
 		        		{
-		        			ItemStack soulGemStack = player.inventory.mainInventory[i];
+		        			ItemStack soulGemStack = player.inventory.mainInventory.get(i);
 	        				
 	        				if (soulGemStack != null)
 	        				{
@@ -101,7 +101,7 @@ public class ItemOblivionStaff extends ItemLEStaff
 	        					
 	        					if (nbt != null)
 	        					{
-	        						ItemSoulGem soulGem = (ItemSoulGem) player.inventory.mainInventory[i].getItem();
+	        						ItemSoulGem soulGem = (ItemSoulGem) player.inventory.mainInventory.get(i).getItem();
 	        						
 	        						LostEclipse.LOGGER.info("souls per use: " + this.getSoulsPerUse());
 	        						if (soulGem != null) 
