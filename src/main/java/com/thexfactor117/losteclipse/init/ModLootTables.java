@@ -1,6 +1,6 @@
 package com.thexfactor117.losteclipse.init;
 
-import com.thexfactor117.losteclipse.Reference;
+import com.thexfactor117.losteclipse.util.Reference;
 
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.storage.loot.LootTableList;

@@ -4,8 +4,8 @@ import javax.annotation.Nullable;
 
 import com.thexfactor117.levels.util.CapabilityUtils;
 import com.thexfactor117.levels.util.SimpleCapabilityProvider;
-import com.thexfactor117.losteclipse.Reference;
 import com.thexfactor117.losteclipse.capabilities.api.IFlameCloak;
+import com.thexfactor117.losteclipse.util.Reference;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;

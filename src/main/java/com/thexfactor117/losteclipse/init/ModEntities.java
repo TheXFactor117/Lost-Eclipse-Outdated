@@ -1,7 +1,6 @@
 package com.thexfactor117.losteclipse.init;
 
 import com.thexfactor117.losteclipse.LostEclipse;
-import com.thexfactor117.losteclipse.Reference;
 import com.thexfactor117.losteclipse.entities.monsters.EntityBandit;
 import com.thexfactor117.losteclipse.entities.monsters.EntityBanshee;
 import com.thexfactor117.losteclipse.entities.monsters.EntityBarbarian;
@@ -17,6 +16,7 @@ import com.thexfactor117.losteclipse.entities.projectiles.EntityFireball;
 import com.thexfactor117.losteclipse.entities.projectiles.EntityFrostbite;
 import com.thexfactor117.losteclipse.entities.projectiles.EntityLightning;
 import com.thexfactor117.losteclipse.entities.projectiles.EntityMagic;
+import com.thexfactor117.losteclipse.util.Reference;
 
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.registry.EntityRegistry;

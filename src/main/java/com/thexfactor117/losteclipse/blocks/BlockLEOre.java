@@ -2,9 +2,9 @@ package com.thexfactor117.losteclipse.blocks;
 
 import java.util.Random;
 
-import com.thexfactor117.losteclipse.Reference;
 import com.thexfactor117.losteclipse.init.ModBlocks;
 import com.thexfactor117.losteclipse.init.ModTabs;
+import com.thexfactor117.losteclipse.util.Reference;
 
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;

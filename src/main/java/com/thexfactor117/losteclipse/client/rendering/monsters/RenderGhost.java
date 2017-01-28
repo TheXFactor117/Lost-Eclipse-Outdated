@@ -1,8 +1,8 @@
 package com.thexfactor117.losteclipse.client.rendering.monsters;
 
-import com.thexfactor117.losteclipse.Reference;
 import com.thexfactor117.losteclipse.client.models.ModelGhostBat;
 import com.thexfactor117.losteclipse.entities.monsters.EntityGhost;
+import com.thexfactor117.losteclipse.util.Reference;
 
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;

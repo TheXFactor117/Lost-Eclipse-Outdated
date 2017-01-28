@@ -1,7 +1,6 @@
 package com.thexfactor117.losteclipse.init;
 
 import com.thexfactor117.levels.leveling.Rarity;
-import com.thexfactor117.losteclipse.Reference;
 import com.thexfactor117.losteclipse.items.melee.ItemLEAdvancedMelee;
 import com.thexfactor117.losteclipse.items.melee.ItemLEMelee;
 import com.thexfactor117.losteclipse.items.ranged.ItemAstrillStaff;
@@ -10,13 +9,14 @@ import com.thexfactor117.losteclipse.items.ranged.ItemElementalStaff;
 import com.thexfactor117.losteclipse.items.ranged.ItemInfernoStaff;
 import com.thexfactor117.losteclipse.items.ranged.ItemIronStaff;
 import com.thexfactor117.losteclipse.items.ranged.ItemLightningStaff;
-import com.thexfactor117.losteclipse.items.ranged.ItemMalachiteStaff;
+import com.thexfactor117.losteclipse.items.ranged.ItemVerantiumStaff;
 import com.thexfactor117.losteclipse.items.ranged.ItemOblivionStaff;
+import com.thexfactor117.losteclipse.util.Reference;
+import com.thexfactor117.losteclipse.util.RegisterHelper;
 import com.thexfactor117.losteclipse.items.base.ItemBaseArmor;
 import com.thexfactor117.losteclipse.items.base.ItemBaseAxe;
 import com.thexfactor117.losteclipse.items.base.ItemBasePickaxe;
 import com.thexfactor117.losteclipse.items.base.ItemBaseShovel;
-import com.thexfactor117.losteclipse.misc.RegisterHelper;
 
 import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.EntityEquipmentSlot;
@@ -36,7 +36,7 @@ public class ModArmory
 	 * materials
 	 */
 	// generic melee
-	public static ToolMaterial malachite = EnumHelper.addToolMaterial("malachite", 2, 250, 6.0F, 2.0F, 14);
+	public static ToolMaterial verantium = EnumHelper.addToolMaterial("verantium", 2, 250, 6.0F, 2.0F, 14);
 	public static ToolMaterial vexal = EnumHelper.addToolMaterial("vexal", 2, 768, 6.5F, 2.5F, 10);
 	public static ToolMaterial astrill = EnumHelper.addToolMaterial("astrill", 3, 2000, 7.0F, 4.0F, 15);
 	
@@ -55,7 +55,7 @@ public class ModArmory
 	public static ToolMaterial founder = EnumHelper.addToolMaterial("founder", 2, 2200, 6.0F, 15.0F, 15);
 	
 	// armor
-	public static ArmorMaterial malachite_armor = EnumHelper.addArmorMaterial("malachite_armor", Reference.MODID + ":malachiteArmor", 15, new int[] { 2, 6, 5, 2 }, 20, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0.0F);
+	public static ArmorMaterial verantium_armor = EnumHelper.addArmorMaterial("malachite_armor", Reference.MODID + ":verantiumArmor", 15, new int[] { 2, 6, 5, 2 }, 20, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0.0F);
 	public static ArmorMaterial astrill_armor = EnumHelper.addArmorMaterial("astrill_armor", Reference.MODID + ":astrillArmor", 40, new int[] { 4, 8, 5, 3 }, 10, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 3.0F);
 	
 	public static ArmorMaterial gyro_chestplate = EnumHelper.addArmorMaterial("gyro_chestplate", Reference.MODID + ":gyroChestplate", 33, new int [] { 1, 10, 1, 1 }, 15, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 1.0F);
@@ -64,77 +64,77 @@ public class ModArmory
 	 * items
 	 */
 	// tools
-	public static Item malachitePick = new ItemBasePickaxe(malachite, "malachitePick", Reference.MODID, ModTabs.tabLE);
-	public static Item malachiteShovel = new ItemBaseShovel(malachite, "malachiteShovel", Reference.MODID, ModTabs.tabLE);
-	public static Item malachiteAxe = new ItemBaseAxe(malachite, "malachiteAxe", Reference.MODID, ModTabs.tabLE, malachite.getDamageVsEntity(), malachite.getEfficiencyOnProperMaterial()); // TODO: fix damage/speed for axes
-	public static Item astrillPick = new ItemBasePickaxe(astrill, "astrillPick", Reference.MODID, ModTabs.tabLE);
-	public static Item astrillShovel = new ItemBaseShovel(astrill, "astrillShovel", Reference.MODID, ModTabs.tabLE);
-	public static Item astrillAxe = new ItemBaseAxe(astrill, "astrillAxe", Reference.MODID, ModTabs.tabLE, malachite.getDamageVsEntity(), malachite.getEfficiencyOnProperMaterial()); // TODO: fix damage/speed for axes
+	public static Item verantiumPick = new ItemBasePickaxe(verantium, "verantium_pick", Reference.MODID, ModTabs.tabLE);
+	public static Item verantiumShovel = new ItemBaseShovel(verantium, "verantium_shovel", Reference.MODID, ModTabs.tabLE);
+	public static Item verantiumAxe = new ItemBaseAxe(verantium, "verantium_axe", Reference.MODID, ModTabs.tabLE, verantium.getDamageVsEntity(), verantium.getEfficiencyOnProperMaterial()); // TODO: fix damage/speed for axes
+	public static Item astrillPick = new ItemBasePickaxe(astrill, "astrill_pick", Reference.MODID, ModTabs.tabLE);
+	public static Item astrillShovel = new ItemBaseShovel(astrill, "astrill_shovel", Reference.MODID, ModTabs.tabLE);
+	public static Item astrillAxe = new ItemBaseAxe(astrill, "astrill_axe", Reference.MODID, ModTabs.tabLE, astrill.getDamageVsEntity(), astrill.getEfficiencyOnProperMaterial()); // TODO: fix damage/speed for axes
 	
 	// armor
-	public static Item malachiteHelmet = new ItemBaseArmor(malachite_armor, EntityEquipmentSlot.HEAD, "malachiteHelmet", Reference.MODID, ModTabs.tabLE);
-	public static Item malachiteChestplate = new ItemBaseArmor(malachite_armor, EntityEquipmentSlot.CHEST, "malachiteChestplate", Reference.MODID, ModTabs.tabLE);
-	public static Item malachiteLeggings = new ItemBaseArmor(malachite_armor, EntityEquipmentSlot.LEGS, "malachiteLeggings", Reference.MODID, ModTabs.tabLE);
-	public static Item malachiteBoots = new ItemBaseArmor(malachite_armor, EntityEquipmentSlot.FEET, "malachiteBoots", Reference.MODID, ModTabs.tabLE);
-	public static Item astrillHelmet = new ItemBaseArmor(astrill_armor, EntityEquipmentSlot.HEAD, "astrillHelmet", Reference.MODID, ModTabs.tabLE);
-	public static Item astrillChestplate = new ItemBaseArmor(astrill_armor, EntityEquipmentSlot.CHEST, "astrillChestplate", Reference.MODID, ModTabs.tabLE);
-	public static Item astrillLeggings = new ItemBaseArmor(astrill_armor, EntityEquipmentSlot.LEGS, "astrillLeggings", Reference.MODID, ModTabs.tabLE);
-	public static Item astrillBoots = new ItemBaseArmor(astrill_armor, EntityEquipmentSlot.FEET, "astrillBoots", Reference.MODID, ModTabs.tabLE);
+	public static Item verantiumHelmet = new ItemBaseArmor(verantium_armor, EntityEquipmentSlot.HEAD, "verantium_helmet", Reference.MODID, ModTabs.tabLE);
+	public static Item verantiumChestplate = new ItemBaseArmor(verantium_armor, EntityEquipmentSlot.CHEST, "verantium_chestplate", Reference.MODID, ModTabs.tabLE);
+	public static Item verantiumLeggings = new ItemBaseArmor(verantium_armor, EntityEquipmentSlot.LEGS, "verantium_leggings", Reference.MODID, ModTabs.tabLE);
+	public static Item verantiumBoots = new ItemBaseArmor(verantium_armor, EntityEquipmentSlot.FEET, "verantium_boots", Reference.MODID, ModTabs.tabLE);
+	public static Item astrillHelmet = new ItemBaseArmor(astrill_armor, EntityEquipmentSlot.HEAD, "astrill_helmet", Reference.MODID, ModTabs.tabLE);
+	public static Item astrillChestplate = new ItemBaseArmor(astrill_armor, EntityEquipmentSlot.CHEST, "astrill_chestplate", Reference.MODID, ModTabs.tabLE);
+	public static Item astrillLeggings = new ItemBaseArmor(astrill_armor, EntityEquipmentSlot.LEGS, "astrill_leggings", Reference.MODID, ModTabs.tabLE);
+	public static Item astrillBoots = new ItemBaseArmor(astrill_armor, EntityEquipmentSlot.FEET, "astrill_boots", Reference.MODID, ModTabs.tabLE);
 	
-	public static Item gyroChestplate = new ItemBaseArmor(gyro_chestplate, EntityEquipmentSlot.CHEST, "gyroChestplate", Reference.MODID, ModTabs.tabLE);
+	public static Item gyroChestplate = new ItemBaseArmor(gyro_chestplate, EntityEquipmentSlot.CHEST, "gyro_chestplate", Reference.MODID, ModTabs.tabLE);
 	
 	// generic melee
-	public static Item ironDagger = new ItemLEAdvancedMelee(ToolMaterial.IRON, "ironDagger", 0.5, 0.5, 175);
-	public static Item ironMace = new ItemLEAdvancedMelee(ToolMaterial.IRON, "ironMace", 1.25, 1.25, 350);
-	public static Item malachiteDagger = new ItemLEAdvancedMelee(malachite, "malachiteDagger", 0.5, 0.5, 175);
-	public static Item malachiteSword = new ItemLEMelee(malachite, "malachiteSword");
-	public static Item malachiteMace = new ItemLEAdvancedMelee(malachite, "malachiteMace", 1.25, 1.25, 350);
-	public static Item vexalDagger = new ItemLEAdvancedMelee(vexal, "vexalDagger", 0.5, 0.5, 512);
-	public static Item vexalSword = new ItemLEMelee(vexal, "vexalSword");
-	public static Item vexalMace = new ItemLEAdvancedMelee(vexal, "vexalMace", 1.25, 1.25, 1024);
-	public static Item astrillDagger = new ItemLEAdvancedMelee(astrill, "astrillDagger", 0.5, 0.5, 1500);
-	public static Item astrillSword = new ItemLEMelee(astrill, "astrillSword");
-	public static Item astrillMace = new ItemLEAdvancedMelee(astrill, "astrillMace", 1.25, 1.25, 2500);
+	public static Item ironDagger = new ItemLEAdvancedMelee(ToolMaterial.IRON, "iron_dagger", 0.5, 0.5, 175);
+	public static Item ironMace = new ItemLEAdvancedMelee(ToolMaterial.IRON, "iron_mace", 1.25, 1.25, 350);
+	public static Item verantiumDagger = new ItemLEAdvancedMelee(verantium, "verantium_dagger", 0.5, 0.5, 175);
+	public static Item verantiumSword = new ItemLEMelee(verantium, "verantium_sword");
+	public static Item verantiumMace = new ItemLEAdvancedMelee(verantium, "verantium_mace", 1.25, 1.25, 350);
+	public static Item vexalDagger = new ItemLEAdvancedMelee(vexal, "vexal_dagger", 0.5, 0.5, 512);
+	public static Item vexalSword = new ItemLEMelee(vexal, "vexal_sword");
+	public static Item vexalMace = new ItemLEAdvancedMelee(vexal, "vexal_mace", 1.25, 1.25, 1024);
+	public static Item astrillDagger = new ItemLEAdvancedMelee(astrill, "astrill_dagger", 0.5, 0.5, 1500);
+	public static Item astrillSword = new ItemLEMelee(astrill, "astrill_sword");
+	public static Item astrillMace = new ItemLEAdvancedMelee(astrill, "astrill_mace", 1.25, 1.25, 2500);
 	
 	// special melee
-	public static Item crystallizedSword = new ItemLEMelee(crystallized, "crystallizedSword");
-	public static Item gyroMace = new ItemLEAdvancedMelee(gyro, "gyroMace", 1, 1.25);
-	public static Item shadowBlade = new ItemLEMelee(shadow, "shadowBlade");
-	public static Item maliceBlade = new ItemLEMelee(malice, "maliceBlade");
-	public static Item woeBlade = new ItemLEAdvancedMelee(woe, "woeBlade", 1, 0.5);
-	public static Item darkMaliceBlade = new ItemLEMelee(dark_malice, "darkMaliceBlade");
-	public static Item soulInfusedSword = new ItemLEMelee(soul_infused, "soulInfusedSword");
-	public static Item divineRapier = new ItemLEAdvancedMelee(divine, "divineRapier", 1, 0.75);
-	public static Item voidHammer = new ItemLEAdvancedMelee(void_hammer, "voidHammer", 1, 1.5);
-	public static Item excaliburRapier = new ItemLEAdvancedMelee(excalibur, "excaliburRapier", 1, 0.75);
-	public static Item ardonsDagger = new ItemLEAdvancedMelee(ardon, "ardonsDagger", 1, 0.5);
-	public static Item foundersBlade = new ItemLEMelee(founder, "foundersBlade");
+	public static Item crystallizedSword = new ItemLEMelee(crystallized, "crystallized_sword");
+	public static Item gyroMace = new ItemLEAdvancedMelee(gyro, "gyro_mace", 1, 1.25);
+	public static Item shadowBlade = new ItemLEMelee(shadow, "shadow_blade");
+	public static Item maliceBlade = new ItemLEMelee(malice, "malice_blade");
+	public static Item woeBlade = new ItemLEAdvancedMelee(woe, "woe_blade", 1, 0.5);
+	public static Item darkMaliceBlade = new ItemLEMelee(dark_malice, "dark_malice_blade");
+	public static Item soulInfusedSword = new ItemLEMelee(soul_infused, "soul_infused_sword");
+	public static Item divineRapier = new ItemLEAdvancedMelee(divine, "divine_rapier", 1, 0.75);
+	public static Item voidHammer = new ItemLEAdvancedMelee(void_hammer, "void_hammer", 1, 1.5);
+	public static Item excaliburRapier = new ItemLEAdvancedMelee(excalibur, "excalibur_rapier", 1, 0.75);
+	public static Item ardonsDagger = new ItemLEAdvancedMelee(ardon, "ardons_dagger", 1, 0.5);
+	public static Item foundersBlade = new ItemLEMelee(founder, "founders_blade");
 	
 	// ranged
-	public static Item ironStaff = new ItemIronStaff("ironStaff", Rarity.UNCOMMON, 1);
-	public static Item malachiteStaff = new ItemMalachiteStaff("malachiteStaff", Rarity.RARE, 2);
-	public static Item astrillStaff = new ItemAstrillStaff("astrillStaff", Rarity.LEGENDARY, 3);
-	public static Item infernoStaff = new ItemInfernoStaff("infernoStaff", Rarity.UNCOMMON, 1);
-	public static Item blizzardStaff = new ItemBlizzardStaff("blizzardStaff", Rarity.UNCOMMON, 1);
-	public static Item lightningStaff = new ItemLightningStaff("lightningStaff", Rarity.RARE, 2);
-	public static Item elementalStaff = new ItemElementalStaff("elementalStaff", Rarity.RARE, 2);
-	public static Item oblivionStaff = new ItemOblivionStaff("oblivionStaff", Rarity.LEGENDARY, 3);
+	public static Item ironStaff = new ItemIronStaff("iron_staff", Rarity.UNCOMMON, 1);
+	public static Item verantiumStaff = new ItemVerantiumStaff("verantium_staff", Rarity.RARE, 2);
+	public static Item astrillStaff = new ItemAstrillStaff("astrill_staff", Rarity.LEGENDARY, 3);
+	public static Item infernoStaff = new ItemInfernoStaff("inferno_staff", Rarity.UNCOMMON, 1);
+	public static Item blizzardStaff = new ItemBlizzardStaff("blizzard_staff", Rarity.UNCOMMON, 1);
+	public static Item lightningStaff = new ItemLightningStaff("lightning_staff", Rarity.RARE, 2);
+	public static Item elementalStaff = new ItemElementalStaff("elemental_staff", Rarity.RARE, 2);
+	public static Item oblivionStaff = new ItemOblivionStaff("oblivion_staff", Rarity.LEGENDARY, 3);
 	
 	public static void registerItems()
 	{
 		// tools
-		RegisterHelper.registerItems(malachitePick);
-		RegisterHelper.registerItems(malachiteShovel);
-		RegisterHelper.registerItems(malachiteAxe);
+		RegisterHelper.registerItems(verantiumPick);
+		RegisterHelper.registerItems(verantiumShovel);
+		RegisterHelper.registerItems(verantiumAxe);
 		RegisterHelper.registerItems(astrillPick);
 		RegisterHelper.registerItems(astrillShovel);
 		RegisterHelper.registerItems(astrillAxe);
 		
 		// armor
-		RegisterHelper.registerItems(malachiteHelmet);
-		RegisterHelper.registerItems(malachiteChestplate);
-		RegisterHelper.registerItems(malachiteLeggings);
-		RegisterHelper.registerItems(malachiteBoots);
+		RegisterHelper.registerItems(verantiumHelmet);
+		RegisterHelper.registerItems(verantiumChestplate);
+		RegisterHelper.registerItems(verantiumLeggings);
+		RegisterHelper.registerItems(verantiumBoots);
 		RegisterHelper.registerItems(astrillHelmet);
 		RegisterHelper.registerItems(astrillChestplate);
 		RegisterHelper.registerItems(astrillLeggings);
@@ -145,9 +145,9 @@ public class ModArmory
 		// generic melee
 		RegisterHelper.registerItems(ironDagger);
 		RegisterHelper.registerItems(ironMace);
-		RegisterHelper.registerItems(malachiteDagger);
-		RegisterHelper.registerItems(malachiteSword);
-		RegisterHelper.registerItems(malachiteMace);
+		RegisterHelper.registerItems(verantiumDagger);
+		RegisterHelper.registerItems(verantiumSword);
+		RegisterHelper.registerItems(verantiumMace);
 		RegisterHelper.registerItems(vexalDagger);
 		RegisterHelper.registerItems(vexalSword);
 		RegisterHelper.registerItems(vexalMace);
@@ -171,7 +171,7 @@ public class ModArmory
 		
 		// ranged
 		RegisterHelper.registerItems(ironStaff);
-		RegisterHelper.registerItems(malachiteStaff);
+		RegisterHelper.registerItems(verantiumStaff);
 		RegisterHelper.registerItems(astrillStaff);
 		RegisterHelper.registerItems(infernoStaff);
 		RegisterHelper.registerItems(blizzardStaff);

@@ -1,6 +1,0 @@
-{
-    "parent":"losteclipse:item/malachiteStaff",
-    "textures": {
-        "layer0":"losteclipse:items/malachiteStaff_2"
-    }
-}

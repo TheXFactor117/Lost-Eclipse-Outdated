@@ -25,7 +25,7 @@ import com.thexfactor117.losteclipse.items.scrolls.ItemInvisibilityScroll;
 import com.thexfactor117.losteclipse.items.scrolls.ItemRadiationScroll;
 import com.thexfactor117.losteclipse.items.scrolls.ItemRemyScroll;
 import com.thexfactor117.losteclipse.items.scrolls.ItemVoidScroll;
-import com.thexfactor117.losteclipse.misc.RegisterHelper;
+import com.thexfactor117.losteclipse.util.RegisterHelper;
 
 import net.minecraft.item.Item;
 
@@ -44,82 +44,82 @@ public class ModItems
 	public static Item nova = new ItemLE("nova", Rarity.ARCHAIC);
 	
 	// ingots & gems
-	public static Item malachiteIngot = new ItemLE("malachiteIngot", Rarity.UNCOMMON);
+	public static Item verantiumIngot = new ItemLE("verantium_ingot", Rarity.UNCOMMON);
 	public static Item garnet = new ItemLE("garnet", Rarity.UNCOMMON);
-	public static Item soulGemFragment = new ItemLE("soulGemFragment", Rarity.UNCOMMON);
-	public static Item soulGem = new ItemSoulGem("soulGem", Rarity.RARE);
-	public static Item flawlessGarnet = new ItemLE("flawlessGarnet", Rarity.RARE);
-	public static Item onyxGem = new ItemLE("onyxGem", Rarity.RARE);
+	public static Item soulGemFragment = new ItemLE("soul_gem_fragment", Rarity.UNCOMMON);
+	public static Item soulGem = new ItemSoulGem("soul_gem", Rarity.RARE);
+	public static Item flawlessGarnet = new ItemLE("flawless_garnet", Rarity.RARE);
+	public static Item onyxGem = new ItemLE("onyx_gem", Rarity.RARE);
 	public static Item amethyst = new ItemLE("amethyst", Rarity.RARE);
-	public static Item vexalGem = new ItemLE("vexalGem", Rarity.RARE);
-	public static Item etherealGem = new ItemLE("etherealGem", Rarity.RARE);
-	public static Item astrillGemFragment = new ItemLE("astrillGemFragment", Rarity.RARE);
-	public static Item astrillGem = new ItemLE("astrillGem", Rarity.LEGENDARY);
-	public static Item flawlessAmethyst = new ItemLE("flawlessAmethyst", Rarity.LEGENDARY);
-	public static Item chysoliteGem = new ItemLE("chysoliteGem", Rarity.LEGENDARY);
+	public static Item vexalGem = new ItemLE("vexal_gem", Rarity.RARE);
+	public static Item etherealGem = new ItemLE("ethereal_gem", Rarity.RARE);
+	public static Item astrillGemFragment = new ItemLE("astrill_gem_fragment", Rarity.RARE);
+	public static Item astrillGem = new ItemLE("astrill_gem", Rarity.LEGENDARY);
+	public static Item flawlessAmethyst = new ItemLE("flawless_amethyst", Rarity.LEGENDARY);
+	public static Item chysoliteGem = new ItemLE("chysolite_gem", Rarity.LEGENDARY);
 	
 	// glyphs
-	public static Item fireGlyph = new ItemLE("fireGlyph", Rarity.COMMON);
-	public static Item frostGlyph = new ItemLE("frostGlyph", Rarity.COMMON);
-	public static Item poisonGlyph = new ItemLE("poisonGlyph", Rarity.COMMON);
-	public static Item strengthGlyph = new ItemLE("strengthGlyph", Rarity.UNCOMMON);
-	public static Item minorDamageGlyph = new ItemLE("minorDamageGlyph", Rarity.UNCOMMON);
-	public static Item minorEtherealGlyph = new ItemLE("minorEtherealGlyph", Rarity.UNCOMMON);
-	public static Item hardenedGlyph = new ItemLE("hardenedGlyph", Rarity.UNCOMMON);
-	public static Item elementalGlyph = new ItemLE("elementalGlyph", Rarity.RARE);
-	public static Item darkenedGlyph = new ItemLE("darkenedGlyph", Rarity.RARE);
-	public static Item brightenedGlyph = new ItemLE("brightenedGlyph", Rarity.RARE);
-	public static Item bloodGlyph = new ItemLE("bloodGlyph", Rarity.RARE);
-	public static Item absorbtionGlyph = new ItemLE("absorbtionGlyph", Rarity.RARE);
-	public static Item minorConjurationGlyph = new ItemLE("minorConjurationGlyph", Rarity.RARE);
-	public static Item majorEtherealGlyph = new ItemLE("majorEtherealGlyph", Rarity.LEGENDARY);
-	public static Item chainedGlyph = new ItemLE("chainedGlyph", Rarity.LEGENDARY);
-	public static Item invisibilityGlyph = new ItemLE("invisibilityGlyph", Rarity.LEGENDARY);
-	public static Item majorConjurationGlyph = new ItemLE("majorConjurationGlyph", Rarity.LEGENDARY);
-	public static Item voidGlyph = new ItemLE("voidGlyph", Rarity.ARCHAIC);
+	public static Item fireGlyph = new ItemLE("fire_glyph", Rarity.COMMON);
+	public static Item frostGlyph = new ItemLE("frost_glyph", Rarity.COMMON);
+	public static Item poisonGlyph = new ItemLE("poison_glyph", Rarity.COMMON);
+	public static Item strengthGlyph = new ItemLE("strength_glyph", Rarity.UNCOMMON);
+	public static Item minorDamageGlyph = new ItemLE("minor_damage_glyph", Rarity.UNCOMMON);
+	public static Item minorEtherealGlyph = new ItemLE("minor_ethereal_glyph", Rarity.UNCOMMON);
+	public static Item hardenedGlyph = new ItemLE("hardened_glyph", Rarity.UNCOMMON);
+	public static Item elementalGlyph = new ItemLE("elemental_glyph", Rarity.RARE);
+	public static Item darkenedGlyph = new ItemLE("darkened_glyph", Rarity.RARE);
+	public static Item brightenedGlyph = new ItemLE("brightened_glyph", Rarity.RARE);
+	public static Item bloodGlyph = new ItemLE("blood_glyph", Rarity.RARE);
+	public static Item absorbtionGlyph = new ItemLE("absorbtion_glyph", Rarity.RARE);
+	public static Item minorConjurationGlyph = new ItemLE("minor_conjuration_glyph", Rarity.RARE);
+	public static Item majorEtherealGlyph = new ItemLE("major_ethereal_glyph", Rarity.LEGENDARY);
+	public static Item chainedGlyph = new ItemLE("chained_glyph", Rarity.LEGENDARY);
+	public static Item invisibilityGlyph = new ItemLE("invisibility_glyph", Rarity.LEGENDARY);
+	public static Item majorConjurationGlyph = new ItemLE("major_conjuration_glyph", Rarity.LEGENDARY);
+	public static Item voidGlyph = new ItemLE("void_glyph", Rarity.ARCHAIC);
 	
 	// scrolls
-	public static Item fireballScroll = new ItemFireballScroll("fireballScroll", Rarity.UNCOMMON);
-	public static Item frostbiteScroll = new ItemFrostbiteScroll("frostbiteScroll", Rarity.UNCOMMON);
-	public static Item hardenedScroll = new ItemHardenedScroll("hardenedScroll", Rarity.UNCOMMON);
-	public static Item etherealScroll = new ItemEtherealScroll("etherealScroll", Rarity.RARE);
-	public static Item radiationScroll = new ItemRadiationScroll("radiationScroll", Rarity.RARE);
-	public static Item elementalScroll = new ItemElementalScroll("elementalScroll", Rarity.RARE);
-	public static Item familiarConjurationScroll = new ItemFamiliarConjurationScroll("familiarConjurationScroll", Rarity.RARE);
-	public static Item flameCloakScroll = new ItemFlameCloakScroll("flameCloakScroll", Rarity.RARE);
-	public static Item invisibilityScroll = new ItemInvisibilityScroll("invisibilityScroll", Rarity.LEGENDARY);
-	public static Item infusedEtherealScroll = new ItemInfusedEtherealScroll("infusedEtherealScroll", Rarity.LEGENDARY);
-	public static Item voidScroll = new ItemVoidScroll("voidScroll", Rarity.LEGENDARY);
-	public static Item remyScroll = new ItemRemyScroll("remyScroll", Rarity.ARCHAIC);
+	public static Item fireballScroll = new ItemFireballScroll("fireball_scroll", Rarity.UNCOMMON);
+	public static Item frostbiteScroll = new ItemFrostbiteScroll("frostbite_scroll", Rarity.UNCOMMON);
+	public static Item hardenedScroll = new ItemHardenedScroll("hardened_scroll", Rarity.UNCOMMON);
+	public static Item etherealScroll = new ItemEtherealScroll("ethereal_scroll", Rarity.RARE);
+	public static Item radiationScroll = new ItemRadiationScroll("radiation_scroll", Rarity.RARE);
+	public static Item elementalScroll = new ItemElementalScroll("elemental_scroll", Rarity.RARE);
+	public static Item familiarConjurationScroll = new ItemFamiliarConjurationScroll("familiar_conjuration_scroll", Rarity.RARE);
+	public static Item flameCloakScroll = new ItemFlameCloakScroll("flame_cloak_scroll", Rarity.RARE);
+	public static Item invisibilityScroll = new ItemInvisibilityScroll("invisibility_scroll", Rarity.LEGENDARY);
+	public static Item infusedEtherealScroll = new ItemInfusedEtherealScroll("infused_ethereal_scroll", Rarity.LEGENDARY);
+	public static Item voidScroll = new ItemVoidScroll("void_scroll", Rarity.LEGENDARY);
+	public static Item remyScroll = new ItemRemyScroll("remy_scroll", Rarity.ARCHAIC);
 	
 	// jewelry
-	public static Item minorHealthGoldenRing = new ItemGoldenRingMinorHealth("minorHealthGoldenRing", Rarity.UNCOMMON);
-	public static Item minorDamageGoldenRing = new ItemGoldenRingMinorDamage("minorDamageGoldenRing", Rarity.UNCOMMON);
-	public static Item fireResistanceBelt = new ItemBeltFireResistance("fireResistanceBelt", Rarity.UNCOMMON);
-	public static Item soulRing = new ItemRing("soulRing", Rarity.RARE);
-	public static Item soulAmulet = new ItemAmulet("soulAmulet", Rarity.RARE);
-	public static Item healthGoldenRing = new ItemGoldenRingHealth("healthGoldenRing", Rarity.RARE);
-	public static Item damageGoldenRing = new ItemGoldenRingDamage("damageGoldenRing", Rarity.RARE);
-	public static Item resistanceBelt = new ItemBeltResistance("resistanceBelt", Rarity.RARE);
-	public static Item infusedSoulRing = new ItemRing("infusedSoulRing", Rarity.LEGENDARY);
-	public static Item infusedSoulAmulet = new ItemAmulet("infusedSoulAmulet", Rarity.LEGENDARY);
-	public static Item valadurSoulAmulet = new ItemAmulet("valadurSoulAmulet", Rarity.ARCHAIC);
-	public static Item forerunnerBelt = new ItemBelt("forerunnerBelt", Rarity.ARCHAIC);
+	public static Item minorHealthGoldenRing = new ItemGoldenRingMinorHealth("minor_health_golden_ring", Rarity.UNCOMMON);
+	public static Item minorDamageGoldenRing = new ItemGoldenRingMinorDamage("minor_damage_golden_ring", Rarity.UNCOMMON);
+	public static Item fireResistanceBelt = new ItemBeltFireResistance("fire_resistance_belt", Rarity.UNCOMMON);
+	public static Item soulRing = new ItemRing("soul_ring", Rarity.RARE);
+	public static Item soulAmulet = new ItemAmulet("soul_amulet", Rarity.RARE);
+	public static Item healthGoldenRing = new ItemGoldenRingHealth("health_golden_ring", Rarity.RARE);
+	public static Item damageGoldenRing = new ItemGoldenRingDamage("damage_golden_ring", Rarity.RARE);
+	public static Item resistanceBelt = new ItemBeltResistance("resistance_belt", Rarity.RARE);
+	public static Item infusedSoulRing = new ItemRing("infused_soul_ring", Rarity.LEGENDARY);
+	public static Item infusedSoulAmulet = new ItemAmulet("infused_soul_amulet", Rarity.LEGENDARY);
+	public static Item valadurSoulAmulet = new ItemAmulet("valadur_soul_amulet", Rarity.ARCHAIC);
+	public static Item forerunnerBelt = new ItemBelt("forerunner_belt", Rarity.ARCHAIC);
 	
 	// misc
-	public static Item staffBase = new ItemLE("staffBase", Rarity.COMMON);
-	public static Item frostRod = new ItemLE("frostRod", Rarity.COMMON);
-	public static Item frostDust = new ItemLE("frostDust", Rarity.COMMON);
-	public static Item goldenRing = new ItemLE("goldenRing", Rarity.COMMON);
-	public static Item basicGlyphPattern = new ItemLE("basicGlyphPattern", Rarity.COMMON);
-	public static Item golemGyro = new ItemLE("golemGyro", Rarity.UNCOMMON);
-	public static Item diamondRing = new ItemLE("diamondRing", Rarity.RARE);
-	public static Item rareGlyphPattern = new ItemLE("rareGlyphPattern", Rarity.RARE);
-	public static Item astrillRing = new ItemLE("astrillRing", Rarity.LEGENDARY);
-	public static Item legendaryGlyphPattern = new ItemLE("legendaryGlyphPattern", Rarity.LEGENDARY);
+	public static Item staffBase = new ItemLE("staff_base", Rarity.COMMON);
+	public static Item frostRod = new ItemLE("frost_rod", Rarity.COMMON);
+	public static Item frostDust = new ItemLE("frost_dust", Rarity.COMMON);
+	public static Item goldenRing = new ItemLE("golden_ring", Rarity.COMMON);
+	public static Item basicGlyphPattern = new ItemLE("basic_glyph_pattern", Rarity.COMMON);
+	public static Item golemGyro = new ItemLE("golem_gyro", Rarity.UNCOMMON);
+	public static Item diamondRing = new ItemLE("diamond_ring", Rarity.RARE);
+	public static Item rareGlyphPattern = new ItemLE("rare_glyph_pattern", Rarity.RARE);
+	public static Item astrillRing = new ItemLE("astrill_ring", Rarity.LEGENDARY);
+	public static Item legendaryGlyphPattern = new ItemLE("legendary_glyph_pattern", Rarity.LEGENDARY);
 	
 	// test
-	public static Item testItem = new ItemTest("testItem", Rarity.ARCHAIC);
+	public static Item testItem = new ItemTest("test_item", Rarity.ARCHAIC);
 	
 	public static void registerItems()
 	{
@@ -131,7 +131,7 @@ public class ModItems
 		RegisterHelper.registerItems(nova);
 		
 		// ingots & gems
-		RegisterHelper.registerItems(malachiteIngot);
+		RegisterHelper.registerItems(verantiumIngot);
 		RegisterHelper.registerItems(garnet);
 		RegisterHelper.registerItems(soulGemFragment);
 		RegisterHelper.registerItems(soulGem);

@@ -1,6 +1,0 @@
-{
-    "parent":"losteclipse:item/ironStaff",
-    "textures": {
-        "layer0":"losteclipse:items/ironStaff_1"
-    }
-}

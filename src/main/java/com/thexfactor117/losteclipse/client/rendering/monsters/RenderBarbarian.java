@@ -1,7 +1,7 @@
 package com.thexfactor117.losteclipse.client.rendering.monsters;
 
-import com.thexfactor117.losteclipse.Reference;
 import com.thexfactor117.losteclipse.entities.monsters.EntityBarbarian;
+import com.thexfactor117.losteclipse.util.Reference;
 
 import net.minecraft.client.model.ModelBiped;
 import net.minecraft.client.renderer.entity.RenderBiped;

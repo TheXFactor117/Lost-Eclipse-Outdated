@@ -3,7 +3,6 @@ package com.thexfactor117.losteclipse;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.thexfactor117.losteclipse.Reference;
 import com.thexfactor117.losteclipse.generation.LEWorldGenerator;
 import com.thexfactor117.losteclipse.init.ModArmory;
 import com.thexfactor117.losteclipse.init.ModBlocks;
@@ -13,6 +12,7 @@ import com.thexfactor117.losteclipse.init.ModEvents;
 import com.thexfactor117.losteclipse.init.ModItems;
 import com.thexfactor117.losteclipse.init.ModRecipes;
 import com.thexfactor117.losteclipse.proxies.CommonProxy;
+import com.thexfactor117.losteclipse.util.Reference;
 
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
