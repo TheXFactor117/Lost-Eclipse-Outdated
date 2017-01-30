@@ -8,9 +8,7 @@ import com.thexfactor117.losteclipse.entities.monsters.EntityGhost;
 import com.thexfactor117.losteclipse.entities.monsters.EntityGolem;
 import com.thexfactor117.losteclipse.entities.monsters.EntityMiniGolem;
 import com.thexfactor117.losteclipse.entities.monsters.EntityMummy;
-import com.thexfactor117.losteclipse.entities.monsters.EntityPirate;
 import com.thexfactor117.losteclipse.entities.monsters.EntityTroll;
-import com.thexfactor117.losteclipse.entities.monsters.EntityValkyrie;
 import com.thexfactor117.losteclipse.entities.projectiles.EntityDarkMagic;
 import com.thexfactor117.losteclipse.entities.projectiles.EntityFireball;
 import com.thexfactor117.losteclipse.entities.projectiles.EntityFrostbite;
@@ -41,9 +39,7 @@ public class ModEntities
 		registerModEntity(EntityGolem.class, "golem");
 		registerModEntity(EntityMiniGolem.class, "mini-golem");
 		registerModEntity(EntityMummy.class, "mummy");
-		registerModEntity(EntityPirate.class, "pirate");
 		registerModEntity(EntityTroll.class, "troll");
-		registerModEntity(EntityValkyrie.class, "valkyrie");
 		
 		// projectiles
 		registerModProjectile(EntityMagic.class, "entityMagic");

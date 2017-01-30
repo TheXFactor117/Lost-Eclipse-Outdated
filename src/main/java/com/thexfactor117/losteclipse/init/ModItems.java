@@ -13,7 +13,6 @@ import com.thexfactor117.losteclipse.items.jewelry.ItemGoldenRingDamage;
 import com.thexfactor117.losteclipse.items.jewelry.ItemGoldenRingHealth;
 import com.thexfactor117.losteclipse.items.jewelry.ItemGoldenRingMinorDamage;
 import com.thexfactor117.losteclipse.items.jewelry.ItemGoldenRingMinorHealth;
-import com.thexfactor117.losteclipse.items.scrolls.ItemElementalScroll;
 import com.thexfactor117.losteclipse.items.scrolls.ItemEtherealScroll;
 import com.thexfactor117.losteclipse.items.scrolls.ItemFamiliarConjurationScroll;
 import com.thexfactor117.losteclipse.items.scrolls.ItemFireballScroll;
@@ -84,7 +83,6 @@ public class ModItems
 	public static Item hardenedScroll = new ItemHardenedScroll("hardened_scroll", Rarity.UNCOMMON);
 	public static Item etherealScroll = new ItemEtherealScroll("ethereal_scroll", Rarity.RARE);
 	public static Item radiationScroll = new ItemRadiationScroll("radiation_scroll", Rarity.RARE);
-	public static Item elementalScroll = new ItemElementalScroll("elemental_scroll", Rarity.RARE);
 	public static Item familiarConjurationScroll = new ItemFamiliarConjurationScroll("familiar_conjuration_scroll", Rarity.RARE);
 	public static Item flameCloakScroll = new ItemFlameCloakScroll("flame_cloak_scroll", Rarity.RARE);
 	public static Item invisibilityScroll = new ItemInvisibilityScroll("invisibility_scroll", Rarity.LEGENDARY);
@@ -171,7 +169,6 @@ public class ModItems
 		RegisterHelper.registerItems(hardenedScroll);
 		RegisterHelper.registerItems(etherealScroll);
 		RegisterHelper.registerItems(radiationScroll);
-		RegisterHelper.registerItems(elementalScroll);
 		RegisterHelper.registerItems(familiarConjurationScroll);
 		RegisterHelper.registerItems(flameCloakScroll);
 		RegisterHelper.registerItems(invisibilityScroll);

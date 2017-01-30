@@ -5,8 +5,8 @@ package com.thexfactor117.losteclipse.capabilities.api;
  * @author TheXFactor117
  *
  */
-public interface IPlayerMaxHealth 
+public interface IMana 
 {
-	float getMaxHealth();
-	void setMaxHealth(float health);
+	int getMana();
+	void setMana(int amount);
 }

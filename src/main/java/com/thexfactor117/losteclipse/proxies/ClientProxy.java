@@ -1,5 +1,6 @@
 package com.thexfactor117.losteclipse.proxies;
 
+import com.thexfactor117.losteclipse.client.gui.GuiMana;
 import com.thexfactor117.losteclipse.client.rendering.monsters.RenderBanshee;
 import com.thexfactor117.losteclipse.client.rendering.monsters.RenderBarbarian;
 import com.thexfactor117.losteclipse.client.rendering.monsters.RenderGhost;
@@ -17,6 +18,8 @@ import com.thexfactor117.losteclipse.entities.projectiles.EntityFrostbite;
 import com.thexfactor117.losteclipse.entities.projectiles.EntityLightning;
 import com.thexfactor117.losteclipse.entities.projectiles.EntityMagic;
 
+import net.minecraft.client.Minecraft;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -29,6 +32,12 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public class ClientProxy extends CommonProxy
 {
+	@Override
+	public void preInit()
+	{
+		MinecraftForge.EVENT_BUS.register(new GuiMana(Minecraft.getMinecraft()));
+	}
+	
 	@Override
 	public void registerRenderers()
 	{

@@ -102,7 +102,7 @@ public class ItemInfernoStaff extends ItemLEStaff
 	        					{
 	        						ItemSoulGem soulGem = (ItemSoulGem) player.inventory.mainInventory.get(i).getItem();
 	        						
-	        						if (soulGem != null) soulGem.setSouls(nbt, soulGem.getSouls(nbt) - this.getSoulsPerUse());
+	        						if (soulGem != null) soulGem.setSouls(nbt, soulGem.getSouls(nbt) - this.getManaPerUse());
 	        					}
 	        				}
 		        		}

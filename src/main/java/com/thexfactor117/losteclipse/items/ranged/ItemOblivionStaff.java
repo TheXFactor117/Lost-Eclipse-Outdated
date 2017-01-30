@@ -103,11 +103,11 @@ public class ItemOblivionStaff extends ItemLEStaff
 	        					{
 	        						ItemSoulGem soulGem = (ItemSoulGem) player.inventory.mainInventory.get(i).getItem();
 	        						
-	        						LostEclipse.LOGGER.info("souls per use: " + this.getSoulsPerUse());
+	        						LostEclipse.LOGGER.info("souls per use: " + this.getManaPerUse());
 	        						if (soulGem != null) 
 	        						{
-	        							soulGem.setSouls(nbt, soulGem.getSouls(nbt) - this.getSoulsPerUse());
-	        							this.setSoulsPerUse(this.getOriginalSoulsPerUse());
+	        							soulGem.setSouls(nbt, soulGem.getSouls(nbt) - this.getManaPerUse());
+	        							this.setManaPerUse(this.getOriginalManaPerUse());
 	        						}
 	        					}
 	        				}

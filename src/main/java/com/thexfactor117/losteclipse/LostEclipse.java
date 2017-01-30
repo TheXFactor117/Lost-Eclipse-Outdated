@@ -59,6 +59,7 @@ public class LostEclipse
 		ModEvents.registerEvents();
 		ModCapabilities.registerCapabilities();
 		
+		proxy.preInit();
 		proxy.registerRenderers();
 	}
 	
