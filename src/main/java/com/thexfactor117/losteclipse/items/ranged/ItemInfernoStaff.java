@@ -3,9 +3,10 @@ package com.thexfactor117.losteclipse.items.ranged;
 import javax.annotation.Nullable;
 
 import com.thexfactor117.levels.leveling.Rarity;
+import com.thexfactor117.losteclipse.capabilities.player.CapabilityMana;
+import com.thexfactor117.losteclipse.capabilities.player.Mana;
 import com.thexfactor117.losteclipse.entities.projectiles.EntityFireball;
 import com.thexfactor117.losteclipse.init.ModArmory;
-import com.thexfactor117.losteclipse.items.ItemSoulGem;
 import com.thexfactor117.losteclipse.items.base.ItemLEStaff;
 
 import net.minecraft.entity.EntityLivingBase;
@@ -13,7 +14,6 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.IItemPropertyGetter;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.Vec3d;
@@ -28,9 +28,9 @@ import net.minecraftforge.fml.relauncher.SideOnly;
  */
 public class ItemInfernoStaff extends ItemLEStaff
 {
-	public ItemInfernoStaff(String name, Rarity rarity, int soulsPerUse) 
+	public ItemInfernoStaff(String name, Rarity rarity, int manaPerUse) 
 	{
-		super(name, rarity, soulsPerUse);
+		super(name, rarity, manaPerUse);
 		this.addPropertyOverride(new ResourceLocation("pull"), new IItemPropertyGetter()
 		{
 			@SideOnly(Side.CLIENT)
@@ -73,8 +73,9 @@ public class ItemInfernoStaff extends ItemLEStaff
 		if (entity instanceof EntityPlayer)
 		{
 			EntityPlayer player = (EntityPlayer) entity;
+			Mana capMana = (Mana) player.getCapability(CapabilityMana.MANA_CAP, null);
 			
-			if (player.capabilities.isCreativeMode || player.inventory.hasItemStack(stack))
+			if ((player.capabilities.isCreativeMode || player.inventory.hasItemStack(stack)) && capMana != null)
 			{
 				world.playSound(player, player.getPosition(), SoundEvents.ENTITY_ARROW_SHOOT, SoundCategory.NEUTRAL, 1.0F, 1.0F);
 				
@@ -87,26 +88,7 @@ public class ItemInfernoStaff extends ItemLEStaff
 					EntityFireball fireball = new EntityFireball(world, x, y, z, 1.0F, 0F);
 					fireball.setPosition(player.posX + look.xCoord, player.posY + look.yCoord + 1.5, player.posZ + look.zCoord);
 					world.spawnEntityInWorld(fireball);
-					
-					for (int i = 0; i < player.inventory.mainInventory.size(); i++)
-		        	{
-		        		if (player.inventory.mainInventory.get(i) != null && player.inventory.mainInventory.get(i).getItem() instanceof ItemSoulGem)
-		        		{
-		        			ItemStack soulGemStack = player.inventory.mainInventory.get(i);
-	        				
-	        				if (soulGemStack != null)
-	        				{
-	        					NBTTagCompound nbt = soulGemStack.getTagCompound();
-	        					
-	        					if (nbt != null)
-	        					{
-	        						ItemSoulGem soulGem = (ItemSoulGem) player.inventory.mainInventory.get(i).getItem();
-	        						
-	        						if (soulGem != null) soulGem.setSouls(nbt, soulGem.getSouls(nbt) - this.getManaPerUse());
-	        					}
-	        				}
-		        		}
-		        	}
+					capMana.setMana(capMana.getMana() - this.getManaPerUse());
 				}
 			}
 		}

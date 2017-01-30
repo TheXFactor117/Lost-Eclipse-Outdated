@@ -4,9 +4,7 @@ import javax.annotation.Nullable;
 
 import com.thexfactor117.levels.leveling.Rarity;
 import com.thexfactor117.losteclipse.capabilities.player.CapabilityMana;
-import com.thexfactor117.losteclipse.capabilities.player.CapabilityMaxMana;
 import com.thexfactor117.losteclipse.capabilities.player.Mana;
-import com.thexfactor117.losteclipse.capabilities.player.MaxMana;
 import com.thexfactor117.losteclipse.entities.projectiles.EntityMagic;
 import com.thexfactor117.losteclipse.init.ModArmory;
 import com.thexfactor117.losteclipse.items.base.ItemLEStaff;
@@ -76,9 +74,8 @@ public class ItemAstrillStaff extends ItemLEStaff
 		{
 			EntityPlayer player = (EntityPlayer) entity;
 			Mana capMana = (Mana) player.getCapability(CapabilityMana.MANA_CAP, null);
-			MaxMana capMaxMana = (MaxMana) player.getCapability(CapabilityMaxMana.MAX_MANA_CAP, null);
 			
-			if ((player.capabilities.isCreativeMode || player.inventory.hasItemStack(stack)) && (capMana != null && capMaxMana != null))
+			if ((player.capabilities.isCreativeMode || player.inventory.hasItemStack(stack)) && capMana != null)
 			{
 				world.playSound(player, player.getPosition(), SoundEvents.ENTITY_ARROW_SHOOT, SoundCategory.NEUTRAL, 1.0F, 1.0F);
 				
