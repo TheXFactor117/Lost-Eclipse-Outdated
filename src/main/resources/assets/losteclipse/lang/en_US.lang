@@ -1,16 +1,9 @@
-levels.rarity.0=Unknown
-levels.rarity.1=Basic
-levels.rarity.2=Uncommon
-levels.rarity.3=Rare
-levels.rarity.4=Legendary
-levels.rarity.5=Ancient
-
 #############################################
 #                  BLOCKS                   #
 #############################################
-tile.malachiteOre.name=Malachite Ore
-tile.vexalOre.name=Vexal Ore
-tile.astrillOre.name=Astrill Ore
+tile.verantium_ore.name=Verantium Ore
+tile.vexal_ore.name=Vexal Ore
+tile.astrill_ore.name=Astrill Ore
 
 #############################################
 #                   ITEMS                   #
@@ -24,171 +17,168 @@ item.mythic.name=Mythic
 item.nova.name=Nova
 
 ### ingots & gems
-item.malachiteIngot.name=Malachite Ingot
-item.vexalGem.name=Vexal Gem
-item.astrillGem.name=Astrill Gem
-item.astrillGemFragment.name=Astrill Gem Fragment
-item.soulGem.name=Soul Gem
-item.soulGemFragment.name=Soul Gem Fragment
-item.etherealGem.name=Ethereal Gem
+item.verantium_ingot.name=Verantium Ingot
+item.vexal_gem.name=Vexal Gem
+item.astrill_gem.name=Astrill Gem
+item.astrill_gem_fragment.name=Astrill Gem Fragment
+item.soul_gem.name=Soul Gem
+item.soul_gem_fragment.name=Soul Gem Fragment
+item.ethereal_gem.name=Ethereal Gem
 item.garnet.name=Garnet
-item.flawlessGarnet.name=Flawless Garnet
-item.onyxGem.name=Onyx Gem
+item.flawless_garnet.name=Flawless Garnet
+item.onyx_gem.name=Onyx Gem
 item.amethyst.name=Amethyst
-item.flawlessAmethyst.name=Flawless Amethyst
-item.chysolite.name=Chysolite
+item.flawless_amethyst.name=Flawless Amethyst
+item.chysolite_gem.name=Chysolite Gem
 
 ### glyphs
-item.fireGlyph.name=Fire Glyph
-item.frostGlyph.name=Frost Glyph
-item.poisonGlyph.name=Poison Glyph
-item.strengthGlyph.name=Strength Glyph
-item.minorDamageGlyph.name=Glyph of Minor Damage
-item.minorEtherealGlyph.name=Minor Ethereal Glyph
-item.hardenedGlyph.name=Hardened Glyph
-item.elementalGlyph.name=Elemental Glyph
-item.darkenedGlyph.name=Darkened Glyph
-item.brightenedGlyph.name=Brightened Glyph
-item.bloodGlyph.name=Blood Glyph
-item.absorbtionGlyph.name=Absorbtion Glyph
-item.minorConjurationGlyph.name=Glyph of Minor Conjuration
-item.majorEtherealGlyph.name=Major Ethereal Glyph
-item.chainedGlyph.name=Chained Glyph
-item.invisibilityGlyph.name=Invisibility Glyph
-item.majorConjurationGlyph.name=Glyph of Major Conjuration
-item.voidGlyph.name=Void Glyph
+item.fire_glyph.name=Fire Glyph
+item.frost_glyph.name=Frost Glyph
+item.poison_glyph.name=Poison Glyph
+item.strength_glyph.name=Strength Glyph
+item.minor_damage_glyph.name=Glyph of Minor Damage
+item.minor_ethereal_glyph.name=Minor Ethereal Glyph
+item.hardened_glyph.name=Hardened Glyph
+item.elemental_glyph.name=Elemental Glyph
+item.darkened_glyph.name=Darkened Glyph
+item.brightened_glyph.name=Brightened Glyph
+item.blood_glyph.name=Blood Glyph
+item.absorbtion_glyph.name=Absorbtion Glyph
+item.minor_conjuration_glyph.name=Glyph of Minor Conjuration
+item.major_ethereal_glyph.name=Major Ethereal Glyph
+item.chained_glyph.name=Chained Glyph
+item.invisibility_glyph.name=Invisibility Glyph
+item.major_conjuration_glyph.name=Glyph of Major Conjuration
+item.void_glyph.name=Void Glyph
 
 ### scrolls
-item.fireballScroll.name=Fireball Scroll
-item.frostbiteScroll.name=Frostbite Scroll
-item.hardenedScroll.name=Hardened Scroll
-item.etherealScroll.name=Ethereal Scroll
-item.radiationScroll.name=Radiation Scroll
-item.elementalScroll.name=Elemental Scroll
-item.familiarConjurationScroll.name=Familiar Conjuration Scroll
-item.flameCloakScroll.name=Flame Cloak Scroll
-item.invisibilityScroll.name=Invisibility Scroll
-item.infusedEtherealScroll.name=Infused Ethereal Scroll
-item.voidScroll.name=Void Scroll
-item.remyScroll.name=Scroll of Remy
+item.fireball_scroll.name=Fireball Scroll
+item.frostbite_scroll.name=Frostbite Scroll
+item.hardened_scroll.name=Hardened Scroll
+item.ethereal_scroll.name=Ethereal Scroll
+item.radiation_scroll.name=Radiation Scroll
+item.elemental_scroll.name=Elemental Scroll
+item.familiar_conjuration_scroll.name=Familiar Conjuration Scroll
+item.flame_cloak_scroll.name=Flame Cloak Scroll
+item.invisibility_scroll.name=Invisibility Scroll
+item.infused_sthereal_scroll.name=Infused Ethereal Scroll
+item.void_scroll.name=Void Scroll
+item.remy_scroll.name=Scroll of Remy
 
 ### jewelry
-item.minorHealthGoldenRing.name=Golden Ring of Minor Health
-item.minorDamageGoldenRing.name=Golden Ring of Minor Damage
-item.fireResistanceBelt.name=Belt of Fire Resistance
-item.soulRing.name=Soul Ring
-item.soulAmulet.name=Soul Amulet
-item.healthGoldenRing.name=Golden Ring of Health
-item.damageGoldenRing.name=Golden Ring of Damage
-item.resistanceBelt.name=Belt of Resistance
-item.infusedSoulRing.name=Infused Soul Ring
-item.infusedSoulAmulet.name=Infused Soul Amulet
-item.valadurSoulAmulet.name=Soul Amulet of Valadur
-item.forerunnerBelt.name=Forerunner Belt
+item.minor_health_golden_ring.name=Golden Ring of Minor Health
+item.minor_damage_golden_ring.name=Golden Ring of Minor Damage
+item.fire-resistance_belt.name=Belt of Fire Resistance
+item.soul_ring.name=Soul Ring
+item.soul_amulet.name=Soul Amulet
+item.health_golden_ring.name=Golden Ring of Health
+item.damage_golden_ring.name=Golden Ring of Damage
+item.resistance_belt.name=Belt of Resistance
+item.infused_soul_ring.name=Infused Soul Ring
+item.infused_soul_amulet.name=Infused Soul Amulet
+item.valadur_soul_amulet.name=Soul Amulet of Valadur
+item.forerunner_belt.name=Forerunner Belt
 
 ### misc
-item.staffBase.name=Staff Base
-item.frostRod.name=Frost Rod
-item.frostDust.name=Frost Dust
-item.goldenRing.name=Golden Ring
-item.basicGlyphPattern.name=Glyph Pattern
-item.uncommonGlyphPattern.name=Glyph Pattern
-item.rareGlyphPattern.name=Glyph Pattern
-item.legendaryGlyphPattern.name=Glyph Pattern
-item.golemGyro.name=Golem Gyro
-item.diamondRing.name=Diamond Ring
-item.astrillRing.name=Astrill Ring
+item.staff_base.name=Staff Base
+item.frost_rod.name=Frost Rod
+item.frost_dust.name=Frost Dust
+item.golden_ring.name=Golden Ring
+item.basic_glyph_pattern.name=Glyph Pattern
+item.uncommon_glyph_pattern.name=Glyph Pattern
+item.rare_glyph_pattern.name=Glyph Pattern
+item.legendary_glyph_pattern.name=Glyph Pattern
+item.golem_gyro.name=Golem Gyro
+item.diamond_ring.name=Diamond Ring
+item.astrill_ring.name=Astrill Ring
 
 ### tools
-item.malachitePick.name=Malachite Pickaxe
-item.malachiteShovel.name=Malachite Shovel
-item.malachiteAxe.name=Malachite Axe
-item.astrillPick.name=Astrill Pickaxe
-item.astrillShovel.name=Astrill Shovel
-item.astrillAxe.name=Astrill Axe
+item.verantium_pick.name=Verantium Pickaxe
+item.verantium_shovel.name=Verantium Shovel
+item.verantium_axe.name=Verantium Axe
+item.astrill_pick.name=Astrill Pickaxe
+item.astrill_shovel.name=Astrill Shovel
+item.astrill_axe.name=Astrill Axe
 
 ### armor
-item.malachiteHelmet.name=Malachite Helmet
-item.malachiteChestplate.name=Malachite Chestplate
-item.malachiteLeggings.name=Malachite Leggings
-item.malachiteBoots.name=Malachite Boots
-item.astrillHelmet.name=Astrill Helmet
-item.astrillChestplate.name=Astrill Chestplate
-item.astrillLeggings.name=Astrill Leggings
-item.astrillBoots.name=Astrill Boots
+item.verantium_helmet.name=Verantium Helmet
+item.verantium_chestplate.name=Verantium Chestplate
+item.verantium_leggings.name=Verantium Leggings
+item.verantium_boots.name=Verantium Boots
+item.astrill_helmet.name=Astrill Helmet
+item.astrill_chestplate.name=Astrill Chestplate
+item.astrill_leggings.name=Astrill Leggings
+item.astrill_boots.name=Astrill Boots
 
-item.gyroChestplate.name=Gyro Chestplate
+item.gyro_chestplate.name=Gyro Chestplate
 
 ### generic melee
-item.ironDagger.name=Iron Dagger
-item.ironMace.name=Iron Mace
-item.malachiteDagger.name=Malachite Dagger
-item.malachiteSword.name=Malachite Sword
-item.malachiteMace.name=Malachite Mace
-item.vexalDagger.name=Vexal Dagger
-item.vexalSword.name=Vexal Sword
-item.vexalMace.name=Vexal Mace
-item.astrillDagger.name=Astrill Dagger
-item.astrillSword.name=Astrill Sword
-item.astrillMace.name=Astrill Mace
+item.iron_dagger.name=Iron Dagger
+item.iron_mace.name=Iron Mace
+item.verantium_dagger.name=Verantium Dagger
+item.verantium_sword.name=Verantium Sword
+item.verantium_mace.name=Verantium Mace
+item.vexal_dagger.name=Vexal Dagger
+item.vexal_sword.name=Vexal Sword
+item.vexal_mace.name=Vexal Mace
+item.astrill_dagger.name=Astrill Dagger
+item.astrill_sword.name=Astrill Sword
+item.astrill_mace.name=Astrill Mace
 
 ### special melee
-item.crystallizedSword.name=Crystallized Sword
-item.gyroMace.name=Gyro Mace
-item.shadowBlade.name=Shadow Blade
-item.maliceBlade.name=Malice Blade
-item.woeBlade.name=Blade of Woe
-item.darkMaliceBlade.name=Dark Malice Blade
-item.soulInfusedSword.name=Soul Infused Sword
-item.divineRapier.name=Divine Rapier
-item.voidHammer.name=Void Hammer
-item.excaliburRapier.name=Excalibur Rapier
-item.ardonsDagger.name=Ardon's Dagger
-item.foundersBlade.name=Blade of the Founders
+item.crystallized_sword.name=Crystallized Sword
+item.gyro_mace.name=Gyro Mace
+item.shadow_blade.name=Shadow Blade
+item.malice_blade.name=Malice Blade
+item.woe_blade.name=Blade of Woe
+item.dark_malice_blade.name=Dark Malice Blade
+item.soul_infused_sword.name=Soul Infused Sword
+item.divine_rapier.name=Divine Rapier
+item.void_hammer.name=Void Hammer
+item.excalibur_rapier.name=Excalibur Rapier
+item.ardons_dagger.name=Ardon's Dagger
+item.founders_blade.name=Blade of the Founders
 
 ### ranged
-item.ironStaff.name=Iron Staff
-item.malachiteStaff.name=Malachite Staff
-item.astrillStaff.name=Astrill Staff
-item.infernoStaff.name=Inferno Staff
-item.blizzardStaff.name=Blizzard Staff
-item.lightningStaff.name=Lightning Staff
-item.elementalStaff.name=Elemental Staff
-item.oblivionStaff.name=Oblivion Staff
+item.iron_staff.name=Iron Staff
+item.verantium_staff.name=Verantium Staff
+item.astrill_staff.name=Astrill Staff
+item.inferno_staff.name=Inferno Staff
+item.blizzard_staff.name=Blizzard Staff
+item.lightning_staff.name=Lightning Staff
+item.elemental_staff.name=Elemental Staff
+item.oblivion_staff.name=Oblivion Staff
 
 #############################################
 #                 ENTITIES                  #
 #############################################
 
 ### common
-entity.entityBarbarian.name=Barbarian
-entity.entityBear.name=Bear
-entity.entityGhost.name=Ghost
-entity.entityGoblin.name=Goblin
-entity.entityMummy.name=Mummy
-entity.entitySnowBlaze.name=Snow Blaze
-entity.entityValkyrie.name=Valkyrie
+entity.entity_barbarian.name=Barbarian
+entity.entity_ghost.name=Ghost
+entity.entity_goblin.name=Goblin
+entity.entity_mummy.name=Mummy
+entity.entity_snow_blaze.name=Snow Blaze
 
 ### semi-rare
-entity.entityBandit.name=Bandit
-entity.entityBanshee.name=Banshee
-entity.entityFrozenWight.name=Frozen Wight
-entity.entityOrc.name=Orc
-entity.entityPirate.name=Pirate
+entity.entity_bandit.name=Bandit
+entity.entity_banshee.name=Banshee
+entity.entity_frozen_wight.name=Frozen Wight
+entity.entity_orc.name=Orc
 
 ### rare
-entity.entityGolem.name=Golem
-entity.entityTroll.name=Troll
-entity.entityWraith.name=Wraith
+entity.entity_golem.name=Golem
+entity.entity_troll.name=Troll
+entity.entity_wraith.name=Wraith
 
 ### semi-boss
-entity.entityPharaoh.name=Pharaoh
-entity.entityMiniGolem.name=Mini Golem
-entity.entityWraithDeathlord.name=Wraith Deathlord
+entity.entity_pharaoh.name=Pharaoh
+entity.entity_mini_golem.name=Mini Golem
+entity.entity_wraith_deathlord.name=Wraith Deathlord
 
 #############################################
 #                   TABS                    #
 #############################################
 
-itemGroup.tabLE=Lost Eclipse
-itemGroup.tabLETest=Lost Eclipse Test
+itemGroup.tab_le=Lost Eclipse
+itemGroup.tab_le_test=Lost Eclipse Test

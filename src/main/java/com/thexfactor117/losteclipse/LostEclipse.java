@@ -11,7 +11,10 @@ import com.thexfactor117.losteclipse.init.ModEntities;
 import com.thexfactor117.losteclipse.init.ModEvents;
 import com.thexfactor117.losteclipse.init.ModItems;
 import com.thexfactor117.losteclipse.init.ModRecipes;
+import com.thexfactor117.losteclipse.network.PacketMana;
+import com.thexfactor117.losteclipse.network.PacketMaxMana;
 import com.thexfactor117.losteclipse.proxies.CommonProxy;
+import com.thexfactor117.losteclipse.util.GuiHandler;
 import com.thexfactor117.losteclipse.util.Reference;
 
 import net.minecraftforge.fml.common.Mod;
@@ -21,7 +24,10 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.network.NetworkRegistry;
+import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.fml.relauncher.Side;
 
 /**
  * 
@@ -46,6 +52,7 @@ public class LostEclipse
 	@SidedProxy(clientSide = Reference.CLIENT_PROXY, serverSide = Reference.COMMON_PROXY)
 	public static CommonProxy proxy;
 	public static final Logger LOGGER = LogManager.getLogger("Lost Eclipse");
+	public static SimpleNetworkWrapper network;
 	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
@@ -61,11 +68,16 @@ public class LostEclipse
 		
 		proxy.preInit();
 		proxy.registerRenderers();
+		
+		network = NetworkRegistry.INSTANCE.newSimpleChannel("lost_eclipse");
+		network.registerMessage(PacketMana.Handler.class, PacketMana.class, 0, Side.CLIENT);
+		network.registerMessage(PacketMaxMana.Handler.class, PacketMaxMana.class, 1, Side.CLIENT);
 	}
 	
 	@EventHandler
 	public void init(FMLInitializationEvent event)
 	{
+		NetworkRegistry.INSTANCE.registerGuiHandler(instance, new GuiHandler());
 		GameRegistry.registerWorldGenerator(new LEWorldGenerator(), 100);
 	}
 	

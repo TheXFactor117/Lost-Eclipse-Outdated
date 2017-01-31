@@ -25,11 +25,11 @@ public class LETab extends CreativeTabs
 	@SideOnly(Side.CLIENT)
 	public ItemStack getTabIconItem()
 	{
-		if (this.name == "tabLE") 
+		if (this.name == "tab_le") 
 		{
 			return new ItemStack(ModItems.omega);
 		} 
-		else if (this.name == "tabLETest")
+		else if (this.name == "tab_le_test")
 		{
 			return new ItemStack(ModItems.nova);
 		}

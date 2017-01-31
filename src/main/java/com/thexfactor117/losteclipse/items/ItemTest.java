@@ -1,13 +1,15 @@
 package com.thexfactor117.losteclipse.items;
 
-import java.util.Random;
-
 import com.thexfactor117.levels.leveling.Rarity;
-import com.thexfactor117.losteclipse.generation.structures.dungeons.StructureDungeon;
+import com.thexfactor117.losteclipse.LostEclipse;
+import com.thexfactor117.losteclipse.capabilities.player.CapabilityMana;
+import com.thexfactor117.losteclipse.capabilities.player.Mana;
 import com.thexfactor117.losteclipse.init.ModTabs;
 import com.thexfactor117.losteclipse.items.base.ItemLE;
+import com.thexfactor117.losteclipse.network.PacketMana;
 
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
@@ -32,9 +34,13 @@ public class ItemTest extends ItemLE
     {
 		if (!world.isRemote)
 		{
-			Random random = world.rand;
-			StructureDungeon structure = new StructureDungeon();
-			structure.generate(world, random, pos);
+			Mana capMana = (Mana) player.getCapability(CapabilityMana.MANA_CAP, null);
+
+			if (capMana != null)
+			{
+				capMana.setMana(50);
+				LostEclipse.network.sendTo(new PacketMana(capMana.getMana()), (EntityPlayerMP) player);
+			}
 
 			return EnumActionResult.SUCCESS;
 		}

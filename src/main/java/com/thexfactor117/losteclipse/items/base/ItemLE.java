@@ -21,7 +21,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
  */
 public class ItemLE extends ItemBase
 {
-	public Rarity rarity;
+	protected Rarity rarity;
 	
 	public ItemLE(String name, Rarity rarity)
 	{

@@ -11,6 +11,6 @@ import net.minecraft.creativetab.CreativeTabs;
  */
 public class ModTabs 
 {
-	public static CreativeTabs tabLE = new LETab(CreativeTabs.getNextID(), "tabLE");
-	public static CreativeTabs tabLETest = new LETab(CreativeTabs.getNextID(), "tabLETest");
+	public static CreativeTabs tabLE = new LETab(CreativeTabs.getNextID(), "tab_le");
+	public static CreativeTabs tabLETest = new LETab(CreativeTabs.getNextID(), "tab_le_test");
 }

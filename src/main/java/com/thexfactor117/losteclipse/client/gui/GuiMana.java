@@ -48,20 +48,22 @@ public class GuiMana extends Gui
 				MaxMana capMaxMana = (MaxMana) player.getCapability(CapabilityMaxMana.MAX_MANA_CAP, null);
 				Mana capMana = (Mana) player.getCapability(CapabilityMana.MANA_CAP, null);
 				
-				if (capMaxMana != null)
+				if (capMaxMana != null && capMana != null)
 				{
+					//LostEclipse.LOGGER.info("Mana: " + capMana.getMana() + "\tMax Mana: " + capMaxMana.getMaxMana());
+
 					if (capMaxMana.getMaxMana() != 0)
 					{
-						int manaBarWidth = (int) (capMana.getMana() / capMaxMana.getMaxMana() * 96);
+						double manaBarWidth = (double) capMana.getMana() / capMaxMana.getMaxMana() * 96.0;
 						int xPos = sr.getScaledWidth() / 2 + 110;
 						int yPos = sr.getScaledHeight() - 20;
 						
 						mc.renderEngine.bindTexture(location);
-						
+
 						if (capMana.getMana() != capMaxMana.getMaxMana())
 						{
-							this.drawTexturedModalRect(xPos, yPos, 0, 85, 96, 6);
-							this.drawTexturedModalRect(xPos, yPos, 0, 24, manaBarWidth, 6);
+							this.drawTexturedModalRect(xPos, yPos, 0, 18, 96, 6);
+							this.drawTexturedModalRect(xPos, yPos, 0, 24, (int) manaBarWidth, 5);
 						}
 					}
 				}
