@@ -84,8 +84,18 @@ public class ModArmory
 	public static Item gyroChestplate = new ItemBaseArmor(gyro_chestplate, EntityEquipmentSlot.CHEST, "gyro_chestplate", Reference.MODID, ModTabs.tabLE);
 	
 	// generic melee
+	// vanilla
+	public static Item woodDagger = new ItemLEAdvancedMelee(ToolMaterial.WOOD, "wood_dagger", 0.5, 0.5, 40);
+	public static Item woodMace = new ItemLEAdvancedMelee(ToolMaterial.WOOD, "wood_mace", 1.25, 1.25, 80);
+	public static Item stoneDagger = new ItemLEAdvancedMelee(ToolMaterial.STONE, "stone_dagger", 0.5, 0.5, 100);
+	public static Item stoneMace = new ItemLEAdvancedMelee(ToolMaterial.STONE, "stone_mace", 1.25, 1.25, 160);
+	public static Item goldDagger = new ItemLEAdvancedMelee(ToolMaterial.GOLD, "gold_dagger", 0.5, 0.5, 20);
+	public static Item goldMace = new ItemLEAdvancedMelee(ToolMaterial.GOLD, "gold_mace", 1.25, 1.25, 40);
 	public static Item ironDagger = new ItemLEAdvancedMelee(ToolMaterial.IRON, "iron_dagger", 0.5, 0.5, 175);
 	public static Item ironMace = new ItemLEAdvancedMelee(ToolMaterial.IRON, "iron_mace", 1.25, 1.25, 350);
+	public static Item diamondDagger = new ItemLEAdvancedMelee(ToolMaterial.DIAMOND, "diamond_dagger", 0.5, 0.5, 1200);
+	public static Item diamondMace = new ItemLEAdvancedMelee(ToolMaterial.DIAMOND, "diamond_mace", 1.25, 1.25, 1800);
+	// modded
 	public static Item verantiumDagger = new ItemLEAdvancedMelee(verantium, "verantium_dagger", 0.5, 0.5, 175);
 	public static Item verantiumSword = new ItemLEMelee(verantium, "verantium_sword");
 	public static Item verantiumMace = new ItemLEAdvancedMelee(verantium, "verantium_mace", 1.25, 1.25, 350);
@@ -143,8 +153,18 @@ public class ModArmory
 		RegisterHelper.registerItems(gyroChestplate);
 		
 		// generic melee
+		// vanilla
+		RegisterHelper.registerItems(woodDagger);
+		RegisterHelper.registerItems(woodMace);
+		RegisterHelper.registerItems(stoneDagger);
+		RegisterHelper.registerItems(stoneMace);
+		RegisterHelper.registerItems(goldDagger);
+		RegisterHelper.registerItems(goldMace);
 		RegisterHelper.registerItems(ironDagger);
 		RegisterHelper.registerItems(ironMace);
+		RegisterHelper.registerItems(diamondDagger);
+		RegisterHelper.registerItems(diamondMace);
+		// modded
 		RegisterHelper.registerItems(verantiumDagger);
 		RegisterHelper.registerItems(verantiumSword);
 		RegisterHelper.registerItems(verantiumMace);
