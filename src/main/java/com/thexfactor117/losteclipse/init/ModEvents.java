@@ -3,7 +3,7 @@ package com.thexfactor117.losteclipse.init;
 import com.thexfactor117.losteclipse.LostEclipse;
 import com.thexfactor117.losteclipse.events.EventFlameCloak;
 import com.thexfactor117.losteclipse.events.EventStealSouls;
-import com.thexfactor117.losteclipse.events.EventUpdate;
+import com.thexfactor117.losteclipse.events.EventUpdatePlayer;
 
 import net.minecraftforge.common.MinecraftForge;
 
@@ -20,7 +20,7 @@ public class ModEvents
 		
 		MinecraftForge.EVENT_BUS.register(new EventStealSouls());
 		MinecraftForge.EVENT_BUS.register(new EventFlameCloak());
-		MinecraftForge.EVENT_BUS.register(new EventUpdate());
+		MinecraftForge.EVENT_BUS.register(new EventUpdatePlayer());
 		
 		LostEclipse.LOGGER.info("Event registration finished.");
 	}

@@ -1,9 +1,9 @@
 package com.thexfactor117.losteclipse.client.gui;
 
+import com.thexfactor117.losteclipse.capabilities.api.IMana;
+import com.thexfactor117.losteclipse.capabilities.api.IMaxMana;
 import com.thexfactor117.losteclipse.capabilities.player.CapabilityMana;
 import com.thexfactor117.losteclipse.capabilities.player.CapabilityMaxMana;
-import com.thexfactor117.losteclipse.capabilities.player.Mana;
-import com.thexfactor117.losteclipse.capabilities.player.MaxMana;
 import com.thexfactor117.losteclipse.util.Reference;
 
 import net.minecraft.client.Minecraft;
@@ -45,8 +45,8 @@ public class GuiMana extends Gui
 			
 			if (!player.capabilities.isCreativeMode)
 			{
-				MaxMana capMaxMana = (MaxMana) player.getCapability(CapabilityMaxMana.MAX_MANA_CAP, null);
-				Mana capMana = (Mana) player.getCapability(CapabilityMana.MANA_CAP, null);
+				IMaxMana capMaxMana = (IMaxMana) player.getCapability(CapabilityMaxMana.MAX_MANA_CAP, null);
+				IMana capMana = (IMana) player.getCapability(CapabilityMana.MANA_CAP, null);
 				
 				if (capMaxMana != null && capMana != null)
 				{

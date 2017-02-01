@@ -30,7 +30,6 @@ public class EventFlameCloak
 				if (flameCloak != null && flameCloak.hasFlameCloak())
 				{
 					attacker.setFire(5);
-					flameCloak.setFlameCloak(false);
 				}
 			}
 		}

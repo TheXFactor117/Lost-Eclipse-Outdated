@@ -18,7 +18,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
  * @author TheXFactor117
  *
  */
-public class EventUpdate 
+public class EventMana 
 {
 	private int tick = 0;
 	
