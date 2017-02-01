@@ -2,20 +2,22 @@ package com.thexfactor117.losteclipse.generation;
 
 import java.util.Random;
 
-import com.thexfactor117.losteclipse.generation.structures.StructureAbandonedHouse;
-import com.thexfactor117.losteclipse.generation.structures.StructureShrine;
-import com.thexfactor117.losteclipse.generation.structures.StructureTower;
 import com.thexfactor117.losteclipse.init.ModBlocks;
+import com.thexfactor117.losteclipse.util.Reference;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraft.world.WorldServer;
 import net.minecraft.world.chunk.IChunkGenerator;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenMinable;
-import net.minecraft.world.gen.feature.WorldGenerator;
+import net.minecraft.world.gen.structure.template.PlacementSettings;
+import net.minecraft.world.gen.structure.template.Template;
+import net.minecraft.world.gen.structure.template.TemplateManager;
 import net.minecraftforge.fml.common.IWorldGenerator;
 
 /**
@@ -81,7 +83,20 @@ public class LEWorldGenerator implements IWorldGenerator
 	 */
 	private void generateOverworldStructures(World world, Random rand, int blockX, int blockZ)
 	{
-		WorldGenerator abandonedHouse = new StructureAbandonedHouse();
+		WorldServer server = (WorldServer) world;
+		TemplateManager manager = server.getStructureTemplateManager();
+		Template smallHouse = manager.getTemplate(world.getMinecraftServer(), new ResourceLocation(Reference.MODID, "structures/smallhouse.nbt"));
+		
+		if ((int) Math.random() * 75 == 0)
+		{
+			int randX = blockX + (int) Math.random() * 16;
+			int randZ = blockZ + (int) Math.random() * 16;
+			int groundY = getGroundFromAbove(world, randX, randZ);
+			BlockPos pos = new BlockPos(randX, groundY, randZ);
+			smallHouse.addBlocksToWorld(world, pos, new PlacementSettings());
+		}
+		
+		/*WorldGenerator abandonedHouse = new StructureAbandonedHouse();
 		if (rand.nextInt(75) == 0)
 		{
 			int randX = blockX + rand.nextInt(16);
@@ -106,7 +121,7 @@ public class LEWorldGenerator implements IWorldGenerator
 			int randZ = blockZ + rand.nextInt(16);
 			int groundY = getGroundFromAbove(world, randX, randZ);
 			tower.generate(world, rand, new BlockPos(randX, groundY + 1, randZ));
-		}
+		}*/
 	}
 	
 	/**
