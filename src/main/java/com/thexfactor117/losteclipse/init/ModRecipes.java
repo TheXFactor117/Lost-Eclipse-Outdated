@@ -20,7 +20,6 @@ public class ModRecipes
 	public static void registerMiscRecipes()
 	{
 		GameRegistry.addShapedRecipe(new ItemStack(ModItems.astrillGem), new Object[] { "AAA", "AAA", "AAA", 'A', ModItems.astrillGemFragment });
-		GameRegistry.addShapedRecipe(new ItemStack(ModItems.soulGem), new Object[] { "AAA", "AAA", "AAA", 'A', ModItems.soulGemFragment });
 		GameRegistry.addShapedRecipe(new ItemStack(ModItems.staffBase), new Object[] { "B", "A", "A", 'A', Items.STICK, 'B', ModItems.golemGyro });
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.frostDust, 2), new Object[] { ModItems.frostRod });
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.frostRod), new Object[] { ModItems.frostDust, Items.STICK });

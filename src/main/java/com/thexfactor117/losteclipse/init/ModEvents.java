@@ -2,7 +2,6 @@ package com.thexfactor117.losteclipse.init;
 
 import com.thexfactor117.losteclipse.LostEclipse;
 import com.thexfactor117.losteclipse.events.EventFlameCloak;
-import com.thexfactor117.losteclipse.events.EventStealSouls;
 import com.thexfactor117.losteclipse.events.EventUpdatePlayer;
 
 import net.minecraftforge.common.MinecraftForge;
@@ -18,7 +17,6 @@ public class ModEvents
 	{
 		LostEclipse.LOGGER.info("Registering events...");
 		
-		MinecraftForge.EVENT_BUS.register(new EventStealSouls());
 		MinecraftForge.EVENT_BUS.register(new EventFlameCloak());
 		MinecraftForge.EVENT_BUS.register(new EventUpdatePlayer());
 		

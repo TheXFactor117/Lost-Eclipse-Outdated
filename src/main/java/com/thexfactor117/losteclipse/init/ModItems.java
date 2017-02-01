@@ -1,7 +1,6 @@
 package com.thexfactor117.losteclipse.init;
 
 import com.thexfactor117.levels.leveling.Rarity;
-import com.thexfactor117.losteclipse.items.ItemSoulGem;
 import com.thexfactor117.losteclipse.items.ItemTest;
 import com.thexfactor117.losteclipse.items.base.ItemAmulet;
 import com.thexfactor117.losteclipse.items.base.ItemBelt;
@@ -43,18 +42,16 @@ public class ModItems
 	public static Item nova = new ItemLE("nova", Rarity.ARCHAIC);
 	
 	// ingots & gems
+	public static Item garnet = new ItemLE("garnet", Rarity.COMMON);
 	public static Item verantiumIngot = new ItemLE("verantium_ingot", Rarity.UNCOMMON);
-	public static Item garnet = new ItemLE("garnet", Rarity.UNCOMMON);
-	public static Item soulGemFragment = new ItemLE("soul_gem_fragment", Rarity.UNCOMMON);
-	public static Item soulGem = new ItemSoulGem("soul_gem", Rarity.RARE);
 	public static Item flawlessGarnet = new ItemLE("flawless_garnet", Rarity.RARE);
 	public static Item onyxGem = new ItemLE("onyx_gem", Rarity.RARE);
 	public static Item amethyst = new ItemLE("amethyst", Rarity.RARE);
 	public static Item vexalGem = new ItemLE("vexal_gem", Rarity.RARE);
-	public static Item etherealGem = new ItemLE("ethereal_gem", Rarity.RARE);
-	public static Item astrillGemFragment = new ItemLE("astrill_gem_fragment", Rarity.RARE);
+	public static Item etherealGem = new ItemLE("ethereal_gem", Rarity.ULTRA_RARE);
+	public static Item flawlessAmethyst = new ItemLE("flawless_amethyst", Rarity.ULTRA_RARE);
+	public static Item astrillGemFragment = new ItemLE("astrill_gem_fragment", Rarity.ULTRA_RARE);
 	public static Item astrillGem = new ItemLE("astrill_gem", Rarity.LEGENDARY);
-	public static Item flawlessAmethyst = new ItemLE("flawless_amethyst", Rarity.LEGENDARY);
 	public static Item chysoliteGem = new ItemLE("chysolite_gem", Rarity.LEGENDARY);
 	
 	// glyphs
@@ -85,8 +82,8 @@ public class ModItems
 	public static Item radiationScroll = new ItemRadiationScroll("radiation_scroll", Rarity.RARE);
 	public static Item familiarConjurationScroll = new ItemFamiliarConjurationScroll("familiar_conjuration_scroll", Rarity.RARE);
 	public static Item flameCloakScroll = new ItemFlameCloakScroll("flame_cloak_scroll", Rarity.RARE);
-	public static Item invisibilityScroll = new ItemInvisibilityScroll("invisibility_scroll", Rarity.LEGENDARY);
-	public static Item infusedEtherealScroll = new ItemInfusedEtherealScroll("infused_ethereal_scroll", Rarity.LEGENDARY);
+	public static Item invisibilityScroll = new ItemInvisibilityScroll("invisibility_scroll", Rarity.ULTRA_RARE);
+	public static Item infusedEtherealScroll = new ItemInfusedEtherealScroll("infused_ethereal_scroll", Rarity.ULTRA_RARE);
 	public static Item voidScroll = new ItemVoidScroll("void_scroll", Rarity.LEGENDARY);
 	public static Item remyScroll = new ItemRemyScroll("remy_scroll", Rarity.ARCHAIC);
 	
@@ -99,8 +96,8 @@ public class ModItems
 	public static Item healthGoldenRing = new ItemGoldenRingHealth("health_golden_ring", Rarity.RARE);
 	public static Item damageGoldenRing = new ItemGoldenRingDamage("damage_golden_ring", Rarity.RARE);
 	public static Item resistanceBelt = new ItemBeltResistance("resistance_belt", Rarity.RARE);
-	public static Item infusedSoulRing = new ItemRing("infused_soul_ring", Rarity.LEGENDARY);
-	public static Item infusedSoulAmulet = new ItemAmulet("infused_soul_amulet", Rarity.LEGENDARY);
+	public static Item infusedSoulRing = new ItemRing("infused_soul_ring", Rarity.ULTRA_RARE);
+	public static Item infusedSoulAmulet = new ItemAmulet("infused_soul_amulet", Rarity.ULTRA_RARE);
 	public static Item valadurSoulAmulet = new ItemAmulet("valadur_soul_amulet", Rarity.ARCHAIC);
 	public static Item forerunnerBelt = new ItemBelt("forerunner_belt", Rarity.ARCHAIC);
 	
@@ -131,8 +128,6 @@ public class ModItems
 		// ingots & gems
 		RegisterHelper.registerItems(verantiumIngot);
 		RegisterHelper.registerItems(garnet);
-		RegisterHelper.registerItems(soulGemFragment);
-		RegisterHelper.registerItems(soulGem);
 		RegisterHelper.registerItems(flawlessGarnet);
 		RegisterHelper.registerItems(onyxGem);
 		RegisterHelper.registerItems(amethyst);
