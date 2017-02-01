@@ -5,6 +5,11 @@ tile.verantium_ore.name=Verantium Ore
 tile.vexal_ore.name=Vexal Ore
 tile.astrill_ore.name=Astrill Ore
 
+tile.verantium_bricks.name=Verantium Bricks
+tile.verantium_block.name=Verantium Block
+tile.vexal_block.name=Vexal Block
+tile.astrill_block.name=Astrill Block
+
 #############################################
 #                   ITEMS                   #
 #############################################

@@ -63,7 +63,7 @@ public class LEWorldGenerator implements IWorldGenerator
 	 */
 	private void generateOverworldOres(World world, Random rand, int blockX, int blockZ)
 	{
-		IBlockState malachiteOre = ModBlocks.malachiteOre.getDefaultState();
+		IBlockState malachiteOre = ModBlocks.verantiumBlock.getDefaultState();
 		IBlockState vexalOre = ModBlocks.vexalOre.getDefaultState();
 		IBlockState astrillOre = ModBlocks.astrillOre.getDefaultState();
 		

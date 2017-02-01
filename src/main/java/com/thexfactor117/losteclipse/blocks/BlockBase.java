@@ -1,5 +1,7 @@
 package com.thexfactor117.losteclipse.blocks;
 
+import com.thexfactor117.losteclipse.util.Reference;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -18,10 +20,10 @@ public class BlockBase extends Block
 	 * @param name
 	 * @param modid
 	 */
-	public BlockBase(Material material, String name, String modid)
+	public BlockBase(Material material, String name)
 	{
 		super(material);
-		this.setRegistryName(modid, name);
+		this.setRegistryName(Reference.MODID, name);
 		this.setUnlocalizedName(name);
 	}
 	
@@ -32,10 +34,10 @@ public class BlockBase extends Block
 	 * @param modid
 	 * @param tab
 	 */
-	public BlockBase(Material material, String name, String modid, CreativeTabs tab)
+	public BlockBase(Material material, String name, CreativeTabs tab)
 	{
 		super(material);
-		this.setRegistryName(modid, name);
+		this.setRegistryName(Reference.MODID, name);
 		this.setUnlocalizedName(name);
 		this.setCreativeTab(tab);
 	}
@@ -53,10 +55,10 @@ public class BlockBase extends Block
 	 * @param harvestType
 	 * @param harvestLevel
 	 */
-	public BlockBase(Material material, String name, String modid, CreativeTabs tab, SoundType soundType, float hardness, float resistance, float lightValue, String harvestType, int harvestLevel)
+	public BlockBase(Material material, String name, CreativeTabs tab, SoundType soundType, float hardness, float resistance, float lightValue, String harvestType, int harvestLevel)
 	{
 		super(material);
-		this.setRegistryName(modid, name);
+		this.setRegistryName(Reference.MODID, name);
 		this.setUnlocalizedName(name);
 		this.setCreativeTab(tab);
 		this.setSoundType(soundType);

@@ -2,7 +2,7 @@
 	"forge_marker": 1,
 	"defaults": {
 		"textures": {
-			"all": "losteclipse:blocks/vexalOre"
+			"all": "losteclipse:blocks/vexal_block"
 		}
 	},
 	"variants": {
