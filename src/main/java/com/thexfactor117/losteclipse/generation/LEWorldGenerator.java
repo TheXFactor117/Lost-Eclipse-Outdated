@@ -83,9 +83,11 @@ public class LEWorldGenerator implements IWorldGenerator
 	 */
 	private void generateOverworldStructures(World world, Random rand, int blockX, int blockZ)
 	{
-		WorldServer server = (WorldServer) world;
+		/*WorldServer server = (WorldServer) world;
 		TemplateManager manager = server.getStructureTemplateManager();
-		Template smallHouse = manager.getTemplate(world.getMinecraftServer(), new ResourceLocation(Reference.MODID, "structures/smallhouse.nbt"));
+		
+		// templates
+		Template smallHouse = manager.getTemplate(world.getMinecraftServer(), new ResourceLocation(Reference.MODID, "smallhouse"));
 		
 		if ((int) Math.random() * 75 == 0)
 		{
@@ -94,33 +96,6 @@ public class LEWorldGenerator implements IWorldGenerator
 			int groundY = getGroundFromAbove(world, randX, randZ);
 			BlockPos pos = new BlockPos(randX, groundY, randZ);
 			smallHouse.addBlocksToWorld(world, pos, new PlacementSettings());
-		}
-		
-		/*WorldGenerator abandonedHouse = new StructureAbandonedHouse();
-		if (rand.nextInt(75) == 0)
-		{
-			int randX = blockX + rand.nextInt(16);
-			int randZ = blockZ + rand.nextInt(16);
-			int groundY = getGroundFromAbove(world, randX, randZ);
-			abandonedHouse.generate(world, rand, new BlockPos(randX, groundY + 1, randZ));
-		}
-		
-		WorldGenerator shrine = new StructureShrine();
-		if (rand.nextInt(75) == 0)
-		{
-			int randX = blockX + rand.nextInt(16);
-			int randZ = blockZ + rand.nextInt(16);
-			int groundY = getGroundFromAbove(world, randX, randZ);
-			shrine.generate(world, rand, new BlockPos(randX, groundY + 1, randZ));
-		}
-		
-		WorldGenerator tower = new StructureTower();
-		if (rand.nextInt(100) == 0)
-		{
-			int randX = blockX + rand.nextInt(16);
-			int randZ = blockZ + rand.nextInt(16);
-			int groundY = getGroundFromAbove(world, randX, randZ);
-			tower.generate(world, rand, new BlockPos(randX, groundY + 1, randZ));
 		}*/
 	}
 	
@@ -131,7 +106,7 @@ public class LEWorldGenerator implements IWorldGenerator
 	 * @param z
 	 * @return
 	 */
-	public static int getGroundFromAbove(World world, int x, int z)
+	private static int getGroundFromAbove(World world, int x, int z)
 	{
 		int y = 255;
 		boolean foundGround = false;
