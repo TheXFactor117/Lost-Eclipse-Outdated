@@ -96,7 +96,7 @@ public class LEWorldGenerator implements IWorldGenerator
 			int groundY = getGroundFromAbove(world, randX, randZ);
 			BlockPos pos = new BlockPos(randX, groundY, randZ);
 			smallHouse.addBlocksToWorld(world, pos, new PlacementSettings());
-		}*/
+		}*/		
 	}
 	
 	/**
