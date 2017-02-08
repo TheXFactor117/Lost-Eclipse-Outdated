@@ -26,19 +26,9 @@ import net.minecraft.world.gen.structure.template.TemplateManager;
  */
 public class ProceduralUtil 
 {	
-	/**
-	 * Generate a randomized room at the given pos. Add position of room to ArrayList.
-	 * @param manager
-	 * @param world
-	 * @param pos
-	 * @param settings
-	 * @param rotation
-	 * @param positions
-	 * @param roomCount
-	 */
-	public static void generateStartingRoom(TemplateManager manager, World world, BlockPos center, ArrayList<BlockPos> roomPositions, ArrayList<BlockPos> hallwayPositions, ArrayList<PotentialPosition> potentialPositions, int roomCount)
+	public static void generateStartingRoom(TemplateManager manager, World world, BlockPos center, int roomCount)
 	{
-		for (BlockPos position : roomPositions)
+		for (BlockPos position : GenerateProcedural.roomPositions)
 		{
 			if (position.equals(center))
 				return;
@@ -47,57 +37,82 @@ public class ProceduralUtil
 		LostEclipse.LOGGER.info("Generating starting room.");
 		
 		Rotation rotation = Rotation.values()[(int) (Math.random() * 4)];
-		generateRandomRoom(manager, world, center, rotation, roomPositions, hallwayPositions, potentialPositions);
+		generateRandomRoom(manager, world, center, rotation);
 	}
 	
-	public static void generateRooms(TemplateManager manager, World world, ArrayList<BlockPos> roomPositions, ArrayList<BlockPos> hallwayPositions, ArrayList<PotentialPosition> potentialPositions, int roomCount)
+	public static void generateRooms(TemplateManager manager, World world, int roomCount)
 	{	
-		int size = potentialPositions.size();
+		int size = GenerateProcedural.potentialPositions.size();
+		LostEclipse.LOGGER.info("Potential size: " + GenerateProcedural.potentialPositions.size());
 		
 		for (int i = 0; i < size; i++)
 		{
-			LostEclipse.LOGGER.info("Potential size: " + potentialPositions.size());
-			BlockPos center = potentialPositions.get(i).getPos();
-			Rotation rotation = potentialPositions.get(i).getRotation();
+			BlockPos center = GenerateProcedural.potentialPositions.get(i).getPos();
+			Rotation rotation = GenerateProcedural.potentialPositions.get(i).getRotation();
 			LostEclipse.LOGGER.info("Generating randomized rooms off of hallways.");
-			generateRandomRoom(manager, world, center, rotation, roomPositions, hallwayPositions, potentialPositions);
+			generateRandomRoom(manager, world, center, rotation);
 		}
 	}
 	
-	private static void generateRandomRoom(TemplateManager manager, World world, BlockPos center, Rotation rotation, ArrayList<BlockPos> roomPositions, ArrayList<BlockPos> hallwayPositions, ArrayList<PotentialPosition> potentialPositions)
+	private static void generateRandomRoom(TemplateManager manager, World world, BlockPos center, Rotation rotation)
 	{
 		// if there is a room at a potential position, return.
-		for (int i = 0; i < roomPositions.size(); i++)
+		for (int i = 0; i < GenerateProcedural.roomPositions.size(); i++)
 		{
-			for (int j = 0; j < potentialPositions.size(); j++)
+			if (center.equals(GenerateProcedural.roomPositions.get(i)))
 			{
-				if (roomPositions.get(i).equals(potentialPositions.get(j).getPos()))
-				{
-					LostEclipse.LOGGER.info("Room position and potential positions matched.");
-					return;
-				}
+				LostEclipse.LOGGER.info("Room and potential position matched.");
+				return;
 			}
 		}
 		
 		// settings and such
 		PlacementSettings settings = new PlacementSettings().setRotation(rotation);
 		Template template = getRandomizedDungeonTemplate(manager, world);
-		LostEclipse.LOGGER.info("Room rotation: " + rotation);
 		
 		// add blocks (and handle any data blocks)
 		BlockPos corner = translateToCorner(template, center, rotation); // translate from center to corner
 		template.addBlocksToWorld(world, corner, settings); // spawn in template at corner pos
 		handleDataBlocks(template, world, corner, settings); // update chest contents
-		roomPositions.add(center); // add template position to array
+		GenerateProcedural.roomPositions.add(center); // add template position to array
+		GenerateProcedural.potentialPositions.remove(center);
 		
 		int hallways = (int) (Math.random() * 3 + 1);
 		LostEclipse.LOGGER.info("Hallways: " + hallways);
 		
 		for (int i = 1; i <= hallways; i++)
 		{
+			boolean none = false;
+			boolean clockwise = false;
+			boolean clockwise180 = false;
+			boolean counterclockwise = false;
+			
 			Rotation hallwayRotation = Rotation.values()[(int) (Math.random() * 4)];
-			LostEclipse.LOGGER.info("Generating hallways off room at rotation: " + hallwayRotation);
-			generateHallway(manager, world, center, hallwayRotation, hallwayPositions, potentialPositions);
+			LostEclipse.LOGGER.info("Hallway Rotation: " + hallwayRotation);
+			
+			switch (hallwayRotation)
+			{
+				case NONE:
+					if (!none) generateHallway(manager, world, center, hallwayRotation);
+					else generateHallway(manager, world, center, hallwayRotation.add(hallwayRotation));
+					none = true;
+					break;
+				case CLOCKWISE_90:
+					if (!clockwise) generateHallway(manager, world, center, hallwayRotation);
+					else generateHallway(manager, world, center, hallwayRotation.add(hallwayRotation));
+					clockwise = true;
+					break;
+				case CLOCKWISE_180:
+					if (!clockwise180) generateHallway(manager, world, center, hallwayRotation);
+					else generateHallway(manager, world, center, hallwayRotation.add(hallwayRotation));
+					clockwise180 = true;
+					break;
+				case COUNTERCLOCKWISE_90:
+					if (!counterclockwise) generateHallway(manager, world, center, hallwayRotation);
+					else generateHallway(manager, world, center, hallwayRotation.add(hallwayRotation));
+					counterclockwise = true;
+					break;
+			}
 		}
 	}
 	
@@ -109,13 +124,13 @@ public class ProceduralUtil
 	 * @param settings
 	 * @param rotation
 	 */
-	private static void generateHallway(TemplateManager manager, World world, BlockPos roomCenter, Rotation rotation, ArrayList<BlockPos> hallwayPositions, ArrayList<PotentialPosition> potentialPositions)
+	private static void generateHallway(TemplateManager manager, World world, BlockPos roomCenter, Rotation rotation)
 	{	
 		// add hallway blocks
 		Template hallway = getRandomizedHallwayTemplate(manager, world);
 		BlockPos hallwayCenter = getHallwayPosition(hallway, roomCenter, rotation);
 		
-		for (BlockPos position : hallwayPositions) // check to make sure hallway can spawn. If not, exit.
+		for (BlockPos position : GenerateProcedural.hallwayPositions) // check to make sure hallway can spawn. If not, exit.
 		{
 			if (position.equals(hallwayCenter))
 				return;
@@ -125,13 +140,11 @@ public class ProceduralUtil
 		BlockPos hallwayCorner = translateHallwayToCorner(hallway, hallwayCenter, rotation);
 		hallway.addBlocksToWorld(world, hallwayCorner, settings);
 		handleDataBlocks(hallway, world, hallwayCorner, settings);
-		hallwayPositions.add(hallwayCenter);
-
-		for (int i = 0; i < 4; i++)
-		{
-			BlockPos potentialPosition = getRoomPosition(getRandomizedDungeonTemplate(manager, world), hallwayCenter, Rotation.values()[i]);
-			potentialPositions.add(new PotentialPosition(potentialPosition, Rotation.values()[i]));
-		}
+		GenerateProcedural.hallwayPositions.add(hallwayCenter);
+		
+		BlockPos potentialPosition = getRoomPosition(getRandomizedDungeonTemplate(manager, world), hallwayCenter, rotation);
+		GenerateProcedural.potentialPositions.add(new PotentialPosition(potentialPosition, rotation));
+		LostEclipse.LOGGER.info("Size: " + GenerateProcedural.potentialPositions.size());
 	}
 	
 	private static Template getRandomizedDungeonTemplate(TemplateManager manager, World world)
@@ -176,34 +189,6 @@ public class ProceduralUtil
 		}
 	}
 	
-	public static BlockPos translateToCenter(Template template, BlockPos originalPos, Rotation rotation)
-	{
-		int x = originalPos.getX();
-		int z = originalPos.getZ();
-		
-		switch (rotation)
-		{
-			case NONE:
-				x += template.getSize().getX() / 2;
-				z += template.getSize().getZ() / 2;
-				break;
-			case CLOCKWISE_90:
-				x -= template.getSize().getX() / 2;
-				z += template.getSize().getZ() / 2;
-				break;
-			case CLOCKWISE_180:
-				x -= template.getSize().getX() / 2;
-				z -= template.getSize().getZ() / 2;
-				break;
-			case COUNTERCLOCKWISE_90:
-				x += template.getSize().getX() / 2;
-				z -= template.getSize().getZ() / 2;
-				break;
-		}
-		
-		return new BlockPos(x, originalPos.getY(), z);
-	}
-	
 	public static BlockPos translateToCorner(Template template, BlockPos originalPos, Rotation rotation)
 	{
 		int x = originalPos.getX();
@@ -245,7 +230,7 @@ public class ProceduralUtil
 				break;
 			case CLOCKWISE_90:
 				x += template.getSize().getZ() / 2;
-				z -= template.getSize().getX() / 2 + 1;
+				z -= template.getSize().getX() / 2;
 				break;
 			case CLOCKWISE_180:
 				x += template.getSize().getX() / 2;
@@ -253,7 +238,7 @@ public class ProceduralUtil
 				break;
 			case COUNTERCLOCKWISE_90:
 				x -= template.getSize().getZ() / 2;
-				z += template.getSize().getX() / 2 + 1;
+				z += template.getSize().getX() / 2;
 				break;
 		}
 		
@@ -271,13 +256,13 @@ public class ProceduralUtil
 				x += template.getSize().getX() - 1;
 				break;
 			case CLOCKWISE_90:
-				z += template.getSize().getX() - 2;
+				z += template.getSize().getX() - 1;
 				break;
 			case CLOCKWISE_180:
 				x -= template.getSize().getX() - 1;
 				break;
 			case COUNTERCLOCKWISE_90:
-				z -= template.getSize().getX() - 2;
+				z -= template.getSize().getX() - 1;
 				break;
 		}
 		
@@ -295,13 +280,13 @@ public class ProceduralUtil
 				x += template.getSize().getX() - 1;
 				break;
 			case CLOCKWISE_90:
-				z -= template.getSize().getZ() - 1;
+				z += template.getSize().getZ() - 1;
 				break;
 			case CLOCKWISE_180:
 				x -= template.getSize().getX() - 1;
 				break;
 			case COUNTERCLOCKWISE_90:
-				z += template.getSize().getZ() - 1;
+				z -= template.getSize().getZ() - 1;
 				break;
 		}
 		

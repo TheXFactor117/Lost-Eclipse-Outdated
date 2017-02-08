@@ -16,9 +16,9 @@ import net.minecraft.world.gen.structure.template.TemplateManager;
 public class GenerateProcedural
 {
 	public static int roomCount = 0;
-	private static ArrayList<BlockPos> roomPositions = new ArrayList<BlockPos>();
-	private static ArrayList<BlockPos> hallwayPositions = new ArrayList<BlockPos>();
-	private static ArrayList<PotentialPosition> potentialPositions = new ArrayList<PotentialPosition>();
+	public static ArrayList<BlockPos> roomPositions = new ArrayList<BlockPos>();
+	public static ArrayList<BlockPos> hallwayPositions = new ArrayList<BlockPos>();
+	public static ArrayList<PotentialPosition> potentialPositions = new ArrayList<PotentialPosition>();
 	
 	public static void procedurallyGenerate(TemplateManager manager, World world, BlockPos startingPos, int maxRooms)
 	{
@@ -36,16 +36,13 @@ public class GenerateProcedural
 		if (roomCount != maxRooms)
 		{
 			if (roomCount == 0)
-				ProceduralUtil.generateStartingRoom(manager, world, startingPos, roomPositions, hallwayPositions, potentialPositions, maxRooms);
+				ProceduralUtil.generateStartingRoom(manager, world, startingPos, maxRooms);
 			else
 			{
 				LostEclipse.LOGGER.info("Generating rooms!");
-				ProceduralUtil.generateRooms(manager, world, roomPositions, hallwayPositions, potentialPositions, maxRooms);
+				ProceduralUtil.generateRooms(manager, world, maxRooms);
 			}
 		}
-		
-		for (int i = 0; i < potentialPositions.size(); i++) 
-			potentialPositions.remove(i);
 		
 		roomCount++;
 		procedurallyGenerate(manager, world, startingPos, maxRooms);

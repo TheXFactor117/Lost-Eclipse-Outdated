@@ -42,7 +42,7 @@ public class ItemTest extends ItemLE
 			
 			WorldServer server = (WorldServer) world;
 			TemplateManager manager = server.getStructureTemplateManager();
-			GenerateProcedural.procedurallyGenerate(manager, world, pos, 2);
+			GenerateProcedural.procedurallyGenerate(manager, world, pos, 4);
 
 			return EnumActionResult.SUCCESS;
 		}
