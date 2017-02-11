@@ -1,0 +1,55 @@
+{
+	"pools": [
+		{
+			"name": "common",
+			"conditions": [
+				{
+					"condition": "random_chance",
+					"chance": 0.95
+				}
+			],
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "loot_table",
+					"name": "losteclipse:loot/common_loot",
+					"weight": 1
+				}
+			]
+		},
+		{
+			"name": "rare",
+			"conditions": [
+				{
+					"condition": "random_chance",
+					"chance": 0.3
+				}
+			],
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "loot_table",
+					"name": "losteclipse:loot/rare_loot",
+					"weight": 1
+				}
+			]
+		},
+		{
+			"name": "legendary",
+			"conditions": [
+				{
+					"condition": "random_chance",
+					"chance": 0.1
+				}
+			],
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "loot_table",
+					"name": "losteclipse:loot/legendary_loot",
+					"weight": 1
+				}
+			]
+		}
+	]
+}
