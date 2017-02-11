@@ -1,0 +1,114 @@
+{
+	"pools": [
+		{
+			"name": "valuables",
+			"rolls": {
+				"min": 0,
+				"max": 1
+			},
+			"entries": [
+				{
+					"type": "item",
+					"name": "losteclipse:garnet",
+					"weight": 1,
+					"functions": [
+						{
+							"function": "set_count",
+							"count": {
+								"min": 1,
+								"max": 2
+							}
+						}
+					]
+				},
+				{
+					"type": "item",
+					"name": "losteclipse:verantium_ingot",
+					"weight": 1
+				}
+			]
+		},
+		{
+			"name": "scrolls",
+			"rolls": {
+				"min": 0,
+				"max": 1
+			},
+			"entries": [
+				{
+					"type": "item",
+					"name": "losteclipse:fireball_scroll",
+					"weight": 1
+				},
+				{
+					"type": "item",
+					"name": "losteclipse:frostbite_scroll",
+					"weight": 1
+				},
+				{
+					"type": "item",
+					"name": "losteclipse:hardened_scroll",
+					"weight": 1
+				}
+			]
+		},
+		{
+			"name": "jewelry",
+			"rolls": {
+				"min": 0,
+				"max": 1
+			},
+			"entries": [
+				{
+					"type": "item",
+					"name": "losteclipse:minor_health_golden_ring",
+					"weight": 1
+				},
+				{
+					"type": "item",
+					"name": "losteclipse:minor_damage_golden_ring",
+					"weight": 1
+				},
+				{
+					"type": "item",
+					"name": "losteclipse:fire_resistance_belt",
+					"weight": 1
+				}
+			]
+		},
+		{
+			"name": "misc",
+			"rolls": {
+				"min": 0,
+				"max": 1
+			},
+			"entries": [
+				{
+					"type": "item",
+					"name": "losteclipse:staff_base",
+					"weight": 1
+				},
+				{
+					"type": "item",
+					"name": "losteclipse:frost_rod",
+					"weight": 2
+				},
+				{
+					"type": "item",
+					"name": "losteclipse:frost_dust",
+					"weight": 2
+				},
+				{
+					"type": "item",
+					"name": "losteclipse:golden_ring",
+					"weight": 1
+				},
+				{
+					"type": "item",
+					"name": "losteclipse:golem_gyro",
+					"weight": 1
+				}
+			]
+		}
+	]
+}

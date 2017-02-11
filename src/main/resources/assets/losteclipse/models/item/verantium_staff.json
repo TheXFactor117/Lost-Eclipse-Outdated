@@ -1,28 +1,31 @@
 {
-	"parent":"item/handheld",
+	"parent": "item/handheld",
 	"textures": {
-		"layer0":"losteclipse:items/verantium_staff"
+		"layer0": "losteclipse:items/verantium_staff"
 	},
+
 	"overrides": [
-        {
-            "predicate": {
-                "pulling": 1
-            },
-            "model": "losteclipse:item/verantiumStaff_0"
-        },
-        {
-            "predicate": {
-                "pulling": 1,
-                "pull": 0.7
-            },
-            "model": "losteclipse:item/verantiumStaff_1"
-        },
-        {
-            "predicate": {
-                "pulling": 1,
-                "pull": 1.5
-            },
-            "model": "losteclipse:item/verantiumStaff_2"
-        }
-    ]
+		{
+			"predicate": {
+				"pulling": 1
+			},
+			"model": "losteclipse:item/verantium_staff_0"
+		},
+
+		{
+			"predicate": {
+				"pulling": 1,
+				"pull": 0.7
+			},
+			"model": "losteclipse:item/verantium_staff_1"
+		},
+
+		{
+			"predicate": {
+				"pulling": 1,
+				"pull": 1.5
+			},
+			"model": "losteclipse:item/verantium_staff_2"
+		}
+	]
 }

@@ -35,21 +35,19 @@ import net.minecraft.item.Item;
 public class ModItems 
 {
 	// artifacts
-	public static Item eclipse = new ItemLE("eclipse", Rarity.ARCHAIC);
-	public static Item omega = new ItemLE("omega", Rarity.ARCHAIC);
-	public static Item inheritance = new ItemLE("inheritance", Rarity.ARCHAIC);
-	public static Item mythic = new ItemLE("mythic", Rarity.ARCHAIC);
-	public static Item nova = new ItemLE("nova", Rarity.ARCHAIC);
+	public static Item eclipse = new ItemLE("artifact_eclipse", Rarity.ARCHAIC);
+	public static Item omega = new ItemLE("artifact_omega", Rarity.ARCHAIC);
+	public static Item inheritance = new ItemLE("artifact_inheritance", Rarity.ARCHAIC);
+	public static Item mythic = new ItemLE("artifact_mythic", Rarity.ARCHAIC);
+	public static Item nova = new ItemLE("artifact_nova", Rarity.ARCHAIC);
 	
 	// ingots & gems
 	public static Item garnet = new ItemLE("garnet", Rarity.COMMON);
 	public static Item verantiumIngot = new ItemLE("verantium_ingot", Rarity.UNCOMMON);
-	public static Item flawlessGarnet = new ItemLE("flawless_garnet", Rarity.RARE);
 	public static Item onyxGem = new ItemLE("onyx_gem", Rarity.RARE);
 	public static Item amethyst = new ItemLE("amethyst", Rarity.RARE);
 	public static Item vexalGem = new ItemLE("vexal_gem", Rarity.RARE);
 	public static Item etherealGem = new ItemLE("ethereal_gem", Rarity.ULTRA_RARE);
-	public static Item flawlessAmethyst = new ItemLE("flawless_amethyst", Rarity.ULTRA_RARE);
 	public static Item astrillGemFragment = new ItemLE("astrill_gem_fragment", Rarity.ULTRA_RARE);
 	public static Item astrillGem = new ItemLE("astrill_gem", Rarity.LEGENDARY);
 	public static Item chysoliteGem = new ItemLE("chysolite_gem", Rarity.LEGENDARY);
@@ -128,14 +126,12 @@ public class ModItems
 		// ingots & gems
 		RegisterHelper.registerItems(verantiumIngot);
 		RegisterHelper.registerItems(garnet);
-		RegisterHelper.registerItems(flawlessGarnet);
 		RegisterHelper.registerItems(onyxGem);
 		RegisterHelper.registerItems(amethyst);
 		RegisterHelper.registerItems(vexalGem);
 		RegisterHelper.registerItems(etherealGem);
 		RegisterHelper.registerItems(astrillGemFragment);
 		RegisterHelper.registerItems(astrillGem);
-		RegisterHelper.registerItems(flawlessAmethyst);
 		RegisterHelper.registerItems(chysoliteGem);
 		
 		// glyphs

@@ -13,7 +13,9 @@ import net.minecraft.world.storage.loot.LootTableList;
 public class ModLootTables 
 {
 	// structures
-	public static final ResourceLocation STRUCTURE_ABANDONED_HOUSE = register("structures/abandoned_house");
+	public static final ResourceLocation STRUCTURE_COMMON = register("structures/common");
+	public static final ResourceLocation STRUCTURE_RARE = register("structures/rare");
+	public static final ResourceLocation STRUCTURE_LEGENDARY = register("structures/legendary");
 	
 	// monsters
 	public static final ResourceLocation ENTITY_COMMON_NORMAL = register("entities/common/common_normal");

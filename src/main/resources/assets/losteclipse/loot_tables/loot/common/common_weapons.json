@@ -1,0 +1,150 @@
+{
+	"pools": [
+		{
+			"name": "vanilla",
+			"rolls": {
+				"min": 0,
+				"max": 1
+			},
+			"entries": [
+				{
+					"type": "item",
+					"name": "minecraft:stone_sword",
+					"weight": 2
+				},
+				{
+					"type": "item",
+					"name": "losteclipse:stone_mace",
+					"weight": 2
+				},
+				{
+					"type": "item",
+					"name": "losteclipse:stone_dagger",
+					"weight": 2
+				},
+				{
+					"type": "item",
+					"name": "minecraft:bow",
+					"weight": 1
+				},
+				{
+					"type": "item",
+					"name": "minecraft:chainmail_helmet",
+					"weight": 1
+				},
+				{
+					"type": "item",
+					"name": "minecraft:chainmail_chestplate",
+					"weight": 1
+				},
+				{
+					"type": "item",
+					"name": "minecraft:chainmail_leggings",
+					"weight": 1
+				},
+				{
+					"type": "item",
+					"name": "minecraft:chainmail_boots",
+					"weight": 1
+				}
+			]
+		},
+		{
+			"name": "melee",
+			"rolls": {
+				"min": 0,
+				"max": 1
+			},
+			"entries": [
+				{
+					"type": "item",
+					"name": "losteclipse:verantium_sword",
+					"weight": 2
+				},
+				{
+					"type": "item",
+					"name": "losteclipse:verantium_mace",
+					"weight": 2
+				},
+				{
+					"type": "item",
+					"name": "losteclipse:verantium_dagger",
+					"weight": 2
+				},
+				{
+					"type": "item",
+					"name": "losteclipse:crystallized_sword",
+					"weight": 1
+				},
+				{
+					"type": "item",
+					"name": "losteclipse:gyro_mace",
+					"weight": 1
+				},
+				{
+					"type": "item",
+					"name": "losteclipse:shadow_blade",
+					"weight": 1
+				},
+				{
+					"type": "item",
+					"name": "losteclipse:malice_blade",
+					"weight": 1
+				},
+			]
+		},
+		{
+			"name": "ranged",
+			"rolls": {
+				"min": 0,
+				"max": 1
+			},
+			"entries": [
+				{
+					"type": "item",
+					"name": "losteclipse:iron_staff",
+					"weight": 1
+				},
+				{
+					"type": "item",
+					"name": "losteclipse:inferno_staff",
+					"weight": 1
+				},
+				{
+					"type": "item",
+					"name": "losteclipse:blizzard_staff",
+					"weight": 1
+				}
+			]
+		},
+		{
+			"name": "armor",
+			"rolls": {
+				"min": 0,
+				"max": 1
+			},
+			"entries": [
+				{
+					"type": "item",
+					"name": "losteclipse:verantium_helmet",
+					"weight": 1
+				},
+				{
+					"type": "item",
+					"name": "losteclipse:verantium_chestplate",
+					"weight": 1
+				},
+				{
+					"type": "item",
+					"name": "losteclipse:verantium_leggings",
+					"weight": 1
+				},
+				{
+					"type": "item",
+					"name": "losteclipse:verantium_boots",
+					"weight": 1
+				}
+			]
+		}
+	]	
+}

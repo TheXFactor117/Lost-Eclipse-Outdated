@@ -1,0 +1,135 @@
+{
+	"pools": [
+		{
+			"name": "vanilla",
+			"rolls": {
+				"min": 0,
+				"max": 1
+			},
+			"entries": [
+				{
+					"type": "item",
+					"name": "minecraft:diamond_sword",
+					"weight": 2
+				},
+				{
+					"type": "item",
+					"name": "losteclipse:diamond_dagger",
+					"weight": 2
+				},
+				{
+					"type": "item",
+					"name": "losteclipse:diamond_mace",
+					"weight": 2
+				},
+				{
+					"type": "item",
+					"name": "minecraft:diamond_helmet",
+					"weight": 1
+				},
+				{
+					"type": "item",
+					"name": "minecraft:diamond_chestplate",
+					"weight": 1
+				},
+				{
+					"type": "item",
+					"name": "minecraft:diamond_leggings",
+					"weight": 1
+				},
+				{
+					"type": "item",
+					"name": "minecraft:diamond_boots",
+					"weight": 1
+				}
+			]	
+		},
+		{
+			"name": "melee",
+			"rolls": {
+				"min": 0,
+				"max": 1
+			},
+			"entries": [
+				{
+					"type": "item",
+					"name": "losteclipse:astrill_sword",
+					"weight": 2
+				},
+				{
+					"type": "item",
+					"name": "losteclipse:astrill_dagger",
+					"weight": 2
+				},
+				{
+					"type": "item",
+					"name": "losteclipse:astrill_mace",
+					"weight": 2
+				},
+				{
+					"type": "item",
+					"name": "losteclipse:excalibur_rapier",
+					"weight": 2
+				},
+				{
+					"type": "item",
+					"name": "losteclipse:ardons_dagger",
+					"weight": 1
+				},
+				{
+					"type": "item",
+					"name": "losteclipse:founders_blade",
+					"weight": 1
+				}
+			]
+		},
+		{
+			"name": "ranged",
+			"rolls": {
+				"min": 0,
+				"max": 1
+			},
+			"entries": [
+				{
+					"type": "item",
+					"name": "losteclipse:astrill_staff",
+					"weight": 1
+				},
+				{
+					"type": "item",
+					"name": "losteclipse:oblivion_staff",
+					"weight": 1
+				}
+			]
+		},
+		{
+			"name": "armor",
+			"rolls": {
+				"min": 0,
+				"max": 1
+			},
+			"entries": [
+				{
+					"type": "item",
+					"name": "losteclipse:astrill_helmet",
+					"weight": 1
+				},
+				{
+					"type": "item",
+					"name": "losteclipse:astrill_chestplate",
+					"weight": 1
+				},
+				{
+					"type": "item",
+					"name": "losteclipse:astrill_leggings",
+					"weight": 1
+				},
+				{
+					"type": "item",
+					"name": "losteclipse:astrill_boots",
+					"weight": 1
+				}
+			]
+		}
+	]
+}

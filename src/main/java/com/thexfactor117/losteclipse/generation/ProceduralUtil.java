@@ -152,8 +152,10 @@ public class ProceduralUtil
 		ArrayList<Template> templates = new ArrayList<Template>();
 		
 		templates.add(manager.getTemplate(world.getMinecraftServer(), new ResourceLocation(Reference.MODID, "loot_room_1")));
+		templates.add(manager.getTemplate(world.getMinecraftServer(), new ResourceLocation(Reference.MODID, "loot_room_2")));
+		templates.add(manager.getTemplate(world.getMinecraftServer(), new ResourceLocation(Reference.MODID, "loot_room_3")));
 		
-		return templates.get((int) (Math.random() * (templates.size() - 1)));
+		return templates.get((int) (Math.random() * (templates.size())));
 	}
 	
 	private static Template getRandomizedHallwayTemplate(TemplateManager manager, World world)
@@ -161,8 +163,10 @@ public class ProceduralUtil
 		ArrayList<Template> templates = new ArrayList<Template>();
 		
 		templates.add(manager.getTemplate(world.getMinecraftServer(), new ResourceLocation(Reference.MODID, "hallway_1")));
+		templates.add(manager.getTemplate(world.getMinecraftServer(), new ResourceLocation(Reference.MODID, "hallway_2")));
+		templates.add(manager.getTemplate(world.getMinecraftServer(), new ResourceLocation(Reference.MODID, "hallway_3")));
 		
-		return templates.get((int) (Math.random() * (templates.size() - 1)));
+		return templates.get((int) (Math.random() * (templates.size())));
 	}
 	
 	/**
@@ -177,14 +181,50 @@ public class ProceduralUtil
 		// loop through all data blocks within the structure
 		for (Entry<BlockPos, String> e : template.getDataBlocks(pos, settings).entrySet())
 		{
-			if ("chest".equals(e.getValue())) // check data block tag
+			if ("common".equals(e.getValue())) // check data block tag
 			{
 				BlockPos dataPos = e.getKey();
 				world.setBlockState(dataPos, Blocks.AIR.getDefaultState(), 3); // remove data block
 				TileEntity chestEntity = world.getTileEntity(dataPos.down()); // chest is located under data block
 							
 				if (chestEntity instanceof TileEntityChest)
-					((TileEntityChest) chestEntity).setLootTable(ModLootTables.STRUCTURE_ABANDONED_HOUSE, world.rand.nextLong());
+				{
+					int rand = (int) (Math.random() * 100 + 1);
+
+					if (rand <= 85) ((TileEntityChest) chestEntity).setLootTable(ModLootTables.STRUCTURE_COMMON, world.rand.nextLong());
+					else if (rand > 95) ((TileEntityChest) chestEntity).setLootTable(ModLootTables.STRUCTURE_LEGENDARY, world.rand.nextLong());
+					else ((TileEntityChest) chestEntity).setLootTable(ModLootTables.STRUCTURE_RARE, world.rand.nextLong());
+				}
+			}
+			else if ("rare".equals(e.getValue())) // check data block tag
+			{
+				BlockPos dataPos = e.getKey();
+				world.setBlockState(dataPos, Blocks.AIR.getDefaultState(), 3); // remove data block
+				TileEntity chestEntity = world.getTileEntity(dataPos.down()); // chest is located under data block
+							
+				if (chestEntity instanceof TileEntityChest)
+				{
+					int rand = (int) (Math.random() * 100 + 1);
+
+					if (rand <= 40) ((TileEntityChest) chestEntity).setLootTable(ModLootTables.STRUCTURE_COMMON, world.rand.nextLong());
+					else if (rand > 90) ((TileEntityChest) chestEntity).setLootTable(ModLootTables.STRUCTURE_LEGENDARY, world.rand.nextLong());
+					else ((TileEntityChest) chestEntity).setLootTable(ModLootTables.STRUCTURE_RARE, world.rand.nextLong());
+				}
+			}
+			else if ("legendary".equals(e.getValue())) // check data block tag
+			{
+				BlockPos dataPos = e.getKey();
+				world.setBlockState(dataPos, Blocks.AIR.getDefaultState(), 3); // remove data block
+				TileEntity chestEntity = world.getTileEntity(dataPos.down()); // chest is located under data block
+							
+				if (chestEntity instanceof TileEntityChest)
+				{
+					int rand = (int) (Math.random() * 100 + 1);
+					
+					if (rand <= 10) ((TileEntityChest) chestEntity).setLootTable(ModLootTables.STRUCTURE_COMMON, world.rand.nextLong());
+					else if (rand > 50) ((TileEntityChest) chestEntity).setLootTable(ModLootTables.STRUCTURE_LEGENDARY, world.rand.nextLong());
+					else ((TileEntityChest) chestEntity).setLootTable(ModLootTables.STRUCTURE_RARE, world.rand.nextLong());
+				}
 			}
 		}
 	}

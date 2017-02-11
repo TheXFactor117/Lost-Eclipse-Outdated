@@ -1,0 +1,37 @@
+{
+	"pools": [
+		{
+			"name": "vanilla",
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "loot_table",
+					"name": "losteclipse:loot/legendary/legendary_vanilla",
+					"weight": 1
+				}
+			]
+		},
+		{
+			"name": "items",
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "loot_table",
+					"name": "losteclipse:loot/legendary/legendary_items",
+					"weight": 1
+				}
+			]
+		},
+		{
+			"name": "weapons",
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "loot_table",
+					"name": "losteclipse:loot/legendary/legendary_weapons",
+					"weight": 1
+				}
+			]
+		}
+	]
+}
