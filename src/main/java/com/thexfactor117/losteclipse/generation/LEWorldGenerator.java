@@ -2,16 +2,23 @@ package com.thexfactor117.losteclipse.generation;
 
 import java.util.Random;
 
+import com.thexfactor117.losteclipse.LostEclipse;
 import com.thexfactor117.losteclipse.init.ModBlocks;
+import com.thexfactor117.losteclipse.util.Reference;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraft.world.WorldServer;
 import net.minecraft.world.chunk.IChunkGenerator;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenMinable;
+import net.minecraft.world.gen.structure.template.PlacementSettings;
+import net.minecraft.world.gen.structure.template.Template;
+import net.minecraft.world.gen.structure.template.TemplateManager;
 import net.minecraftforge.fml.common.IWorldGenerator;
 
 /**
@@ -77,20 +84,45 @@ public class LEWorldGenerator implements IWorldGenerator
 	 */
 	private void generateOverworldStructures(World world, Random rand, int blockX, int blockZ)
 	{
-		/*WorldServer server = (WorldServer) world;
+		WorldServer server = (WorldServer) world;
 		TemplateManager manager = server.getStructureTemplateManager();
 		
 		// templates
 		Template smallHouse = manager.getTemplate(world.getMinecraftServer(), new ResourceLocation(Reference.MODID, "smallhouse"));
+		Template castle = manager.getTemplate(world.getMinecraftServer(), new ResourceLocation(Reference.MODID, "castle1"));
 		
-		if ((int) Math.random() * 75 == 0)
+		// structures
+		if ((int) (Math.random() * 75) == 0)
 		{
 			int randX = blockX + (int) Math.random() * 16;
 			int randZ = blockZ + (int) Math.random() * 16;
 			int groundY = getGroundFromAbove(world, randX, randZ);
 			BlockPos pos = new BlockPos(randX, groundY, randZ);
+			LostEclipse.LOGGER.info("Generating Small House at " + pos);
 			smallHouse.addBlocksToWorld(world, pos, new PlacementSettings());
-		}*/		
+		}
+		
+		if ((int) (Math.random() * 100) == 0)
+		{
+			int randX = blockX + (int) Math.random() * 16;
+			int randZ = blockZ + (int) Math.random() * 16;
+			int groundY = getGroundFromAbove(world, randX, randZ);
+			BlockPos pos = new BlockPos(randX, groundY, randZ);
+			LostEclipse.LOGGER.info("Generating Castle at " + pos);
+			castle.addBlocksToWorld(world, pos, new PlacementSettings());
+		}
+		
+		// dungeons
+		if ((int) (Math.random() * 200) == 0)
+		{
+			int randX = blockX + (int) Math.random() * 16;
+			int randZ = blockZ + (int) Math.random() * 16;
+			int y = (int) (Math.random() * 40 + 5);
+			BlockPos pos = new BlockPos(randX, y, randZ);
+			LostEclipse.LOGGER.info("Generating Dungeon at " + pos);
+			int maxRooms = 4 + (int) (Math.random() * 2);
+			GenerateProcedural.procedurallyGenerate(manager, world, pos, maxRooms);
+		}
 	}
 	
 	/**

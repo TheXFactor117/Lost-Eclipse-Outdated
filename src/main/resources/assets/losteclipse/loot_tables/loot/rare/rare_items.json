@@ -31,13 +31,15 @@
 					"type": "item",
 					"name": "losteclipse:astrill_gem_fragment",
 					"weight": 1,
-					"functions": {
-						"function": "set_count",
-						"count": {
-							"min": 1,
-							"max": 2
+					"functions": [
+						{
+							"function": "set_count",
+							"count": {
+								"min": 1,
+								"max": 2
+							}
 						}
-					}
+					]
 				}
 			]
 		},
