@@ -3,6 +3,7 @@ package com.thexfactor117.losteclipse.generation;
 import java.util.Random;
 
 import com.thexfactor117.losteclipse.LostEclipse;
+import com.thexfactor117.losteclipse.generation.procedural.ProceduralDungeon;
 import com.thexfactor117.losteclipse.init.ModBlocks;
 import com.thexfactor117.losteclipse.util.Reference;
 
@@ -117,11 +118,13 @@ public class LEWorldGenerator implements IWorldGenerator
 		{
 			int randX = blockX + (int) Math.random() * 16;
 			int randZ = blockZ + (int) Math.random() * 16;
-			int y = (int) (Math.random() * 40 + 5);
+			int y = (int) (Math.random() * 45 + 5);
 			BlockPos pos = new BlockPos(randX, y, randZ);
-			LostEclipse.LOGGER.info("Generating Dungeon at " + pos);
 			int maxRooms = 4 + (int) (Math.random() * 2);
-			GenerateProcedural.procedurallyGenerate(manager, world, pos, maxRooms);
+			LostEclipse.LOGGER.info("Generating Dungeon (" + maxRooms + ") at " + pos);
+			
+			ProceduralDungeon dungeon = new ProceduralDungeon(maxRooms);
+			dungeon.generate(world, rand, pos);
 		}
 	}
 	

@@ -8,7 +8,7 @@ import net.minecraft.item.ItemSword;
  * @author TheXFactor117
  *
  */
-public class ItemBaseSword extends ItemSword
+public abstract class ItemBaseSword extends ItemSword
 {
 	public ItemBaseSword(ToolMaterial material, String name, String modid)
 	{

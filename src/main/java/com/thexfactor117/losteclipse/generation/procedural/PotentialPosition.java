@@ -1,4 +1,4 @@
-package com.thexfactor117.losteclipse.generation;
+package com.thexfactor117.losteclipse.generation.procedural;
 
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;

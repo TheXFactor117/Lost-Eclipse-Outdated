@@ -1,7 +1,7 @@
 package com.thexfactor117.losteclipse.items;
 
 import com.thexfactor117.levels.leveling.Rarity;
-import com.thexfactor117.losteclipse.generation.GenerateProcedural;
+import com.thexfactor117.losteclipse.generation.procedural.ProceduralDungeon;
 import com.thexfactor117.losteclipse.init.ModTabs;
 import com.thexfactor117.losteclipse.items.base.ItemLE;
 
@@ -11,8 +11,6 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.minecraft.world.WorldServer;
-import net.minecraft.world.gen.structure.template.TemplateManager;
 
 /**
  * 
@@ -40,9 +38,8 @@ public class ItemTest extends ItemLE
 				LostEclipse.network.sendTo(new PacketMana(capMana.getMana()), (EntityPlayerMP) player);
 			}*/
 			
-			WorldServer server = (WorldServer) world;
-			TemplateManager manager = server.getStructureTemplateManager();
-			GenerateProcedural.procedurallyGenerate(manager, world, pos, 4);
+			ProceduralDungeon dungeon = new ProceduralDungeon(6);
+			dungeon.generate(world, world.rand, pos);
 
 			return EnumActionResult.SUCCESS;
 		}

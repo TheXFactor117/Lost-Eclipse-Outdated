@@ -2,10 +2,10 @@ package com.thexfactor117.losteclipse.capabilities.player;
 
 import javax.annotation.Nullable;
 
-import com.thexfactor117.health.util.CapabilityUtils;
-import com.thexfactor117.health.util.SimpleCapabilityProvider;
 import com.thexfactor117.losteclipse.capabilities.api.IMana;
+import com.thexfactor117.losteclipse.util.CapabilityUtils;
 import com.thexfactor117.losteclipse.util.Reference;
+import com.thexfactor117.losteclipse.util.SimpleCapabilityProvider;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;

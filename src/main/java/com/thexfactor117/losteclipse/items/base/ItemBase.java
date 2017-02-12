@@ -8,7 +8,7 @@ import net.minecraft.item.Item;
  * @author TheXFactor117
  *
  */
-public class ItemBase extends Item
+public abstract class ItemBase extends Item
 {
 	public ItemBase(String name, String modid)
 	{
