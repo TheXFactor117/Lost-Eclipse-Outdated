@@ -1,7 +1,7 @@
 {
 	"pools": [
 		{
-			"name": "vanilla",
+			"name": "main",
 			"rolls": {
 				"min": 0,
 				"max": 1
@@ -10,22 +10,22 @@
 				{
 					"type": "item",
 					"name": "minecraft:stone_sword",
-					"weight": 2
+					"weight": 3
 				},
 				{
 					"type": "item",
 					"name": "losteclipse:stone_mace",
-					"weight": 2
+					"weight": 3
 				},
 				{
 					"type": "item",
 					"name": "losteclipse:stone_dagger",
-					"weight": 2
+					"weight": 3
 				},
 				{
 					"type": "item",
 					"name": "minecraft:bow",
-					"weight": 1
+					"weight": 3
 				},
 				{
 					"type": "item",
@@ -46,16 +46,7 @@
 					"type": "item",
 					"name": "minecraft:chainmail_boots",
 					"weight": 1
-				}
-			]
-		},
-		{
-			"name": "melee",
-			"rolls": {
-				"min": 0,
-				"max": 1
-			},
-			"entries": [
+				},
 				{
 					"type": "item",
 					"name": "losteclipse:verantium_sword",
@@ -74,12 +65,12 @@
 				{
 					"type": "item",
 					"name": "losteclipse:crystallized_sword",
-					"weight": 1
+					"weight": 3
 				},
 				{
 					"type": "item",
 					"name": "losteclipse:gyro_mace",
-					"weight": 1
+					"weight": 2
 				},
 				{
 					"type": "item",
@@ -90,40 +81,22 @@
 					"type": "item",
 					"name": "losteclipse:malice_blade",
 					"weight": 1
-				}
-			]
-		},
-		{
-			"name": "ranged",
-			"rolls": {
-				"min": 0,
-				"max": 1
-			},
-			"entries": [
+				},
 				{
 					"type": "item",
 					"name": "losteclipse:iron_staff",
-					"weight": 1
+					"weight": 3
 				},
 				{
 					"type": "item",
 					"name": "losteclipse:inferno_staff",
-					"weight": 1
+					"weight": 2
 				},
 				{
 					"type": "item",
 					"name": "losteclipse:blizzard_staff",
-					"weight": 1
-				}
-			]
-		},
-		{
-			"name": "armor",
-			"rolls": {
-				"min": 0,
-				"max": 1
-			},
-			"entries": [
+					"weight": 2
+				},
 				{
 					"type": "item",
 					"name": "losteclipse:verantium_helmet",

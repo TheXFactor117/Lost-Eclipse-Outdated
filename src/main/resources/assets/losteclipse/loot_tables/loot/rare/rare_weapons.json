@@ -1,7 +1,7 @@
 {
 	"pools": [
 		{
-			"name": "vanilla",
+			"name": "main",
 			"rolls": {
 				"min": 0,
 				"max": 1
@@ -10,47 +10,38 @@
 				{
 					"type": "item",
 					"name": "minecraft:iron_sword",
-					"weight": 2
+					"weight": 3
 				},
 				{
 					"type": "item",
 					"name": "losteclipse:iron_mace",
-					"weight": 2
+					"weight": 3
 				},
 				{
 					"type": "item",
 					"name": "losteclipse:iron_dagger",
-					"weight": 2
+					"weight": 3
 				},
 				{
 					"type": "item",
 					"name": "minecraft:iron_helmet",
-					"weight": 1
+					"weight": 2
 				},
 				{
 					"type": "item",
 					"name": "minecraft:iron_chestplate",
-					"weight": 1
+					"weight": 2
 				},
 				{
 					"type": "item",
 					"name": "minecraft:iron_leggings",
-					"weight": 1
+					"weight": 2
 				},
 				{
 					"type": "item",
 					"name": "minecraft:iron_boots",
-					"weight": 1
-				}
-			]
-		},
-		{
-			"name": "melee",
-			"rolls": {
-				"min": 0,
-				"max": 1
-			},
-			"entries": [
+					"weight": 2
+				},
 				{
 					"type": "item",
 					"name": "losteclipse:vexal_dagger",
@@ -85,44 +76,26 @@
 					"type": "item",
 					"name": "losteclipse:divine_rapier",
 					"weight": 1
-				}
-			]
-		},
-		{
-			"name": "ranged",
-			"rolls": {
-				"min": 0,
-				"max": 1
-			},
-			"entries": [
+				},
 				{
 					"type": "item",
 					"name": "losteclipse:verantium_staff",
-					"weight": 1
+					"weight": 2
 				},
 				{
 					"type": "item",
 					"name": "losteclipse:lightning_staff",
-					"weight": 1
+					"weight": 2
 				},
 				{
 					"type": "item",
 					"name": "losteclipse:elemental_staff",
-					"weight": 1
-				}
-			]
-		},
-		{
-			"name": "armor",
-			"rolls": {
-				"min": 0,
-				"max": 1
-			},
-			"entries": [
+					"weight": 2
+				},
 				{
 					"type": "item",
 					"name": "losteclipse:gyro_chestplate",
-					"weight": 1
+					"weight": 2
 				}
 			]
 		}

@@ -1,16 +1,16 @@
 {
 	"pools": [
 		{
-			"name": "valuables",
+			"name": "main",
 			"rolls": {
 				"min": 0,
-				"max": 1
+				"max": 2
 			},
 			"entries": [
 				{
 					"type": "item",
 					"name": "losteclipse:onyx_gem",
-					"weight": 2
+					"weight": 3
 				},
 				{
 					"type": "item",
@@ -20,12 +20,12 @@
 				{
 					"type": "item",
 					"name": "losteclipse:vexal_gem",
-					"weight": 2
+					"weight": 3
 				},
 				{
 					"type": "item",
 					"name": "losteclipse:ethereal_gem",
-					"weight": 1
+					"weight": 2
 				},
 				{
 					"type": "item",
@@ -40,16 +40,7 @@
 							}
 						}
 					]
-				}
-			]
-		},
-		{
-			"name": "scrolls",
-			"rolls": {
-				"min": 0,
-				"max": 1
-			},
-			"entries": [
+				},
 				{
 					"type": "item",
 					"name": "losteclipse:ethereal_scroll",
@@ -79,16 +70,7 @@
 					"type": "item",
 					"name": "losteclipse:infused_ethereal_scroll",
 					"weight": 1
-				}
-			]
-		},
-		{
-			"name": "jewelry",
-			"rolls": {
-				"min": 0,
-				"max": 1
-			},
-			"entries": [
+				},
 				{
 					"type": "item",
 					"name": "losteclipse:soul_ring",
@@ -123,20 +105,11 @@
 					"type": "item",
 					"name": "losteclipse:infused_soul_amulet",
 					"weight": 1
-				}
-			]
-		},
-		{
-			"name": "misc",
-			"rolls": {
-				"min": 0,
-				"max": 1
-			},
-			"entries": [
+				},
 				{
 					"type": "item",
 					"name": "losteclipse:diamond_ring",
-					"weight": 1
+					"weight": 2
 				}
 			]
 		}

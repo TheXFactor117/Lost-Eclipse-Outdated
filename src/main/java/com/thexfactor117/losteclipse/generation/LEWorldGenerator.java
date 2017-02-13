@@ -8,6 +8,7 @@ import com.thexfactor117.losteclipse.init.ModBlocks;
 import com.thexfactor117.losteclipse.util.Reference;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.ResourceLocation;
@@ -93,7 +94,7 @@ public class LEWorldGenerator implements IWorldGenerator
 		Template castle = manager.getTemplate(world.getMinecraftServer(), new ResourceLocation(Reference.MODID, "castle1"));
 		
 		// structures
-		if ((int) (Math.random() * 75) == 0)
+		if ((int) (Math.random() * 150) == 0)
 		{
 			int randX = blockX + (int) Math.random() * 16;
 			int randZ = blockZ + (int) Math.random() * 16;
@@ -103,7 +104,7 @@ public class LEWorldGenerator implements IWorldGenerator
 			smallHouse.addBlocksToWorld(world, pos, new PlacementSettings());
 		}
 		
-		if ((int) (Math.random() * 100) == 0)
+		if ((int) (Math.random() * 200) == 0)
 		{
 			int randX = blockX + (int) Math.random() * 16;
 			int randZ = blockZ + (int) Math.random() * 16;
@@ -114,7 +115,7 @@ public class LEWorldGenerator implements IWorldGenerator
 		}
 		
 		// dungeons
-		if ((int) (Math.random() * 200) == 0)
+		if ((int) (Math.random() * 500) == 0)
 		{
 			int randX = blockX + (int) Math.random() * 16;
 			int randZ = blockZ + (int) Math.random() * 16;
@@ -135,17 +136,37 @@ public class LEWorldGenerator implements IWorldGenerator
 	 * @param z
 	 * @return
 	 */
-	private static int getGroundFromAbove(World world, int x, int z)
+	private int getGroundFromAbove(World world, int x, int z)
 	{
 		int y = 255;
 		boolean foundGround = false;
-		while(!foundGround && y-- >= 0)
+		while(!foundGround && y-- >= 63)
 		{
 			Block blockAt = world.getBlockState(new BlockPos(x,y,z)).getBlock();
 			foundGround = blockAt == Blocks.DIRT || blockAt == Blocks.GRASS;
 		}
 
 		return y;
+	}
+	
+	private boolean canSpawnHere(World world, BlockPos posAboveGround)
+	{
+		// check all the corners to see which ones are replaceable
+		boolean corner1Air = canReplace(world, posAboveGround);
+		boolean corner2Air = canReplace(world, posAboveGround.add(4, 0, 0));
+		boolean corner4Air = canReplace(world, posAboveGround.add(0, 0, 4));
+		boolean corner3Air = canReplace(world, posAboveGround.add(4, 0, 4));
+		
+		// if Y > 20 and all corners pass the test, it's okay to spawn the structure
+		return posAboveGround.getY() > 63 && corner1Air && corner2Air && corner3Air && corner4Air;
+	}
+	
+	private boolean canReplace(World world, BlockPos pos)
+	{
+		Block at = world.getBlockState(pos).getBlock();
+		Material material = at.getMaterial(at.getDefaultState());
+		// we think it's replaceable if it's air / liquid / snow, plants, or leaves 
+		return material.isReplaceable() || material == Material.PLANTS || material == Material.LEAVES;
 	}
 	
 	/**
