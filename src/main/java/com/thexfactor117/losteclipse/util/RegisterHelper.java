@@ -17,7 +17,6 @@ public class RegisterHelper
 	public static void registerItems(Item item)
 	{
 		GameRegistry.register(item);
-		ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(item.getRegistryName(), "inventory"));
 	}
 	
 	public static void registerBlocks(Block block)
@@ -27,7 +26,15 @@ public class RegisterHelper
 		
 		GameRegistry.register(block);
 		GameRegistry.register(itemBlock);
-		
+	}
+	
+	public static void setModel(Item item)
+	{
+		ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(item.getRegistryName(), "inventory"));
+	}
+	
+	public static void setModel(ItemBlock itemBlock)
+	{
 		ModelLoader.setCustomModelResourceLocation(itemBlock, 0, new ModelResourceLocation(itemBlock.getRegistryName(), "inventory"));
 	}
 }
