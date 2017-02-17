@@ -208,7 +208,7 @@ public abstract class ProceduralDungeonBase extends WorldGenerator
 		// loop through all data blocks within the structure
 		for (Entry<BlockPos, String> e : template.getDataBlocks(pos, settings).entrySet())
 		{
-			if ("common".equals(e.getValue())) // check data block tag
+			if ("common_chest".equals(e.getValue())) // check data block tag
 			{
 				BlockPos dataPos = e.getKey();
 				world.setBlockState(dataPos, Blocks.AIR.getDefaultState(), 3); // remove data block
@@ -223,7 +223,7 @@ public abstract class ProceduralDungeonBase extends WorldGenerator
 					else ((TileEntityChest) chestEntity).setLootTable(ModLootTables.STRUCTURE_RARE, world.rand.nextLong());
 				}
 			}
-			else if ("rare".equals(e.getValue())) // check data block tag
+			else if ("rare_chest".equals(e.getValue())) // check data block tag
 			{
 				BlockPos dataPos = e.getKey();
 				world.setBlockState(dataPos, Blocks.AIR.getDefaultState(), 3); // remove data block
@@ -238,7 +238,7 @@ public abstract class ProceduralDungeonBase extends WorldGenerator
 					else ((TileEntityChest) chestEntity).setLootTable(ModLootTables.STRUCTURE_RARE, world.rand.nextLong());
 				}
 			}
-			else if ("legendary".equals(e.getValue())) // check data block tag
+			else if ("legendary_chest".equals(e.getValue())) // check data block tag
 			{
 				BlockPos dataPos = e.getKey();
 				world.setBlockState(dataPos, Blocks.AIR.getDefaultState(), 3); // remove data block

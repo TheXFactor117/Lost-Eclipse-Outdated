@@ -1,5 +1,6 @@
 package com.thexfactor117.losteclipse.init;
 
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -48,6 +49,12 @@ public class ModRecipes
 		GameRegistry.addShapedRecipe(new ItemStack(ModArmory.gyroChestplate), new Object[] { "A A", "AAA", "AAA", 'A', ModItems.golemGyro });
 		
 		// generic melee
+		GameRegistry.addShapedRecipe(new ItemStack(ModArmory.woodDagger), new Object[] { "A", "B", 'A', Blocks.PLANKS, 'B', Items.STICK });
+		GameRegistry.addShapedRecipe(new ItemStack(ModArmory.woodMace), new Object[] { " A ", "ABA", " B ", 'A', Blocks.PLANKS, 'B', Items.STICK });
+		GameRegistry.addShapedRecipe(new ItemStack(ModArmory.stoneDagger), new Object[] { "A", "B", 'A', Blocks.COBBLESTONE, 'B', Items.STICK });
+		GameRegistry.addShapedRecipe(new ItemStack(ModArmory.stoneMace), new Object[] { " A ", "ABA", " B ", 'A', Blocks.COBBLESTONE, 'B', Items.STICK });
+		GameRegistry.addShapedRecipe(new ItemStack(ModArmory.goldDagger), new Object[] { "A", "B", 'A', Items.GOLD_INGOT, 'B', Items.STICK });
+		GameRegistry.addShapedRecipe(new ItemStack(ModArmory.goldMace), new Object[] { " A ", "ABA", " B ", 'A', Items.GOLD_INGOT, 'B', Items.STICK });
 		GameRegistry.addShapedRecipe(new ItemStack(ModArmory.ironDagger), new Object[] { "A", "B", 'A', Items.IRON_INGOT, 'B', Items.STICK });
 		GameRegistry.addShapedRecipe(new ItemStack(ModArmory.ironMace), new Object[] { " A ", "ABA", " B ", 'A', Items.IRON_INGOT, 'B', Items.STICK });
 		GameRegistry.addShapedRecipe(new ItemStack(ModArmory.verantiumDagger), new Object[] { "A", "B", 'A', ModItems.verantiumIngot, 'B', Items.STICK });
@@ -56,6 +63,8 @@ public class ModRecipes
 		GameRegistry.addShapedRecipe(new ItemStack(ModArmory.vexalDagger), new Object[] { "A", "B", 'A', ModItems.vexalGem, 'B', Items.STICK });
 		GameRegistry.addShapedRecipe(new ItemStack(ModArmory.vexalSword), new Object[] { "A", "A", "B", 'A', ModItems.vexalGem, 'B', Items.STICK });
 		GameRegistry.addShapedRecipe(new ItemStack(ModArmory.vexalMace), new Object[] { " A ", "ABA", " B ", 'A', ModItems.vexalGem, 'B', Items.STICK });
+		GameRegistry.addShapedRecipe(new ItemStack(ModArmory.diamondDagger), new Object[] { "A", "B", 'A', Items.DIAMOND, 'B', Items.STICK });
+		GameRegistry.addShapedRecipe(new ItemStack(ModArmory.diamondMace), new Object[] { " A ", "ABA", " B ", 'A', Items.DIAMOND, 'B', Items.STICK });
 		GameRegistry.addShapedRecipe(new ItemStack(ModArmory.astrillDagger), new Object[] { "A", "B", 'A', ModItems.astrillGem, 'B', Items.STICK });
 		GameRegistry.addShapedRecipe(new ItemStack(ModArmory.astrillSword), new Object[] { "A", "A", "B", 'A', ModItems.astrillGem, 'B', Items.STICK });
 		GameRegistry.addShapedRecipe(new ItemStack(ModArmory.astrillMace), new Object[] { " A ", "ABA", " B ", 'A', ModItems.astrillGem, 'B', Items.STICK });

@@ -1,16 +1,19 @@
 package com.thexfactor117.losteclipse.generation;
 
+import java.util.Map.Entry;
 import java.util.Random;
 
 import com.thexfactor117.losteclipse.LostEclipse;
 import com.thexfactor117.losteclipse.generation.procedural.ProceduralDungeon;
 import com.thexfactor117.losteclipse.init.ModBlocks;
+import com.thexfactor117.losteclipse.init.ModLootTables;
 import com.thexfactor117.losteclipse.util.Reference;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.tileentity.TileEntityChest;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -29,7 +32,7 @@ import net.minecraftforge.fml.common.IWorldGenerator;
  *
  */
 public class LEWorldGenerator implements IWorldGenerator
-{
+{	
 	@Override
 	public void generate(Random rand, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) 
 	{
@@ -68,7 +71,7 @@ public class LEWorldGenerator implements IWorldGenerator
 	 */
 	private void generateOverworldOres(World world, Random rand, int blockX, int blockZ)
 	{
-		IBlockState malachiteOre = ModBlocks.verantiumBlock.getDefaultState();
+		IBlockState malachiteOre = ModBlocks.verantiumOre.getDefaultState();
 		IBlockState vexalOre = ModBlocks.vexalOre.getDefaultState();
 		IBlockState astrillOre = ModBlocks.astrillOre.getDefaultState();
 		
@@ -94,24 +97,34 @@ public class LEWorldGenerator implements IWorldGenerator
 		Template castle = manager.getTemplate(world.getMinecraftServer(), new ResourceLocation(Reference.MODID, "castle1"));
 		
 		// structures
+		if ((int) (Math.random() * 100) == 0)
+		{
+			int randX = blockX + (int) Math.random() * 16;
+			int randZ = blockZ + (int) Math.random() * 16;
+			int groundY = getGroundFromAbove(world, randX, randZ);
+			BlockPos pos = new BlockPos(randX, groundY, randZ);
+			
+			if (canSpawnHere(castle, world, pos))
+			{
+				LostEclipse.LOGGER.info("Generating Small House at " + pos);
+				smallHouse.addBlocksToWorld(world, pos, new PlacementSettings());
+				handleDataBlocks(smallHouse, world, pos, new PlacementSettings());
+			}
+		}
+		
 		if ((int) (Math.random() * 150) == 0)
 		{
 			int randX = blockX + (int) Math.random() * 16;
 			int randZ = blockZ + (int) Math.random() * 16;
 			int groundY = getGroundFromAbove(world, randX, randZ);
 			BlockPos pos = new BlockPos(randX, groundY, randZ);
-			LostEclipse.LOGGER.info("Generating Small House at " + pos);
-			smallHouse.addBlocksToWorld(world, pos, new PlacementSettings());
-		}
-		
-		if ((int) (Math.random() * 200) == 0)
-		{
-			int randX = blockX + (int) Math.random() * 16;
-			int randZ = blockZ + (int) Math.random() * 16;
-			int groundY = getGroundFromAbove(world, randX, randZ);
-			BlockPos pos = new BlockPos(randX, groundY, randZ);
-			LostEclipse.LOGGER.info("Generating Castle at " + pos);
-			castle.addBlocksToWorld(world, pos, new PlacementSettings());
+			
+			if (canSpawnHere(castle, world, pos))
+			{
+				LostEclipse.LOGGER.info("Generating Castle at " + pos);
+				castle.addBlocksToWorld(world, pos, new PlacementSettings());
+				handleDataBlocks(castle, world, pos, new PlacementSettings());
+			}
 		}
 		
 		// dungeons
@@ -143,30 +156,39 @@ public class LEWorldGenerator implements IWorldGenerator
 		while(!foundGround && y-- >= 63)
 		{
 			Block blockAt = world.getBlockState(new BlockPos(x,y,z)).getBlock();
-			foundGround = blockAt == Blocks.DIRT || blockAt == Blocks.GRASS;
+			foundGround = blockAt == Blocks.DIRT || blockAt == Blocks.GRASS || blockAt == Blocks.SAND || blockAt == Blocks.SNOW || blockAt == Blocks.SNOW_LAYER;
 		}
 
 		return y;
 	}
 	
-	private boolean canSpawnHere(World world, BlockPos posAboveGround)
+	private boolean canSpawnHere(Template template, World world, BlockPos posAboveGround)
 	{
+		int zwidth = template.getSize().getZ();
+		int xwidth = template.getSize().getX();
+		
 		// check all the corners to see which ones are replaceable
-		boolean corner1Air = canReplace(world, posAboveGround);
-		boolean corner2Air = canReplace(world, posAboveGround.add(4, 0, 0));
-		boolean corner4Air = canReplace(world, posAboveGround.add(0, 0, 4));
-		boolean corner3Air = canReplace(world, posAboveGround.add(4, 0, 4));
+		boolean corner1 = isCornerValid(world, posAboveGround);
+		boolean corner2 = isCornerValid(world, posAboveGround.add(xwidth, 0, zwidth));
 		
 		// if Y > 20 and all corners pass the test, it's okay to spawn the structure
-		return posAboveGround.getY() > 63 && corner1Air && corner2Air && corner3Air && corner4Air;
+		return posAboveGround.getY() > 63 && corner1 && corner2;
 	}
 	
-	private boolean canReplace(World world, BlockPos pos)
+	private boolean isCornerValid(World world, BlockPos pos)
 	{
-		Block at = world.getBlockState(pos).getBlock();
-		Material material = at.getMaterial(at.getDefaultState());
-		// we think it's replaceable if it's air / liquid / snow, plants, or leaves 
-		return material.isReplaceable() || material == Material.PLANTS || material == Material.LEAVES;
+		int variation = 3;
+		int highestBlock = getGroundFromAbove(world, pos.getX(), pos.getZ());
+		
+		if (highestBlock > pos.getY() - variation && highestBlock < pos.getY() + variation)
+		{
+			LostEclipse.LOGGER.info("Corner valid.");
+			return true;
+		}
+		
+		LostEclipse.LOGGER.info("Canceling gen for this structure.");
+		
+		return false;
 	}
 	
 	/**
@@ -192,6 +214,66 @@ public class LEWorldGenerator implements IWorldGenerator
 			int posY = minY + random.nextInt(maxY - minY);
 			int posZ = blockZPos + random.nextInt(maxZ);
 			new WorldGenMinable(block, maxVeinSize).generate(world, random, new BlockPos(posX, posY, posZ));
+		}
+	}
+	
+	/**
+	 * Iterates through every Data Structure Block in the given template. Used to add loot to chests.
+	 * @param template
+	 * @param world
+	 * @param pos
+	 * @param settings
+	 */
+	private void handleDataBlocks(Template template, World world, BlockPos pos, PlacementSettings settings)
+	{
+		// loop through all data blocks within the structure
+		for (Entry<BlockPos, String> e : template.getDataBlocks(pos, settings).entrySet())
+		{
+			if ("common_chest".equals(e.getValue())) // check data block tag
+			{
+				BlockPos dataPos = e.getKey();
+				world.setBlockState(dataPos, Blocks.AIR.getDefaultState(), 3); // remove data block
+				TileEntity chestEntity = world.getTileEntity(dataPos.down()); // chest is located under data block
+							
+				if (chestEntity instanceof TileEntityChest)
+				{
+					int rand = (int) (Math.random() * 100 + 1);
+
+					if (rand <= 85) ((TileEntityChest) chestEntity).setLootTable(ModLootTables.STRUCTURE_COMMON, world.rand.nextLong());
+					else if (rand > 95) ((TileEntityChest) chestEntity).setLootTable(ModLootTables.STRUCTURE_LEGENDARY, world.rand.nextLong());
+					else ((TileEntityChest) chestEntity).setLootTable(ModLootTables.STRUCTURE_RARE, world.rand.nextLong());
+				}
+			}
+			else if ("rare_chest".equals(e.getValue())) // check data block tag
+			{
+				BlockPos dataPos = e.getKey();
+				world.setBlockState(dataPos, Blocks.AIR.getDefaultState(), 3); // remove data block
+				TileEntity chestEntity = world.getTileEntity(dataPos.down()); // chest is located under data block
+							
+				if (chestEntity instanceof TileEntityChest)
+				{
+					int rand = (int) (Math.random() * 100 + 1);
+
+					if (rand <= 40) ((TileEntityChest) chestEntity).setLootTable(ModLootTables.STRUCTURE_COMMON, world.rand.nextLong());
+					else if (rand > 90) ((TileEntityChest) chestEntity).setLootTable(ModLootTables.STRUCTURE_LEGENDARY, world.rand.nextLong());
+					else ((TileEntityChest) chestEntity).setLootTable(ModLootTables.STRUCTURE_RARE, world.rand.nextLong());
+				}
+			}
+			else if ("legendary_chest".equals(e.getValue())) // check data block tag
+			{
+				BlockPos dataPos = e.getKey();
+				world.setBlockState(dataPos, Blocks.AIR.getDefaultState(), 3); // remove data block
+				TileEntity chestEntity = world.getTileEntity(dataPos.down()); // chest is located under data block
+							
+				if (chestEntity instanceof TileEntityChest)
+				{
+					int rand = (int) (Math.random() * 100 + 1);
+					
+					if (rand <= 10) ((TileEntityChest) chestEntity).setLootTable(ModLootTables.STRUCTURE_COMMON, world.rand.nextLong());
+					else if (rand > 50) ((TileEntityChest) chestEntity).setLootTable(ModLootTables.STRUCTURE_LEGENDARY, world.rand.nextLong());
+					else ((TileEntityChest) chestEntity).setLootTable(ModLootTables.STRUCTURE_RARE, world.rand.nextLong());
+				}
+			}
 		}
 	}
 }

@@ -15,11 +15,11 @@ tile.astrill_block.name=Astrill Block
 #############################################
 
 ### artifacts
-item.eclipse.name=Eclipse
-item.omega.name=Omega
-item.inheritance.name=Inheritance
-item.mythic.name=Mythic
-item.nova.name=Nova
+item.artifact_eclipse.name=Eclipse
+item.artifact_omega.name=Omega
+item.artifact_inheritance.name=Inheritance
+item.artifact_mythic.name=Mythic
+item.artifact_nova.name=Nova
 
 ### ingots & gems
 item.verantium_ingot.name=Verantium Ingot

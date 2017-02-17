@@ -50,7 +50,7 @@ public class ModItems
 	public static Item etherealGem = new ItemLE("ethereal_gem", Rarity.ULTRA_RARE);
 	public static Item astrillGemFragment = new ItemLE("astrill_gem_fragment", Rarity.ULTRA_RARE);
 	public static Item astrillGem = new ItemLE("astrill_gem", Rarity.LEGENDARY);
-	public static Item chysoliteGem = new ItemLE("chysolite_gem", Rarity.LEGENDARY);
+	public static Item inferniteGem = new ItemLE("infernite_gem", Rarity.LEGENDARY);
 	
 	// glyphs
 	public static Item fireGlyph = new ItemLE("fire_glyph", Rarity.COMMON);
@@ -132,7 +132,7 @@ public class ModItems
 		RegisterHelper.registerItems(etherealGem);
 		RegisterHelper.registerItems(astrillGemFragment);
 		RegisterHelper.registerItems(astrillGem);
-		RegisterHelper.registerItems(chysoliteGem);
+		RegisterHelper.registerItems(inferniteGem);
 		
 		// glyphs
 		RegisterHelper.registerItems(fireGlyph);
