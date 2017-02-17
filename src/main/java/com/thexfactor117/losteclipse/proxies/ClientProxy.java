@@ -19,6 +19,9 @@ import com.thexfactor117.losteclipse.entities.projectiles.EntityLightning;
 import com.thexfactor117.losteclipse.entities.projectiles.EntityMagic;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.item.Item;
+import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.relauncher.Side;
@@ -36,6 +39,12 @@ public class ClientProxy extends CommonProxy
 	public void preInit()
 	{
 		MinecraftForge.EVENT_BUS.register(new GuiMana(Minecraft.getMinecraft()));
+	}
+	
+	@Override
+	public void registerItemRenderers(Item item, int meta)
+	{
+		ModelLoader.setCustomModelResourceLocation(item, meta, new ModelResourceLocation(item.getRegistryName(), "inventory"));
 	}
 	
 	@Override

@@ -1,5 +1,7 @@
 package com.thexfactor117.losteclipse.items.base;
 
+import com.thexfactor117.losteclipse.LostEclipse;
+
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemArmor;
@@ -24,5 +26,10 @@ public class ItemBaseArmor extends ItemArmor
 		this.setRegistryName(modid, name);
 		this.setUnlocalizedName(name);
 		this.setCreativeTab(tab);
+	}
+	
+	public void registerItemRenderer()
+	{
+		LostEclipse.proxy.registerItemRenderers(this, 0);
 	}
 }

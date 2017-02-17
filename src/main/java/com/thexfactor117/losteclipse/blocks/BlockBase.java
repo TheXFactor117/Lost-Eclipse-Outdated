@@ -1,11 +1,13 @@
 package com.thexfactor117.losteclipse.blocks;
 
+import com.thexfactor117.losteclipse.LostEclipse;
 import com.thexfactor117.losteclipse.util.Reference;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.ItemBlock;
 
 /**
  * 
@@ -66,5 +68,10 @@ public class BlockBase extends Block
 		this.setResistance(resistance);
 		this.setLightLevel(lightValue);
 		this.setHarvestLevel(harvestType, harvestLevel);
+	}
+	
+	public void registerItemModel(ItemBlock itemBlock) 
+	{
+		LostEclipse.proxy.registerItemRenderers(itemBlock, 0);
 	}
 }

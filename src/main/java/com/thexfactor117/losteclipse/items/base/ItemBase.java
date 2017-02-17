@@ -1,5 +1,7 @@
 package com.thexfactor117.losteclipse.items.base;
 
+import com.thexfactor117.losteclipse.LostEclipse;
+
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 
@@ -23,5 +25,10 @@ public abstract class ItemBase extends Item
 		this.setCreativeTab(tab);
 		this.setRegistryName(modid, name);
 		this.setUnlocalizedName(name);
+	}
+	
+	public void registerItemRenderer()
+	{
+		LostEclipse.proxy.registerItemRenderers(this, 0);
 	}
 }

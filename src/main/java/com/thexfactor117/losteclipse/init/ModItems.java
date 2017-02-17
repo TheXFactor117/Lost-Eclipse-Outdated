@@ -26,8 +26,6 @@ import com.thexfactor117.losteclipse.items.scrolls.ItemVoidScroll;
 import com.thexfactor117.losteclipse.util.RegisterHelper;
 
 import net.minecraft.item.Item;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 
 /**
  * 
@@ -197,89 +195,5 @@ public class ModItems
 		
 		// test
 		RegisterHelper.registerItems(testItem);
-	}
-	
-	@SideOnly(Side.CLIENT)
-	public static void registerModels()
-	{
-		// artifacts
-		RegisterHelper.setModel(eclipse);
-		RegisterHelper.setModel(omega);
-		RegisterHelper.setModel(inheritance);
-		RegisterHelper.setModel(mythic);
-		RegisterHelper.setModel(nova);
-		
-		// ingots & gems
-		RegisterHelper.setModel(verantiumIngot);
-		RegisterHelper.setModel(garnet);
-		RegisterHelper.setModel(onyxGem);
-		RegisterHelper.setModel(amethyst);
-		RegisterHelper.setModel(vexalGem);
-		RegisterHelper.setModel(etherealGem);
-		RegisterHelper.setModel(astrillGemFragment);
-		RegisterHelper.setModel(astrillGem);
-		RegisterHelper.setModel(inferniteGem);
-		
-		// glyphs
-		RegisterHelper.setModel(fireGlyph);
-		RegisterHelper.setModel(frostGlyph);
-		RegisterHelper.setModel(poisonGlyph);
-		RegisterHelper.setModel(strengthGlyph);
-		RegisterHelper.setModel(minorDamageGlyph);
-		RegisterHelper.setModel(minorEtherealGlyph);
-		RegisterHelper.setModel(hardenedGlyph);
-		RegisterHelper.setModel(elementalGlyph);
-		RegisterHelper.setModel(darkenedGlyph);
-		RegisterHelper.setModel(brightenedGlyph);
-		RegisterHelper.setModel(bloodGlyph);
-		RegisterHelper.setModel(absorbtionGlyph);
-		RegisterHelper.setModel(minorConjurationGlyph);
-		RegisterHelper.setModel(majorEtherealGlyph);
-		RegisterHelper.setModel(chainedGlyph);
-		RegisterHelper.setModel(invisibilityGlyph);
-		RegisterHelper.setModel(majorConjurationGlyph);
-		RegisterHelper.setModel(voidGlyph);
-		
-		// scrolls
-		RegisterHelper.setModel(fireballScroll);
-		RegisterHelper.setModel(frostbiteScroll);
-		RegisterHelper.setModel(hardenedScroll);
-		RegisterHelper.setModel(etherealScroll);
-		RegisterHelper.setModel(radiationScroll);
-		RegisterHelper.setModel(familiarConjurationScroll);
-		RegisterHelper.setModel(flameCloakScroll);
-		RegisterHelper.setModel(invisibilityScroll);
-		RegisterHelper.setModel(infusedEtherealScroll);
-		RegisterHelper.setModel(voidScroll);
-		RegisterHelper.setModel(remyScroll);
-		
-		// jewelry
-		RegisterHelper.setModel(minorHealthGoldenRing);
-		RegisterHelper.setModel(minorDamageGoldenRing);
-		RegisterHelper.setModel(fireResistanceBelt);
-		RegisterHelper.setModel(soulRing);
-		RegisterHelper.setModel(soulAmulet);
-		RegisterHelper.setModel(healthGoldenRing);
-		RegisterHelper.setModel(damageGoldenRing);
-		RegisterHelper.setModel(resistanceBelt);
-		RegisterHelper.setModel(infusedSoulRing);
-		RegisterHelper.setModel(infusedSoulAmulet);
-		RegisterHelper.setModel(valadurSoulAmulet);
-		RegisterHelper.setModel(forerunnerBelt);
-		
-		// misc
-		RegisterHelper.setModel(staffBase);
-		RegisterHelper.setModel(frostRod);
-		RegisterHelper.setModel(frostDust);
-		RegisterHelper.setModel(goldenRing);
-		RegisterHelper.setModel(basicGlyphPattern);
-		RegisterHelper.setModel(golemGyro);
-		RegisterHelper.setModel(diamondRing);
-		RegisterHelper.setModel(rareGlyphPattern);
-		RegisterHelper.setModel(astrillRing);
-		RegisterHelper.setModel(legendaryGlyphPattern);
-		
-		// test
-		RegisterHelper.setModel(testItem);
 	}
 }

@@ -1,5 +1,7 @@
 package com.thexfactor117.losteclipse.proxies;
 
+import net.minecraft.item.Item;
+
 /**
  * 
  * @author TheXFactor117
@@ -8,5 +10,6 @@ package com.thexfactor117.losteclipse.proxies;
 public class CommonProxy 
 {
 	public void preInit() {}
+	public void registerItemRenderers(Item item, int meta) {}
 	public void registerRenderers() {}
 }

@@ -16,9 +16,9 @@ targetCompatibility = 1.8
 
 loadProperties()
 
-version = config.minecraft_version + "-" + config.mod_version + "." + config.build_number
+version = config.minecraft_version + "-" + config.mod_version
 group= "com.thexfactor117.losteclipse"
-archivesBaseName = "Lost-Eclipse"
+archivesBaseName = "Lost Eclipse"
 
 def loadProperties() {
     ext.configFile = file "build.properties"
@@ -41,7 +41,7 @@ minecraft {
 
 dependencies {
 	compile files (
-	"libs/Levels-" + config.levels_version + ".jar",
+	"libs/Levels 2-" + config.levels_version + ".jar",
 	"libs/Baubles-" + config.baubles_version + ".jar"
 	)
 }

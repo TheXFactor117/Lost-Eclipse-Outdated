@@ -1,6 +1,10 @@
 package com.thexfactor117.losteclipse.init;
 
 import com.thexfactor117.levels.leveling.Rarity;
+import com.thexfactor117.losteclipse.items.base.ItemBaseArmor;
+import com.thexfactor117.losteclipse.items.base.ItemBaseAxe;
+import com.thexfactor117.losteclipse.items.base.ItemBasePickaxe;
+import com.thexfactor117.losteclipse.items.base.ItemBaseShovel;
 import com.thexfactor117.losteclipse.items.melee.ItemLEAdvancedMelee;
 import com.thexfactor117.losteclipse.items.melee.ItemLEMelee;
 import com.thexfactor117.losteclipse.items.ranged.ItemAstrillStaff;
@@ -9,14 +13,10 @@ import com.thexfactor117.losteclipse.items.ranged.ItemElementalStaff;
 import com.thexfactor117.losteclipse.items.ranged.ItemInfernoStaff;
 import com.thexfactor117.losteclipse.items.ranged.ItemIronStaff;
 import com.thexfactor117.losteclipse.items.ranged.ItemLightningStaff;
-import com.thexfactor117.losteclipse.items.ranged.ItemVerantiumStaff;
 import com.thexfactor117.losteclipse.items.ranged.ItemOblivionStaff;
+import com.thexfactor117.losteclipse.items.ranged.ItemVerantiumStaff;
 import com.thexfactor117.losteclipse.util.Reference;
 import com.thexfactor117.losteclipse.util.RegisterHelper;
-import com.thexfactor117.losteclipse.items.base.ItemBaseArmor;
-import com.thexfactor117.losteclipse.items.base.ItemBaseAxe;
-import com.thexfactor117.losteclipse.items.base.ItemBasePickaxe;
-import com.thexfactor117.losteclipse.items.base.ItemBaseShovel;
 
 import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.EntityEquipmentSlot;

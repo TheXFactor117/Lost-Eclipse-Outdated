@@ -118,6 +118,12 @@ item.astrill_boots.name=Astrill Boots
 item.gyro_chestplate.name=Gyro Chestplate
 
 ### generic melee
+item.wood_dagger.name=Wood Dagger
+item.wood_mace.name=Wood Mace
+item.stone_dagger.name=Stone Dagger
+item.stone_mace.name=Stone Mace
+item.gold_dagger.name=Gold Dagger
+item.gold_mace.name=Gold Mace
 item.iron_dagger.name=Iron Dagger
 item.iron_mace.name=Iron Mace
 item.verantium_dagger.name=Verantium Dagger
@@ -126,6 +132,8 @@ item.verantium_mace.name=Verantium Mace
 item.vexal_dagger.name=Vexal Dagger
 item.vexal_sword.name=Vexal Sword
 item.vexal_mace.name=Vexal Mace
+item.diamond_dagger.name=Diamond Dagger
+item.diamond_mace.name=Diamond Mace
 item.astrill_dagger.name=Astrill Dagger
 item.astrill_sword.name=Astrill Sword
 item.astrill_mace.name=Astrill Mace
