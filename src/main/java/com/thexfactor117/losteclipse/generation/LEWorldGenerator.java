@@ -97,7 +97,7 @@ public class LEWorldGenerator implements IWorldGenerator
 		Template castle = manager.getTemplate(world.getMinecraftServer(), new ResourceLocation(Reference.MODID, "castle1"));
 		
 		// structures
-		if ((int) (Math.random() * 100) == 0)
+		if ((int) (Math.random() * 150) == 0)
 		{
 			int randX = blockX + (int) Math.random() * 16;
 			int randZ = blockZ + (int) Math.random() * 16;
@@ -112,7 +112,7 @@ public class LEWorldGenerator implements IWorldGenerator
 			}
 		}
 		
-		if ((int) (Math.random() * 150) == 0)
+		if ((int) (Math.random() * 200) == 0)
 		{
 			int randX = blockX + (int) Math.random() * 16;
 			int randZ = blockZ + (int) Math.random() * 16;
