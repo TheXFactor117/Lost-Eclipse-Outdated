@@ -1,0 +1,22 @@
+################################
+###                          ###
+### Lost Eclipse Changelogs  ###
+###                          ###
+################################
+
+#################
+### Pre-Alpha ###
+#################
+
+#####
+### Pre-Alpha 1
+#####
+
+### pre-a1.1.0
++ Added a configuration system.
++ Added options to change worldgen features (more options will be added over time).
+* Tweaked structure spawn chances.
+
+
+### pre-a1.0.0
+* Initial release

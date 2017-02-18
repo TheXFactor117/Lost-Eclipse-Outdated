@@ -81,6 +81,7 @@ public class Config
 		spawnDungeons = prop.getBoolean();
 		propOrder.add(prop.getName());
 		
+		// chances
 		prop = worldgen.get(category, "smallHouseChance", smallHouseChance);
 		prop.setComment("Determines how frequently Small Houses will spawn. Higher numbers = less frequently (1 / number = percentage per chunk)");
 		smallHouseChance = prop.getInt();
