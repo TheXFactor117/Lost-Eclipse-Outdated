@@ -1,8 +1,11 @@
 package com.thexfactor117.losteclipse;
 
+import java.io.File;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.thexfactor117.losteclipse.config.Config;
 import com.thexfactor117.losteclipse.generation.LEWorldGenerator;
 import com.thexfactor117.losteclipse.init.ModArmory;
 import com.thexfactor117.losteclipse.init.ModBlocks;
@@ -53,11 +56,17 @@ public class LostEclipse
 	public static CommonProxy proxy;
 	public static final Logger LOGGER = LogManager.getLogger("Lost Eclipse");
 	public static SimpleNetworkWrapper network;
+	private static File configDir;
 	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
 	{
 		LostEclipse.LOGGER.info("Beginning initialization...");
+		
+		configDir = new File(event.getModConfigurationDirectory() + "/" + Reference.MODID);
+		configDir.mkdirs();
+		Config.init(configDir);
+		
 		ModBlocks.registerBlocks();
 		ModItems.registerItems();
 		ModArmory.registerItems();

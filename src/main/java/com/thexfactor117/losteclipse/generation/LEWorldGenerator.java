@@ -4,6 +4,7 @@ import java.util.Map.Entry;
 import java.util.Random;
 
 import com.thexfactor117.losteclipse.LostEclipse;
+import com.thexfactor117.losteclipse.config.Config;
 import com.thexfactor117.losteclipse.generation.procedural.ProceduralDungeon;
 import com.thexfactor117.losteclipse.init.ModBlocks;
 import com.thexfactor117.losteclipse.init.ModLootTables;
@@ -71,13 +72,13 @@ public class LEWorldGenerator implements IWorldGenerator
 	 */
 	private void generateOverworldOres(World world, Random rand, int blockX, int blockZ)
 	{
-		IBlockState malachiteOre = ModBlocks.verantiumOre.getDefaultState();
+		IBlockState verantiumOre = ModBlocks.verantiumOre.getDefaultState();
 		IBlockState vexalOre = ModBlocks.vexalOre.getDefaultState();
 		IBlockState astrillOre = ModBlocks.astrillOre.getDefaultState();
 		
-		addOreSpawn(malachiteOre, world, rand, blockX, blockZ, 16, 16, 4 + rand.nextInt(4), 14, 1, 64);
+		addOreSpawn(verantiumOre, world, rand, blockX, blockZ, 16, 16, 4 + rand.nextInt(4), 14, 1, 64);
 		addOreSpawn(vexalOre, world, rand, blockX, blockZ, 16, 16, 2 + rand.nextInt(2), 6, 24, 48);
-		addOreSpawn(astrillOre, world, rand, blockX, blockZ, 16, 16, 1, 3, rand.nextInt(1), 15);
+		addOreSpawn(astrillOre, world, rand, blockX, blockZ, 16, 16, 1, 3, 1, 15);
 	}
 	
 	/**
@@ -89,56 +90,62 @@ public class LEWorldGenerator implements IWorldGenerator
 	 */
 	private void generateOverworldStructures(World world, Random rand, int blockX, int blockZ)
 	{
-		WorldServer server = (WorldServer) world;
-		TemplateManager manager = server.getStructureTemplateManager();
-		
-		// templates
-		Template smallHouse = manager.getTemplate(world.getMinecraftServer(), new ResourceLocation(Reference.MODID, "smallhouse"));
-		Template castle = manager.getTemplate(world.getMinecraftServer(), new ResourceLocation(Reference.MODID, "castle1"));
-		
-		// structures
-		if ((int) (Math.random() * 150) == 0)
+		if (Config.spawnStructures)
 		{
-			int randX = blockX + (int) Math.random() * 16;
-			int randZ = blockZ + (int) Math.random() * 16;
-			int groundY = getGroundFromAbove(world, randX, randZ);
-			BlockPos pos = new BlockPos(randX, groundY, randZ);
+			WorldServer server = (WorldServer) world;
+			TemplateManager manager = server.getStructureTemplateManager();
 			
-			if (canSpawnHere(castle, world, pos))
+			// templates
+			Template smallHouse = manager.getTemplate(world.getMinecraftServer(), new ResourceLocation(Reference.MODID, "smallhouse"));
+			Template castle = manager.getTemplate(world.getMinecraftServer(), new ResourceLocation(Reference.MODID, "castle1"));
+			
+			// structures
+			if ((int) (Math.random() * Config.smallHouseChance) == 0)
 			{
-				LostEclipse.LOGGER.info("Generating Small House at " + pos);
-				smallHouse.addBlocksToWorld(world, pos, new PlacementSettings());
-				handleDataBlocks(smallHouse, world, pos, new PlacementSettings());
+				int randX = blockX + (int) Math.random() * 16;
+				int randZ = blockZ + (int) Math.random() * 16;
+				int groundY = getGroundFromAbove(world, randX, randZ);
+				BlockPos pos = new BlockPos(randX, groundY, randZ);
+				
+				if (canSpawnHere(smallHouse, world, pos))
+				{
+					LostEclipse.LOGGER.info("Generating Small House at " + pos);
+					smallHouse.addBlocksToWorld(world, pos, new PlacementSettings());
+					handleDataBlocks(smallHouse, world, pos, new PlacementSettings());
+				}
+			}
+			
+			if ((int) (Math.random() * Config.castleChance) == 0)
+			{
+				int randX = blockX + (int) Math.random() * 16;
+				int randZ = blockZ + (int) Math.random() * 16;
+				int groundY = getGroundFromAbove(world, randX, randZ);
+				BlockPos pos = new BlockPos(randX, groundY, randZ);
+				
+				if (canSpawnHere(castle, world, pos))
+				{
+					LostEclipse.LOGGER.info("Generating Castle at " + pos);
+					castle.addBlocksToWorld(world, pos, new PlacementSettings());
+					handleDataBlocks(castle, world, pos, new PlacementSettings());
+				}
 			}
 		}
 		
-		if ((int) (Math.random() * 200) == 0)
+		if (Config.spawnDungeons)
 		{
-			int randX = blockX + (int) Math.random() * 16;
-			int randZ = blockZ + (int) Math.random() * 16;
-			int groundY = getGroundFromAbove(world, randX, randZ);
-			BlockPos pos = new BlockPos(randX, groundY, randZ);
-			
-			if (canSpawnHere(castle, world, pos))
+			// dungeons
+			if ((int) (Math.random() * 500) == 0)
 			{
-				LostEclipse.LOGGER.info("Generating Castle at " + pos);
-				castle.addBlocksToWorld(world, pos, new PlacementSettings());
-				handleDataBlocks(castle, world, pos, new PlacementSettings());
+				int randX = blockX + (int) Math.random() * 16;
+				int randZ = blockZ + (int) Math.random() * 16;
+				int y = (int) (Math.random() * 45 + 5);
+				BlockPos pos = new BlockPos(randX, y, randZ);
+				int maxRooms = 4 + (int) (Math.random() * 2);
+				LostEclipse.LOGGER.info("Generating Dungeon (" + maxRooms + ") at " + pos);
+				
+				ProceduralDungeon dungeon = new ProceduralDungeon(maxRooms);
+				dungeon.generate(world, rand, pos);
 			}
-		}
-		
-		// dungeons
-		if ((int) (Math.random() * 500) == 0)
-		{
-			int randX = blockX + (int) Math.random() * 16;
-			int randZ = blockZ + (int) Math.random() * 16;
-			int y = (int) (Math.random() * 45 + 5);
-			BlockPos pos = new BlockPos(randX, y, randZ);
-			int maxRooms = 4 + (int) (Math.random() * 2);
-			LostEclipse.LOGGER.info("Generating Dungeon (" + maxRooms + ") at " + pos);
-			
-			ProceduralDungeon dungeon = new ProceduralDungeon(maxRooms);
-			dungeon.generate(world, rand, pos);
 		}
 	}
 	
