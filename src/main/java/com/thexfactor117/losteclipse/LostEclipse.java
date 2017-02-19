@@ -44,7 +44,6 @@ import net.minecraftforge.fml.relauncher.Side;
  * * Structure spawn rate balancing
  * * Cleanup structure spawning
  * * Recipe cleanup
- * * Overall code cleanup and documentation
  * 
  */
 @Mod(modid = Reference.MODID, name = Reference.NAME, version = Reference.VERSION, dependencies = Reference.DEPENDENCIES, updateJSON = Reference.UPDATE_URL)
