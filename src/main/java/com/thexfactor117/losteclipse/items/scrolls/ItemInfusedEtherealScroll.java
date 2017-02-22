@@ -5,7 +5,9 @@ import com.thexfactor117.losteclipse.init.ModItems;
 import com.thexfactor117.losteclipse.items.base.ItemLE;
 
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.MobEffects;
 import net.minecraft.item.ItemStack;
+import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
@@ -33,6 +35,7 @@ public class ItemInfusedEtherealScroll extends ItemLE
 			if (!world.isRemote)
 			{
 				player.setHealth(player.getMaxHealth());
+				player.addPotionEffect(new PotionEffect(MobEffects.ABSORPTION, 20*15, 0));
 				
 				// decrease stack size by 1
 				stack.func_190918_g(1);
