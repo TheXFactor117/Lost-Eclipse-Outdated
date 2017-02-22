@@ -66,7 +66,7 @@ item.elemental_scroll.name=Elemental Scroll
 item.familiar_conjuration_scroll.name=Familiar Conjuration Scroll
 item.flame_cloak_scroll.name=Flame Cloak Scroll
 item.invisibility_scroll.name=Invisibility Scroll
-item.infused_sthereal_scroll.name=Infused Ethereal Scroll
+item.infused_ethereal_scroll.name=Infused Ethereal Scroll
 item.void_scroll.name=Void Scroll
 item.remy_scroll.name=Scroll of Remy
 
