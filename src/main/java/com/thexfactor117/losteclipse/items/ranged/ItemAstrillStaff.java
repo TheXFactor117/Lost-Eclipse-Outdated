@@ -87,7 +87,7 @@ public class ItemAstrillStaff extends ItemLEStaff
 					double z = look.zCoord;
 					EntityMagic magic = new EntityMagic(world, x, y, z, 1.0F, 0F, 12.0F);
 					magic.setPosition(player.posX + look.xCoord, player.posY + look.yCoord + 1.5, player.posZ + look.zCoord);
-					world.spawnEntityInWorld(magic);
+					world.spawnEntity(magic);
 					capMana.setMana(capMana.getMana() - this.getManaPerUse());
 				}
 			}

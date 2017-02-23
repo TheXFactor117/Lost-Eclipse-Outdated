@@ -87,7 +87,7 @@ public class ItemOblivionStaff extends ItemLEStaff
 					double z = look.zCoord;
 					EntityDarkMagic darkMagic = new EntityDarkMagic(world, x, y, z, 1.0F, 0F);
 					darkMagic.setPosition(player.posX + look.xCoord, player.posY + look.yCoord + 1.5, player.posZ + look.zCoord);
-					world.spawnEntityInWorld(darkMagic);
+					world.spawnEntity(darkMagic);
 					capMana.setMana(capMana.getMana() - this.getManaPerUse());
 				}
 			}

@@ -30,7 +30,7 @@ public abstract class ItemLEBauble extends ItemLE implements IBauble
 	@Override
 	public void onEquipped(ItemStack stack, EntityLivingBase entity) 
 	{
-		if (!entity.worldObj.isRemote) entity.playSound(SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 0.1F, 1.3f);
+		if (!entity.getEntityWorld().isRemote) entity.playSound(SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 0.1F, 1.3f);
 	}
 
 	@Override

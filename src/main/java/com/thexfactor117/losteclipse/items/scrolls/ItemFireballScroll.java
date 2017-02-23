@@ -40,9 +40,9 @@ public class ItemFireballScroll extends ItemLE
 				double z = look.zCoord;
 				EntityFireball fireball = new EntityFireball(world, x, y, z, 1.0F, 0F);
 				fireball.setPosition(player.posX + look.xCoord, player.posY + look.yCoord + 1.5, player.posZ + look.zCoord);
-				world.spawnEntityInWorld(fireball);
+				world.spawnEntity(fireball);
 				// decrease stack size by 1
-				stack.func_190918_g(1);
+				stack.shrink(1);
 			}
 		}
 		

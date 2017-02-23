@@ -38,7 +38,7 @@ public class ItemInfusedEtherealScroll extends ItemLE
 				player.addPotionEffect(new PotionEffect(MobEffects.ABSORPTION, 20*15, 0));
 				
 				// decrease stack size by 1
-				stack.func_190918_g(1);
+				stack.shrink(1);
 			}
 		}
 		

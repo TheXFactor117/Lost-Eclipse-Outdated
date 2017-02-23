@@ -70,7 +70,7 @@ public class EntityBanshee extends EntityLEMonster
 		
 		if (this.ticksExisted % (20 * (rand.nextInt(60) + 1) + 15) == 0)
 		{
-			if (!this.worldObj.isRemote) this.addPotionEffect(new PotionEffect(MobEffects.INVISIBILITY, 20*7, 0, false, false));
+			if (!this.getEntityWorld().isRemote) this.addPotionEffect(new PotionEffect(MobEffects.INVISIBILITY, 20*7, 0, false, false));
 		}
 	}
 	
@@ -80,7 +80,7 @@ public class EntityBanshee extends EntityLEMonster
 		if (!super.attackEntityFrom(source, amount)) return false;
     	else
     	{
-    		if (!this.worldObj.isRemote) this.addPotionEffect(new PotionEffect(MobEffects.INVISIBILITY, 20*7, 0, false, false));   	
+    		if (!this.getEntityWorld().isRemote) this.addPotionEffect(new PotionEffect(MobEffects.INVISIBILITY, 20*7, 0, false, false));   	
     	}
     	
     	return true;

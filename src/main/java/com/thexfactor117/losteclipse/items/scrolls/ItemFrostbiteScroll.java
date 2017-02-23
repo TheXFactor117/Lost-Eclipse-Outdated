@@ -45,9 +45,9 @@ public class ItemFrostbiteScroll extends ItemLE
 				double z = look.zCoord;
 				EntityFrostbite frostbite = new EntityFrostbite(world, x, y, z, 1.0F, 0F);
 				frostbite.setPosition(player.posX + look.xCoord, player.posY + look.yCoord + 1.5, player.posZ + look.zCoord);
-				world.spawnEntityInWorld(frostbite);
+				world.spawnEntity(frostbite);
 				// decrease stack size by 1
-				stack.func_190918_g(1);
+				stack.shrink(1);
 			}
 		}
 		

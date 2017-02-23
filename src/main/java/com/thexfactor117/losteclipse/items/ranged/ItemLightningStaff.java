@@ -87,7 +87,7 @@ public class ItemLightningStaff extends ItemLEStaff
 					double z = look.zCoord;
 					EntityLightning lightning = new EntityLightning(world, x, y, z, 1.0F, 0F);
 					lightning.setPosition(player.posX + look.xCoord, player.posY + look.yCoord + 1.5, player.posZ + look.zCoord);
-					world.spawnEntityInWorld(lightning);
+					world.spawnEntity(lightning);
 					capMana.setMana(capMana.getMana() - this.getManaPerUse());
 				}
 			}

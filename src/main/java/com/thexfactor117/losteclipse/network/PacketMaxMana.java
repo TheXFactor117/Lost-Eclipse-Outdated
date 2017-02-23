@@ -50,7 +50,7 @@ public class PacketMaxMana implements IMessage
 				@Override
 				public void run() 
 				{	
-					EntityPlayer entity = Minecraft.getMinecraft().thePlayer;
+					EntityPlayer entity = Minecraft.getMinecraft().player;
 					
 					if (entity instanceof EntityPlayer)
 					{

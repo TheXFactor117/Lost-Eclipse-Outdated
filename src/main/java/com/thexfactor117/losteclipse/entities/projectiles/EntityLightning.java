@@ -37,9 +37,9 @@ public class EntityLightning extends EntityThrowable
     {
     	super.onUpdate();
     	
-    	if (this.worldObj.isRemote)
+    	if (this.getEntityWorld().isRemote)
     	{
-    		if (!this.inGround && !this.isDead) this.worldObj.spawnParticle(EnumParticleTypes.FIREWORKS_SPARK, this.posX, this.posY, this.posZ, 0F, 0F, 0F, new int[0]);
+    		if (!this.inGround && !this.isDead) this.getEntityWorld().spawnParticle(EnumParticleTypes.FIREWORKS_SPARK, this.posX, this.posY, this.posZ, 0F, 0F, 0F, new int[0]);
     		if (this.inGround) this.setDead();
     	}
     }
@@ -47,7 +47,7 @@ public class EntityLightning extends EntityThrowable
     @Override
     protected void onImpact(RayTraceResult result)
     {	
-    	if (!this.worldObj.isRemote)
+    	if (!this.getEntityWorld().isRemote)
     	{
     		if (result.entityHit != null)
     		{	
@@ -55,7 +55,7 @@ public class EntityLightning extends EntityThrowable
     			{
     				EntityLivingBase enemy = (EntityLivingBase) result.entityHit;
     				
-    				enemy.attackEntityFrom(DamageSource.magic, 4.0F);
+    				enemy.attackEntityFrom(DamageSource.MAGIC, 4.0F);
     				enemy.setFire(2);
     				enemy.addPotionEffect(new PotionEffect(Potion.getPotionById(2), 20*2, 10));
     				enemy.addPotionEffect(new PotionEffect(Potion.getPotionById(15), 20*4, 0));

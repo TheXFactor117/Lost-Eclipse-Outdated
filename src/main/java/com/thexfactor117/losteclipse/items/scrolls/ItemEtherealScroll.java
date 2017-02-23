@@ -37,7 +37,7 @@ public class ItemEtherealScroll extends ItemLE
 				if (player.getHealth() > player.getMaxHealth()) player.setHealth(player.getMaxHealth());
 				
 				// decrease stack size by 1
-				stack.func_190918_g(1);
+				stack.shrink(1);
 			}
 		}
 		

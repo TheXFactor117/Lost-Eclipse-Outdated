@@ -50,7 +50,7 @@ public class ItemRadiationScroll extends ItemLE
 				}
 				
 				// decrease stack size by 1
-				stack.func_190918_g(1);
+				stack.shrink(1);
 			}
 		}
 		

@@ -37,7 +37,7 @@ public class ItemInvisibilityScroll extends ItemLE
 				player.addPotionEffect(new PotionEffect(MobEffects.INVISIBILITY, 20*20, 0, false, false));
 				
 				// decrease stack size by 1
-				stack.func_190918_g(1);
+				stack.shrink(1);
 			}
 		}
 		

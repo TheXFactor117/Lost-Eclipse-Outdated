@@ -35,9 +35,9 @@ public class EntityFireball extends EntityThrowable
     {
     	super.onUpdate();
     	
-    	if (this.worldObj.isRemote)
+    	if (this.getEntityWorld().isRemote)
     	{
-    		if (!this.inGround && !this.isDead) this.worldObj.spawnParticle(EnumParticleTypes.FLAME, this.posX, this.posY, this.posZ, 0F, 0F, 0F, new int[0]);
+    		if (!this.inGround && !this.isDead) this.getEntityWorld().spawnParticle(EnumParticleTypes.FLAME, this.posX, this.posY, this.posZ, 0F, 0F, 0F, new int[0]);
     		if (this.inGround) this.setDead();
     	}
     }
@@ -45,7 +45,7 @@ public class EntityFireball extends EntityThrowable
     @Override
     protected void onImpact(RayTraceResult result)
     {	
-    	if (!this.worldObj.isRemote)
+    	if (!this.getEntityWorld().isRemote)
     	{
     		if (result.entityHit != null)
     		{	
@@ -53,7 +53,7 @@ public class EntityFireball extends EntityThrowable
     			{
     				EntityLivingBase enemy = (EntityLivingBase) result.entityHit;
     				
-    				enemy.attackEntityFrom(DamageSource.magic, 4.0F);
+    				enemy.attackEntityFrom(DamageSource.MAGIC, 4.0F);
     				enemy.setFire(4);
     			}
     		}

@@ -36,7 +36,7 @@ public class ItemRemyScroll extends ItemLE
 				//world.spawnEntityInWorld(entityIn)
 				
 				// decrease stack size by 1
-				stack.func_190918_g(1);
+				stack.shrink(1);
 			}
 		}
 		

@@ -25,7 +25,7 @@ public class ItemGoldenRingDamage extends ItemLEBauble implements IBauble
 	@Override
 	public void onWornTick(ItemStack stack, EntityLivingBase entity) 
 	{
-		if (!entity.worldObj.isRemote && entity.ticksExisted%39 == 0) entity.addPotionEffect(new PotionEffect(MobEffects.STRENGTH, 20*2, 1, false, false));
+		if (!entity.getEntityWorld().isRemote && entity.ticksExisted%39 == 0) entity.addPotionEffect(new PotionEffect(MobEffects.STRENGTH, 20*2, 1, false, false));
 	}
 	
 	@Override

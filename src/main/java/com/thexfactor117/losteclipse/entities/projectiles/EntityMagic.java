@@ -38,9 +38,9 @@ public class EntityMagic extends EntityThrowable
     {
     	super.onUpdate();
     	
-    	if (this.worldObj.isRemote)
+    	if (this.getEntityWorld().isRemote)
     	{
-    		if (!this.inGround && !this.isDead) this.worldObj.spawnParticle(EnumParticleTypes.SPELL_INSTANT, this.posX, this.posY, this.posZ, 0F, 0F, 0F, new int[0]);
+    		if (!this.inGround && !this.isDead) this.getEntityWorld().spawnParticle(EnumParticleTypes.SPELL_INSTANT, this.posX, this.posY, this.posZ, 0F, 0F, 0F, new int[0]);
     		if (this.inGround) this.setDead();
     	}
     }
@@ -48,7 +48,7 @@ public class EntityMagic extends EntityThrowable
     @Override
     protected void onImpact(RayTraceResult result)
     {	
-    	if (!this.worldObj.isRemote)
+    	if (!this.getEntityWorld().isRemote)
     	{
     		if (result.entityHit != null)
     		{
@@ -56,7 +56,7 @@ public class EntityMagic extends EntityThrowable
     			{
     				EntityLivingBase enemy = (EntityLivingBase) result.entityHit;
     				
-    				enemy.attackEntityFrom(DamageSource.magic, this.damage);
+    				enemy.attackEntityFrom(DamageSource.MAGIC, this.damage);
     			}
     		}
     		

@@ -32,9 +32,9 @@ public class EntityFrostbite extends EntityThrowable
     {
     	super.onUpdate();
     	
-    	if (this.worldObj.isRemote)
+    	if (this.getEntityWorld().isRemote)
     	{
-    		if (!this.inGround && !this.isDead) this.worldObj.spawnParticle(EnumParticleTypes.SNOWBALL, this.posX, this.posY, this.posZ, 0F, 0F, 0F, new int[0]);
+    		if (!this.inGround && !this.isDead) this.getEntityWorld().spawnParticle(EnumParticleTypes.SNOWBALL, this.posX, this.posY, this.posZ, 0F, 0F, 0F, new int[0]);
     		if (this.inGround) this.setDead();
     	}
     }
@@ -42,7 +42,7 @@ public class EntityFrostbite extends EntityThrowable
     @Override
     protected void onImpact(RayTraceResult result)
     {	
-    	if (!this.worldObj.isRemote)
+    	if (!this.getEntityWorld().isRemote)
     	{
     		if (result.entityHit != null)
     		{	
@@ -50,7 +50,7 @@ public class EntityFrostbite extends EntityThrowable
     			{
     				EntityLivingBase enemy = (EntityLivingBase) result.entityHit;
     				
-    				enemy.attackEntityFrom(DamageSource.magic, 4.0F);
+    				enemy.attackEntityFrom(DamageSource.MAGIC, 4.0F);
     				enemy.addPotionEffect(new PotionEffect(Potion.getPotionById(2), 20 * 4, 10));
     			}
     		}

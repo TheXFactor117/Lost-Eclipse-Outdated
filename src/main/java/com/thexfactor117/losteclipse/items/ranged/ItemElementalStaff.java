@@ -80,7 +80,7 @@ public class ItemElementalStaff extends ItemLEStaff
 			if ((player.capabilities.isCreativeMode || player.inventory.hasItemStack(stack)) && capMana != null)
 			{
 				world.playSound(player, player.getPosition(), SoundEvents.ENTITY_ARROW_SHOOT, SoundCategory.NEUTRAL, 1.0F, 1.0F);
-				int rand = player.worldObj.rand.nextInt(3);
+				int rand = player.getEntityWorld().rand.nextInt(3);
 				
 				if (!world.isRemote)
 				{
@@ -94,15 +94,15 @@ public class ItemElementalStaff extends ItemLEStaff
 						case 0:
 							EntityFireball fireball = new EntityFireball(world, x, y, z, 1.0F, 0F);
 							fireball.setPosition(player.posX + look.xCoord, player.posY + look.yCoord + 1.5, player.posZ + look.zCoord);
-							world.spawnEntityInWorld(fireball);
+							world.spawnEntity(fireball);
 						case 1:
 							EntityFrostbite frostbite = new EntityFrostbite(world, x, y, z, 1.0F, 0F);
 							frostbite.setPosition(player.posX + look.xCoord, player.posY + look.yCoord + 1.5, player.posZ + look.zCoord);
-							world.spawnEntityInWorld(frostbite);
+							world.spawnEntity(frostbite);
 						case 2:
 							EntityMagic magic = new EntityMagic(world, x, y, z, 1.0F, 0F, 8.0F);
 							magic.setPosition(player.posX + look.xCoord, player.posY + look.yCoord + 1.5, player.posZ + look.zCoord);
-							world.spawnEntityInWorld(magic);
+							world.spawnEntity(magic);
 					}
 					
 					capMana.setMana(capMana.getMana() - this.getManaPerUse());

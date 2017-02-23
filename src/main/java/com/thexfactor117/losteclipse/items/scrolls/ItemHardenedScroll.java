@@ -32,7 +32,7 @@ public class ItemHardenedScroll extends ItemLE
 				player.addPotionEffect(new PotionEffect(MobEffects.RESISTANCE, 20*20, 0, false, false));
 				
 				// decrease stack size by 1
-				stack.func_190918_g(1);
+				stack.shrink(1);
 			}
 		}
 		

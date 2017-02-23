@@ -41,7 +41,7 @@ public class GuiMana extends Gui
 		else
 		{
 			ScaledResolution sr = event.getResolution();
-			EntityPlayer player = mc.thePlayer;
+			EntityPlayer player = mc.player;
 			
 			if (!player.capabilities.isCreativeMode)
 			{

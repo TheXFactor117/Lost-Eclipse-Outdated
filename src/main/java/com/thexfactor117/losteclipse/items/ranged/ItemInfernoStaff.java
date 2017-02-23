@@ -87,7 +87,7 @@ public class ItemInfernoStaff extends ItemLEStaff
 					double z = look.zCoord;
 					EntityFireball fireball = new EntityFireball(world, x, y, z, 1.0F, 0F);
 					fireball.setPosition(player.posX + look.xCoord, player.posY + look.yCoord + 1.5, player.posZ + look.zCoord);
-					world.spawnEntityInWorld(fireball);
+					world.spawnEntity(fireball);
 					capMana.setMana(capMana.getMana() - this.getManaPerUse());
 				}
 			}

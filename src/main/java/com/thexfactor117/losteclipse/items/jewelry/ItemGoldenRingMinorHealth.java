@@ -57,7 +57,7 @@ public class ItemGoldenRingMinorHealth extends ItemLEBauble
 	@Override
 	public void onEquipped(ItemStack stack, EntityLivingBase entity) 
 	{
-		if (entity.worldObj.isRemote) entity.playSound(SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 0.1F, 1.3f);
+		if (entity.getEntityWorld().isRemote) entity.playSound(SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 0.1F, 1.3f);
 		else
 		{	
 			NBTTagCompound nbt = stack.getTagCompound();
@@ -79,7 +79,7 @@ public class ItemGoldenRingMinorHealth extends ItemLEBauble
 	@Override
 	public void onUnequipped(ItemStack stack, EntityLivingBase entity) 
 	{
-		if (!entity.worldObj.isRemote)
+		if (!entity.getEntityWorld().isRemote)
 		{
 			NBTTagCompound nbt = stack.getTagCompound();
 			
