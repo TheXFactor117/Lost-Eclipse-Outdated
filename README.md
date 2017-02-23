@@ -14,8 +14,8 @@ Links
 * [Items & Blocks](https://github.com/TheXFactor117/Lost-Eclipse/wiki/Items-&-Blocks)
 
 ###The Team
-TheXFactor117 - Creator & Lead-Developer,
-Alex Couch - Developer,
+TheXFactor117 - Creator & Lead-Developer,<br/>
+Alex Couch - Developer,<br/>
 Ithronyar - Lead Artist
 
 ###Progress
