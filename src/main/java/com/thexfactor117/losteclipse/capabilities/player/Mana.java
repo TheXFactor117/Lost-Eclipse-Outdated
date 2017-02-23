@@ -6,6 +6,11 @@ import com.thexfactor117.losteclipse.capabilities.api.IMana;
 
 import net.minecraft.entity.EntityLivingBase;
 
+/**
+ * 
+ * @author TheXFactor117
+ *
+ */
 public class Mana implements IMana
 {
 	private int mana;

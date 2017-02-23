@@ -50,28 +50,26 @@ public class EventUpdatePlayer
 				if (capMaxMana.getMaxMana() == 0)
 				{
 					int startingMaxMana = 100;
-					LostEclipse.network.sendTo(new PacketMaxMana(startingMaxMana), (EntityPlayerMP) player); 
-					LostEclipse.network.sendTo(new PacketMana(startingMaxMana), (EntityPlayerMP) player);
 					capMaxMana.setMaxMana(startingMaxMana);
 					capMana.setMana(capMaxMana.getMaxMana());
+					LostEclipse.network.sendTo(new PacketMana(capMana.getMana()), (EntityPlayerMP) player);
+					LostEclipse.network.sendTo(new PacketMaxMana(capMaxMana.getMaxMana()), (EntityPlayerMP) player);
 				}
-				
-				//LostEclipse.LOGGER.info("Mana: " + capMana.getMana() + "\tMax Mana: " + capMaxMana.getMaxMana());
-				
+								
 				if (capMana.getMana() != capMaxMana.getMaxMana())
 				{
 					manaTick++;
 					
 					if (manaTick % 20 == 0)
 					{
-						int manaRegenRate = 3;
+						int manaRegenRate = 1;
 						capMana.setMana(capMana.getMana() + manaRegenRate);
 						
 						if (capMana.getMana() > capMaxMana.getMaxMana())
 							capMana.setMana(capMaxMana.getMaxMana());
-						
-						LostEclipse.network.sendTo(new PacketMaxMana(capMaxMana.getMaxMana()), (EntityPlayerMP) player); 
+
 						LostEclipse.network.sendTo(new PacketMana(capMana.getMana()), (EntityPlayerMP) player);
+						LostEclipse.network.sendTo(new PacketMaxMana(capMaxMana.getMaxMana()), (EntityPlayerMP) player);
 						manaTick = 0;
 					}
 				}

@@ -1,5 +1,6 @@
 package com.thexfactor117.losteclipse.network;
 
+import com.thexfactor117.losteclipse.LostEclipse;
 import com.thexfactor117.losteclipse.capabilities.api.IMana;
 import com.thexfactor117.losteclipse.capabilities.player.CapabilityMana;
 
@@ -55,6 +56,7 @@ public class PacketMana implements IMessage
 					if (entity instanceof EntityPlayer)
 					{
 						final IMana mana = CapabilityMana.getMana(entity);
+						LostEclipse.LOGGER.info("Sending mana over to client: " + message.mana);
 						mana.setMana(message.mana);
 					}
 				}

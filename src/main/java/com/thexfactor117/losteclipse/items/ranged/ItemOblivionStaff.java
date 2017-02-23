@@ -3,14 +3,17 @@ package com.thexfactor117.losteclipse.items.ranged;
 import javax.annotation.Nullable;
 
 import com.thexfactor117.levels.leveling.Rarity;
+import com.thexfactor117.losteclipse.LostEclipse;
 import com.thexfactor117.losteclipse.capabilities.player.CapabilityMana;
 import com.thexfactor117.losteclipse.capabilities.player.Mana;
 import com.thexfactor117.losteclipse.entities.projectiles.EntityDarkMagic;
 import com.thexfactor117.losteclipse.init.ModArmory;
 import com.thexfactor117.losteclipse.items.base.ItemLEStaff;
+import com.thexfactor117.losteclipse.network.PacketMana;
 
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.IItemPropertyGetter;
 import net.minecraft.item.ItemStack;
@@ -89,6 +92,7 @@ public class ItemOblivionStaff extends ItemLEStaff
 					darkMagic.setPosition(player.posX + look.xCoord, player.posY + look.yCoord + 1.5, player.posZ + look.zCoord);
 					world.spawnEntity(darkMagic);
 					capMana.setMana(capMana.getMana() - this.getManaPerUse());
+					LostEclipse.network.sendTo(new PacketMana(capMana.getMana()), (EntityPlayerMP) player);
 				}
 			}
 		}
