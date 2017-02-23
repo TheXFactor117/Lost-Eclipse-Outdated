@@ -29,8 +29,14 @@ public class Config
 	 * WORLDGEN
 	 */
 	
-	public static boolean spawnStructures = true;
+	public static boolean spawnSmallHouse = true;
 	public static boolean spawnDungeons = true;
+	public static boolean spawnCastle = true;
+	
+	public static String spawnSmallHouseString = "spawnSmallHouse";
+	public static String spawnCastleString = "spawnCastle";
+	public static String spawnDungeonsString = "spawnDungeons";
+	
 	// chances
 	public static int smallHouseChance = 150;
 	public static int castleChance = 200;
@@ -47,7 +53,7 @@ public class Config
 	private static void sync()
 	{
 		syncMain();
-		syncWorldGen();
+		syncWorldGens();
 	}
 	
 	private static void syncMain()
@@ -65,24 +71,33 @@ public class Config
 		main.save();
 	}
 	
-	private static void syncWorldGen()
+	private static void syncWorldGens()
 	{
 		String category = "worldgen";
 		List<String> propOrder = Lists.newArrayList();
 		Property prop;
 		
-		prop = worldgen.get(category, "spawnStructures", spawnStructures);
+		syncWorldGenStructures(spawnSmallHouseString, spawnSmallHouse, "If true, a small house will spawn throughout the world.");
+		syncWorldGenStructures(spawnCastleString, spawnCastle, "If true, a castle will spawn throughout the world.");
+		syncWorldGenStructures(spawnDungeonsString, spawnDungeons, "If true, dungeons will spawn throughout the world.");
+		
+		/*prop = worldgen.get(category, "spawnSmallHouse", spawnSmallHouse);
 		prop.setComment("If true, structures will spawn throughout the world (excludes dungeons).");
-		spawnStructures = prop.getBoolean();
+		spawnSmallHouse = prop.getBoolean();
+		propOrder.add(prop.getName());
+		
+		prop = worldgen.get(category, "spawnCastle", spawnCastle);
+		prop.setComment("If true, structures will spawn throughout the world (excludes dungeons).");
+		spawnCastle = prop.getBoolean();
 		propOrder.add(prop.getName());
 		
 		prop = worldgen.get(category, "spawnDungeons", spawnDungeons);
 		prop.setComment("If true, dungeons will spawn throughout the world.");
 		spawnDungeons = prop.getBoolean();
-		propOrder.add(prop.getName());
+		propOrder.add(prop.getName());*/
 		
 		// chances
-		prop = worldgen.get(category, "smallHouseChance", smallHouseChance);
+		/*prop = worldgen.get(category, "smallHouseChance", smallHouseChance);
 		prop.setComment("Determines how frequently Small Houses will spawn. Higher numbers = less frequently (1 / number = percentage per chunk)");
 		smallHouseChance = prop.getInt();
 		propOrder.add(prop.getName());
@@ -95,9 +110,35 @@ public class Config
 		prop = worldgen.get(category, "proceduralDungeonChance", proceduralDungeonChance);
 		prop.setComment("Determines how frequently Dungeons will spawn. Higher numbers = less frequently (1 / number = percentage per chunk). BE CAREFUL WITH THIS ONE. Higher frequencies can mess things up.");
 		proceduralDungeonChance = prop.getInt();
-		propOrder.add(prop.getName());
+		propOrder.add(prop.getName());*/
+		
+		syncWorldGenChance("proceduralDungeonChance", proceduralDungeonChance, "Determines how frequently Dungeons will spawn. Higher numbers = less frequently (1 / number = percentage per chunk). BE CAREFUL WITH THIS ONE. Higher frequencies can mess things up.");
+		syncWorldGenChance("castleChance", castleChance, "Determines how frequently Castles will spawn. Higher numbers = less frequently (1 / number = percentage per chunk)");
+		syncWorldGenChance("smallHouseChance", smallHouseChance, "Determines how frequently Small Houses will spawn. Higher numbers = less frequently (1 / number = percentage per chunk)");
 		
 		worldgen.setCategoryPropertyOrder(category, propOrder);
 		worldgen.save();
+	}
+	
+	private static void syncWorldGenStructures(String key, boolean spawn, String comment){
+		String category = "worldgen";
+		List<String> propOrder = Lists.newArrayList();
+		Property prop;
+		
+		prop = worldgen.get(category, key, spawn);
+		prop.setComment(comment);
+		spawn = prop.getBoolean();
+		propOrder.add(prop.getName());
+	}
+	
+	private static void syncWorldGenChance(String key, int chance, String comment){
+		String category = "worldgen";
+		List<String> propOrder = Lists.newArrayList();
+		Property prop;
+		
+		prop = worldgen.get(category, key, chance);
+		prop.setComment(comment);
+		proceduralDungeonChance = prop.getInt();
+		propOrder.add(prop.getName());
 	}
 }
