@@ -1,34 +1,29 @@
 package com.thexfactor117.losteclipse.generation;
 
-import java.util.Map.Entry;
-import java.util.Random;
-import org.apache.logging.log4j.Logger;
+import java.util.*;
+import java.util.Map.*;
+
+import org.apache.logging.log4j.*;
 
 import com.google.common.base.*;
-import com.thexfactor117.losteclipse.LostEclipse;
-import com.thexfactor117.losteclipse.config.Config;
-import com.thexfactor117.losteclipse.generation.procedural.ProceduralDungeon;
-import com.thexfactor117.losteclipse.init.ModBlocks;
-import com.thexfactor117.losteclipse.init.ModLootTables;
-import com.thexfactor117.losteclipse.util.Reference;
+import com.thexfactor117.losteclipse.*;
+import com.thexfactor117.losteclipse.config.*;
+import com.thexfactor117.losteclipse.generation.procedural.*;
+import com.thexfactor117.losteclipse.init.*;
+import com.thexfactor117.losteclipse.util.*;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.state.IBlockState;
+import net.minecraft.block.*;
+import net.minecraft.block.state.*;
 import net.minecraft.block.state.pattern.*;
-import net.minecraft.init.Blocks;
-import net.minecraft.tileentity.TileEntity;
-import net.minecraft.tileentity.TileEntityChest;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
-import net.minecraft.world.WorldServer;
-import net.minecraft.world.chunk.IChunkGenerator;
-import net.minecraft.world.chunk.IChunkProvider;
-import net.minecraft.world.gen.feature.WorldGenMinable;
-import net.minecraft.world.gen.structure.template.PlacementSettings;
-import net.minecraft.world.gen.structure.template.Template;
-import net.minecraft.world.gen.structure.template.TemplateManager;
-import net.minecraftforge.fml.common.IWorldGenerator;
+import net.minecraft.init.*;
+import net.minecraft.tileentity.*;
+import net.minecraft.util.*;
+import net.minecraft.util.math.*;
+import net.minecraft.world.*;
+import net.minecraft.world.chunk.*;
+import net.minecraft.world.gen.feature.*;
+import net.minecraft.world.gen.structure.template.*;
+import net.minecraftforge.fml.common.*;
 
 /**
  * 
@@ -37,22 +32,21 @@ import net.minecraftforge.fml.common.IWorldGenerator;
  */
 public class LEWorldGenerator implements IWorldGenerator {
 	private static final Logger LOGGER = LostEclipse.LOGGER;
+	private List<Integer> chestChance = new ArrayList<Integer>();
 
 	@Override
 	public void generate(Random rand, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator,
 			IChunkProvider chunkProvider) {
-		int blockX = chunkX * 16;
-		int blockZ = chunkZ * 16;
 
 		switch (world.provider.getDimension()) {
 		case -1:
-			generateNether(world, rand, blockX, blockZ);
+			generateNether(world, rand, chunkX * 16, chunkZ * 16);
 			break;
 		case 0:
-			generateOverworld(world, rand, blockX, blockZ);
+			generateOverworld(world, rand, chunkX * 16, chunkZ * 16);
 			break;
 		case 1:
-			generateEnd(world, rand, blockX, blockZ);
+			generateEnd(world, rand, chunkX * 16, chunkZ * 16);
 			break;
 		}
 	}
@@ -260,87 +254,39 @@ public class LEWorldGenerator implements IWorldGenerator {
 	private void handleDataBlocks(Template template, World world, BlockPos pos, PlacementSettings settings) {
 		// loop through all data blocks within the structure
 		for (Entry<BlockPos, String> e : template.getDataBlocks(pos, settings).entrySet()) {
-			if ("common_chest".equals(e.getValue())) // check data block tag
-			{
-				BlockPos dataPos = e.getKey();
-				world.setBlockState(dataPos, Blocks.AIR.getDefaultState(), 3); // remove
-																				// data
-																				// block
-				TileEntity chestEntity = world.getTileEntity(dataPos.down()); // chest
-																				// is
-																				// located
-																				// under
-																				// data
-																				// block
-
-				if (chestEntity instanceof TileEntityChest) {
-					int rand = (int) (Math.random() * 100 + 1);
-
-					if (rand <= 85)
-						((TileEntityChest) chestEntity).setLootTable(ModLootTables.STRUCTURE_COMMON,
-								world.rand.nextLong());
-					else if (rand > 95)
-						((TileEntityChest) chestEntity).setLootTable(ModLootTables.STRUCTURE_LEGENDARY,
-								world.rand.nextLong());
-					else
-						((TileEntityChest) chestEntity).setLootTable(ModLootTables.STRUCTURE_RARE,
-								world.rand.nextLong());
-				}
-			} else if ("rare_chest".equals(e.getValue())) // check data block
-															// tag
-			{
-				BlockPos dataPos = e.getKey();
-				world.setBlockState(dataPos, Blocks.AIR.getDefaultState(), 3); // remove
-																				// data
-																				// block
-				TileEntity chestEntity = world.getTileEntity(dataPos.down()); // chest
-																				// is
-																				// located
-																				// under
-																				// data
-																				// block
-
-				if (chestEntity instanceof TileEntityChest) {
-					int rand = (int) (Math.random() * 100 + 1);
-
-					if (rand <= 40)
-						((TileEntityChest) chestEntity).setLootTable(ModLootTables.STRUCTURE_COMMON,
-								world.rand.nextLong());
-					else if (rand > 90)
-						((TileEntityChest) chestEntity).setLootTable(ModLootTables.STRUCTURE_LEGENDARY,
-								world.rand.nextLong());
-					else
-						((TileEntityChest) chestEntity).setLootTable(ModLootTables.STRUCTURE_RARE,
-								world.rand.nextLong());
-				}
-			} else if ("legendary_chest".equals(e.getValue())) // check data
-																// block tag
-			{
-				BlockPos dataPos = e.getKey();
-				world.setBlockState(dataPos, Blocks.AIR.getDefaultState(), 3); // remove
-																				// data
-																				// block
-				TileEntity chestEntity = world.getTileEntity(dataPos.down()); // chest
-																				// is
-																				// located
-																				// under
-																				// data
-																				// block
-
-				if (chestEntity instanceof TileEntityChest) {
-					int rand = (int) (Math.random() * 100 + 1);
-
-					if (rand <= 10)
-						((TileEntityChest) chestEntity).setLootTable(ModLootTables.STRUCTURE_COMMON,
-								world.rand.nextLong());
-					else if (rand > 50)
-						((TileEntityChest) chestEntity).setLootTable(ModLootTables.STRUCTURE_LEGENDARY,
-								world.rand.nextLong());
-					else
-						((TileEntityChest) chestEntity).setLootTable(ModLootTables.STRUCTURE_RARE,
-								world.rand.nextLong());
-				}
+			switch(e.getValue()){
+			case "common_chest":
+				genChest(world, e, 85, 95);
+				break;
+			case "rare_chest":
+				genChest(world, e, 40, 90);
+				break;
+			case "legendary_chest":
+				genChest(world, e, 10, 50);
+				break;
 			}
+		}
+	}
+	
+	private void genChest(World world, Entry<BlockPos, String> e, int chance1, int chance2){
+		BlockPos dataPos = e.getKey();
+		world.setBlockState(dataPos, Blocks.AIR.getDefaultState(), 3);
+		chestChance.add(chance1);
+		chestChance.add(chance2);
+		//Chest is located under data block
+		TileEntity chestEntity = world.getTileEntity(dataPos.down()); 
+		if (chestEntity instanceof TileEntityChest) {
+			int rand = (int) (Math.random() * 100 + 1);
+
+			if (rand <= chestChance.get(0))
+				((TileEntityChest) chestEntity).setLootTable(ModLootTables.STRUCTURE_COMMON,
+						world.rand.nextLong());
+			else if (rand > chestChance.get(1))
+				((TileEntityChest) chestEntity).setLootTable(ModLootTables.STRUCTURE_LEGENDARY,
+						world.rand.nextLong());
+			else
+				((TileEntityChest) chestEntity).setLootTable(ModLootTables.STRUCTURE_RARE,
+						world.rand.nextLong());
 		}
 	}
 }
