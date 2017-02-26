@@ -37,7 +37,7 @@ public class ModArmory
 	 */
 	// generic melee
 	public static ToolMaterial verantium = EnumHelper.addToolMaterial("verantium", 2, 250, 6.0F, 2.0F, 14);
-	public static ToolMaterial vexal = EnumHelper.addToolMaterial("vexal", 2, 768, 6.5F, 2.5F, 10);
+	public static ToolMaterial vexal = EnumHelper.addToolMaterial("vexal", 2, 648, 6.5F, 2.5F, 10);
 	public static ToolMaterial astrill = EnumHelper.addToolMaterial("astrill", 3, 2000, 7.0F, 4.0F, 15);
 	
 	// special melee
@@ -85,37 +85,39 @@ public class ModArmory
 	
 	// generic melee
 	// vanilla
-	public static Item woodDagger = new ItemLEAdvancedMelee(ToolMaterial.WOOD, "wood_dagger", 0.5, 0.5, 40);
-	public static Item woodMace = new ItemLEAdvancedMelee(ToolMaterial.WOOD, "wood_mace", 1.25, 1.25, 80);
-	public static Item stoneDagger = new ItemLEAdvancedMelee(ToolMaterial.STONE, "stone_dagger", 0.5, 0.5, 100);
-	public static Item stoneMace = new ItemLEAdvancedMelee(ToolMaterial.STONE, "stone_mace", 1.25, 1.25, 160);
-	public static Item goldDagger = new ItemLEAdvancedMelee(ToolMaterial.GOLD, "gold_dagger", 0.5, 0.5, 20);
-	public static Item goldMace = new ItemLEAdvancedMelee(ToolMaterial.GOLD, "gold_mace", 1.25, 1.25, 40);
-	public static Item ironDagger = new ItemLEAdvancedMelee(ToolMaterial.IRON, "iron_dagger", 0.5, 0.5, 175);
-	public static Item ironMace = new ItemLEAdvancedMelee(ToolMaterial.IRON, "iron_mace", 1.25, 1.25, 350);
-	public static Item diamondDagger = new ItemLEAdvancedMelee(ToolMaterial.DIAMOND, "diamond_dagger", 0.5, 0.5, 1200);
-	public static Item diamondMace = new ItemLEAdvancedMelee(ToolMaterial.DIAMOND, "diamond_mace", 1.25, 1.25, 1800);
+	public static Item woodDagger = new ItemLEAdvancedMelee(ToolMaterial.WOOD, "wood_dagger", 0.5, 0.5, 90);
+	public static Item woodMace = new ItemLEAdvancedMelee(ToolMaterial.WOOD, "wood_mace", 1.25, 1.25, 45);
+	public static Item stoneDagger = new ItemLEAdvancedMelee(ToolMaterial.STONE, "stone_dagger", 0.5, 0.5, 195);
+	public static Item stoneMace = new ItemLEAdvancedMelee(ToolMaterial.STONE, "stone_mace", 1.25, 1.25, 97);
+	public static Item goldDagger = new ItemLEAdvancedMelee(ToolMaterial.GOLD, "gold_dagger", 0.5, 0.5, 45);
+	public static Item goldMace = new ItemLEAdvancedMelee(ToolMaterial.GOLD, "gold_mace", 1.25, 1.25, 22);
+	public static Item ironDagger = new ItemLEAdvancedMelee(ToolMaterial.IRON, "iron_dagger", 0.5, 0.5, 376);
+	public static Item ironMace = new ItemLEAdvancedMelee(ToolMaterial.IRON, "iron_mace", 1.25, 1.25, 188);
+	public static Item diamondDagger = new ItemLEAdvancedMelee(ToolMaterial.DIAMOND, "diamond_dagger", 0.5, 0.5, 2343);
+	public static Item diamondMace = new ItemLEAdvancedMelee(ToolMaterial.DIAMOND, "diamond_mace", 1.25, 1.25, 1171);
 	// modded
-	public static Item verantiumDagger = new ItemLEAdvancedMelee(verantium, "verantium_dagger", 0.5, 0.5, 175);
+	public static Item verantiumDagger = new ItemLEAdvancedMelee(verantium, "verantium_dagger", 0.5, 0.5, 376);
 	public static Item verantiumSword = new ItemLEMelee(verantium, "verantium_sword");
-	public static Item verantiumMace = new ItemLEAdvancedMelee(verantium, "verantium_mace", 1.25, 1.25, 350);
-	public static Item vexalDagger = new ItemLEAdvancedMelee(vexal, "vexal_dagger", 0.5, 0.5, 512);
+	public static Item verantiumMace = new ItemLEAdvancedMelee(verantium, "verantium_mace", 1.25, 1.25, 188);
+	public static Item vexalDagger = new ItemLEAdvancedMelee(vexal, "vexal_dagger", 0.5, 0.5, 972);
 	public static Item vexalSword = new ItemLEMelee(vexal, "vexal_sword");
-	public static Item vexalMace = new ItemLEAdvancedMelee(vexal, "vexal_mace", 1.25, 1.25, 1024);
+	public static Item vexalMace = new ItemLEAdvancedMelee(vexal, "vexal_mace", 1.25, 1.25, 486);
 	public static Item astrillDagger = new ItemLEAdvancedMelee(astrill, "astrill_dagger", 0.5, 0.5, 1500);
 	public static Item astrillSword = new ItemLEMelee(astrill, "astrill_sword");
 	public static Item astrillMace = new ItemLEAdvancedMelee(astrill, "astrill_mace", 1.25, 1.25, 2500);
 	
 	// special melee
+	//public static Item lightCrystalSword = new ItemLEMelee(crystal, "light_crystal_sword");
+	//public static Item darkCrystalSword = new ItemLEMelee(crystal, "dark_crystal_sword");
 	public static Item gyroMace = new ItemLEAdvancedMelee(gyro, "gyro_mace", 1, 1.25);
 	public static Item shadowBlade = new ItemLEMelee(shadow, "shadow_blade");
 	public static Item maliceBlade = new ItemLEMelee(malice, "malice_blade");
 	public static Item woeBlade = new ItemLEAdvancedMelee(woe, "woe_blade", 1, 0.5);
 	public static Item darkMaliceBlade = new ItemLEMelee(dark_malice, "dark_malice_blade");
 	public static Item soulInfusedSword = new ItemLEMelee(soul_infused, "soul_infused_sword");
-	public static Item divineRapier = new ItemLEAdvancedMelee(divine, "divine_rapier", 1, 0.75);
-	public static Item voidHammer = new ItemLEAdvancedMelee(void_hammer, "void_hammer", 1, 1.5);
-	public static Item excaliburRapier = new ItemLEAdvancedMelee(excalibur, "excalibur_rapier", 1, 0.75);
+	public static Item divineRapier = new ItemLEMelee(divine, "divine_rapier");
+	public static Item voidHammer = new ItemLEAdvancedMelee(void_hammer, "void_hammer", 1, 1.25);
+	public static Item excaliburRapier = new ItemLEMelee(excalibur, "excalibur_rapier");
 	public static Item ardonsDagger = new ItemLEAdvancedMelee(ardon, "ardons_dagger", 1, 0.5);
 	public static Item foundersBlade = new ItemLEMelee(founder, "founders_blade");
 	
