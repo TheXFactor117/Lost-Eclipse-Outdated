@@ -12,6 +12,7 @@ import com.thexfactor117.losteclipse.util.Reference;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.init.Biomes;
 import net.minecraft.init.Blocks;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityChest;
@@ -122,7 +123,7 @@ public class LEWorldGenerator implements IWorldGenerator
 				int groundY = getGroundFromAbove(world, randX, randZ);
 				BlockPos pos = new BlockPos(randX, groundY, randZ);
 				
-				if (canSpawnHere(castle, world, pos))
+				if (canSpawnHere(castle, world, pos) && world.getBiome(pos) == Biomes.PLAINS)
 				{
 					LostEclipse.LOGGER.info("Generating Castle at " + pos);
 					castle.addBlocksToWorld(world, pos, new PlacementSettings());
@@ -188,10 +189,7 @@ public class LEWorldGenerator implements IWorldGenerator
 		int highestBlock = getGroundFromAbove(world, pos.getX(), pos.getZ());
 		
 		if (highestBlock > pos.getY() - variation && highestBlock < pos.getY() + variation)
-		{
-			LostEclipse.LOGGER.info("Corner valid.");
 			return true;
-		}
 		
 		LostEclipse.LOGGER.info("Canceling gen for this structure.");
 		

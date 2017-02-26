@@ -36,7 +36,7 @@ public class Config
 	public static boolean spawnCastle = true;
 	
 	// chances
-	public static int smallHouseChance = 150;
+	public static int smallHouseChance = 200;
 	public static int castleChance = 200;
 	public static int proceduralDungeonChance = 500;
 	
