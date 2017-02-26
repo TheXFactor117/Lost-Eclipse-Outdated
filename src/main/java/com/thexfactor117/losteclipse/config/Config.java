@@ -29,6 +29,8 @@ public class Config
 	 * WORLDGEN
 	 */
 	
+	public static boolean spawnStructures = true;
+	
 	public static boolean spawnSmallHouse = true;
 	public static boolean spawnDungeons = true;
 	public static boolean spawnCastle = true;
@@ -73,6 +75,11 @@ public class Config
 		List<String> propOrder = Lists.newArrayList();
 		Property prop;
 
+		prop = worldgen.get(category, "spawnStructures", spawnStructures);
+		prop.setComment("If true, structures will spawn throughout the world (excludes dungeons).");
+		spawnStructures = prop.getBoolean();
+		propOrder.add(prop.getName());
+		
 		prop = worldgen.get(category, "spawnSmallHouse", spawnSmallHouse);
 		prop.setComment("If true, structures will spawn throughout the world (excludes dungeons).");
 		spawnSmallHouse = prop.getBoolean();
