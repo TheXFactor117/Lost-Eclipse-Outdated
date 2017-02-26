@@ -41,18 +41,18 @@ public class ModArmory
 	public static ToolMaterial astrill = EnumHelper.addToolMaterial("astrill", 3, 2000, 7.0F, 4.0F, 15);
 	
 	// special melee
-	public static ToolMaterial crystallized = EnumHelper.addToolMaterial("crystallized", 2, 256, 6.0F, 3.0F, 25);
-	public static ToolMaterial gyro = EnumHelper.addToolMaterial("gyro", 2, 768, 6.0F, 6.0F, 15);
+	public static ToolMaterial crystal = EnumHelper.addToolMaterial("crystal", 2, 256, 6.0F, 3.0F, 25);
+	public static ToolMaterial gyro = EnumHelper.addToolMaterial("gyro", 2, 198, 6.0F, 6.0F, 15);
 	public static ToolMaterial shadow = EnumHelper.addToolMaterial("shadow", 2, 384, 6.0F, 4.0F, 20);
 	public static ToolMaterial malice = EnumHelper.addToolMaterial("malice", 2, 448, 6.0F, 4.0F, 10);
-	public static ToolMaterial woe = EnumHelper.addToolMaterial("woe", 2, 512, 6.0F, 5.5F, 20);
-	public static ToolMaterial dark_malice = EnumHelper.addToolMaterial("dark_malice", 2, 640, 6.0F, 7.0F, 25);
-	public static ToolMaterial soul_infused = EnumHelper.addToolMaterial("soul_infused", 2, 448, 6.0F, 5.0F, 10);
-	public static ToolMaterial divine = EnumHelper.addToolMaterial("divine", 2, 384, 6.0F, 6.0F, 25);
-	public static ToolMaterial void_hammer = EnumHelper.addToolMaterial("void_hammer", 2, 1024, 6.0F, 12.0F, 15);
-	public static ToolMaterial excalibur = EnumHelper.addToolMaterial("excalibur", 2, 512, 6.0F, 8.0F, 15);
-	public static ToolMaterial ardon = EnumHelper.addToolMaterial("ardon", 2, 1600, 6.0F, 10.0F, 20);
-	public static ToolMaterial founder = EnumHelper.addToolMaterial("founder", 2, 2200, 6.0F, 15.0F, 15);
+	public static ToolMaterial woe = EnumHelper.addToolMaterial("woe", 2, 768, 6.0F, 5.5F, 20);
+	public static ToolMaterial dark_malice = EnumHelper.addToolMaterial("dark_malice", 2, 480, 6.0F, 7.0F, 25);
+	public static ToolMaterial soul_infused = EnumHelper.addToolMaterial("soul_infused", 2, 648, 6.0F, 5.0F, 10);
+	public static ToolMaterial divine = EnumHelper.addToolMaterial("divine", 2, 512, 6.0F, 6.0F, 25);
+	public static ToolMaterial void_hammer = EnumHelper.addToolMaterial("void_hammer", 2, 448, 6.0F, 12.0F, 15);
+	public static ToolMaterial excalibur = EnumHelper.addToolMaterial("excalibur", 2, 648, 6.0F, 8.0F, 15);
+	public static ToolMaterial ardon = EnumHelper.addToolMaterial("ardon", 2, 1512, 6.0F, 10.0F, 20);
+	public static ToolMaterial founder = EnumHelper.addToolMaterial("founder", 2, 1024, 6.0F, 15.0F, 15);
 	
 	// armor
 	public static ArmorMaterial verantium_armor = EnumHelper.addArmorMaterial("malachite_armor", Reference.MODID + ":verantiumArmor", 15, new int[] { 2, 6, 5, 2 }, 20, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0.0F);
@@ -107,7 +107,6 @@ public class ModArmory
 	public static Item astrillMace = new ItemLEAdvancedMelee(astrill, "astrill_mace", 1.25, 1.25, 2500);
 	
 	// special melee
-	public static Item crystallizedSword = new ItemLEMelee(crystallized, "crystallized_sword");
 	public static Item gyroMace = new ItemLEAdvancedMelee(gyro, "gyro_mace", 1, 1.25);
 	public static Item shadowBlade = new ItemLEMelee(shadow, "shadow_blade");
 	public static Item maliceBlade = new ItemLEMelee(malice, "malice_blade");
@@ -176,7 +175,6 @@ public class ModArmory
 		RegisterHelper.registerItems(astrillMace);
 		
 		// special melee
-		RegisterHelper.registerItems(crystallizedSword);
 		RegisterHelper.registerItems(gyroMace);
 		RegisterHelper.registerItems(shadowBlade);
 		RegisterHelper.registerItems(maliceBlade);
