@@ -53,7 +53,7 @@ public class ModItems
 	public static Item inferniteGem = new ItemLE("infernite_gem", Rarity.LEGENDARY);
 	
 	// glyphs
-	public static Item fireGlyph = new ItemLE("fire_glyph", Rarity.COMMON);
+	/*public static Item fireGlyph = new ItemLE("fire_glyph", Rarity.COMMON);
 	public static Item frostGlyph = new ItemLE("frost_glyph", Rarity.COMMON);
 	public static Item poisonGlyph = new ItemLE("poison_glyph", Rarity.COMMON);
 	public static Item strengthGlyph = new ItemLE("strength_glyph", Rarity.UNCOMMON);
@@ -70,7 +70,7 @@ public class ModItems
 	public static Item chainedGlyph = new ItemLE("chained_glyph", Rarity.LEGENDARY);
 	public static Item invisibilityGlyph = new ItemLE("invisibility_glyph", Rarity.LEGENDARY);
 	public static Item majorConjurationGlyph = new ItemLE("major_conjuration_glyph", Rarity.LEGENDARY);
-	public static Item voidGlyph = new ItemLE("void_glyph", Rarity.ARCHAIC);
+	public static Item voidGlyph = new ItemLE("void_glyph", Rarity.ARCHAIC);*/
 	
 	// scrolls
 	public static Item fireballScroll = new ItemFireballScroll("fireball_scroll", Rarity.UNCOMMON);
@@ -135,7 +135,7 @@ public class ModItems
 		RegisterHelper.registerItems(inferniteGem);
 		
 		// glyphs
-		RegisterHelper.registerItems(fireGlyph);
+		/*RegisterHelper.registerItems(fireGlyph);
 		RegisterHelper.registerItems(frostGlyph);
 		RegisterHelper.registerItems(poisonGlyph);
 		RegisterHelper.registerItems(strengthGlyph);
@@ -152,7 +152,7 @@ public class ModItems
 		RegisterHelper.registerItems(chainedGlyph);
 		RegisterHelper.registerItems(invisibilityGlyph);
 		RegisterHelper.registerItems(majorConjurationGlyph);
-		RegisterHelper.registerItems(voidGlyph);
+		RegisterHelper.registerItems(voidGlyph);*/
 		
 		// scrolls
 		RegisterHelper.registerItems(fireballScroll);
