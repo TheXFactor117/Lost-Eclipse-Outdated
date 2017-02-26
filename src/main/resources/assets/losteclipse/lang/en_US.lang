@@ -73,7 +73,7 @@ item.remy_scroll.name=Scroll of Remy
 ### jewelry
 item.minor_health_golden_ring.name=Golden Ring of Minor Health
 item.minor_damage_golden_ring.name=Golden Ring of Minor Damage
-item.fire-resistance_belt.name=Belt of Fire Resistance
+item.fire_resistance_belt.name=Belt of Fire Resistance
 item.soul_ring.name=Soul Ring
 item.soul_amulet.name=Soul Amulet
 item.health_golden_ring.name=Golden Ring of Health
