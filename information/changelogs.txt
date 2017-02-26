@@ -12,12 +12,25 @@
 ### Pre-Alpha 1
 #####
 
+### pre1-0.1.2.0
++ Added 15 second Absorbtion to Infused Ethereal Scrolls.
++ Added many new textures.
+- Removed all glyphs.
+* Fixed Belt of Fire Resistance's name in-game.
+* Tweaked attack speed/damage modifier values for melee weapons.
+* Updated durability for many melee weapons and tool materials.
+* Decreased mana per second from 3/sec to 1/sec.
+* Fixed Staff's not using mana properly.
+* Fixed mana GUI display issues.
+* Fixed Infused Ethereal Scroll's name in-game.
+* Small House structure has been updated.
+* Pickaxe textures now render properly.
 
-### pre-a1.1.0
+### pre1-0.1.1.0
 + Added a configuration system.
 + Added options to change worldgen features (more options will be added over time).
 * Tweaked structure spawn chances.
 
 
-### pre-a1.0.0
+### pre1-0.1.0.0
 * Initial release

@@ -1,10 +1,10 @@
 {
 	"homepage": "https://minecraft.curseforge.com/projects/lost-eclipse/files",
 	"promos": {
-		"1.11.2-latest": "pre-a1.1.0",
-		"1.11.2-recommended": "pre-a1.1.0"
+		"1.11.2-latest": "pre1-0.1.2.0",
+		"1.11.2-recommended": "pre1-0.1.2.0"
 	},
 	"1.11.2": {
-		"pre-a1.1.0": "* Full changelog can be found at our GitHub repository. It is highly recommended to update."
+		"pre1-0.1.2.0": "* Full changelog can be found at our GitHub repository. It is highly recommended to update."
 	}
 }
