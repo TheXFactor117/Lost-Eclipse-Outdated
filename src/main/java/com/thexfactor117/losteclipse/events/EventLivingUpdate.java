@@ -68,8 +68,7 @@ public class EventLivingUpdate
 					
 					if (manaTick % 20 == 0)
 					{
-						int manaRegenRate = 1;
-						capMana.setMana(capMana.getMana() + manaRegenRate);
+						capMana.addMana(capMana.getManaPerSec());
 						
 						if (capMana.getMana() > capMana.getMaxMana())
 							capMana.setMana(capMana.getMaxMana());

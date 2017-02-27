@@ -91,7 +91,7 @@ public class ItemOblivionStaff extends ItemLEStaff
 					EntityDarkMagic darkMagic = new EntityDarkMagic(world, x, y, z, 1.0F, 0F);
 					darkMagic.setPosition(player.posX + look.xCoord, player.posY + look.yCoord + 1.5, player.posZ + look.zCoord);
 					world.spawnEntity(darkMagic);
-					capMana.setMana(capMana.getMana() - this.getManaPerUse());
+					capMana.addMana(-getManaPerUse());
 					LostEclipse.network.sendTo(new PacketMana(capMana.getMana(), capMana.getMaxMana(), capMana.getManaPerSec()), (EntityPlayerMP) player);
 				}
 			}

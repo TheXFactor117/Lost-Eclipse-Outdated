@@ -91,7 +91,7 @@ public class ItemLightningStaff extends ItemLEStaff
 					EntityLightning lightning = new EntityLightning(world, x, y, z, 1.0F, 0F);
 					lightning.setPosition(player.posX + look.xCoord, player.posY + look.yCoord + 1.5, player.posZ + look.zCoord);
 					world.spawnEntity(lightning);
-					capMana.setMana(capMana.getMana() - this.getManaPerUse());
+					capMana.addMana(-getManaPerUse());
 					LostEclipse.network.sendTo(new PacketMana(capMana.getMana(), capMana.getMaxMana(), capMana.getManaPerSec()), (EntityPlayerMP) player);
 				}
 			}

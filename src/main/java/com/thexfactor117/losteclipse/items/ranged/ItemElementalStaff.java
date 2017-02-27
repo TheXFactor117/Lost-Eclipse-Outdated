@@ -108,7 +108,7 @@ public class ItemElementalStaff extends ItemLEStaff
 							world.spawnEntity(magic);
 					}
 					
-					capMana.setMana(capMana.getMana() - this.getManaPerUse());
+					capMana.addMana(-getManaPerUse());
 					LostEclipse.network.sendTo(new PacketMana(capMana.getMana(), capMana.getMaxMana(), capMana.getManaPerSec()), (EntityPlayerMP) player);
 				}
 			}
