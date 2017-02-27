@@ -5,10 +5,12 @@ import com.thexfactor117.levels.capabilities.IEnemyLevel;
 import com.thexfactor117.losteclipse.LostEclipse;
 import com.thexfactor117.losteclipse.capabilities.api.ICharacterLevel;
 import com.thexfactor117.losteclipse.capabilities.player.CapabilityCharacterLevel;
+import com.thexfactor117.losteclipse.network.PacketCharacterLevel;
 
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
@@ -49,9 +51,9 @@ public class EventLivingDeath
 		else if (enemy instanceof EntityMob)
 		{
 			IEnemyLevel enemyLevel = enemy.getCapability(CapabilityEnemyLevel.ENEMY_LEVEL_CAP, null);
-			ICharacterLevel characterLevel = player.getCapability(CapabilityCharacterLevel.CHARACTER_LEVEL, null);
+			ICharacterLevel charLevel = player.getCapability(CapabilityCharacterLevel.CHARACTER_LEVEL, null);
 			
-			if (enemyLevel != null && characterLevel != null)
+			if (enemyLevel != null && charLevel != null)
 			{
 				switch (enemyLevel.getEnemyLevel())
 				{
@@ -76,8 +78,9 @@ public class EventLivingDeath
 						break;
 				}
 				
-				characterLevel.addExperience(experience);
-				LostEclipse.LOGGER.info("Adding experience! " + characterLevel.getExperience());
+				charLevel.addExperience(experience);
+				LostEclipse.network.sendTo(new PacketCharacterLevel(charLevel.getLevel(), charLevel.getExperience(), charLevel.getSkillPoints()), (EntityPlayerMP) player);
+				LostEclipse.LOGGER.info("Adding experience! " + charLevel.getExperience());
 			}
 		}
 	}
