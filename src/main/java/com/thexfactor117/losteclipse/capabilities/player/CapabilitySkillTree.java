@@ -53,6 +53,26 @@ public class CapabilitySkillTree
 				nbt.setInteger("SwordsmanTier", instance.getSwordsmanTier());
 				nbt.setInteger("BruteTier", instance.getBruteTier());
 				
+				// hunter
+				nbt.setInteger("ProtectionTier", instance.getProtectionTier());
+				nbt.setInteger("ArcheryTier", instance.getArcheryTier());
+				nbt.setInteger("QuickDrawTier", instance.getQuickDrawTier());
+				nbt.setInteger("RecoveryTier", instance.getRecoveryTier());
+				nbt.setInteger("ParalyzeTier", instance.getParalyzeTier());
+				
+				// mage
+				nbt.setInteger("ManaTier", instance.getManaTier());
+				nbt.setInteger("SorceryTier", instance.getSorceryTier());
+				nbt.setInteger("KnowledgeTier", instance.getKnowledgeTier());
+				nbt.setInteger("MastermindTier", instance.getMastermindTier());
+				
+				// assassin
+				nbt.setInteger("AgilityTier", instance.getAgilityTier());
+				nbt.setInteger("PrecisionTier", instance.getPrecisionTier());
+				nbt.setInteger("SlashTier", instance.getSlashTier());
+				nbt.setInteger("CriticalTier", instance.getCriticalTier());
+				nbt.setInteger("DestructionTier", instance.getDestructionTier());
+				
 				return nbt;
 			}
 
@@ -69,6 +89,26 @@ public class CapabilitySkillTree
 				instance.setPowerTier(compound.getInteger("PowerTier"));
 				instance.setSwordsmanTier(compound.getInteger("SwordsmanTier"));
 				instance.setBruteTier(compound.getInteger("BruteTier"));
+				
+				// hunter
+				instance.setProtectionTier(compound.getInteger("ProtectionTier"));
+				instance.setArcheryTier(compound.getInteger("ArcheryTier"));
+				instance.setQuickDrawTier(compound.getInteger("QuickDrawTier"));
+				instance.setRecoveryTier(compound.getInteger("RecoveryTier"));
+				instance.setParalyzeTier(compound.getInteger("ParalyzeTier"));
+				
+				// mana
+				instance.setManaTier(compound.getInteger("ManaTier"));
+				instance.setSorceryTier(compound.getInteger("SorceryTier"));
+				instance.setKnowledgeTier(compound.getInteger("KnowledgeTier"));
+				instance.setMastermindTier(compound.getInteger("MastermindTier"));
+				
+				// assassin
+				instance.setAgilityTier(compound.getInteger("AgilityTier"));
+				instance.setPrecisionTier(compound.getInteger("PrecisionTier"));
+				instance.setSlashTier(compound.getInteger("SlashTier"));
+				instance.setCriticalTier(compound.getInteger("CriticalTier"));
+				instance.setDestructionTier(compound.getInteger("DestructionTier"));
 			}
 		}, () -> new SkillTree(null));
 
@@ -81,9 +121,9 @@ public class CapabilitySkillTree
 		return CapabilityUtils.getCapability(entity, SKILL_TREE, DEFAULT_FACING);
 	}
 	
-	public static ICapabilityProvider createProvider(ISkillTree mana) 
+	public static ICapabilityProvider createProvider(ISkillTree tree) 
 	{
-		return new SimpleCapabilityProvider<>(SKILL_TREE, DEFAULT_FACING, mana);
+		return new SimpleCapabilityProvider<>(SKILL_TREE, DEFAULT_FACING, tree);
 	}
 	
 	public static class EventHandler 
@@ -93,8 +133,8 @@ public class CapabilitySkillTree
 		{
 			if (event.getObject() instanceof EntityPlayer) 
 			{
-				final SkillTree warrior = new SkillTree((EntityPlayer) event.getObject());
-				event.addCapability(ID, createProvider(warrior));
+				final SkillTree tree = new SkillTree((EntityPlayer) event.getObject());
+				event.addCapability(ID, createProvider(tree));
 			}
 		}
 		
@@ -114,6 +154,26 @@ public class CapabilitySkillTree
 				newTree.setPowerTier(oldTree.getPowerTier());
 				newTree.setSwordsmanTier(oldTree.getSwordsmanTier());
 				newTree.setBruteTier(oldTree.getBruteTier());
+				
+				// hunter
+				newTree.setProtectionTier(oldTree.getProtectionTier());
+				newTree.setArcheryTier(oldTree.getArcheryTier());
+				newTree.setQuickDrawTier(oldTree.getQuickDrawTier());
+				newTree.setRecoveryTier(oldTree.getRecoveryTier());
+				newTree.setParalyzeTier(oldTree.getParalyzeTier());
+				
+				// mage
+				newTree.setManaTier(oldTree.getManaTier());
+				newTree.setSorceryTier(oldTree.getSorceryTier());
+				newTree.setKnowledgeTier(oldTree.getKnowledgeTier());
+				newTree.setMastermindTier(oldTree.getMastermindTier());
+				
+				// assassin
+				newTree.setAgilityTier(oldTree.getAgilityTier());
+				newTree.setPrecisionTier(oldTree.getPrecisionTier());
+				newTree.setSlashTier(oldTree.getSlashTier());
+				newTree.setCriticalTier(oldTree.getCriticalTier());
+				newTree.setDestructionTier(oldTree.getDestructionTier());
 			}
 		}
 	}
