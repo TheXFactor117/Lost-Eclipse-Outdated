@@ -7,6 +7,13 @@ package com.thexfactor117.losteclipse.capabilities.api;
  */
 public interface IMana 
 {
-	int getMana();
-	void setMana(int amount);
+	float getMana();
+	void addMana(float amount);
+	void setMana(float amount);
+	float getMaxMana();
+	void addMaxMana(float amount);
+	void setMaxMana(float amount);
+	float getManaPerSec();
+	void addManaPerSec(float amount);
+	void setManaPerSec(float amount);
 }

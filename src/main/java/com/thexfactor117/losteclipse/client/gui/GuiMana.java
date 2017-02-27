@@ -1,9 +1,7 @@
 package com.thexfactor117.losteclipse.client.gui;
 
 import com.thexfactor117.losteclipse.capabilities.api.IMana;
-import com.thexfactor117.losteclipse.capabilities.api.IMaxMana;
 import com.thexfactor117.losteclipse.capabilities.player.CapabilityMana;
-import com.thexfactor117.losteclipse.capabilities.player.CapabilityMaxMana;
 import com.thexfactor117.losteclipse.util.Reference;
 
 import net.minecraft.client.Minecraft;
@@ -45,22 +43,21 @@ public class GuiMana extends Gui
 			
 			if (!player.capabilities.isCreativeMode)
 			{
-				IMaxMana capMaxMana = (IMaxMana) player.getCapability(CapabilityMaxMana.MAX_MANA_CAP, null);
 				IMana capMana = (IMana) player.getCapability(CapabilityMana.MANA_CAP, null);
 				
-				if (capMaxMana != null && capMana != null)
+				if (capMana != null)
 				{
 					//LostEclipse.LOGGER.info("Mana: " + capMana.getMana() + "\tMax Mana: " + capMaxMana.getMaxMana());
 
-					if (capMaxMana.getMaxMana() != 0)
+					if (capMana.getMaxMana() != 0)
 					{
-						double manaBarWidth = (double) capMana.getMana() / capMaxMana.getMaxMana() * 96.0;
+						double manaBarWidth = (double) capMana.getMana() / capMana.getMaxMana() * 96.0;
 						int xPos = sr.getScaledWidth() / 2 + 110;
 						int yPos = sr.getScaledHeight() - 20;
 						
 						mc.renderEngine.bindTexture(location);
 
-						if (capMana.getMana() != capMaxMana.getMaxMana())
+						if (capMana.getMana() != capMana.getMaxMana())
 						{
 							this.drawTexturedModalRect(xPos, yPos, 0, 18, 96, 6);
 							this.drawTexturedModalRect(xPos, yPos, 0, 24, (int) manaBarWidth, 5);

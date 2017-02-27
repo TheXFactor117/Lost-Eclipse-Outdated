@@ -16,7 +16,6 @@ import com.thexfactor117.losteclipse.init.ModItems;
 import com.thexfactor117.losteclipse.init.ModRecipes;
 import com.thexfactor117.losteclipse.network.PacketCharacterLevel;
 import com.thexfactor117.losteclipse.network.PacketMana;
-import com.thexfactor117.losteclipse.network.PacketMaxMana;
 import com.thexfactor117.losteclipse.proxies.CommonProxy;
 import com.thexfactor117.losteclipse.util.GuiHandler;
 import com.thexfactor117.losteclipse.util.Reference;
@@ -80,8 +79,7 @@ public class LostEclipse
 		
 		network = NetworkRegistry.INSTANCE.newSimpleChannel("lost_eclipse");
 		network.registerMessage(PacketMana.Handler.class, PacketMana.class, 0, Side.CLIENT);
-		network.registerMessage(PacketMaxMana.Handler.class, PacketMaxMana.class, 1, Side.CLIENT);
-		network.registerMessage(PacketCharacterLevel.Handler.class, PacketCharacterLevel.class, 2, Side.CLIENT);
+		network.registerMessage(PacketCharacterLevel.Handler.class, PacketCharacterLevel.class, 1, Side.CLIENT);
 	}
 	
 	@EventHandler

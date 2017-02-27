@@ -109,7 +109,7 @@ public class ItemElementalStaff extends ItemLEStaff
 					}
 					
 					capMana.setMana(capMana.getMana() - this.getManaPerUse());
-					LostEclipse.network.sendTo(new PacketMana(capMana.getMana()), (EntityPlayerMP) player);
+					LostEclipse.network.sendTo(new PacketMana(capMana.getMana(), capMana.getMaxMana(), capMana.getManaPerSec()), (EntityPlayerMP) player);
 				}
 			}
 		}

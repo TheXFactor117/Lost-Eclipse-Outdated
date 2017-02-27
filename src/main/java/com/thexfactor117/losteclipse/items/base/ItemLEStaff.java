@@ -2,9 +2,7 @@ package com.thexfactor117.losteclipse.items.base;
 
 import com.thexfactor117.levels.leveling.Rarity;
 import com.thexfactor117.losteclipse.capabilities.player.CapabilityMana;
-import com.thexfactor117.losteclipse.capabilities.player.CapabilityMaxMana;
 import com.thexfactor117.losteclipse.capabilities.player.Mana;
-import com.thexfactor117.losteclipse.capabilities.player.MaxMana;
 import com.thexfactor117.losteclipse.init.ModItems;
 
 import baubles.api.BaublesApi;
@@ -45,9 +43,8 @@ public class ItemLEStaff extends ItemLE
         	@SuppressWarnings("deprecation")
 			IInventory baubles = BaublesApi.getBaubles(player);
 			Mana capMana = (Mana) player.getCapability(CapabilityMana.MANA_CAP, null);
-			MaxMana capMaxMana = (MaxMana) player.getCapability(CapabilityMaxMana.MAX_MANA_CAP, null);
 			
-			if (capMana != null && capMaxMana != null && baubles != null)
+			if (capMana != null && baubles != null)
 			{
 				for (int j = 0; j < baubles.getSizeInventory(); j++)
 				{
@@ -62,12 +59,6 @@ public class ItemLEStaff extends ItemLE
 							if (baubles.getStackInSlot(j).getItem().equals(ModItems.valadurSoulAmulet)) setManaPerUse(0);
 							
 							if (getManaPerUse() < 0) setManaPerUse(0);
-							
-							/*if (capMana.getMana() - getManaPerUse() >= 0)
-							{
-								player.setActiveHand(hand);
-								return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, player.inventory.getCurrentItem());
-							}*/
 						}
 					}
 				}

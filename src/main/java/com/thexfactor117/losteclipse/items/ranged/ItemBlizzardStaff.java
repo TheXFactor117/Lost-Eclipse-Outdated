@@ -92,7 +92,7 @@ public class ItemBlizzardStaff extends ItemLEStaff
 					frostbite.setPosition(player.posX + look.xCoord, player.posY + look.yCoord + 1.5, player.posZ + look.zCoord);
 					world.spawnEntity(frostbite);
 					capMana.setMana(capMana.getMana() - this.getManaPerUse());
-					LostEclipse.network.sendTo(new PacketMana(capMana.getMana()), (EntityPlayerMP) player);
+					LostEclipse.network.sendTo(new PacketMana(capMana.getMana(), capMana.getMaxMana(), capMana.getManaPerSec()), (EntityPlayerMP) player);
 				}
 			}
 		}

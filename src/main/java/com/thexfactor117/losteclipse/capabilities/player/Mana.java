@@ -13,7 +13,10 @@ import net.minecraft.entity.EntityLivingBase;
  */
 public class Mana implements IMana
 {
-	private int mana;
+	private float mana;
+	private float maxMana;
+	private float manaPerSec;
+	
 	@SuppressWarnings("unused")
 	private final EntityLivingBase entity;
 	
@@ -23,14 +26,56 @@ public class Mana implements IMana
 	}
 	
 	@Override
-	public int getMana() 
+	public float getMana() 
 	{
 		return mana;
 	}
+	
+	@Override
+	public void addMana(float amount)
+	{
+		mana += amount;
+	}
 
 	@Override
-	public void setMana(int amount) 
+	public void setMana(float amount) 
 	{
 		mana = amount;
+	}
+
+	@Override
+	public float getMaxMana() 
+	{
+		return maxMana;
+	}
+	
+	@Override
+	public void addMaxMana(float amount)
+	{
+		maxMana += amount;
+	}
+
+	@Override
+	public void setMaxMana(float amount) 
+	{
+		maxMana = amount;
+	}
+
+	@Override
+	public float getManaPerSec() 
+	{
+		return manaPerSec;
+	}
+	
+	@Override
+	public void addManaPerSec(float amount)
+	{
+		manaPerSec += amount;
+	}
+
+	@Override
+	public void setManaPerSec(float amount) 
+	{
+		manaPerSec = amount;
 	}
 }

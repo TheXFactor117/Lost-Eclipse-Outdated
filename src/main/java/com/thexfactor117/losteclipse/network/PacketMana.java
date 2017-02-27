@@ -1,6 +1,5 @@
 package com.thexfactor117.losteclipse.network;
 
-import com.thexfactor117.losteclipse.LostEclipse;
 import com.thexfactor117.losteclipse.capabilities.api.IMana;
 import com.thexfactor117.losteclipse.capabilities.player.CapabilityMana;
 
@@ -19,25 +18,33 @@ import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
  */
 public class PacketMana implements IMessage
 {
-	private int mana;
+	private float mana;
+	private float maxMana;
+	private float manaPerSec;
 	
 	public PacketMana() {}
 	
-	public PacketMana(int mana)
+	public PacketMana(float mana, float maxMana, float manaPerSec)
 	{
 		this.mana = mana;
+		this.maxMana = maxMana;
+		this.manaPerSec = manaPerSec;
 	}
 
 	@Override
 	public void fromBytes(ByteBuf buf) 
 	{
-		this.mana = buf.readInt();
+		this.mana = buf.readFloat();
+		this.maxMana = buf.readFloat();
+		this.manaPerSec = buf.readFloat();
 	}
 
 	@Override
 	public void toBytes(ByteBuf buf)
 	{
-		buf.writeInt(this.mana);
+		buf.writeFloat(mana);
+		buf.writeFloat(maxMana);
+		buf.writeFloat(manaPerSec);
 	}
 	
 	public static class Handler implements IMessageHandler<PacketMana, IMessage>
@@ -56,8 +63,9 @@ public class PacketMana implements IMessage
 					if (entity instanceof EntityPlayer)
 					{
 						final IMana mana = CapabilityMana.getMana(entity);
-						LostEclipse.LOGGER.info("Sending mana over to client: " + message.mana);
 						mana.setMana(message.mana);
+						mana.setMaxMana(message.maxMana);
+						mana.setManaPerSec(message.manaPerSec);
 					}
 				}
 			});

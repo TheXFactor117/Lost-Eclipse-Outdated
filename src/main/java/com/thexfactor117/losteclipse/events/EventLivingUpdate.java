@@ -3,12 +3,9 @@ package com.thexfactor117.losteclipse.events;
 import com.thexfactor117.losteclipse.LostEclipse;
 import com.thexfactor117.losteclipse.capabilities.api.IFlameCloak;
 import com.thexfactor117.losteclipse.capabilities.api.IMana;
-import com.thexfactor117.losteclipse.capabilities.api.IMaxMana;
 import com.thexfactor117.losteclipse.capabilities.player.CapabilityFlameCloak;
 import com.thexfactor117.losteclipse.capabilities.player.CapabilityMana;
-import com.thexfactor117.losteclipse.capabilities.player.CapabilityMaxMana;
 import com.thexfactor117.losteclipse.network.PacketMana;
-import com.thexfactor117.losteclipse.network.PacketMaxMana;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
@@ -52,22 +49,20 @@ public class EventLivingUpdate
 	{
 		if (!player.getEntityWorld().isRemote)
 		{
-			IMaxMana capMaxMana = (IMaxMana) player.getCapability(CapabilityMaxMana.MAX_MANA_CAP, null);
 			IMana capMana = (IMana) player.getCapability(CapabilityMana.MANA_CAP, null);
 			
-			if (capMaxMana != null && capMana != null)
+			if (capMana != null)
 			{
 				// set max mana if at 0
-				if (capMaxMana.getMaxMana() == 0)
+				if (capMana.getMaxMana() == 0)
 				{
 					int startingMaxMana = 100;
-					capMaxMana.setMaxMana(startingMaxMana);
-					capMana.setMana(capMaxMana.getMaxMana());
-					LostEclipse.network.sendTo(new PacketMana(capMana.getMana()), (EntityPlayerMP) player);
-					LostEclipse.network.sendTo(new PacketMaxMana(capMaxMana.getMaxMana()), (EntityPlayerMP) player);
+					capMana.setMaxMana(startingMaxMana);
+					capMana.setMana(capMana.getMaxMana());
+					LostEclipse.network.sendTo(new PacketMana(capMana.getMana(), capMana.getMaxMana(), capMana.getManaPerSec()), (EntityPlayerMP) player);
 				}
 								
-				if (capMana.getMana() != capMaxMana.getMaxMana())
+				if (capMana.getMana() != capMana.getMaxMana())
 				{
 					manaTick++;
 					
@@ -76,11 +71,10 @@ public class EventLivingUpdate
 						int manaRegenRate = 1;
 						capMana.setMana(capMana.getMana() + manaRegenRate);
 						
-						if (capMana.getMana() > capMaxMana.getMaxMana())
-							capMana.setMana(capMaxMana.getMaxMana());
+						if (capMana.getMana() > capMana.getMaxMana())
+							capMana.setMana(capMana.getMaxMana());
 
-						LostEclipse.network.sendTo(new PacketMana(capMana.getMana()), (EntityPlayerMP) player);
-						LostEclipse.network.sendTo(new PacketMaxMana(capMaxMana.getMaxMana()), (EntityPlayerMP) player);
+						LostEclipse.network.sendTo(new PacketMana(capMana.getMana(), capMana.getMaxMana(), capMana.getManaPerSec()), (EntityPlayerMP) player);
 						manaTick = 0;
 					}
 				}

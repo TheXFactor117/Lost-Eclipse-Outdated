@@ -11,7 +11,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.nbt.NBTBase;
-import net.minecraft.nbt.NBTTagInt;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
@@ -37,13 +37,23 @@ public class CapabilityMana
 			@Override
 			public NBTBase writeNBT(Capability<IMana> capability, IMana instance, EnumFacing side) 
 			{
-				return new NBTTagInt(instance.getMana());
+				NBTTagCompound nbt = new NBTTagCompound();
+				
+				nbt.setFloat("Mana", instance.getMana());
+				nbt.setFloat("MaxMana", instance.getMaxMana());
+				nbt.setFloat("ManaPerSec", instance.getManaPerSec());
+				
+				return nbt;
 			}
 
 			@Override
 			public void readNBT(Capability<IMana> capability, IMana instance, EnumFacing side, NBTBase nbt) 
 			{
-				instance.setMana(((NBTTagInt)nbt).getInt());
+				NBTTagCompound compound = (NBTTagCompound) nbt;
+				
+				instance.setMana(compound.getFloat("Mana"));
+				instance.setMaxMana(compound.getFloat("MaxMana"));
+				instance.setManaPerSec(compound.getFloat("ManaPerSec"));
 			}
 		}, () -> new Mana(null));
 
@@ -79,7 +89,12 @@ public class CapabilityMana
 			IMana oldMana = getMana(event.getOriginal());
 			IMana newMana = getMana(event.getEntityLiving());
 
-			if (newMana != null && oldMana != null) newMana.setMana(oldMana.getMana());
+			if (newMana != null && oldMana != null)
+			{
+				newMana.setMana(oldMana.getMana());
+				newMana.setMaxMana(oldMana.getMaxMana());
+				newMana.setManaPerSec(oldMana.getManaPerSec());
+			}
 		}
 	}
 }
