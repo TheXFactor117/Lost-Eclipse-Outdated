@@ -43,8 +43,24 @@ public interface ICharacterLevel
 	
 	/**
 	 * Returns the amount of experience needed to level up.
-	 * @param currentLevel
 	 * @return
 	 */
-	int getLevelUpExperience(int currentLevel);
+	int getLevelUpExperience();
+	
+	/**
+	 * Returns the amount of skill points the player has.
+	 * @return
+	 */
+	int getSkillPoints();
+	
+	/**
+	 * Adds a skill point to the player.
+	 */
+	void addSkillPoint();
+	
+	/**
+	 * Sets the amount of skill points the player has.
+	 * @param amount
+	 */
+	void setSkillPoints(int amount);
 }

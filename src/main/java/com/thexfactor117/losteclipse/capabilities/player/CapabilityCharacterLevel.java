@@ -46,6 +46,7 @@ public class CapabilityCharacterLevel
 				
 				nbt.setInteger("CharacterLevel", instance.getLevel());
 				nbt.setInteger("CharacterExperience", instance.getExperience());
+				nbt.setInteger("CharacterSkillPoints", instance.getSkillPoints());
 				
 				return nbt;
 			}
@@ -57,6 +58,7 @@ public class CapabilityCharacterLevel
 				
 				instance.setLevel(compound.getInteger("CharacterLevel"));
 				instance.setExperience(compound.getInteger("CharacterExperience"));
+				instance.setSkillPoints(compound.getInteger("CharacterSkillPoints"));
 			}
 		}, () -> new CharacterLevel(null));
 
@@ -96,6 +98,7 @@ public class CapabilityCharacterLevel
 			{
 				newCharacterLevel.setLevel(oldCharacterLevel.getLevel());
 				newCharacterLevel.setExperience(oldCharacterLevel.getExperience());
+				newCharacterLevel.setSkillPoints(oldCharacterLevel.getSkillPoints());
 			}
 		}
 	}

@@ -20,13 +20,19 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
  * @author TheXFactor117
  *
  */
-public class EventUpdatePlayer 
+public class EventLivingUpdate 
 {
 	private int manaTick = 0;
 	private int flameCloakTick = 0;
 	
 	@SubscribeEvent
-	public void updatePlayer(LivingUpdateEvent event)
+	public void updateLiving(LivingUpdateEvent event)
+	{
+		updatePlayer(event);
+		updateEnemy(event);
+	}
+	
+	private void updatePlayer(LivingUpdateEvent event)
 	{
 		if (event.getEntityLiving() instanceof EntityPlayer)
 		{
@@ -35,6 +41,11 @@ public class EventUpdatePlayer
 			updateMana(player);
 			updateFlameCloak(player);
 		}
+	}
+	
+	private void updateEnemy(LivingUpdateEvent event)
+	{
+		
 	}
 	
 	private void updateMana(EntityPlayer player)

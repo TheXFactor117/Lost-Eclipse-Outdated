@@ -2,6 +2,7 @@ package com.thexfactor117.losteclipse.capabilities.player;
 
 import javax.annotation.Nullable;
 
+import com.thexfactor117.losteclipse.LostEclipse;
 import com.thexfactor117.losteclipse.capabilities.api.ICharacterLevel;
 
 import net.minecraft.entity.EntityLivingBase;
@@ -15,6 +16,7 @@ public class CharacterLevel implements ICharacterLevel
 {
 	private int level;
 	private int experience;
+	private int skillPoints;
 	
 	@SuppressWarnings("unused")
 	private final EntityLivingBase entity;
@@ -35,7 +37,9 @@ public class CharacterLevel implements ICharacterLevel
 	@Override
 	public void increaseLevel()
 	{
-		this.level++;
+		level++;
+		addSkillPoint();
+		LostEclipse.LOGGER.info("Level increased to " + level + "\tSkill Points: " + skillPoints);
 	}
 
 	@Override
@@ -53,18 +57,39 @@ public class CharacterLevel implements ICharacterLevel
 	@Override
 	public void addExperience(int amount)
 	{
-		this.experience += amount;
+		experience += amount;
+		
+		if (experience >= getLevelUpExperience())
+			increaseLevel();
 	}
 
 	@Override
 	public void setExperience(int amount) 
 	{
-		this.experience = amount;
+		experience = amount;
 	}
 
 	@Override
-	public int getLevelUpExperience(int currentLevel) 
+	public int getLevelUpExperience() 
 	{
-		return 0;
+		return 20 * level;
+	}
+	
+	@Override
+	public int getSkillPoints()
+	{
+		return skillPoints;
+	}
+	
+	@Override
+	public void addSkillPoint()
+	{
+		skillPoints++;
+	}
+	
+	@Override
+	public void setSkillPoints(int amount)
+	{
+		skillPoints = amount;
 	}
 }

@@ -87,6 +87,7 @@ public class LostEclipse
 	{
 		NetworkRegistry.INSTANCE.registerGuiHandler(instance, new GuiHandler());
 		GameRegistry.registerWorldGenerator(new LEWorldGenerator(), 100);
+		proxy.init();
 	}
 	
 	@EventHandler

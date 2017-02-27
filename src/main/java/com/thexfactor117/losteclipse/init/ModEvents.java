@@ -1,8 +1,9 @@
 package com.thexfactor117.losteclipse.init;
 
 import com.thexfactor117.losteclipse.LostEclipse;
-import com.thexfactor117.losteclipse.events.EventFlameCloak;
-import com.thexfactor117.losteclipse.events.EventUpdatePlayer;
+import com.thexfactor117.losteclipse.events.EventLivingDeath;
+import com.thexfactor117.losteclipse.events.EventLivingHurt;
+import com.thexfactor117.losteclipse.events.EventLivingUpdate;
 
 import net.minecraftforge.common.MinecraftForge;
 
@@ -17,8 +18,9 @@ public class ModEvents
 	{
 		LostEclipse.LOGGER.info("Registering events...");
 		
-		MinecraftForge.EVENT_BUS.register(new EventFlameCloak());
-		MinecraftForge.EVENT_BUS.register(new EventUpdatePlayer());
+		MinecraftForge.EVENT_BUS.register(new EventLivingHurt());
+		MinecraftForge.EVENT_BUS.register(new EventLivingDeath());
+		MinecraftForge.EVENT_BUS.register(new EventLivingUpdate());
 		
 		LostEclipse.LOGGER.info("Event registration finished.");
 	}
