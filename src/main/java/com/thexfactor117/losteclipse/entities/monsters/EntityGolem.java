@@ -2,6 +2,7 @@ package com.thexfactor117.losteclipse.entities.monsters;
 
 import com.thexfactor117.levels.capabilities.CapabilityEnemyLevel;
 import com.thexfactor117.levels.capabilities.IEnemyLevel;
+import com.thexfactor117.losteclipse.config.Config;
 import com.thexfactor117.losteclipse.entities.EntityLEMonster;
 import com.thexfactor117.losteclipse.init.ModLootTables;
 
@@ -25,6 +26,12 @@ import net.minecraft.world.storage.loot.LootTableList;
  */
 public class EntityGolem extends EntityLEMonster
 {
+	private double health = 120;
+	private double damage = 16;
+	private double speed = 0.15;
+	private double range = 16;
+	private double knockback = 0.5;
+	
 	public EntityGolem(World world) 
 	{
 		super(world);
@@ -54,11 +61,31 @@ public class EntityGolem extends EntityLEMonster
 	protected void applyEntityAttributes()
 	{
 		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(120.0D);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(16.0D);
-		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.15D);
-		this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(16.0D);
-		this.getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(0.5D);
+		
+		switch (Config.difficulty)
+		{
+			case 0:
+				this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(health * difficulty0);
+				this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(damage * difficulty0);
+				this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(speed * difficulty0);
+				this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(range * difficulty0);
+				this.getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(knockback * difficulty0);
+				break;
+			case 1:
+				this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(health * difficulty1);
+				this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(damage * difficulty1);
+				this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(speed * difficulty1);
+				this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(range * difficulty1);
+				this.getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(knockback * difficulty1);
+				break;
+			case 2:
+				this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(health * difficulty1);
+				this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(damage * difficulty1);
+				this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(speed * difficulty1);
+				this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(range * difficulty1);
+				this.getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(knockback * difficulty2);
+				break;
+		}
 	}
 	
 	@Override
