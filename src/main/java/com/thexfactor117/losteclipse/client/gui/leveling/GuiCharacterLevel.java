@@ -57,6 +57,7 @@ public class GuiCharacterLevel extends GuiScreen
 			drawCenteredString(fontRendererObj, player.getName(), width / 2, 20, 0xFFFFFF);
 			drawString(fontRendererObj, I18n.format("levels.misc.level") + ": " + charLevel.getLevel(), width / 2 - 50, 40, 0xFFFFFF);
 			drawString(fontRendererObj, I18n.format("levels.misc.experience") + ": " + charLevel.getExperience() + " / " + charLevel.getLevelUpExperience(), width / 2 - 50, 50, 0xFFFFFF);
+			drawString(fontRendererObj, I18n.format("losteclipse.leveling.skills.points") + ": " + charLevel.getSkillPoints(), width / 2 - 50, 60, 0xFFFFFF);
 		}
 		else
 		{

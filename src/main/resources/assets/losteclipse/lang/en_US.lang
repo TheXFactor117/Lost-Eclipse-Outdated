@@ -1,4 +1,14 @@
 #############################################
+#                  STRINGS                  #
+#############################################
+losteclipse.leveling.skills.tree=Skill Tree
+losteclipse.leveling.skills.points=Skill Points
+losteclipse.leveling.skills.warrior=Warrior
+losteclipse.leveling.skills.hunter=Hunter
+losteclipse.leveling.skills.mage=Mage
+losteclipse.leveling.skills.assassin=Assassin
+
+#############################################
 #                  BLOCKS                   #
 #############################################
 tile.verantium_ore.name=Verantium Ore

@@ -13,7 +13,6 @@ import com.thexfactor117.losteclipse.items.jewelry.ItemGoldenRingHealth;
 import com.thexfactor117.losteclipse.items.jewelry.ItemGoldenRingMinorDamage;
 import com.thexfactor117.losteclipse.items.jewelry.ItemGoldenRingMinorHealth;
 import com.thexfactor117.losteclipse.items.scrolls.ItemEtherealScroll;
-import com.thexfactor117.losteclipse.items.scrolls.ItemFamiliarConjurationScroll;
 import com.thexfactor117.losteclipse.items.scrolls.ItemFireballScroll;
 import com.thexfactor117.losteclipse.items.scrolls.ItemFlameCloakScroll;
 import com.thexfactor117.losteclipse.items.scrolls.ItemFrostbiteScroll;
@@ -78,7 +77,7 @@ public class ModItems
 	public static Item hardenedScroll = new ItemHardenedScroll("hardened_scroll", Rarity.UNCOMMON);
 	public static Item etherealScroll = new ItemEtherealScroll("ethereal_scroll", Rarity.RARE);
 	public static Item radiationScroll = new ItemRadiationScroll("radiation_scroll", Rarity.RARE);
-	public static Item familiarConjurationScroll = new ItemFamiliarConjurationScroll("familiar_conjuration_scroll", Rarity.RARE);
+	//public static Item familiarConjurationScroll = new ItemFamiliarConjurationScroll("familiar_conjuration_scroll", Rarity.RARE);
 	public static Item flameCloakScroll = new ItemFlameCloakScroll("flame_cloak_scroll", Rarity.RARE);
 	public static Item invisibilityScroll = new ItemInvisibilityScroll("invisibility_scroll", Rarity.ULTRA_RARE);
 	public static Item infusedEtherealScroll = new ItemInfusedEtherealScroll("infused_ethereal_scroll", Rarity.ULTRA_RARE);
@@ -104,12 +103,12 @@ public class ModItems
 	public static Item frostRod = new ItemLE("frost_rod", Rarity.COMMON);
 	public static Item frostDust = new ItemLE("frost_dust", Rarity.COMMON);
 	public static Item goldenRing = new ItemLE("golden_ring", Rarity.COMMON);
-	public static Item basicGlyphPattern = new ItemLE("basic_glyph_pattern", Rarity.COMMON);
+	//public static Item basicGlyphPattern = new ItemLE("basic_glyph_pattern", Rarity.COMMON);
 	public static Item golemGyro = new ItemLE("golem_gyro", Rarity.UNCOMMON);
 	public static Item diamondRing = new ItemLE("diamond_ring", Rarity.RARE);
-	public static Item rareGlyphPattern = new ItemLE("rare_glyph_pattern", Rarity.RARE);
+	//public static Item rareGlyphPattern = new ItemLE("rare_glyph_pattern", Rarity.RARE);
 	public static Item astrillRing = new ItemLE("astrill_ring", Rarity.LEGENDARY);
-	public static Item legendaryGlyphPattern = new ItemLE("legendary_glyph_pattern", Rarity.LEGENDARY);
+	//public static Item legendaryGlyphPattern = new ItemLE("legendary_glyph_pattern", Rarity.LEGENDARY);
 	
 	// test
 	public static Item testItem = new ItemTest("test_item", Rarity.ARCHAIC);
@@ -160,7 +159,7 @@ public class ModItems
 		RegisterHelper.registerItems(hardenedScroll);
 		RegisterHelper.registerItems(etherealScroll);
 		RegisterHelper.registerItems(radiationScroll);
-		RegisterHelper.registerItems(familiarConjurationScroll);
+		//RegisterHelper.registerItems(familiarConjurationScroll);
 		RegisterHelper.registerItems(flameCloakScroll);
 		RegisterHelper.registerItems(invisibilityScroll);
 		RegisterHelper.registerItems(infusedEtherealScroll);
@@ -186,12 +185,12 @@ public class ModItems
 		RegisterHelper.registerItems(frostRod);
 		RegisterHelper.registerItems(frostDust);
 		RegisterHelper.registerItems(goldenRing);
-		RegisterHelper.registerItems(basicGlyphPattern);
+		//RegisterHelper.registerItems(basicGlyphPattern);
 		RegisterHelper.registerItems(golemGyro);
 		RegisterHelper.registerItems(diamondRing);
-		RegisterHelper.registerItems(rareGlyphPattern);
+		//RegisterHelper.registerItems(rareGlyphPattern);
 		RegisterHelper.registerItems(astrillRing);
-		RegisterHelper.registerItems(legendaryGlyphPattern);
+		//RegisterHelper.registerItems(legendaryGlyphPattern);
 		
 		// test
 		RegisterHelper.registerItems(testItem);
