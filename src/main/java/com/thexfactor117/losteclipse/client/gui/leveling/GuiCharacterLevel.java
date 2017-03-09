@@ -2,9 +2,12 @@ package com.thexfactor117.losteclipse.client.gui.leveling;
 
 import java.io.IOException;
 
+import com.thexfactor117.losteclipse.LostEclipse;
 import com.thexfactor117.losteclipse.capabilities.api.ICharacterLevel;
 import com.thexfactor117.losteclipse.capabilities.player.CapabilityCharacterLevel;
+import com.thexfactor117.losteclipse.util.GuiHandler;
 
+import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.resources.I18n;
@@ -19,11 +22,15 @@ import net.minecraftforge.fml.relauncher.SideOnly;
  */
 public class GuiCharacterLevel extends GuiScreen
 {
+	private GuiButton skillTree;
+	
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void initGui()
 	{
-		// create buttons
+		skillTree = new GuiButton(0, width / 2 - 50, 100, 100, 20, I18n.format("losteclipse.leveling.skills.tree"));
+		
+		this.buttonList.add(skillTree);
 	}
 	
 	@Override
@@ -35,7 +42,7 @@ public class GuiCharacterLevel extends GuiScreen
 		
 		if (player != null)
 		{
-			drawStrings(player);
+			drawStrings(player, mouseX, mouseY);
 		}
 		
 		super.drawScreen(mouseX, mouseY, partialTicks);
@@ -45,10 +52,18 @@ public class GuiCharacterLevel extends GuiScreen
 	@SideOnly(Side.CLIENT)
 	protected void actionPerformed(GuiButton button) throws IOException
 	{
-		// do stuff with buttons
+		if (button == skillTree)
+		{
+			EntityPlayerSP player = mc.player;
+			
+			if (player != null)
+			{
+				player.openGui(LostEclipse.instance, GuiHandler.SKILL_TREE, player.getEntityWorld(), (int) player.posX, (int) player.posY, (int) player.posZ);
+			}
+		}
 	}
 	
-	private void drawStrings(EntityPlayer player)
+	private void drawStrings(EntityPlayer player, int mouseX, int mouseY)
 	{
 		ICharacterLevel charLevel = player.getCapability(CapabilityCharacterLevel.CHARACTER_LEVEL, null);
 		

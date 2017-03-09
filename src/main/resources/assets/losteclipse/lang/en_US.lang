@@ -3,10 +3,34 @@
 #############################################
 losteclipse.leveling.skills.tree=Skill Tree
 losteclipse.leveling.skills.points=Skill Points
+losteclipse.leveling.skills.tier=Tier
 losteclipse.leveling.skills.warrior=Warrior
 losteclipse.leveling.skills.hunter=Hunter
 losteclipse.leveling.skills.mage=Mage
 losteclipse.leveling.skills.assassin=Assassin
+
+losteclipse.leveling.skills.warrior.info=The Warrior skill tree focuses on dealing physical damage, absorbing damage, and increasing health.
+losteclipse.leveling.skills.hunter.info=The Hunter skill tree focuses on ranged physical damage and utilizing light armor.
+losteclipse.leveling.skills.mage.info=The Mage skill tree focuses on increasing magical damage and utilizing mana more efficiently.
+losteclipse.leveling.skills.assassin.info=The Assassin skill tree focuses on smaller weapons, agility, and critical damage.
+
+losteclipse.leveling.skills.warrior.fortification=Fortification
+losteclipse.leveling.skills.warrior.heavyLifting=Heavy Lifting
+losteclipse.leveling.skills.warrior.vigor=Vigor
+losteclipse.leveling.skills.warrior.regeneration=Regeneration
+losteclipse.leveling.skills.warrior.power=Power
+losteclipse.leveling.skills.warrior.swordsman=Swordsman
+losteclipse.leveling.skills.warrior.brute=Brute
+
+losteclipse.leveling.skills.warrior.fortification.info1=Increases damage resistance when wearing full heavy armor.
+losteclipse.leveling.skills.warrior.heavyLifting.info1=Increases movement speed when wearing full heavy armor.
+losteclipse.leveling.skills.warrior.vigor.info1=Increases amount of health.
+losteclipse.leveling.skills.warrior.regeneration.info1=Increases how much health is regenerated per second.
+losteclipse.leveling.skills.warrior.power.info1=Increases melee damage.
+losteclipse.leveling.skills.warrior.swordsman.info1=Increases the effectiveness of swords.
+losteclipse.leveling.skills.warrior.brute.info1=Increases the effectiveness of maces.
+
+losteclipse.gui.goback=Go Back
 
 #############################################
 #                  BLOCKS                   #
